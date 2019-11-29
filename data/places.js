@@ -74,12 +74,12 @@ for (i = 0; i < PLACES.length; i++) {
   PLACES[i].color = '#c00000';
 }
 
-(function validateLinks() {
-  const validIDs = PLACES.map(p => p.id);
-  LINKS.forEach(link => {
-    if (!validIDs.includes(link.from) || !validIDs.includes(link.to)) {
-      console.log(`Invalid node ID!`);
-      console.log(link);
-    }
-  });
-})();
+// (function validateLinks() {
+//   const validIDs = PLACES.map(p => p.id);
+//   LINKS.forEach(link => {
+//     if (!validIDs.includes(link.from) || !validIDs.includes(link.to)) {
+//       console.log(`Invalid node ID!`);
+//       console.log(link);
+//     }
+//   });
+// })();

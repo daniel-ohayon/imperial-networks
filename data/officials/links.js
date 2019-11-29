@@ -1,4 +1,19 @@
-let LINKS = [{
+const OFFICIALS_TAGS_TO_COLORS = {
+    officials: {
+        label: 'Officials',
+        color: '#d95f02'
+    },
+    military: {
+        label: 'Military',
+        color: '#1b9e77'
+    },
+    other: {
+        label: 'Other',
+        color: '#7570b3'
+    },
+};
+
+let OFFICIALS_LINKS = [{
         "bio": "Ailleboust de Céry, Marie Madeleine d', fille de Philippe Marie d'Ailleboust de Céry, capitaine de port au Canada, retraité en 1773, réfugiée de Saint-Domingue 1787",
         "from": "Caribbean",
         "to": "New France",
@@ -2067,7 +2082,7 @@ let LINKS = [{
 // add connections to metropole
 const moreEdges = [];
 const seen = new Set();
-LINKS.forEach(e => {
+OFFICIALS_LINKS.forEach(e => {
     if (seen.has(e.bio)) {
         return;
     }
@@ -2078,13 +2093,12 @@ LINKS.forEach(e => {
         to: e.from
     });
 });
-LINKS = LINKS.concat(moreEdges);
+OFFICIALS_LINKS = OFFICIALS_LINKS.concat(moreEdges);
 
-
-function getSimplifiedEdges() {
+const OFFICIALS_SIMPLIFIED_EDGES = (() => {
     const output = [];
     const counts = {};
-    LINKS.forEach(e => {
+    OFFICIALS_LINKS.forEach(e => {
         const key = `${e.tag}:${e.from}:${e.to}`;
         if (!counts.hasOwnProperty(key)) {
             counts[key] = 0;
@@ -2099,10 +2113,10 @@ function getSimplifiedEdges() {
             source: keyParts[1],
             target: keyParts[2],
             tag: keyParts[0],
-            color: TAG_TO_COLOR[keyParts[0]].color,
+            color: OFFICIALS_TAGS_TO_COLORS[keyParts[0]].color,
             size: counts[key] / 3,
         });
     });
 
     return output;
-}
+})();

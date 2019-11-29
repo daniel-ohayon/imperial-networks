@@ -1,4 +1,4 @@
-const LINKS = [{
+const LAWS_LINKS = [{
     from: 'Caribbean',
     to: 'France',
     from_date: 1685,
