@@ -2590,6 +2590,20 @@ const SHIPS_LINKS = [{
   },
   {
     from: 'France',
+    to: 'Guyana',
+    from_date: '1769',
+    to_date: '1769',
+    preview: 'CURIEUX (1769-1769): Lorient → Cayenne → Lorient'
+  },
+  {
+    from: 'Guyana',
+    to: 'France',
+    from_date: '1769',
+    to_date: '1769',
+    preview: 'CURIEUX (1769-1769): Lorient → Cayenne → Lorient'
+  },
+  {
+    from: 'France',
     to: 'India',
     from_date: '1775',
     to_date: '1775',
@@ -6069,6 +6083,13 @@ const SHIPS_LINKS = [{
   },
   {
     from: 'Senegal',
+    to: 'Guyana',
+    from_date: '1724',
+    to_date: '1724',
+    preview: 'BONNE AVENTURE ou BONNAVENTURE (1722-1724): Le Havre → Sénégal et Gorée → Cayenne → Nantes → Lorient'
+  },
+  {
+    from: 'Guyana',
     to: 'France',
     from_date: '1724',
     to_date: '1724',
@@ -7548,6 +7569,13 @@ const SHIPS_LINKS = [{
     from: 'France',
     to: 'Senegal',
     from_date: '1778',
+    to_date: '1779',
+    preview: 'GÉNOIS (1778-1779): Lorient → Le Havre → Lisbonne → Juda → Cayenne → ?'
+  },
+  {
+    from: 'Senegal',
+    to: 'Guyana',
+    from_date: '1779',
     to_date: '1779',
     preview: 'GÉNOIS (1778-1779): Lorient → Le Havre → Lisbonne → Juda → Cayenne → ?'
   },
@@ -9604,6 +9632,13 @@ const SHIPS_LINKS = [{
   },
   {
     from: 'Senegal',
+    to: 'Guyana',
+    from_date: '1735',
+    to_date: '1735',
+    preview: 'DROMADAIRE (1733-1735): Lorient → Juda et côtes de Guinée → Cayenne → Saint-Domingue → Lorient'
+  },
+  {
+    from: 'Guyana',
     to: 'Caribbean',
     from_date: '1735',
     to_date: '1735',
@@ -12082,6 +12117,13 @@ const SHIPS_LINKS = [{
   },
   {
     from: 'Senegal',
+    to: 'Guyana',
+    from_date: '1726',
+    to_date: '1726',
+    preview: 'EXPÉDITION (1724-1726): Le Havre → Lorient → Juda → Guyane → Lorient'
+  },
+  {
+    from: 'Guyana',
     to: 'France',
     from_date: '1726',
     to_date: '1726',
@@ -13174,8 +13216,15 @@ const SHIPS_LINKS = [{
   },
   {
     from: 'France',
-    to: 'Caribbean',
+    to: 'Guyana',
     from_date: '1781',
+    to_date: '1782',
+    preview: 'FRATERNITÉ (1781-1782): Bordeaux → Île d\'Aix → Île de Ré → Cayenne → Guadeloupe → Cap-Français → Lorient'
+  },
+  {
+    from: 'Guyana',
+    to: 'Caribbean',
+    from_date: '1782',
     to_date: '1782',
     preview: 'FRATERNITÉ (1781-1782): Bordeaux → Île d\'Aix → Île de Ré → Cayenne → Guadeloupe → Cap-Français → Lorient'
   },
@@ -14535,7 +14584,7 @@ const SHIPS_LINKS = [{
     to: 'France',
     from_date: '1734',
     to_date: '1734',
-    preview: 'JUPITER (1733-1734): Lorient → Cadix → Madagascar → Inde et Mascareignes → Ascension → Lorient'
+    preview: 'JUPITER (1733-1734): Lorient → Cadix → Madagascar → Inde et Mascareignes \ufffd\ufffd\ufffd Ascension → Lorient'
   },
   {
     from: 'France',
@@ -14707,6 +14756,13 @@ const SHIPS_LINKS = [{
   },
   {
     from: 'Senegal',
+    to: 'Guyana',
+    from_date: '1779',
+    to_date: '1779',
+    preview: 'OISEAU (1778-1779): Le Havre → Gorée → côte de Guinée → Cayenne → Lorient'
+  },
+  {
+    from: 'Guyana',
     to: 'France',
     from_date: '1779',
     to_date: '1779',
@@ -15019,6 +15075,20 @@ const SHIPS_LINKS = [{
     from_date: '1744',
     to_date: '1744',
     preview: 'LIONCEAU ou LYONCEAU (1744-1744): Lorient → Sénégal'
+  },
+  {
+    from: 'France',
+    to: 'Guyana',
+    from_date: '1780',
+    to_date: '1781',
+    preview: 'LUTIN (1780-1781): Brest → Cayenne → Lorient'
+  },
+  {
+    from: 'Guyana',
+    to: 'France',
+    from_date: '1781',
+    to_date: '1781',
+    preview: 'LUTIN (1780-1781): Brest → Cayenne → Lorient'
   },
   {
     from: 'France',
@@ -18095,6 +18165,13 @@ const SHIPS_LINKS = [{
   },
   {
     from: 'France',
+    to: 'Guyana',
+    from_date: '1781',
+    to_date: '1781',
+    preview: 'SOPHIE (1781-1781): Lorient → Cayenne ?'
+  },
+  {
+    from: 'France',
     to: 'Isle Bourbon & Isle of France',
     from_date: '1766',
     to_date: '1769',
@@ -19449,7 +19526,7 @@ const SHIPS_LINKS = [{
     to: 'Isle Bourbon & Isle of France',
     from_date: '1786',
     to_date: '1786',
-    preview: 'SIX FRÈRES devenu la  (1786-1786): Bordeaux → île de France'
+    preview: 'SIX FRÈRES devenu la  (1786-1786): Bordeaux \ufffd\ufffd\ufffd île de France'
   },
   {
     from: 'France',
@@ -19814,6 +19891,13 @@ const SHIPS_LINKS = [{
     from_date: '1783',
     to_date: '1783',
     preview: 'SUPERBE (1783-1783): Lorient → îles de France et de Bourbon ?'
+  },
+  {
+    from: 'France',
+    to: 'Guyana',
+    from_date: '1785',
+    to_date: '1785',
+    preview: 'SURPRISE (1785-1785): Lorient → Cayenne ?'
   },
   {
     from: 'France',
@@ -20584,6 +20668,13 @@ const SHIPS_LINKS = [{
     from_date: '1787',
     to_date: '1787',
     preview: 'PETIT BOULLONGNE (1787-1787): Lorient → îles de France et de Bourbon ?'
+  },
+  {
+    from: 'France',
+    to: 'Guyana',
+    from_date: '1781',
+    to_date: '1781',
+    preview: 'PETITE HENRIETTE (1781-1781): Lorient → Cayenne ?'
   },
   {
     from: 'France',
