@@ -1,18 +1,3 @@
-const OFFICIALS_TAGS_TO_COLORS = {
-    officials: {
-        label: 'Officials',
-        color: '#d95f02'
-    },
-    military: {
-        label: 'Military',
-        color: '#1b9e77'
-    },
-    other: {
-        label: 'Other',
-        color: '#7570b3'
-    },
-};
-
 let OFFICIALS_LINKS = [{
         "bio": "Ailleboust de Céry, Marie Madeleine d', fille de Philippe Marie d'Ailleboust de Céry, capitaine de port au Canada, retraité en 1773, réfugiée de Saint-Domingue 1787",
         "from": "Caribbean",
@@ -2094,29 +2079,3 @@ OFFICIALS_LINKS.forEach(e => {
     });
 });
 OFFICIALS_LINKS = OFFICIALS_LINKS.concat(moreEdges);
-
-const OFFICIALS_SIMPLIFIED_EDGES = (() => {
-    const output = [];
-    const counts = {};
-    OFFICIALS_LINKS.forEach(e => {
-        const key = `${e.tag}:${e.from}:${e.to}`;
-        if (!counts.hasOwnProperty(key)) {
-            counts[key] = 0;
-        }
-        counts[key]++;
-    });
-
-    Object.keys(counts).forEach((key, index) => {
-        const keyParts = key.split(':');
-        output.push({
-            id: `e${index}`,
-            source: keyParts[1],
-            target: keyParts[2],
-            tag: keyParts[0],
-            color: OFFICIALS_TAGS_TO_COLORS[keyParts[0]].color,
-            size: counts[key] / 3,
-        });
-    });
-
-    return output;
-})();

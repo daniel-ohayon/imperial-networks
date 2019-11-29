@@ -22,6 +22,13 @@ who made the journey.
 `viz/ships.html` shows ship journeys.
 It is based on online marine records, extracted in `scripts/parse_ship_data.ipynb`.
 
+On the [marine website](https://www.memoiredeshommes.sga.defense.gouv.fr/fr/arkotheque/client/mdh/compagnie_des_indes/), each ship has a dedicated page with a list of its journeys.
+
+For each journey, there are two sources of information: a one-line summary with arrows (like `Le Havre → Lorient → Madagascar et Mascareignes → Nantes`) and a spreadsheet. These two are sometimes contradictory, for example with the ship COURRIER DE BOURBON, 1718-1719. In those cases, we use the itinerary with the highest number of stops between the two.
+
+To translate these itineraries into links in our map, we use a mapping of port names to colony. We ignore ports that are not relevant to our study (eg in Brasil, Spain, China, etc).
+
+
 # Implementation
 Data extraction/processing is done in Python (under `scripts`).
 For web-based archives, we use the `requests` library to make

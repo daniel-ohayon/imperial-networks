@@ -7,15 +7,15 @@ const LAWS_CONFIG = {
     tag_to_color: {
         Religion: {
             label: 'Culture and Religion',
-            color: '#1b9e77'
+            color: '#009292'
         },
         Intermarriage: {
             label: 'Intermarriage',
-            color: '#d95f02'
+            color: '#db6d00'
         },
         'Free People of Color': {
             label: 'Free People of Color',
-            color: '#7570b3'
+            color: '#490092'
         },
     },
     makeModalContent: makeModalContent
