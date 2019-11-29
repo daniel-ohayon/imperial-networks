@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Laws network</title>
+
+  <link rel="stylesheet" href="../style/network-animation.css" />
+  <script src="../lib/sigma/sigma.min.js"></script>
+  <script src="../lib/sigma/sigma.canvas.edges.curvedArrowRandom.js"></script>
+  <script src="../lib/sigma/sigma.canvas.labels.def.js"></script>
+</head>
+
+<body>
+  <div id="title">Global influences between French colonial laws</div>
+  <div class="slider-container">
+    <input type="range" min="1" max="100" value="1" class="slider" id="time-slider">
+    <button class="play-button">Start</button>
+  </div>
+
+  <div id="container">
+    <div id="year"></div>
+    <div id="legend"></div>
+  </div>
+
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close-button">x</span>
+      <div class="modal-text"></div>
+    </div>
+  </div>
+
+  <!-- DATA SPECIFIC TO THIS VISUALIZATION-->
+  <script src="../data/laws/config.js" charset="utf-8"></script>
+  <script src="../data/laws/links.js" charset="utf-8"></script>
+  <script src="../data/laws/modal-config.js" charset="utf-8"></script>
+  <!---------------------------------------->
+
+  <script src="../data/places.js"></script>
+  <script src="../lib/network.js" charset="utf-8"></script>
+  <script src="../lib/animation.js" charset="utf-8"></script>
+  <script src="../lib/modal.js" charset="utf-8"></script>
+</body>
+
+</html>
