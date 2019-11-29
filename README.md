@@ -20,7 +20,7 @@ who made the journey.
 
 ## SHIPS
 `viz/ships.html` shows ship journeys.
-It is based on online records, extracted in `scripts/ships.ipynb`.
+It is based on online marine records, extracted in `scripts/parse_ship_data.ipynb`.
 
 # Implementation
 Data extraction/processing is done in Python (under `scripts`).
