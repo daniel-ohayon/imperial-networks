@@ -4,18 +4,15 @@ const LAWS_CONFIG = {
     use_simplified_edges: false,
     edge_size: 2,
     arrow_head_size: 10,
+    skip_france: true,
     tag_to_color: {
-        Religion: {
-            label: 'Culture and Religion',
+        with_metropole: {
+            label: 'Through metropole',
             color: '#009292'
         },
-        Intermarriage: {
-            label: 'Intermarriage',
+        without_metropole: {
+            label: 'Colony-to-colony',
             color: '#db6d00'
-        },
-        'Free People of Color': {
-            label: 'Free People of Color',
-            color: '#490092'
         },
     },
     makeModalContent: makeModalContent

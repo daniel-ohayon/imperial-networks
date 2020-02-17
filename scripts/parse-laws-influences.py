@@ -52,49 +52,48 @@ def get_law_of_origin(laws, key):
 
 for _, law in df.iterrows():
     law_of_origin = get_law_of_origin(df, law['Origin ID'])
-    if not is_from_metropole(law):
-        if law_of_origin is None:
-            continue
-        graph_edges.append({
-            'from': law_of_origin['Location'],
-            'to': law['Location'],
-            'from_date': law_of_origin['Date'],
-            'to_date': law['Date'],
-            'preview': law['Quotation'],
-            'tag': law['Theme'],
-            'partial_match': law['Connection with Previous Law'] == 'Similar Content'
-        })
-    else:
-        if law_of_origin is None:
-            graph_edges.append({
-                'from': 'France',
-                'to': law['Location'],
-                'from_date': law['Date'],
-                'to_date': law['Date'],
-                'preview': law['Quotation'],
-                'tag': law['Theme'],
-                'partial_match': law['Connection with Previous Law'] == 'Similar Content'
-            })
-        else:
-            # Does not happen for now
-            graph_edges.append({
-                'from': law_of_origin['Location'],
-                'to': 'France',
-                'from_date': law_of_origin['Date'],
-                'to_date': law['Date'],
-                'preview': law_of_origin['Quotation'],
-                'tag': law['Theme'],
-                'partial_match': law['Connection with Previous Law'] == 'Similar Content'
-            })
-            graph_edges.append({
-                'from': 'France',
-                'to': law['Location'],
-                'from_date': law['Date'],
-                'to_date': law['Date'],
-                'preview': law['Quotation'],
-                'tag': law['Theme'],
-                'partial_match': law['Connection with Previous Law'] == 'Similar Content'
-            })
+    if law_of_origin is None:
+        continue
+    graph_edges.append({
+        'from': law_of_origin['Location'],
+        'to': law['Location'],
+        'from_date': law_of_origin['Date'],
+        'to_date': law['Date'],
+        'preview': law['Quotation'],
+        'tag': 'with_metropole' if is_from_metropole(law) else 'without_metropole',
+        'partial_match': law['Connection with Previous Law'] == 'Similar Content'
+    })
+    # else:
+    #     if law_of_origin is None:
+    #         graph_edges.append({
+    #             'from': 'France',
+    #             'to': law['Location'],
+    #             'from_date': law['Date'],
+    #             'to_date': law['Date'],
+    #             'preview': law['Quotation'],
+    #             'tag': law['Theme'],
+    #             'partial_match': law['Connection with Previous Law'] == 'Similar Content'
+    #         })
+    # else:
+    #     # Does not happen for now
+    #     graph_edges.append({
+    #         'from': law_of_origin['Location'],
+    #         'to': 'France',
+    #         'from_date': law_of_origin['Date'],
+    #         'to_date': law['Date'],
+    #         'preview': law_of_origin['Quotation'],
+    #         'tag': law['Theme'],
+    #         'partial_match': law['Connection with Previous Law'] == 'Similar Content'
+    #     })
+    #     graph_edges.append({
+    #         'from': 'France',
+    #         'to': law['Location'],
+    #         'from_date': law['Date'],
+    #         'to_date': law['Date'],
+    #         'preview': law['Quotation'],
+    #         'tag': law['Theme'],
+    #         'partial_match': law['Connection with Previous Law'] == 'Similar Content'
+    #     })
 
 # numpy.int64 can't be serialized to JSON :/
 for i, entry in enumerate(graph_edges):
