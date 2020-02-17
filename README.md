@@ -8,6 +8,10 @@ colonial empire.
 The data is based on Melanie's book chapter 5 (`scripts/laws-influences.xslsx`)
 The data is parsed and transformed to JS using `scripts/parse-laws-influences.py`.
 
+We only show links directly between colonies, and not links with the metropole for readability. We use color coding to differentiate (a) laws that went directly from one colony to another, from (b) laws that were processed through the metropole in-between (by the King or Colbert, etc).
+
+We use dotted arrows to represent laws that had the same intent or similar wording, and solid arrows for laws that had the exact same text.
+
 ## OFFICIALS
 `viz/officials.html` shows travels of French officials. It is based on online archive records, extracted in `scripts/parse-officials/travel.ipynb`.
 

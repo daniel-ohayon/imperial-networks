@@ -1,4 +1,5 @@
-const LAWS_LINKS = [{
+const LINKS = [
+  {
     from: 'Caribbean',
     to: 'Isle Bourbon & Isle of France',
     from_date: 1685,
@@ -394,4 +395,5 @@ const LAWS_LINKS = [{
     tag: 'without_metropole',
     partial_match: true
   }
-];
+]
+;
