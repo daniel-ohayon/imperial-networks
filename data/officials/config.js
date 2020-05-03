@@ -2,9 +2,11 @@ const OFFICIALS_CONFIG = {
     links: OFFICIALS_LINKS,
     use_anmiation: false,
     use_simplified_edges: true,
-    arrow_scaling_factor: 3,
+    arrow_scaling_factor: 1.2,
     edge_size: 0.5,
     arrow_head_size: 5,
+    undirected: true,
+    use_tags: false,
     tag_to_color: {
         officials: {
             label: 'Officials',
