@@ -60,7 +60,7 @@ for _, law in df.iterrows():
         'from_date': law_of_origin['Date'],
         'to_date': law['Date'],
         'preview': law['Quotation'],
-        'tag': 'with_metropole' if is_from_metropole(law) else 'without_metropole',
+        'through_metropole': law['Goes Through Metrople'] == "Yes",
         'partial_match': law['Connection with Previous Law'] == 'Similar Content'
     })
     # else:

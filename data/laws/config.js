@@ -1,20 +1,10 @@
 const LAWS_CONFIG = {
     links: LAWS_LINKS,
-    use_animation: true,
+    use_animation: false,
     use_simplified_edges: false,
-    edge_size: 2,
+    edge_size: 1,
     arrow_head_size: 10,
     skip_france: true,
-    tag_to_color: {
-        with_metropole: {
-            label: 'Through metropole',
-            color: '#009292'
-        },
-        without_metropole: {
-            label: 'Colony-to-colony',
-            color: '#db6d00'
-        },
-    },
     makeModalContent: makeModalContent
 };
 
