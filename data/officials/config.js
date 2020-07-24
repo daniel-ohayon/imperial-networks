@@ -1,24 +1,24 @@
 const OFFICIALS_CONFIG = {
     links: OFFICIALS_LINKS,
     use_anmiation: false,
-    use_simplified_edges: true,
+    use_simplified_edges: false,
     arrow_scaling_factor: 1.2,
-    edge_size: 0.5,
+    edge_size: 0.8,
     arrow_head_size: 5,
     undirected: true,
-    use_tags: false,
+    use_tags: true,
     tag_to_color: {
-        officials: {
-            label: 'Officials',
-            color: '#009292'
+        before_1763: {
+            label: 'before 1763',
+            color: 'black'
         },
-        military: {
-            label: 'Military',
-            color: '#db6d00'
+        before_1763_maybe: {
+            label: 'before 1763 maybe',
+            color: 'black'
         },
-        other: {
-            label: 'Other',
-            color: '#490092'
+        after_1763: {
+            label: 'after_1763',
+            color: '#C5C5C5'
         },
     },
     makeModalContent: function (node, sigmaInstance, links) {

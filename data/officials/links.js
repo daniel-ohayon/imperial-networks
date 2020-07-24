@@ -1,2081 +1,1962 @@
-let OFFICIALS_LINKS = [{
-        "bio": "Ailleboust de Céry, Marie Madeleine d', fille de Philippe Marie d'Ailleboust de Céry, capitaine de port au Canada, retraité en 1773, réfugiée de Saint-Domingue 1787",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+const OFFICIALS_LINKS = [
+    {
+        bio: 'Lépinay, Jean Michel de, né vers 1665, départ pour le Canada en enseigne en 1687, promu lieutenant en 1687, puis capitaine en 1691 au Canada. Rrtour en France en 1695, pui gouverneur de la Louisiane à partir de 1716, puis de la Grenade aux Antilles en 1717. Mort en Martinique en 1721. ',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Ailleboust de Céry, Philippe Antoine d', né à Québec, le 7 juin 1739, enseigne dans les troupes du Canada, lieutenant, puis capitaine dans la légion de Saint-Domingue 1766",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Ailleboust de Mantet, d', capitaine au régiment de Pondichéry, marié à mademoiselle de La Hogue, créole de l'île Bourbon 1787",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Ailleboust de Saint-Vilmé, Jean Baptiste d', lieutenant des troupes de la Marine à l'île Royale, capitaine dans les troupes nationales à Cayenne, capitaine aux volontaires d'Afrique, major au Cap Tiburon à Saint-Domingue, commandant particulier au Môle Saint-Nicolas, lieutenant de roi à Saint-Louis 1733/1788",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Albergati-Vezza, François Marie, marquis, lieutenant puis capitaine dans les troupes du Canada et de l'île de France 1760/1773",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Allard de Sainte-Marie, Philippe Antoine d', lieutenant, puis capitaine d'artillerie à Cayenne, puis capitaine au régiment de la Guadeloupe 1767/1786",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Allemagne de Varage, Louis d', chevalier, capitaine au régiment d'Angoumois, ayant fait campagne à la Louisiane et à Saint-Domingue, demande une compagnie dans un régiment des colonies ou un emploi dans un état-major des Iles 1740/1787",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
-    },
-    {
-        "bio": "Amat, Jean Joseph, agent de la marine à Pondichéry, au Cap de Bonne-Espérance et à l'île de France 1766/1786",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
-    },
-    {
-        "bio": "Arrot, d', chevalier, puis vicomte, sous-lieutenant dans la légion de l'île de France, lieutenant puis capitaine au régiment de Pondichéry, colonel d'infanterie, aide-maréchal général des logis à Saint-Domingue, commandant au second à la Guadeloupe, gouverneur de Tabago 1772/1785",
-        "from": "Caribbean",
-        "to": "India",
-        "tag": "officials"
-    },
-    {
-        "bio": "Arrot, d', chevalier, puis vicomte, sous-lieutenant dans la légion de l'île de France, lieutenant puis capitaine au régiment de Pondichéry, colonel d'infanterie, aide-maréchal général des logis à Saint-Domingue, commandant au second à la Guadeloupe, gouverneur de Tabago 1772/1785",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Auger, Jean Baptiste, caporal au régiment de Pondichéry, mort à l'île de France 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Auger, Nicolas, créole du Sénégal, ouvrier tonnelier, engagé pour l'île de France 1772",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Senegal",
-        "tag": "other"
-    },
-    {
-        "bio": "Auvray-Dufresne, Jean Louis, capitaine dans les troupes nationales de Cayenne et dans la légion de Saint-Domingue 1766/1779",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "military"
-    },
-    {
-        "bio": "Bachelier, Jean Baptiste, natif de la province d'île de France, boulanger, mort pendant la traversée de Saint-Domingue 1766",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
-    },
-    {
-        "bio": "Bance, Etienne Joseph, conseiller aux Conseils supérieurs de l'île Bourbon et de l'île de France, ensuite habitant de Saint-Domingue, enfin juge au tribunal civil de l'Eure 1766/an IX",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Barbé de Marbois, Nicolas François, lieutenant de juge, de la juridiction de l'île de France, frère de François Barbé de Marbois, intendant de Saint-Domingue (lettres de ce dernier) 1777/1810",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Barbier de blignières, Nicolas Joseph, lieutenant d'infanterie, et ingénieur ordinaire du Roi à Cayenne, capitaine de dragons à Saint-Domingue 1766/1776",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Barbier de Villejuif, Charles, engagé pour les troupes des colonies et embarqué pour Cayenne, André Ange Rousseau de La Gorre, fils de l'ancien gouverneur de la Désirade, sous-lieutenant dans les troupes de Cayenne, puis au régiment de Port-au-Prince, et François Dupont Du Chambon de Mésilliac, capitaine des troupes entretenues à l'île Royale, capitaine au régiment de Foix, à Saint-Domingue, puis à la légion de Saint-Domingue 1779",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Bardies Du Rouet, Etienne, abbé, missionnaire à Cayenne et à Saint-Domingue 1775/1778",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
-    },
-    {
-        "bio": "Barrère, Jean Baptiste, négociant au Cap-Français (Saint-Domingue), procédure de confiscation pour fait de commerce étranger du bateau le Bayonnais, capitaine Amiaud, par le tribunal de l'amirauté de Cayenne 1768",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "military"
-    },
-    {
-        "bio": "Barry de Richeville, Charles Henri, sous-lieutenant au régiment de Pondichéry, fils de Barry de Richeville conseiller aux Conseils supérieurs de Pondichéry et de l'île de France, et Pierre Marie Des Savoyes, lieutenant au régiment de Pondichéry 1780/1783",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Barry de Richeville, conseiller au Conseil supérieur de Pondichéry, puis au Conseil supérieur de l'île de France et Louis Rezet son créancier 1774/1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Baudin, chargé d'une mission à l'île de France, débarqué à Pondichéry 1776",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
-    },
-    {
-        "bio": "Baudry de Lamarche, Jacques, natif du Canada, acquéreur des terres de M. de la Mothe-Cadillac, ci-devant gouverneur de la Louisiane et auparavant commandant au détroit du lac Erié, sises près du fort des Hurons, difficultés avec Henri de Tonty, commandant au détroit du lac Erié 1722/1729",
-        "from": "New France",
-        "to": "Louisiana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Beaunay, Abraham Charles Laurent de, comte, petit-fils de Laurent Corneille de Graff, le célèbre flibustier, lieutenant de roi à Saint-Domingue, demande le gouvernement de l'île de la Tortue ou de la Louisiane [XVIIIe]",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Beauvoillier de Courchant, gouverneur de l'île Bourbon, puis de Pondichéry 1718/1722",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Beillion, François Joseph, natif de Franche-Comté, soldat du régiment de l'île de France, à Pondichéry, déserteur 1785",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Belairmont, de, commissaire des guerres, demande une sous-lieutenance pour son fils au Sénégal ou à Cayenne 1786",
-        "from": "Guyana",
-        "to": "Senegal",
-        "tag": "officials"
-    },
-    {
-        "bio": "Bergeron, Antoine, natif du Limousin, sergent au régiment de Pondichéry, mort à l'île de France 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Bertaud, Jacques, de la Rochelle, ancien colon de la Louisiane et à Saint-Domingue et sa femme Gabrielle Gabion, demande de secours 1775",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "other"
-    },
-    {
-        "bio": "Berth, Jean Baptiste, natif de Paris, soldat du régiment de Pondichéry, mort à l'île de France 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Berthelot de Crosse, ancien officier au Canada, à Saint-Domingue, aux îles Saint-Pierre et Miquelon 1764/1766",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
-    },
-    {
-        "bio": "Bertry, Irénée, ancien missionnaire à la Louisiane, et Jean Damascène de Pully, capucin, désigné pour Saint-Domingue 1783",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "other"
-    },
-    {
-        "bio": "Béthisy, Louis de, ancien sergent au régiment de l'île de France, demande une place de commis aux écritures à Saint-Domingue 1784/1790",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Biemeré, Louis Joseph, natif de Givet, soldat au régiment de Port-au-Prince à Saint-Domingue, précédemment sergent dans les troupes nationales de Cayenne 1773/1779",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "military"
-    },
-    {
-        "bio": "Billouard Dessalles de Kervaségan, René Antoine Agathe, ancien officier des troupes de la Louisiane, capitaine au régiment de la Guadeloupe, major honoraire d'infanterie 1736/1783",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
-    },
-    {
-        "bio": "Blandin, Jean Baptiste, chirurgien-major à Pondichéry, aux îles de France et de Bourbon et sa veuve Marie Anne Françoise Pajot 1784/1810",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
-    },
-    {
-        "bio": "Blondy, ouvrier du Roi, embarqué pour Cayenne, puis pour Saint-Domingue 1789",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
-    },
-    {
-        "bio": "Blot, Claude Louis, dit Saint-Louis, natif de Franche-Comté, soldat mort à l'île de Gorée 1763",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "military"
-    },
-    {
-        "bio": "Bonnefoy de Brétigneul, lieutenant général du bailliage de Vermandois, et siège présidial de Laon, demande la place du procureur général du Conseil supérieur du Cap, à Saint-Domingue, et Antoine de Bonnefoy, secrétaire de M. Guiran de la Brillane, gouverneur général des îles de France et de Bourbon 1779/1780",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Bonnegrâce, Jean, ancien capitaine de vaisseau marchand, faisant la traite des noirs, négociant au Cap-Français, à Saint-Domingue, procès au sujet d'une affaire de traite avec François La Fitte, habitant de l'île Bourbon, Marie Toinette Sabbatier, femme du dit La Fitte, procès dans lequel sont compromis Nicolas-Guy Du Rousseau de La Combe, procureur du Roi, Le Sueur de Petitville, juge, et Antoine Besmazières, greffier de la juridiction royale de l'île 1775/1788",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Bordes, ancien commis du bureau des colonies, sous-commissaire de la Marine à Cayenne, greffier de la juridiction et de l'amirauté de la Pointe-à-Pitre, à la Guadeloupe 1772/1776",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Borel Du Bourg, Claude Isaac de, né à Grenoble, officier au régiment de Bourbon, puis au régiment de Pondichéry, aide-major à Saint-Marc, à Saint-Domingue 1774/1820",
-        "from": "Caribbean",
-        "to": "India",
-        "tag": "military"
-    },
-    {
-        "bio": "Borel Du Bourg, Claude Isaac de, né à Grenoble, officier au régiment de Bourbon, puis au régiment de Pondichéry, aide-major à Saint-Marc, à Saint-Domingue 1774/1820",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Boucault, Charles, prisonnier d'Etat pour la Désirade, venant de Cayenne, mort à la Martinique 1764",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
-    },
-    {
-        "bio": "Boudon, Paul, natif de Nîmes, soldat au régiment de Pondichéry, mort à l'île de France 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Boudon de Méranville, Etienne Pierre, lieutenant de grenadiers au service du Portugal, demande une lieutenance dans la légion de l'île de France ou celle de Saint-Domingue 1766/1772",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Boullot, Pierre, capitaine de navires marchands à Louisbourg et à la Martinique, mort aux îles Saint-Pierre et Miquelon 1758/1774",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
-    },
-    {
-        "bio": "Bourbevelle, de, ancien garde du corps du Roi, demande à être employé aux Indes orientales, au Sénégal ou à Cayenne 1785",
-        "from": "Guyana",
-        "to": "Senegal",
-        "tag": "other"
-    },
-    {
-        "bio": "Bourbonnois, Simon, garde extraordinaire de la brigade du domaine du Roi au bureau de Québec 1749",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "other"
-    },
-    {
-        "bio": "Bouynot, Henri, commandant de vaisseau de la Compagnie des Indes le Saint-Louis, sa succession à Pondichéry et Chandernagor 1714/1747",
-        "from": "Caribbean",
-        "to": "India",
-        "tag": "other"
-    },
-    {
-        "bio": "Boyé, Pierre, employé dans l'administration à l'île de France et à Bourbon, puis à Pondichéry, écrivain des colonies 1774/1787",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Bremeuil, Pierre, sergent au bataillon de l'Inde, embarqué à l'île de France pour Pondichéry 1773",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Breteuil, Louis Auguste de, baron, concessionnaire à Cayenne, affaires engagées par lui à Saint-Domingue 1772/1787",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
-    },
-    {
-        "bio": "Briard, Jean, prêtre du diocèse de Coutances, missionnaire au Sénégal et à Saint-Domingue 1753/1772",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "other"
-    },
-    {
-        "bio": "Briffaud, Louis, natif d'Auxerre, déserteur du régiment de l'île de Bourbon, jugé à Pondichéry 1785",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Bruguières, Jean Guillaume, médecin désigné comme botaniste pour Saint-Domingue, en même temps que le sieur Richard à Cayenne 1787",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
-    },
-    {
-        "bio": "Brunel, Ignace, substitut du procureur général du Conseil supérieur de l'île de France, lieutenant de juge de la juridiction royale de l'île de France, premier conseiller au Conseil supérieur de Pondichéry, juge de la sénéchaussée de l'île de France 1772/1789",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Lépinay, Jean Michel de, né vers 1665, départ pour le Canada en enseigne en 1687, promu lieutenant en 1687, puis capitaine en 1691 au Canada. Rrtour en France en 1695, pui gouverneur de la Louisiane à partir de 1716, puis de la Grenade aux Antilles en 1717. Mort en Martinique en 1721. ',
+        from: 'New France',
+        to: 'Louisiana',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Bruslé, Antoine, commandant de la paroisse de la Grande-Rivière, à Saint-Domingue, fils de Bruslé Antoine, en son vivant premier conseiller au Conseil supérieur de la Nouvelle-Orléans 1776/1791",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Buchepot, fils d'Armand Charles marquis de Buchepot, on demande pour lui une place dans les régiments du Sénégal ou de Cayenne 1788",
-        "from": "Guyana",
-        "to": "Senegal",
-        "tag": "military"
-    },
-    {
-        "bio": "Cabanac, Joseph de, né au Canada, capitaine commandant au régiment de l'île de France 1779/1785",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "military"
-    },
-    {
-        "bio": "Cadet de Fontenay, Pierre François , capitaine dans les troupes de Cayenne puis au régiment de l'île de France 1766/1786",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "military"
-    },
-    {
-        "bio": "Caillou de Précourt, Augustin Anne, natif de l'île de Bourbon, demande une sous-lieutenance au régiment de Pondichéry, nommé sous-lieutenant au régiment de l'île de France 1778/1813",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Caire, François de, lieutenant-colonel et sous-brigadier au Génie, ingénieur en chef à Pondichéry et sa femme Marie Elisabeth Lebe, née au Canada 1775/1784",
-        "from": "India",
-        "to": "New France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Cambefort de La Motte-Bézat, Joseph Paul Augustin de, lieutenant aux régiments de l'île de Bourbon et de l'île de France, aide-major aux volontaires étrangers de la Marine, major puis lieutenant-colonel au régiment de la Guadeloupe, colonel du régiment du Cap, à Saint-Domingue, fils de Cambefort de La Motte-Bezat (Jean-Paul de), lieutenant-colonel du régiment de Cavalerie-Berry, et de Fiennes (Agnès-Gabrielle de) 1772/1793",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Capelly, Antoine, déserteur de la légion de l'île de France, embarqué pour Saint-Domingue 1767",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Carles, Joseph André François, originaire de Castres, volontaire au régiment d'Auvergne, sergent aux gardes françaises, chargé comme tel de la garde de Damiens, capitaine dans le régiment des recrues de Perpignan, capitaine aide-major aux recrues de la légion de l'île de France, capitaine aide-major au régiment de Pondichéry, lieutenant-colonel en 1779, maréchal de camp en 1791 1770/an VIII",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Carné de Trécesson, René Camille de, comte, époux de Françoise Louise Henriette de Rostaing, aide-major général à Cayenne (1762), commandant en second aux îles Saint-Martin et Saint-Barthélemy (1763), lieutenant-colonel d'infanterie (1772), chef de bataillon du régiment de la Guadeloupe (1775), assassiné par son domestique, en 1784, à Avignon 1769/1785",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Caro, François, invalide des troupes de la Compagnie des Indes, à l'île de France, venu en France, demande à passer à Pondichéry 1775",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Carré, Benoît, cuisinier sur le vaisseau l'Île de France, de la Compagnie des Indes, mort à Chandernagor 1776",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
-    },
-    {
-        "bio": "Castelconnell, de, ancien enseigne des troupes de la Louisiane, demande une place d'enseigne réformé à Saint-Domingue 1742",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
-    },
-    {
-        "bio": "Catalogne, Charles Gédéon de, lieutenant au régiment du Port-au-Prince, capitaine aide-major aux Cayes (Saint-Domingue) né à Louisbourg, le 14 février 1735, mort aux Cayes en 1781 1763/an V",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Cava, Jean, caporal commis à la garde des forçats au Fort Royal de la Martinique, et sa femme Geneviève Bourbonne, qui demande son passage pour le rejoindre 1775",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Chalus, Paul Marie Jean François de, cadet-gentilhomme des troupes des colonies, nommé successivement sous-lieutenant aux régiments de la Martinique, de la Guadeloupe et de l'île de France, et François Alexis Rahier et Jacques Aimé Armand Guériff de Kernozay, proposé pour cadets-gentilshommes des troupes des colonies 1766/1785",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Chambeau, Canadiens servant comme officiers au régiment de la Couronne, réclament les bontés du Roi et une place à la légion de Saint-Domingue pour leur troisième frère. Leur soeur est Mme de Longueil, dont le mari a été tué les armes à la main pendant la dernière guerre du Canada 1770",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
-    },
-    {
-        "bio": "Champagne, de, chevalier, sous-lieutenant au régiment d'Artois, demeuré à l'île de France après le départ de ce régiment pour France, passé à Pondichéry 1776/1777",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Champeaux, Michel, capitaine au corps royal du Génie désigné pour la Martinique, ensuite pour l'île de France 1778/1789",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Champfort de Longueval, Nicolas, ancien enseigne des troupes de la Louisiane, réfugié à Saint-Domingue 1773/1776",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
-    },
-    {
-        "bio": "Charanville, major à Pondichéry, gouverneur de l'île de Bourbon, major à Cayenne 1705/1720",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Charanville, major à Pondichéry, gouverneur de l'île de Bourbon, major à Cayenne 1705/1720",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Charly, de, aide-major des troupes détachées de la Marine au Canada, major de l'île de Gorée 1765/1775",
-        "from": "New France",
-        "to": "Senegal",
-        "tag": "military"
-    },
-    {
-        "bio": "Chauvigny, Jean Baptiste de, capitaine à la suite des troupes nationales de Cayenne, capitaine de la légion de l'île de France, commandant d'un bataillon de Cipayes, et François Fontenelle-Dessalles, capitaine aide-major d'un bataillon de Cipayes 1758/1793",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "military"
-    },
-    {
-        "bio": "Chaux, Louis Georges de, de Bourbon, tué en duel par Salavy (neveu de Cailleau, garde-magasin général de l'île de France) à bord du vaisseau le Pondichéry 1777/1779",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Cheboeuf, fils du concierge de Saint-Maur, volontaire dans les troupes de la Marine au Canada, demande une sous-lieutenance à Saint-Domingue 1724",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Chenot, François, capitaine adjudant-major au régiment de l'île de Bourbon, détaché au bataillon servant à Pondichéry 1755/1808",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Chermont, Jean Gabriel de, chevalier, capitaine d'infanterie, ingénieur ordinaire du Roi à la Louisiane, puis à Rochefort, sa femme Marie Charlotte Fabre Pontfrac de Mazan, leur fils Balthazar Catherine Marie Pierre Louis, élève des écoles royales militaires et résidant à Brienne, leur fille Sophie Marie Françoise, son beau-père Balthazar Fabre Pontfrac de Mazan, ancien officier des troupes détachées à la Louisiane, mort major du Fort-Dauphin à Saint Domingue en 1775 et François Fabre Pontfrac de Mazan, capitaine au régiment de la Martinique, major du Fort-Dauphin à Saint Domingue 1743/an VIII",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
-    },
-    {
-        "bio": "Chesnel, François, fils de Chesnel (Claude), conseiller du Roi, professeur en droit à Poitiers, demande qu'il lui soit accordé de l'emploi dans la légion de Saint-Domingue ou dans les troupes destinées pour l'île de France 1765",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Charanville, voyage dans les colonies françaises de l\'Amérique en 1699, sous brigadier des gardes des la marine, arrive à Pondicheéry en 1704, fait major de la place et des troupes en 1708, gouverneur à l\'Île Bourbon à partir de 1709, repasse en France en 1710, nommé pour servir à Cayenne en 1711, y arrive en 1713, y devient capitaine, puis major en 1727 et lieutenant en 1729. Mort en 1730 ',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Chevreuil de La Maudinière, ancien enseigne adjudant des troupes des Indes occidentales de Hollande, à Curaçao, demande un emploi dans le bataillon du Sénégal ou dans les troupes de Cayenne 1788",
-        "from": "Guyana",
-        "to": "Senegal",
-        "tag": "military"
-    },
-    {
-        "bio": "Chrétien, Louis, natif d'Anjou, grenadier au régiment de Pondichéry, mort à l'île de France 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Clause, négociant alsacien établi à la Nouvelle-Angleterre, passé à la Martinique, puis à Gorée 1777",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "other"
-    },
-    {
-        "bio": "Clermont-Brethe, François Marie René de, exempt de la compagnie de maréchaussée établie à Cayenne, capitaine au régiment provincial de Sens, capitaine au régiment de Port-Louis, à l'île de France 1764/1774",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "military"
-    },
-    {
-        "bio": "Cocheret de Jarlierre, Charles Louis, ancien employé au service de la Compagnie des Indes à Pondichéry, et ailleurs comme caissier, chef de nation, etc.., demande une place de garde-magasin à l'Ile de Bourbon, puis de greffier de la juridiction de Saint-Marc, à Saint-Domingue 1779/1783",
-        "from": "Caribbean",
-        "to": "India",
-        "tag": "officials"
-    },
-    {
-        "bio": "Cocheret de Jarlierre, Charles Louis, ancien employé au service de la Compagnie des Indes à Pondichéry, et ailleurs comme caissier, chef de nation, etc.., demande une place de garde-magasin à l'Ile de Bourbon, puis de greffier de la juridiction de Saint-Marc, à Saint-Domingue 1779/1783",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Collet, Jean Maurice, chirurgien à la Nouvelle-Orléans, (Louisiane), puis à Saint-Domingue, demande un brevet de chirurgien-major du Roi 1770/1785",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "other"
-    },
-    {
-        "bio": "Cosse, Jean Pierre, natif de Lorient, matelot de la Cayenne de mer à l'île de France, mort dans cette colonie 1788",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "other"
-    },
-    {
-        "bio": "Coudrai, François, natif de l'île de France, mort à l'hôpital militaire de la Guadeloupe 1773",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
-    },
-    {
-        "bio": "Courville, Jean Benoist de, né à Montréal le 8 décembre 1751, lieutenant au régiment de la Martinique, puis capitaine au régiment de la Guadeloupe 1778/an II",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Coutoy, Jean Baptiste, natif de Québec, matelot à bord du vaisseau du Roi le Souverain. mort à la Martinique 1782",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
-    },
-    {
-        "bio": "Cresnay, de, baron, lieutenant de roi à la Louisiane, puis à Cayenne 1730/1736",
-        "from": "Louisiana",
-        "to": "Guyana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Croizil de Courtemanche, capitaine et chevalier de Saint-Louis au Canada 1768",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
-    },
-    {
-        "bio": "Curt, Louis de, capitaine dans les troupes coloniales de la Guadeloupe, aide-de-camp de M. d'Estaing, commandant en chef les forces de terre et de mer du Roi en Amérique, commissaire du Roi pour la vérification et la suppression du papier monnaie aux îles de France et de Bourbon, député de la Guadeloupe à l'Assemblée constituante 1779/1792",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Cusson, Jean Pierre de, né à Carcassonne, capitaine réformé au régiment de Béarn, ayant servi au Canada, demande l'aide-majorité de Léogane, à Saint-Domingue 1770/1782",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
-    },
-    {
-        "bio": "Cuvilier, Jean Mathieu, natif de la province de Liège, soldat au régiment de l'île de France, déserteur jugé à Pondichéry 1785",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
-    },
-    {
-        "bio": "Dagneaux-Douville, Alexandre René, né au Canada en 1736, ayant servi dans cette colonie, ensuite capitaine au régiment de la Guadeloupe, commandant en second les îles Saint-Martin et Saint-Barthélemy, retiré lieutenant-colonel d'infanterie, fils de Dagneaux-Douville (Alexandre), capitaine des troupes détachées de la Marine au Canada et de Marie Coulon de Villiers 1736/1789",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Dagobert, capucin de la province de Champagne, grand vicaire particulier de l'évêque de Québec pour la Nouvelle-Orléans 1765",
-        "from": "New France",
-        "to": "Louisiana",
-        "tag": "other"
-    },
-    {
-        "bio": "Dallemand, Joseph, écrivain de la Marine aux îles de France, de Bourbon, de Madagascar, commissaire de la Marine à Cayenne, proposé pour capitaine des dragons de la milice 1773/1790",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Dantier, Maximin Joseph Félix, lieutenant au régiment de l'île de France, adjudant de place à Pondichéry 1783/1792",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "David, Pierre Félix Barthélemy, gouverneur du Sénégal, gouverneur des îles de France et de Bourbon, et sa veuve Anne Jeanne Perrine Duchauffour 1742/1816",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Senegal",
-        "tag": "officials"
-    },
-    {
-        "bio": "Dazille, Jean Barthélemy, chirurgien-major à Cayenne, à l'île de France puis médecin du Roi à Saint-Domingue 1776/1784",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
-    },
-    {
-        "bio": "Dazille, Jean Barthélemy, chirurgien-major à Cayenne, à l'île de France puis médecin du Roi à Saint-Domingue 1776/1784",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "other"
-    },
-    {
-        "bio": "Decous, Henry, ancien capitaine de navire et aide-major des milices garde-côtes à la Louisiane, lieutenant de port à Saint-Pierre, à la Martinique 1757/1792",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
-    },
-    {
-        "bio": "Dedons, commis dans les bureaux de l'adminstration à Cayenne, Thorame, commis aux écritures à Cayenne, et Patrault, commis aux écritures à Cayenne, puis à l'île de France 1771",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Forcade, Pierre de, commissaire de la Marine, travaille à la greffe et notariat de la juridiction de Saint Domingue à partir de 1713, ses intérêts à Saint-Domingue et à Cayenne 1719/1742',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Déglicourt, Dominique, prêtre missionnaire à Cayenne et au Sénégal, directeur du séminaire du Saint-Esprit à Paris 1781/1782",
-        "from": "Guyana",
-        "to": "Senegal",
-        "tag": "other"
-    },
-    {
-        "bio": "Delisle, ancien habitant du Canada, conseiller au Conseil supérieur de l'île de Bourbon, et sa sœur Marie Thérèse 1770",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Delosmes-Desdodins, Jean Pierre, ancien conseiller au Conseil supérieur de Pondichéry, ex-procureur général au Conseil supérieur de l'île de France, adjoint au contrôleur de la Marine 1783",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
-    },
-    {
-        "bio": "Demars, nommé conseiller au Conseil supérieur de Pondichéry, puis greffier de la juridiction de l'île de Bourbon 1778/1779",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Jousselin de Marigny, capitaine des troupes entretenues au Canada, puis à Saint-Domingue en 1716',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Denis de La Ronde, Pierre, lieutenant à la Louisiane, fils de Louis Denis de La Ronde, capitaine au Canada 1763/1768",
-        "from": "New France",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Beauvoillier de Courchant, gouverneur de l\'île Bourbon à partir de 1718, puis de Pondichéry à partir de 1723',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Denois, Joseph Boucher, né au Canada, enseigne dans les troupes entretenues à la Louisiane, capitaine au régiment de l'île de France 1762/1785",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Escairac, d\', entre au service en 1718, capitaine des troupes du Canada, puis major du Port-de-Paix à Saint-Domingue 1725/1748',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Denois, Joseph Boucher, né au Canada, enseigne dans les troupes entretenues à la Louisiane, capitaine au régiment de l'île de France 1762/1785",
-        "from": "New France",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'L\'Isle, sous-lieutenant des troupes de la Louisiane, passé à Saint-Domingue vers 1718/1726',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Deschiens de Villefeu, employé en qualité de lieutenant sur la corvette du Roi le Nécessaire, puis commandant du navire l'Indienne, de Bordeaux allant aux îles de France et de Bourbon, incident survenu pendant sa relâche à Gorée 1774/1775",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Régis, en service dans les colonies à partir de 1719, lieuntenant de Dragons en Louisiane à partir de 1724 ou il conduit les négotiations avec les Choctaws en 1729, puis capitaine en pied à Cayenne. Demande à se retirer en 1747. ',
+        from: 'Louisiana',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Descorches de Sainte-Croix, Jacques, sous-commissaire de la Marine à Brest et à Rochefort, puis à Pondichéry, ordonnateur à Chandernagor, commissaire des colonies, mort à l'île de France 1768/1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'La Longueville, de, chevalier, lieutenant des troupes du Canada, puis capitaine des troupes de la Louisiane 1720, demande une lieutenance aux Îles du Vent des Antilles, potentiel poste pour lui en Martinique',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Desgarcins, Joseph Antoine, dessinateur employé pour les fortifications de Pondichéry, puis exempt de la maréchaussée à Saint-Domingue, pièces relatives à sa carrière administrative et à un meurtre commis par lui en état de légitime défense à Pondichéry, et son fils Desgarcins, nommé exempt de la maréchaussée à Saint-Domingue 1770/1784",
-        "from": "Caribbean",
-        "to": "India",
-        "tag": "other"
+    {
+        bio: 'La Longueville, de, chevalier, lieutenant des troupes du Canada, puis capitaine des troupes de la Louisiane 1720, demande une lieutenance aux Îles du Vent des Antilles, potentiel poste pour lui en Martinique',
+        from: 'New France',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Desjardins, Guillaume, fils de Guillaume Antoine Desjardins, nommé capitaine au régiment du Cap, à Saint-Domingue, a préféré servir au régiment de l'île de Bourbon 1785/1787",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Le Gardeur de Repentigny, Louis, comte, né en 1721 à Montréal, second enseigne des troupes puis lieutenant en 1751 et capitaine en 1759  en Nouvelle France, colonel des régiments de l\'Amérique en 1773 , de la Guadeloupe quatre ans plus tard puis de la Martinique, gouverneur du Sénégal à partir de 1783',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Desmahis, ancien commerçant de Saint-Domingue, allant s'établir à l'île de France 1770",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Le Gardeur de Repentigny, Louis, comte, né en 1721 à Montréal, second enseigne des troupes puis lieutenant en 1751 et capitaine en 1759  en Nouvelle France, colonel des régiments de l\'Amérique en 1773 , de la Guadeloupe quatre ans plus tard puis de la Martinique, gouverneur du Sénégal à partir de 1783',
+        from: 'New France',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Desrivierre-Gers, Henri Louis Jérôme, sous-lieutenant au régiment de la Martinique, aux volontaires d'Afrique, au régiment de la Guadeloupe, capitaine dans les troupes de Cayenne, aide-major de place à Cayenne, chargé du commandement de Cayenne en l'absence du gouverneur et du major commandant le bataillon de la Guyane, et sa veuve Audat (Anne-Marie), et leurs enfants 1776/1807",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Sanguin de Gassonville, Thomas, né vers 1697, entre au service de la compagnie en 1723, aide major de Bourbon jusqu\'en 1725, passe à Pondichery et y travail comme aide major jusqu\'en 1726, fait capitaine en 1726 et le reste au moins jusqu\'en 1740, puis capitaine a Chandernagor en 1740',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Destanchau, capitaine des troupes de Saint-Domingue, et du Canada 1732/1755",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Hochereau de Gassonville, aide-major à l\'île de Bourbon et à Pondichéry en 1724',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Desvaulx, Nicolas Jacques, né à Chandernagor, capitaine d'artillerie à Pondichéry et à l'île de France, retiré comme lieutenant-colonel d'infanterie 1777/1814",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Durand, ci-devant garde-magasin de la Compagnie des Indes, à la Louisiane, prévaricateur passé à Saint-Domingue après 1725',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Desvaux, Etienne Michel, natif de Paris, habitant l'Angleterre, marchand mort en mer allant au Cap-Français, à Saint-Domingue, à Louisbourg, île Royale 1740/1741",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Cresnay, de, baron, commandant des troupes à la Louisiane en 1730, Lieutenant à la Mobile en 1731, puis à Cayenne en 1734, mort à Cayenne en 1736',
+        from: 'Louisiana',
+        to: 'Guyana',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Detcheverry, Jean Baptiste, lieutenant général au bailliage de Mixe, en Basse-Navarre, nommé substitut du procureur général au Conseil supérieur de Cayenne, puis juge civil, criminel et de police de la juridiction royale de l'île de Bourbon 1777/1790",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'La Rouvillière de Villebois, Honoré Michel de, commisaire ordinaire de la Marine au Canada de 1730 à 1747 puis à la Louisiane de 1748 à 1752',
+        from: 'New France',
+        to: 'Louisiana',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Deville, Jean Baptiste, successivement soldat, comédien, commis dans les magasins du Roi, officier des troupes nationales à l'île de France, habitant au Port-Bourbon, et Guillaume François Marcotte, habitant de l'île de France, acquéreurs des biens de La Roche Du Ronzet (Claude de), chevalier de Saint-Louis, commandant de quartier, difficultés survenues à ce sujet entre l'administration, les sieurs Deville, Marcotte et Ricard de Bignicourt (Louis Joseph Chrysotome), ancien directeur du Domaine, à l'île de France 1781/1785",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Pelevilain de La Houssaye, Jean Richard, cadet, enseigne puis lieutenant  en Louisiane , depart de France en 1730, et capitaine  à Louisbourg à partir de 1750',
+        from: 'New France',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Didier, Antoine, dit Saint-Louis, natif de Remiremont, soldat au 2e bataillon du régiment d'Artois, en garnison à Louisbourg, à l'île Royale 1756",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Potier de Pommeroy, René Gédéon, né au fort Frontenac au Canada le 7 septembre 1730, cadet dans les troupe de fort royal à partir de 1742, officier en 1749, sous aide major en 1750, capitaine en 1754 puis lieutenant en 1755, capitaine des troupes nationales de Cayenne, retiré en 1768',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Dolnet de Palmaroux, capitaine d'infanterie des volontaires à l'île de Bourbon, capitaine des troupes de la Compagnie des Indes, à Pondichéry 1738/1759",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'David, Pierre Félix Barthélemy, entre au service de la compagnie des Indes en 1729, envoyé sous inspecteur au Sénégal en 1732, Inspecteur en second du directeur général en 1733,  repasse en France en 1737, nommé gouverneur général du Sénégal à partir de 1742, en 1746, nommé à la gouvernance des l\'Îles Bourbon et de France, passe en France en 1753',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Donnadieu de Pélissier Dugrès, Louis Joseph, chevalier, lieutenant dans les troupes de l'île Royale, capitaine dans les troupes nationales de Cayenne, major du Fort-Dauphin, à Saint-Domingue, en remplacement de Mazan (Balthazar Fabre Pontfrac de), lieutenant de roi et commandant particulier au Cap-Français, remplissant par intérim les fonctions de commandant en second de la partie du Nord, colonel d'infanterie, et sa femme Louise Marguerite Vallée 1765/1786",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Destanchau, capitaine des troupes de Saint-Domingue à partir de 1732, et capitaine réformé des troupes au Canada ',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Douin de La Motte, lieutenant à la Louisiane, puis capitaine dans les troupes de Saint-Domingue, enfin capitaine au régiment provincial de Mantes 1762/1776",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Membrède, de, lieutenant à la Louisiane en 1732, puis capitaine en 1733, puis major à la Nouvelle-Orléans, à la Louisiane 1746-1747, puis lieutenant de roi à Saint-Domingue 1770, mort à Saint Domingue en 1770',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Doumet de Siblas, Jacques, lieutenant, ingénieur à l'île Royale, major à Gorée, major au Petit-Goave, lieutenant de roi à Saint-Louis, commandant particulier de Port-au-Prince à Saint-Domingue, colonel d'infanterie 1757/an IX",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Paradis, entre au service de la Compagnie des Indes en 1732, d\'abord en qualité d\'ingénieur aux îles de France et de Bourbon, puis ingénieur en chef à Mahé, Karikal et Pondichéry, puis commandant à Karikal 1à partir de 1744',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Doyon, Thomas, de Québec, pauvre bourgeois mort à la Martinique 1783",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Ponssy, Joseph de, rentre au service de la compagnie des Indes avec un brevet d\'infantrie à l\'Île Bourbon en 1732, commission de capitaine en 1740, passe du temps à l\'Île de France puis à Pondichery en 1741 et 1742, major général des ville et fort de Pondichéry  en 1743, reconnu la même année major générak des troupes de l\'Île de France',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Drouet de La Coulonnerie, enseigne des troupes du Canada, puis sous-lieutenant dans la légion de l'île de France 1765/1769",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Villotte, Pierre, navigateur en provenance de Louisbourg, arrive au Cap-Français, à Saint-Domingue en 1732, il y demeure habituellement',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Du Breuil-Villars, Alexandre, ci-devant enseigne des troupes entretenues à la Louisiane, capitaine au régiment de la Guadeloupe 1763/1785",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Eyma, Joseph Aima d\', en service à partir de 1734. Capitaine dans les troupes du Canada, puis dans la légion de Saint-Domingue ',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Du Coudray, Jean François, natif de Rennes, soldat au régiment de l'île de France, déserteur jugé à Pondichéry 1785",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Gamon de La Rochette, Joseph, en service à partir de 1734. Major au Port-de-Paix à Saint-Domingue,capitaine des troupes de la Louisiane à partir de 1753 ',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Du gast, Charles Joseph Gohier, François Désiré de Brueys et Alexandre de Séguin de Piégon, cadet-gentilhommes au bataillon auxiliaire des colonies, on les propose comme sous-lieutenants aux régiments du Cap, de Port-au-Prince et de l'île de France 1788",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Noyelles, Charles Joseph de, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en Louisiane en 1739, enseigne en second au Canada en 1744, commandant du fort à Michilimackinac, puis gouverneur de Montréal en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au Canada, à Cayenne en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à Gorée ',
+        from: 'New France',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Du Montet, Aimé Guillin, officier des vaisseaux de la Compagnie des Indes, officier à Saint-Domingue, à la Martinique, à la Guadeloupe, colonel d'infanterie, gouverneur de Saint-Vincent, gouverneur du Sénégal, son remplacement par Le Gardeur de Repentigny (Louis) 1748/1785",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Noyelles, Charles Joseph de, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en Louisiane en 1739, enseigne en second au Canada en 1744, commandant du fort à Michilimackinac, puis gouverneur de Montréal en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au Canada, à Cayenne en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à Gorée ',
+        from: 'Louisiana',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Du Myrat de Vertpré, Charles François, major-général de l'île de France, colonel dans les troupes des colonies, employé à Saint-Domingue et à la Martinique 1771/1780",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Noyelles, Charles Joseph de, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en Louisiane en 1739, enseigne en second au Canada en 1744, commandant du fort à Michilimackinac, puis gouverneur de Montréal en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au Canada, à Cayenne en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à Gorée ',
+        from: 'Guyana',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Du Plessis, Jean Baptiste Vigoureux, né à Chandernagor le 6 mai 1735, lieutenant-colonel d'infanterie, commandant à Mahé, 1778, gouverneur de l'île Saint-Vincent, 1780, brigadier des armées du Roi, 1784, gouverneur de l'île de Bourbon 1771/1814",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Sabrevois de Bleury, Charles de, né en 1734 au Canada, cadet des troupes au Canada, enseigne en second à l\'Île Royale en 1750, Lieutenant en 1759, et Capitaine en 1766, puis capitaine réformé du régiment de l\'ïle Bourbon à partir de 1775',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Du Roullin, Pierre Claude, lieutenant dans les troupes de la Louisiane, capitaine au régiment de la Guadeloupe, major en 1779 1770/1788",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Catalogne, Charles Gédéon de, né à Louisbourg le 14 février 1735, entré au service à Louisbourg en 1749, passe au canada en 1757, en 1764 passe à Cayenne, puis lieutenant au régiment du Port-au-Prince, capitaine aide-major aux Cayes (Saint-Domingue) ',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Dubé, Gabriel, natif du Canada, pauvre sans secours, mort à l'hôpital de la Pointe-à-Pitre, à la Guadeloupe 1787",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Catalogne, Charles Gédéon de, né à Louisbourg le 14 février 1735, entré au service à Louisbourg en 1749, passe au canada en 1757, en 1764 passe à Cayenne, puis lieutenant au régiment du Port-au-Prince, capitaine aide-major aux Cayes (Saint-Domingue) ',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Duboe, Jean Baptiste, et Pierre Rodrigue, négociants à Louisbourg (île Royale) et Gaspard Lebeau, négociant à Saint-Domingue 1754",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Du Plessis, Jean Baptiste Vigoureux, né à Chandernagor le 6 mai 1735, lieutenant-colonel d\'infanterie, commandant à Mahé, 1778, gouverneur de l\'île Saint-Vincent aux Antilles, 1780, brigadier des armées du Roi, 1784, gouverneur de l\'île de Bourbon 1771/1814',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Dubois, ancien sénéchal et lieutenant-général d'amirauté à la Guadeloupe, il sollicite un emploi de son grade dans la Louisiane vers 1780",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Hertel de Cournoyer, Michel, né à l\'île Royale en 1735, mort à Cayenne, en 1780, cadet à l\'île Royale, enseigne au Canada, aide-major des troupes nationales de la Guyane 1716/1782',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Dubreuil, Simon Etienne, employé au bureau des armements et des magasins à l'île de France, puis secrétaire de brigade à la suite de l'armée de M. de Bussy, ensuite employé au magasin de Trinquemalé, puis aux travaux des fortifications à Pondichéry 1779/an X",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Sabran-Beaudinar, Pierre Bruno de, chevalier, enseigne en second à la Louisiane en 1735, major à la Mobile en Louisiane en 1736,  puis à Saint-Domingue 1735/1741',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Duchêne, Jacques, appointé de l'artillerie de l'île de France, à Pondichéry 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Dagneaux-Douville, Alexandre René, né au Canada en 1736, ayant servi dans cette colonie, ensuite capitaine au régiment de la Guadeloupe, commandant en second les îles Saint-Martin et Saint-Barthélemy, retiré lieutenant-colonel d\'infanterie',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Dufaur, César Antoine, lieutenant dans la légion de l'île de France, capitaine au régiment de Pondichéry, retiré avec le brevet de major mort en 1786 et sa veuve Defarcy Céleste 1740/1786",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Boullot, Pierre, capitaine de navires marchands en voyage entre la Martinique, Louisbourg, Quebec et la France entre 1737 et 1753. Habitant à Louisbourg entre 1753 et 1758, puis reste en France jusqu\'en 1763, quand il part pour Saint Pierre et Miquelon ',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Dufaure de La Curatrie, Jean Baptiste, sous-lieutenant dans les troupes nationales de Cayenne, lieutenant au régiment de Port-au-Prince à Saint-Domingue 1772/1773",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Guyon, Jean Baptiste Régis de, né en 1737 à Québec au Canada, à servit à Saint Domingue, pui en tant que capitaine d\'Infanterie à l\'île de France 1752/an VI',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Dufay, lieutenant au régiment de la Reine, qui a bien servi au au Canada, pendant plusieurs campagnes, demande une compagnie dans la légion de l'île de France 1769",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Decous, Henry,  navigateur. Il fait des campagnes à la Martinique en 1738 et 1740 en tant que volontaire sur un navire. En 1742, Il fait une autre campagne à la Martinique en qualité de lieutenant en second sur un navire. En 1747, il fait campagne au Canada sur un bateau en qualité de capitaine en second. En 1749, il fait campagne à Saint Domingue sur un navire en qualité de second capitaine. EN 1750, il fait un voyage à la Louisiane. Il reste en Louisiane et y occuppe la position de major des milices pendant 8 ans. Il devient ensuite lieutenant de port à Saint-Pierre, à la Martinique.',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Dugas, Pierre, natif d'Anjou, tonnelier de la Cayenne de mer, à Port-Louis, île de France, mort à l'hôpital 1788",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Decous, Henry,  navigateur. Il fait des campagnes à la Martinique en 1738 et 1740 en tant que volontaire sur un navire. En 1742, Il fait une autre campagne à la Martinique en qualité de lieutenant en second sur un navire. En 1747, il fait campagne au Canada sur un bateau en qualité de capitaine en second. En 1749, il fait campagne à Saint Domingue sur un navire en qualité de second capitaine. EN 1750, il fait un voyage à la Louisiane. Il reste en Louisiane et y occuppe la position de major des milices pendant 8 ans. Il devient ensuite lieutenant de port à Saint-Pierre, à la Martinique.',
+        from: 'New France',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Duhart, capitaine de l'Économe, venu de Saint-Domingue à Gorée 1778",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "military"
+    {
+        bio: 'Ailleboust de Céry, Philippe Antoine d\',  né à Quebec en 1739, entré au service vers 1748, bléssé en 1759, enseigne dans les troupes du Canada, lieutenant à Montréal, puis capitaine dans la légion de Saint-Domingue 1766',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Dumas de Saint-Marcel, chevalier, capitaine en second au régiment d'Aquitaine, demande une majorité dans les régiments de Pondichéry ou de l'île de France 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Marchant Des Ligneris, Constant François Xavier Daniel, né au Canada en 1739, cadet dans les troupes de cette colonie en 1750, enseigne en second au Canada à partir de 1757, puis à partir de 1760 enseigne en Canada, lieutenant dans la légion de Saint-Domingue à partir de 1766, capitaine en 1769 puis second capitaine commandant en 1785 ',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Dumont, Jean, natif de Libourne, quartier-maître de la Cayenne de Mer à l'île de France 1788",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Du Breuil-Villars, Alexandre, né à la Nouvelle Orléans en 1742, enseigne des troupes entretenues à la Louisiane, capitaine au régiment de la Guadeloupe ',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Duparquier, Alexandre Claude, ancien garde-magasin général du Roi, à la Louisiane, chargé du bureau des classes à Saint-Domingue 1754/1775",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Le Moyne, Antoine Philippe, contrôleur à la Martinique à partir de 1742, ordonnateur à Cayenne et commissaire général de la marine à Rochefort ',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Dupont Du Chambon, Charles François Ferdinand , lieutenant des troupes détachées de la Marine au Canada et à l'île Royale, capitaine au régiment de Foix, à Saint-Domingue 1777",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Du Roullin, Pierre Claude, en service à partir de 1742. Lieutenant dans les troupes de la Louisiane, capitaine au régiment de la Guadeloupe, major en 1779 ',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Dupuy, Charles, capitaine du bateau le Lançon, du Cap-Français, à Saint-Domingue, en charge pour Louisbourg, île Royale, pris et confisqué pour commerce prohibé 1753",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Foucault, Denis Nicolas, écrivain principal de la Marine à partir de 1742, ordonnateur à la Louisiane et à Pondichéry, commissaire général ordonnateur faisant fonctions d\'intendant à l\'île de France ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Durand, ci-devant garde-magasin de la Compagnie des Indes, à la Louisiane, prévaricateur passé à Saint-Domingue après 1725",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Foucault, Denis Nicolas, écrivain principal de la Marine à partir de 1742, ordonnateur à la Louisiane et à Pondichéry, commissaire général ordonnateur faisant fonctions d\'intendant à l\'île de France ',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Louisiana',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Durseau, Jean, ci-devant habitant du Canada, demande de secours et de passage à Saint-Domingue 1763",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Espinette, Charles François d\', entre en service en 1743. Major de la légion de l\'île de France, puis du régiment de Pondichéry, avec brevet de lieutenant-colonel 1770/1776',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Dussamin, Philibert, récollet de la province d'Artois, curé de Saint-Louis, en l'île de Gorée 1766",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "other"
+    {
+        bio: 'Gosse, Mathias Claude, ancien consul à Bassorah, conseiller à Pondichéry en 1743 et à l\'Île de France en 1750',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Duvigier-Plançon, nommé sous-lieutenant au régiment de l'île de France, n'a pas rejoint ayant passé au régiment de la Guadeloupe comme volontaire 1773",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Marchant Des Ligneris, Pierre Marie, chevalier, né au Canada, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en Louisiane en 1762, incorporé aux troupe de Cayenne en 1764, fait lieutenant en 1769, incorporé dans la légion de Saint Domingue en 1772, fait capitaine au l au régiment de Port-au-Prince en 1773',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Enserman, Jean Michel, natif d'Alsace, soldat au régiment de Pondichéry, mort à l'île de France 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Marchant Des Ligneris, Pierre Marie, chevalier, né au Canada, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en Louisiane en 1762, incorporé aux troupe de Cayenne en 1764, fait lieutenant en 1769, incorporé dans la légion de Saint Domingue en 1772, fait capitaine au l au régiment de Port-au-Prince en 1773',
+        from: 'New France',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Erneville, Pierre Henri d', ancien capitaine des troupes de la Louisiane, sa femme Pélagie Fleuriau, et leur fils Charles Jean Baptiste d'Erneville, capitaine d'artillerie au régiment de Grenoble, puis au Sénégal 1725/1789",
-        "from": "Louisiana",
-        "to": "Senegal",
-        "tag": "military"
+    {
+        bio: 'Marchant Des Ligneris, Pierre Marie, chevalier, né au Canada, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en Louisiane en 1762, incorporé aux troupe de Cayenne en 1764, fait lieutenant en 1769, incorporé dans la légion de Saint Domingue en 1772, fait capitaine au l au régiment de Port-au-Prince en 1773',
+        from: 'Louisiana',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Escairac, d', capitaine des troupes du Canada, puis major du Port-de-Paix à Saint-Domingue 1725/1748",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Charly, de, cadet au Québec à partir de 1744, enseigne à Louisbourg à partir de 1749, puis major des troupes en 1750, brevet d\'aide-major den 1759, continue ses service jusqu\'à la prise du Canada, puis major de l\'île de Gorée',
+        from: 'New France',
+        to: 'Senegal',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Espinassy, Antoine Marie Joseph d', capitaine en premier d'artillerie à l'île de France, puis à Saint-Domingue, devenu général en 1797 1757/1829",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Dupont Du Chambon, Charles François Ferdinand, entre au service en 1744. Lieutenant des troupes détachées de la Marine au Canada et à l\'île Royale, capitaine au régiment de Foix, à Saint-Domingue 1777',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Espinette, Charles François d', major de la légion de l'île de France, puis du régiment de Pondichéry, avec brevet de lieutenant-colonel 1770/1776",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Fontaine, Jean Baptiste, capitaine d\'artillerie à l\'île de France, entre au service en 1744. Commandant l\'artillerie de Pondichéry, major des troupes des colonies 1727/1791',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Estèbe, ancien conseiller au Conseil supérieur de Québec, secrétaire du Roi en la chancellerie près la cour des aides de Bordeaux, demande que les lettres d'honneur de cet emploi qui lui ont été accordées soient enregistrées au Conseil supérieur de Saint-Domingue 1779",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Desvaulx, Nicolas Jacques, né à Chandernagor en 1745, passe en France, renvoyé aux indes avec commission de capitaine en 1771, capitaine commandant d\'une compagnie d\'artillerie à Pondichéry en 1777, à l\'Île de France entre 1781 à 1786, où il est capitaine d\'artillerie,   fait lieutenant colonel en 1787',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Estoupan de Laval, Louis François, commis aux écritures à l'île de France, à Pondichéry, puis au Bureau des Colonies 1775/1809",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Lecodé, Yves, natif de Louisbourg, devient mousse de bateaux en 1745, voyages en France, puis au Port Louis de l\'Île de France en 1746 et à l\'Orient en 1747, devient maitre d\'équipage en 1749,  cammandant en 1750, pilote cotier en 1757, envoyé au Fort Dauphine en 1758 pour y piloter les vaisseaux du roi, puis au Quebec la même année. Il arrive à Cayenne en 1764 avec sa famille et y devient maître de port en 1767. ',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Eyma, Joseph Aima d', capitaine dans les troupes du Canada, puis dans la légion de Saint-Domingue 1734/1777",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Lecodé, Yves, natif de Louisbourg, devient mousse de bateaux en 1745, voyages en France, puis au Port Louis de l\'Île de France en 1746 et à l\'Orient en 1747, devient maitre d\'équipage en 1749,  cammandant en 1750, pilote cotier en 1757, envoyé au Fort Dauphine en 1758 pour y piloter les vaisseaux du roi, puis au Quebec la même année. Il arrive à Cayenne en 1764 avec sa famille et y devient maître de port en 1767. ',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Faveris, Jean Baptiste, originaire de l'île de Bourbon, chirurgien-major à Gorée, ses démêlés avec Boniface (Charles-Hippolyte de) 1770/1779",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Senegal",
-        "tag": "other"
+    {
+        bio: 'Hazeur de Lorme, Louis, né à la Louisiane en 1746, capitaine au régiment de la Guadeloupe puis commandant particulier par intérim à Tabago en 1785 1754/1792',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Fayolle de Saint-Félix, Gabriel Jacques, écrivain de la Marine à la Guadeloupe, sous-commissaire à l'île de France, commissaire puis inspecteur de la Marine 1775/1826",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Ailleboust de Saint-Vilmé, Jean Baptiste d\', cadet et enseigne dans les compagnie de la Marine à l\'Île Royale en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de Louisbourg en 1758, nommé à une compagnie des troupes nationales à Cayenne en 1764, authorisé à passer à Gorée en 1768,  lieutenant de roi à Saint-Louis ',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Ferrand, Jean, natif de Castres, fusilier au régiment de l'île de France, mort à Pondichéry 1787",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Ailleboust de Saint-Vilmé, Jean Baptiste d\', cadet et enseigne dans les compagnie de la Marine à l\'Île Royale en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de Louisbourg en 1758, nommé à une compagnie des troupes nationales à Cayenne en 1764, authorisé à passer à Gorée en 1768,  lieutenant de roi à Saint-Louis ',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Foin, Guillaume François, soldat au régiment de Pondichéry, mort à l'île de France en 1782 1778/1782",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Ailleboust de Saint-Vilmé, Jean Baptiste d\', cadet et enseigne dans les compagnie de la Marine à l\'Île Royale en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de Louisbourg en 1758, nommé à une compagnie des troupes nationales à Cayenne en 1764, authorisé à passer à Gorée en 1768,  lieutenant de roi à Saint-Louis ',
+        from: 'Guyana',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Fontaine, Jean Baptiste, capitaine d'artillerie à l'île de France, commandant l'artillerie de Pondichéry, major des troupes des colonies 1727/1791",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Hertel de Saint-Francois, Antoine, né en Canada, entre au service cadet en 1747, fait officier à Louisbourg en 1751, nommé à une lieutenance dans la légion de l\'Île de France en 1767 et devient capitain en 1770.',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Fontette-Sommery, Charles Marie de, comte, capitaine de dragons au régiment d'Artois, employé à Saint-Domingue puis comme aide-de camp de M. de Boufflers au Sénégal 1779/1785",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "military"
+    {
+        bio: 'Treyvoux, Georges, armurier au Canada en 1747, puis à la Martinique ',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Forcade, Pierre de, commissaire de la Marine et premier commis du bureau des Colonies au Ministère, frère de Forcade, caissier au Trésor de la Marine à Rochefort, et sa femme Catherine de La Borde, leurs intérêts à Saint-Domingue et à Cayenne 1719/1742",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Rastel de Rocheblave, Pierre Louis, passe au Canada en 1749 ou il travail en tant que cadet, envoyé aux Illinois en 1759, nommé  gouverneur de Gorée en 1769, lieutenant de roi à Saint-Domingue à partir de 1775, mort en 1780',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Forget, Olivier, natif de Vannes, matelot de la Cayenne de mer à l'île de France, mort à l'hôpital 1788",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Rastel de Rocheblave, Pierre Louis, passe au Canada en 1749 ou il travail en tant que cadet, envoyé aux Illinois en 1759, nommé  gouverneur de Gorée en 1769, lieutenant de roi à Saint-Domingue à partir de 1775, mort en 1780',
+        from: 'New France',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Foubert, enseigne dans les troupes du Canada, demande à passer à la Louisiane 1758",
-        "from": "New France",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Legros de La Grancours, Honoré Michel, commence le service dans la gendarmerie en 1742, passe au Canada en 1750 pour servir dans la guerre, enseigne à la Louisiane à partir de 1758, repasse en France en 1769, puis capitaine au régiment de l\'île de France , voyage en Inde à Pondicherry',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Foucault, Denis Nicolas, écrivain principal de la Marine, ordonnateur à la Louisiane et à Pondichéry, commissaire général ordonnateur faisant fonctions d'intendant à l'île de France 1743/1807",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Legros de La Grancours, Honoré Michel, commence le service dans la gendarmerie en 1742, passe au Canada en 1750 pour servir dans la guerre, enseigne à la Louisiane à partir de 1758, repasse en France en 1769, puis capitaine au régiment de l\'île de France , voyage en Inde à Pondicherry',
+        from: 'New France',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Foucault, Denis Nicolas, écrivain principal de la Marine, ordonnateur à la Louisiane et à Pondichéry, commissaire général ordonnateur faisant fonctions d'intendant à l'île de France 1743/1807",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Meyracq, Laurent Domenger de, nommé bailli au bailliage royal de Louisbourg à l\'île Royale en 1750, puis nommé juge de l\'amirauté à la Guadeloupe en 1767',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Fournier, Claude, natif de Paris, soldat au régiment de Pondichéry, mort à l'île de France 1788/1789",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Neyon de Villiers, Pierre Joseph, arrive en Louisiane en 1750, major commandant au pays des Illinois à partir de 1755, retourne en France en 1764, fait colonel au régiment de la Guadeloupe en 1772, gouverneur de Marie-Galante à partir de 1775, mort pendant la traversée de son retour en France en 1780 ',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Francisque, noir indien, esclave de Saint-Rémy (François), commis aux écritures chargé de la Cayenne du Roi à l'île de France : affranchissement 1778",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Romain, créole de la Guadeloupe, appliqué au commerce Maritime, ayant résidé à Cayenne pendant 12 ans à partir des années 1750 ',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "François, Antoine, soldat au régiment de l'île de France, à Pondichéry, mort en mer 1785",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Sornay, Pierre Basile de, né en 1727, au service de la Marine à partir de 1746, passe à Pondichéry en 1750, prend service dans les troupes de la Compagnie des Indes en qualité d\'ingénieur et d\'officier d\'infantrie, capitaine à partir de 1759, commandant à la suite des milices de l\'Île de france à partir de 1769, puis major à l\'Île de France à partir de 1772 ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Francy de La Tour, Claude, chevalier de Saint-Louis, décédé à l'île de France, sa succession 1783",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Courville, Jean Benoist de, né à Montréal le 8 décembre 1751, lieutenant au régiment de la Martinique, puis capitaine au régiment de la Guadeloupe ',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Frondad, de, capitaine au régiment d'Angoumois à la Louisiane, demande un commandement à Saint-Domingue 1766",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Duparquier, Alexandre Claude, arrive en Louisiane en 1751.  Garde-magasin général du Roi à la Louisiane, puis chargé du bureau des classes à Saint-Domingue 1754/1775',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Fusée-aublet, Laurent, médecin et botaniste à l'île de France et à Cayenne, et Pierre Milleret, chirurgien de l'hôpital militaire de l'île d'Oléron 1773/1779",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Olivier, Joseph, commis aux ecritures à Québec à partir de 1751, puischargé du détail de l\'artillerie dans la même colonie à partir de 1752, retour en France en 1760 nommé garde-magasin principal à Port-au-Prince à Saint-Domingue à partir de 1786',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Fyard de Gévigney, ancien capitaine dans le Corps de Montréal, demande une place dans la maréchaussée de Saint-Domingue 1788",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Albergati-Vezza, François Marie, marquis, cadet au Canada à partir de 1752, enseigne en 1756, lieutenant en 1767 puis capitaine de légion à l\'île de France 1760/1773',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Gabard, ancien sous-officier, commandant le quartier de Plaisance à Saint-Domingue en 1791 et sa veuve originaire de Louisbourg 1768/ an XIII",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Billouard Dessalles de Kervaségan, René Antoine Agathe, né en 1736, campagne volontaire et enseigne au service des la compagnie dans les Indes Orientales de 1752 à 1755, puis enseigne des troupes de la Louisiane en 1760, passe à Saint Domingue en 1766, puis officier puis capitaine au régiment de la Guadeloupe à partir de 1775',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Gadobert, Pierre, négociant aux Illinois, son mariage avec Nermand (Anne Elisabeth), veuve de Laubinois (Louis), écrivain principal de la Marine à la Nouvelle-Orléans, acte de naissance de Gadobert (Benjamin Jacques Sébastien), né avant le mariage, acte de décès de la veuve Gadobert à Saint-Domingue en 1776 1763/1770",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Guyon, Jean Baptiste de, né en 1739, aide major au Canada en 1752, puis cadet d\'artillerie en 1757 et sous major d\'artillerie en 1758 toujours au Canada, renvoyé en France en 1760, puis sous aide major des compagnie d\'artillerie à Saint Domingue en 1762, passe en France en 1764,  puis lieutenant en second d\'artillerie à l\'Île de France en 1771 et passe comme sous lieutenant dans la même île en 1777',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Gallois, Nicolas, directeur d'un comptoir à Gorée, chargé d'introduire des nègres à Saint-Domingue 1764/1766",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "other"
+    {
+        bio: 'Orte, Jean François Denis d\', capitaine d\'une compagnie d\'ouvriers et ingénieur en chef à l\'île de Bourbonà partir de 1752  jusqu\'en 1767, inventeur d\'un moulin à coton, demande à être employé à Saint-Domingue en 1786',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Gamon de La Rochette, Joseph, major au Port-de-Paix à Saint-Domingue, ancien capitaine des troupes de la Louisiane 1753/1777",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Rustan, Pascal Fabre, lieutenant et capitaine en Canada de 1752 à 1760, passage en France, puis garde-magasin à Pointe-à-Pitre à la Guadeloupe à partir de 1781',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Gannes, Georges de, né au Canada en 1759, cadet gentilhomme, sous-lieutenant au régiment du Cap, à Saint-Domingue, puis au régiment de la Martinique 1779/1790",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Briard, Jean, prêtre du diocèse de Coutances, nommé missionnaire au Sénégal en 1753, devient prêtre à Saint-Domingue vers 1763',
+        from: 'Caribbean',
+        to: 'Senegal',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Garnier d'Aiglancay, Nicolas Gérard, lieutenant d'infanterie à l'île de France, à Pondichéry et à Saint-Domingue 1771/an VI",
-        "from": "Caribbean",
-        "to": "India",
-        "tag": "officials"
+    {
+        bio: 'Tizoneaux, employé dans les Bureaux de la Marine en Louisiane à partir de 1753, notaire en Louisiane à partir de 1758, chargé des comptes des gardes magasins de la Louisiane à partir de 1764, commis à la comptabilité de la Louisiane, nommé écrivain de la Marine, à Saint-Domingue à partir de 1774',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Garnier d'Aiglancay, Nicolas Gérard, lieutenant d'infanterie à l'île de France, à Pondichéry et à Saint-Domingue 1771/an VI",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Champfort de Longueval, Nicolas, lieutenant et enseigne des troupes de la Louisiane à partir de c. 1754  jusqu\'en 1763, réfugié à Saint-Domingue en 1773',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Garrus de La Roque, Pierre Louis, natif de Paris, commis de l'administration de Cayenne, mort à la Martinique 1778/1787",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Cadet de Fontenay, Pierre François, né à Paris, arrive au Canada en 1755 en qualité de cadet, puis aide major en 1755, officier en 1757, puis enseigne en 1758, passe à Cayenne en 1764 en qualité de Lieutenant sous aide major, lieutenant d\'une compagnie d\'ouvrier à l\'Île de France en 1769, puis lieutenant avec commission de capitaine au régiment de Port Louis en 1772 et capitaine en 1775, voyage dans l\'Inde evers 1785',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Gauvain, Jérôme, natif de la Louisiane, capitaine de port aux Cayes-Saint-Louis, à Saint-Domingue 1782/1791",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Cadet de Fontenay, Pierre François, né à Paris, arrive au Canada en 1755 en qualité de cadet, puis aide major en 1755, officier en 1757, puis enseigne en 1758, passe à Cayenne en 1764 en qualité de Lieutenant sous aide major, lieutenant d\'une compagnie d\'ouvrier à l\'Île de France en 1769, puis lieutenant avec commission de capitaine au régiment de Port Louis en 1772 et capitaine en 1775, voyage dans l\'Inde evers 1785',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Geoffrion de Boisy, employé dans les bureaux de l'île de Bourbon, passé à Pondichéry, puis à l'armée anglaise 1772",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Donnadieu de Pélissier Dugrès, Louis Joseph, chevalier, départ pour Louisbourg avec un bataillon en 1755, il obtient en 1764 un commission de capitaine à la suite des troupes nationales de la Guyane, à Cayenne, il fait les fonction d\'aide major des troupes. En 1769, fait aide major à Saint Domingue',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Geofroy Du Bourguet, Antoine, directeur général des fortifications des îles du Vent, ingénieur en chef, lieutenant du roi au Fort-Bourbon à la Martinique 1769/1787",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Gohin, Pierre André de, chevalier de Montreuil, major général à Montréal au Canada en 1755, puis gouverneur général, par intérim de Saint-Domingue à partir de 1763',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Gerbier, Jacques, soldat de Marine sur la frégate le Montréal, mort à la Martinique 1784",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Lépervanche, Eustache de, commence à servir au Canada en 1755 en tant que cadet, fait enseigne des troupes du Canada en 1759,fait lieutenant dans la légion de l\'Île de France en 1766 puis lieutenant dans la même legion en 1766, passe en la même qualité au régiment de l\'Île Bourbon capitaine au régiment de Bourbon, passe capitaine au régimen de l\'Île Bourbon en 1785, obtient sa retraite en 1786.',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Giblot, Charles François, commandant en second à l'île de France, sa veuve Anne de Laval, et leur fils Joseph Benoît Giblot Du Villeret, ancien sous-lieutenant d'infanterie, résidant au Cap-Français, à Saint-Domingue 1747/1786",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Magon de La Villebague, René,  gouverneur des îles de France et de Bourbon de 1755 à 1759, intendant de Saint-Domingue de 1763 à 1766. Plusieurs membres de sa famille ont fait carrière dans les colonies. ',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Gilbert, esclave créole de la Grenade, habitant Cayenne, affranchi par son maître Lescalier (Balthazar) 1787",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Morin, Jean Antoine Charles, cadet dans les troupes de Louisbourg à partir de 1755, nommé cadet dans les troupes nationales de Guyane en 1764, sous lieutenant au régiment de la Guadeloupe depart en 1775, demande une place dans les bureaux de l\'île de France, passage en 1784',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Giraud, habitant de Cayenne condamné pour sévices envers ses nègres, passé à Saint-Domingue 1766/1774",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Morin, Jean Antoine Charles, cadet dans les troupes de Louisbourg à partir de 1755, nommé cadet dans les troupes nationales de Guyane en 1764, sous lieutenant au régiment de la Guadeloupe depart en 1775, demande une place dans les bureaux de l\'île de France, passage en 1784',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Godefroy de Linetot, Maurice Régis, né à Montréal, capitaine aux régiments de l'Île Bourbon et de l'île de France 1757/1785",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Perrault, Paul, major des milices du Canada à partir de 1756 jusqu\'à la capitulation, passé ensuite à Cayenne ou il meurt ',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Gohin, Pierre André de, chevalier de Montreuil, major général au Canada, puis gouverneur général, par intérim de Saint-Domingue 1755/1764",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Vincelotte de Sainte-Hélène, originaire du Canada, née à la Martinique, a perdu sa fortune au Canada pendant la guerre de 1756 et les évènements qui ont suivis',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Golbéry, Sylvain François Xavier Meinrade, capitaine au corps royal du Génie, employé à Gorée et à Cayenne 1785/1792",
-        "from": "Guyana",
-        "to": "Senegal",
-        "tag": "military"
+    {
+        bio: 'Allemagne de Varage, Louis d\', chevalier, né en 1740, capitaine au régiment d\'Angoumois, ayant fait campagne à la Louisiane vers 1757, passe à Saint-Domingue vers 1786, demande une compagnie dans un régiment des colonies ou un emploi dans un état-major des Iles ',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Golbéry de Tirion, de, capitaine au corps royal du Génie, employé à Gorée et à Cayenne, ingénieur au Sénégal 1787",
-        "from": "Guyana",
-        "to": "Senegal",
-        "tag": "military"
+    {
+        bio: 'Durseau, Jean,  habitant du Canada à partir d\'avant 1757 demande de secours et de passage à Saint-Domingue ou à la Martinique en 1763',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Gonnet, Philippe, natif de Metz, soldat au régiment de Pondichéry, mort à l'île de France 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Godefroy de Linetot, Maurice Régis, né à Montréal, entre au service au Canada en 1757, puis capitaine aux régiments de l\'île de France, bléssé à Madagascar, mission aux Indies Orientales, 1757/1785',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: null,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Gosse, Mathias Claude, ancien consul à Bassorah, conseiller au Conseil supérieur de Pondichéry, puis de l'île de France 1743/1775",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Neyon de Soizy, Alexandre Joseph, cadet en Louisiane en 1757, puis lieutenant/sous aide major en Guadeloupe en 1772 et capitaine dans la même colonie à partir de 1774',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Guetz, François, natif de Marseille, cocq de la Cayenne de mer, mort à l'hôpital de l'île de France le 28 octobre 1788 1788",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Dazille, Jean Barthélemy, chirurgien, voyages au Canada à partir de 1758, en 1763, il obtient un brevet de chirurgien major des troupes et des habitans de Cayenne, puis en 1766, il obtient un brevet de chirurgien major des hopiteaux de l\'Île de France, puis chirurgien du roi à Saint Domingue',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Guillemin, Jean, fusilier né à Auteuil en île de France, mort le 2 octobre 1788 à la Guadeloupe 1788",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Dazille, Jean Barthélemy, chirurgien, voyages au Canada à partir de 1758, en 1763, il obtient un brevet de chirurgien major des troupes et des habitans de Cayenne, puis en 1766, il obtient un brevet de chirurgien major des hopiteaux de l\'Île de France, puis chirurgien du roi à Saint Domingue',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Guillot, Joseph, soldat à Pondichéry, mort le 28 juin 1777 à Saint-Louis 1777",
-        "from": "Caribbean",
-        "to": "India",
-        "tag": "military"
+    {
+        bio: 'Foubert, enseigne dans les troupes du Canada, demande à passer à la Louisiane en 1758',
+        from: 'New France',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Guillouet d'Orvilliers de La Troncais, Claude, lieutenant dans les troupes de Cayenne, puis à Saint-Domingue 1737/1751",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Normand, écrivain des colonies à la Louisiane à partir de 1758 puis à Cayenne à partir de 1763, commissaire des classes à Bayonne en 1779 ',
+        from: 'Louisiana',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Guyon, Jean Baptiste de, né en 1739, officier d'artillerie au Canada, à l'île de France 1752/an VI",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Bertaud, Jacques, de la Rochelle, colon de la Louisiane à partir de 1759, puis à Saint-Domingue en conséquence de la guerre de Sept ans, et sa femme Gabrielle Gabion, demande de secours dans les années 1770',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Guyon, Jean Baptiste Régis de, né en 1737 à Québec au Canada, capitaine d'Infanterie à l'île de France 1752/an VI",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Gannes, Georges de, né au Canada en 1759, cadet gentilhomme, sous-lieutenant au régiment du Cap, à Saint-Domingue, puis au régiment de la Martinique 1779/1790',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Hardy, Jean Claude, natif de l'île de France, soldat à la légion de Saint-Domingue 1769",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Macarty de Macteigne, de, chevalier, entre au service en 1759. Enseigne des troupes de la Louisiane à partir de 1762, passe à Saint Domingue en 1779, puis lieutenant des grenadiers volontaires au Cap-Français à Saint-Domingue. Fils du Lieutenant au roi à la Louisiane',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Harné, Jean, natif de l'île de Bourbon, élève-pilote, mort à Chandernagor 1777",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Fontette-Sommery, Charles Marie de, comte, entre au service en 1760. Capitaine de dragons au régiment d\'Artois, employé à Saint-Domingue puis comme aide-de camp de M. de Boufflers au Sénégal 1779/1785',
+        from: 'Caribbean',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Hauguet, Thomas, employé dans les bureaux à Saint-Domingue, puis contrôleur des colonies au Sénégal 1773/1781",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Dantier, Maximin Joseph Félix, engagé dans les troupes de la compagnie des indes en 1759, depart pour l\'Île de France en 1761, en guerre sur la côte Malabare en Inde en 1775, nommé sous lieutenant de la Milice bourgeoise de Mahé en 1778, officier en 1778, sous lieutenant au régiment de Pondichéry en 1784, puis à L\'Île de France en 1785, lieutenant en second en 1787',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Hazeur de Lorme, Louis, né à la Louisiane en 1746, capitaine au régiment de la Guadeloupe puis commandant particulier par intérim à Tabago en 1785 1754/1792",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Petit, François, à l\'Île de France en 1761, incorporé au régiment de l\'Île de France en 1775,  adjudant au régiment de l\'Île Bourbon à partir de 1785, puis capitaine de la garde nationale à Pondichéry à partir de 1793',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Herbourg, Marie Marthe, du Canada, passée à la Martinique 1763",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Carné de Trécesson, René Camille de, comte, époux de Françoise Louise Henriette de Rostaing, aide-major général à Cayenne (1762), commandant en second aux îles Saint-Martin et Saint-Barthélemy (1763), lieutenant-colonel d\'infanterie (1772), chef de bataillon du régiment de la Guadeloupe (1775), assassiné par son domestique, en 1784, à Avignon 1769/1785',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Hertel de Cournoyer, Michel, né à l'île Royale en 1735, mort à Cayenne, en 1780, cadet à l'île Royale, enseigne au Canada, aide-major des troupes nationales de la Guyane 1716/1782",
-        "from": "New France",
-        "to": "Guyana",
-        "tag": "military"
+    {
+        bio: 'Clermont-Brethe, François Marie René de, arrive à Cayenne vers 1762, y devient exempt de la compagnie de maréchaussée en 1764, repasse en France en 1765, nommé capitaine au régiment de Port-Louis, à l\'île de France ',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'military'
     },
-    {
-        "bio": "Hertel de Saint-Francois, Antoine, officier des troupes du Canada, capitaine au régiment de l'île de France 1764/1779",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Herbourg, Marie Marthe, du Canada, passée à la Martinique en 1763',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Heuzet, Pierre, natif de la province de l'île de France, fusilier au régiment de la Guadeloupe 1789",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Mars, Joseph de, passé à Cayenne en 1763, commandant particulier à Cayenne, passé à la Guadeloupe en 1768, où il a servi dans les états-majors ',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763',
+        category: 'other'
     },
-    {
-        "bio": "Hochereau de Gassonville, aide-major à l'île de Bourbon et à Pondichéry 1724",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Lartigue, Jacques, originaire de Louisbourg à l\'île Royale, nommé pour Cayenne en 1764, puis procureur du Roi de la juridiction de Cayenne, mort à Cayenne vers 1775, son père était juge à Louisbourg',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'officials'
     },
-    {
-        "bio": "Huaud, Gilles, ancien habitant de Louisbourg, passé à Cayenne et employé au magasin de Sinnamary 1767",
-        "from": "New France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Boucault, Charles, prisonnier d\'Etat pour la Désirade, venant de Cayenne, mort à la Martinique 1764',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Jacob, Jean Marie, natif de la province de l'île de France, fusilier au régiment de la Guadeloupe 1784",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'L\'Ostende, de, chevalier, ancien capitaine au régiment de l\'île de France, demande à passer à Cayenne en 1764',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Guyana',
+        through_metropole: null,
+        tag: 'before_1763_maybe',
+        category: 'military'
     },
-    {
-        "bio": "Jacquin-Philibert, Nicolas, ancien habitant du Canada, désire passer à l'île de Bourbon, auprès de son frère, sous-commissaire de la Marine 1770",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Poillevé, officier des troupes de Louisiane et lieutenant dans la légion de Saint-Domingue, demande de congé pour retourner en France en 1765',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'officials'
     },
-    {
-        "bio": "Jarret de Verchères, capitaine d'une compagnie des troupes de la Marine à la Louisiane, chevalier de Saint-Louis le 20 août 1745 1745",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Berthelot de Crosse, ancien officier au Canada, commission de capitaine dans la légion de Saint-Domingue en 1766, lieutenant aux îles Saint-Pierre et Miquelon ',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'officials'
     },
-    {
-        "bio": "Joantho, de, secrétaire du Roi, ses intérêts à l'île de France et à la Grenade 1774/1780",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Giraud, habitant de Cayenne condamné pour sévices envers ses nègres en 1766, passé à Saint-Domingue ',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: null,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Jolibert, aumônier à Gorée, mort à la Guadeloupe 1773/1778",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "other"
+    {
+        bio: 'Hardy, Jean Claude, natif de l\'île de France, soldat à la légion de Saint-Domingue, départ en 1766',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'military'
     },
-    {
-        "bio": "Jouanne de Saint-Martin, négociant à la Rochelle, armant pour Cayenne et Saint-Domingue 1772",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Philippe, Claude Guy, né en 1734 à Paris, enseigne en Louisiane, puis lieutenant à Saint-Domingue après 1766',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'officials'
     },
-    {
-        "bio": "Jousselin de Marigny, capitaine des troupes entretenues au Canada, puis à Saint-Domingue 1716/1746",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Huaud, Gilles, ancien habitant de Louisbourg, passé à Cayenne en 1763 et employé au magasin de Sinnamary ',
+        from: 'New France',
+        to: 'Guyana',
+        through_metropole: null,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Juchereau de Saint-Denis, Louis Barbe, lieutenant aux gardes françaises, arrière-petit-fils de Juchereau de Saint-Denis Nicolas anobli en 1692 pour services militaires au Canada, petit-fils de Juchereau de Saint-Denis Charles lieutenant général de l'île de Montréal ; fils de Juchereau de Saint-Denis Joseph Charles conseiller au Conseil supérieur du Cap à Saint-Domingue 1781/1787",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Barrère, Jean Baptiste, négociant au Cap-Français (Saint-Domingue), escale en martinique, guadeloupe, procédure de confiscation pour fait de commerce étranger du bateau le Bayonnais, capitaine Amiaud, par le tribunal de l\'amirauté de Cayenne en 1768',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'military'
     },
-    {
-        "bio": "Juneau, Nicolas, dit la Grenade, soldat des troupes du Canada, mort à Québec 1760",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Geoffrion de Boisy, resident de l\'Île Bourbon avant 1768, employé dans les bureaux de l\'île de Bourbon, passé à Pondichéry, puis à l\'armée anglaise 1772',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "La Barthe, Jean Baptiste, négociant et habitant de Port-au-Prince à Saint-Domingue, demande une concession à Cayenne 1770",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Dufay, lieutenant au régiment de la Reine, qui a  servi au Canada pendant plusieurs campagnes, demande une compagnie dans la légion de l\'île de France en 1769',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'officials'
     },
-    {
-        "bio": "La Carrière, sous-lieutenant à la suite de l'artillerie des îles de France et de Bourbon et à Pondichéry 1781/1789",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Delisle, ancien habitant du Canada, conseiller au Conseil supérieur de l\'île de Bourbon, mort vers 1770',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'officials'
     },
-    {
-        "bio": "La Glaine d'Auzon, Jean René, lieutenant d'artillerie à Pondichéry, capitaine d'artillerie aux volontaires étrangers de la Marine, major commandant l'artillerie au Sénégal 1762/1783",
-        "from": "India",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Jacquin-Philibert, Nicolas, ancien habitant du Canada, désire passer à l\'île de Bourbon, auprès de son frère, sous-commissaire de la Marine en 1770',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: null,
+        tag: 'before_1763_maybe',
+        category: 'officials'
     },
-    {
-        "bio": "La Longueville, de, chevalier, lieutenant des troupes du Canada, puis capitaine des troupes de la Louisiane 1720",
-        "from": "New France",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'La Barthe, Jean Baptiste, négociant et habitant de Port-au-Prince à Saint-Domingue, demande une concession à Cayenne en 1770',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: null,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "La Martelliere, de, ancien officier de Marine, demande un emploi dans les troupes, à Pondichéry ou Saint-Domingue, nommé capitaine au régiment de Pondichéry 1776",
-        "from": "Caribbean",
-        "to": "India",
-        "tag": "military"
+    {
+        bio: 'Patrault, commis aux écritures à Cayenne, emmené à l\'Île de France après 1771',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "La Rouvillière de Villebois, Honoré Michel de, commissaire des colonies au Canada, en Louisiane et sa femme Marie Catherine Elisabeth Bégou 1730/1753",
-        "from": "New France",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: ' Thorame, commis aux écritures à Cayenne, emmené à l\'Île de France après 1771',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "La Salle, de, ancien lieutenant des troupes du Canada, capitaine réformé à Saint-Domingue 1716",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Fusée-aublet, Laurent, médecin et botaniste à l\'île de France, Cayenne et Saint Domingue. Obtient une pension en 1773. ',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Lacroix de Villeneuve, Thomas, conseiller au Conseil supérieur de Pondichéry, puis au Conseil supérieur de Port-au-Prince à Saint-Domingue 1749/1782",
-        "from": "Caribbean",
-        "to": "India",
-        "tag": "officials"
+    {
+        bio: 'Deschiens de Villefeu, employé en qualité de lieutenant sur la corvette du Roi le Nécessaire, puis commandant du navire l\'Indienne, de Bordeaux allant aux îles de France, passe du temps a Cayenne, incident survenu pendant sa relâche à Gorée  en 1774',
+        from: 'Guyana',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'officials'
     },
-    {
-        "bio": "Lanton, chirurgien-major au Fort-Bourbon, à la Martinique 1786",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Caro, François, invalide des troupes de la Compagnie des Indes, à l\'île de France, venu en France, demande à repasser à Pondichéry où est toujours sa famille en 1775',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'military'
     },
-    {
-        "bio": "Lartigue, Jacques, originaire de Louisbourg à l'île Royale, greffier, puis procureur du Roi de la juridiction de Cayenne 1763/1776",
-        "from": "New France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Olivier, Jacques, exempt de maréchaussée à Saint-Domingue, puis canonnier à l\'île de France, demande à passer à Pondichéry en 1775',
+        from: 'Caribbean',
+        to: 'India',
+        through_metropole: null,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Le Brasseur, Joseph Alexandre, commissaire général de la Marine puis des Colonies, commissaire ordonnateur à Gorée à Saint-Domingue, intendant général des fonds de la Marine et des Colonies 1768/1788",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Olivier, Jacques, exempt de maréchaussée à Saint-Domingue, puis canonnier à l\'île de France, demande à passer à Pondichéry en 1775',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Le Cler, Pierre, de Québec, matelot mort à Pondichéry 1777",
-        "from": "India",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Anne Elisabeth Gadobert aux Illinois, à la Louisiane, morte à Saint-Domingue en 1776',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: null,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Le Clerc de Fresne, Camille Charles, chevalier, colonel du régiment de l'île de Bourbon, gouverneur de Pondichéry 1784/1817",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Le Cler, Pierre, de Québec, matelot mort à Pondichéry en 1776',
+        from: 'India',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Le Deist de Botidoux, Jean François, ci-devant capitaine dans le régiment de Matha, demande une sous-lieutenance à Cayenne ou au Sénégal 1788/1789",
-        "from": "Guyana",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Lépine, de, employé aux écritures à la Guadeloupe, demande à passer à Pondichéry en 1776',
+        from: 'Caribbean',
+        to: 'India',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Le Gardeur de Repentigny, Louis, comte, colonel des régiments de l'Amérique, de la Guadeloupe puis de la Martinique, gouverneur du Sénégal 1721/1786",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Pascaud, Joseph, natif du Bas-Poitou, ci-devant négociant à Québec, demande le brevet d\'interprète du Roi pour la langue anglaise, au Cap-Français à Saint-Domingue en 1776, il y a passé du temps, il reçoit un commission d\'interprete pour la langue anglaise au Cap en 1777 puis une commission d\'interprete du roi au pres du gouvernemente et des tribunaux de Saint Domingue en 1779',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: null,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Le Moyne, Antoine Philippe, contrôleur à la Martinique, ordonnateur à Cayenne et commissaire général de la marine à Rochefort 1734/1777",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Harné, Jean, natif de l\'île de Bourbon, élève-pilote, mort à Chandernagor 1777',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Le Voyer, Louis, sous-lieutenant au régiment de Pondichéry, lieutenant au régiment de l'île de France 1776/an XIII",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Proby, Claude François de, ancien lieutenant de milices à Saint-Domingue, demande ce grade à Cayenne ou il a dirigé une habitation à partir d\'Octobre 1777',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'officials'
     },
-    {
-        "bio": "Lecodé, Yves, natif de Louisbourg, maître de port à Cayenne 1767/1792",
-        "from": "New France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Duhart, capitaine de l\'Économe, venu de Saint-Domingue à Gorée en 1778, envoyé à Cayenne on ne sait pas si il est arrivé à cette destination',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'military'
     },
-    {
-        "bio": "Lefebvre, Jean Baptiste Nicolas Claude, procureur général au Conseil supérieur de Pondichéry, puis procureur du Roi de la juridiction de l'île de Bourbon 1776/1784",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Duhart, capitaine de l\'Économe, venu de Saint-Domingue à Gorée en 1778, envoyé à Cayenne on ne sait pas si il est arrivé à cette destination',
+        from: 'Guyana',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'military'
     },
-    {
-        "bio": "Legros de La Grancours, Honoré Michel, enseigne à la Louisiane, puis capitaine au régiment de l'île de France 1762/1787",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Estèbe, ancien conseiller au Conseil supérieur de Québec, secrétaire du Roi en la chancellerie près la cour des aides de Bordeaux, demande que les lettres d\'honneur de cet emploi qui lui ont été accordées soient enregistrées au Conseil supérieur de Saint-Domingue ou il a une partie de sa famille en 1779',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'officials'
     },
-    {
-        "bio": "Lemire, Louis, dit Chenevard, natif de Québec au Canada, chef de caserne à Saint-Jean-d'Angely, accusé de concussions dans la distribution des secours accordés aux colons passant à Cayenne 1764",
-        "from": "New France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Gauvain, Jérôme, natif de la Louisiane, en service à partir de 1779. Capitaine de port aux Cayes-Saint-Louis, à Saint-Domingue, service sur vaisseaux, destinations: Saint Domingue, Guinée, Martinique.',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'military'
     },
-    {
-        "bio": "Lépervanche, Eustache de, enseigne des troupes du Canada, capitaine au régiment de Bourbon 1755/1788",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Breteuil, Louis Auguste de, baron, concessionnaire à Cayenne, affaires engagées par lui à Saint-Domingue dans les années 1780',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Lépinay, Jean Michel de, gouverneur de la Louisiane, puis de la Grenade 1716/1718",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Coutoy, Jean Baptiste, natif de Québec, matelot à bord du vaisseau du Roi le Souverain. mort à la Martinique en 1782',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'before_1763_maybe',
+        category: 'other'
     },
-    {
-        "bio": "Lépine, de, employé aux écritures à la Guadeloupe, demande à passer à Pondichéry 1776",
-        "from": "Caribbean",
-        "to": "India",
-        "tag": "other"
+    {
+        bio: 'Auvray-Dufresne, Jean Louis, capitaine dans les troupes nationales de Cayenne à partir de 1764, puis dans la légion de Saint-Domingue',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "L'Isle, sous-lieutenant des troupes de la Louisiane, passé à Saint-Domingue 1718/1726",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Rambaud, Benoît Thérèse, en Martinique de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'ïle de France sous les ordres de l\'Ingenieur en chef, 1781 débarque en Inde,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de Pondichéry en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au Sénégal à partir de 1787',
+        from: 'Caribbean',
+        to: 'India',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Lolooz, de, colonel en Suède, chevalier de Saint-Louis, habitant de l'île de France 1788",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Rambaud, Benoît Thérèse, en Martinique de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'ïle de France sous les ordres de l\'Ingenieur en chef, 1781 débarque en Inde,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de Pondichéry en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au Sénégal à partir de 1787',
+        from: 'India',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "L'Ostende, de, chevalier, ancien capitaine au régiment de l'île de France, demande à passer à Cayenne, et sa femme Du Roure 1764",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "military"
+    {
+        bio: 'Bordes, entre au bureau des colonies en 1765, sous-commissaire de la Marine à Cayenne en 1775, greffier de la juridiction et de l\'amirauté de la Pointe-à-Pitre, à la Guadeloupe avec un brevet obtenu en 1776',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Luneau de Villeson, greffier au Sénégal, mort à la Martinique 1781/1784",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "other"
+    {
+        bio: 'Drouet de La Coulonnerie, enseigne des troupes du Canada en 1765, puis sous-lieutenant dans la légion de l\'île de France en 1769',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'New France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Macarty de Macteigne, de, chevalier, enseigne des troupes de la Louisiane, lieutenant des grenadiers volontaires au Cap-Français à Saint-Domingue 1763/1781",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Villeray, ancien officier au Canada, sous-lieutenant à Saint-Domingue à partir de 1765',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Magon de La Villebague, René, ancien gouverneur des îles de France et de Bourbon, intendant de Saint-Domingue, et sa veuve 1757/an V",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Barbier de blignières, Nicolas Joseph, lieutenant d\'infanterie, et ingénieur ordinaire du Roi à Cayenne en 1766, capitaine de dragons à Saint-Domingue vers  1776',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Maissin, Jacques de, ancien major général des troupes de la Compagnie des Indes, aux Indes, colonel d'infanterie, commandant les milices de la Rivière-Noire, à l'île de France. Chevalier de Saint-Louis en 1759 1738/1770",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Dubois, en activité à partir e 1766. Sénéchal et lieutenant-général d\'amirauté à la Guadeloupe, administration et magistrature à Saint Domingue, il sollicite un emploi de son grade dans la Louisiane vers 1780',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Maloeuvre, Jean, natif de Bretagne, soldat au régiment de l'île de France, condamné comme déserteur à Pondichéry 1785",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Dufaur, César Antoine, lieutenant dans la légion de l\'île de France à partir de 1766, capitaine au régiment de Pondichéry à partir de 1772, retiré avec le brevet de major mort en 1786',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Manent, Jean Baptiste, capitaine au régiment de l'île de Bourbon, puis au régiment de Pondichéry 1772/1805",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Millon, François, nommé procureur général au Conseil supérieur de l\'île Bourbon en 1766, sénéchal et juge d\'amirauté à Saint-Marc à Saint-Domingue en 1778',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Marchant Des Ligneris, Constant François Xavier Daniel, né au Canada en 1739, lieutenant dans la légion de Saint-Domingue, capitaine commandant au régiment du Cap-Français 1750/1792",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Martinon Du Verdereau, depart pour l\'Île de France en 1768 ou il devient procureur général au roi en 1772, puis nommé procureur général au Conseil supérieur de Pondichéry en de 1776, retour en France',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Marchant Des Ligneris, Pierre Marie, chevalier, né au Canada, en 1743, sous-lieutenant aux troupes nationales de Cayenne, lieutenant à la légion de Saint-Domingue, capitaine au régiment de Port-au-Prince 1770/1786",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Sonnerat, dessinateur, voyageur, naturaliste, à l\'Île de France entre 1768 et 1772, voyage aux Indes et à la Chine de 1774 à 1781, commissaire de la Marine à Pondichéry de 1786 à 1789, Commandant à Yanam de 1789 à 1793, administrateur du jardin des Plantes ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Marchant Des Ligneris, Pierre Marie, chevalier, né au Canada, en 1743, sous-lieutenant aux troupes nationales de Cayenne, lieutenant à la légion de Saint-Domingue, capitaine au régiment de Port-au-Prince 1770/1786",
-        "from": "New France",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Bance, Etienne Joseph, avocat au parlement de Paris, conseiller au Conseil supérieur de l\'île de France à partir de 1769, ensuite habitant de Saint-Domingue, enfin juge au tribunal civil de l\'Eure ',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Mars, Joseph de, commandant particulier à Cayenne, passé à la Guadeloupe en 1768, où il a servi dans les états-majors 1770/1773",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Bardies Du Rouet, Etienne, abbé, missionnaire à Cayenne à partir de 1769 et à Saint-Domingue ',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Martinon Du Verdereau, procureur général au Conseil supérieur de Pondichéry, puis à celui de l'île de France 1776/1777",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Biemeré, Louis Joseph, natif de Givet, sergent dans les troupes nationales de Cayenne à partir de 1769, puis soldat au régiment de Port-au-Prince à Saint-Domingue',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Mauduit de Montréal, demande la place de sénéchal de la Basse-Terre à la Guadeloupe 1786/1789",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Collet, Jean Maurice, chirurgien à la Nouvelle-Orléans, (Louisiane) en 1769, puis à Saint-Domingue',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Membrède, de, major à la Nouvelle-Orléans, à la Louisiane, puis lieutenant de roi à Saint-Domingue 1746/1770",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Estoupan de Laval, Louis François, passe à l\'Île de France en 1769. Employé de la compagnie des Indes sur cette Île jusqu\'en 1774. Entre dabs les bureaux de l\'administrtaion de Pondichéry en 1774. Passe à Mahé en 1777. Fait prisonier par les Anglais en 1778 pendant 4 ans. En 1782, il est employé dans le bureau de la comptabilité des Îles de France et de Bourbon.  Son Pere est mort Chef des Ventes de la COmpagnie des Indes. Mr David son oncle est mort Directeur de la Compagnie des Indes et Mr David son fils a été gouverneur des Îles de Bourbon et de France. Son oncle Mr Estoupan de Villeneuve était capitaine des vaisseaux des la Compagnie des Indes. Tous les trois oncles on été successivement gouverneurs du Sénégal',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Ménard, Jean Louis, natif d'Avranches, soldat au régiment de Pondichéry, mort à l'île de France 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Estoupan de Laval, Louis François, passe à l\'Île de France en 1769. Employé de la compagnie des Indes sur cette Île jusqu\'en 1774. Entre dabs les bureaux de l\'administrtaion de Pondichéry en 1774. Passe à Mahé en 1777. Fait prisonier par les Anglais en 1778 pendant 4 ans. En 1782, il est employé dans le bureau de la comptabilité des Îles de France et de Bourbon.  Son Pere est mort Chef des Ventes de la COmpagnie des Indes. Mr David son oncle est mort Directeur de la Compagnie des Indes et Mr David son fils a été gouverneur des Îles de Bourbon et de France. Son oncle Mr Estoupan de Villeneuve était capitaine des vaisseaux des la Compagnie des Indes. Tous les trois oncles on été successivement gouverneurs du Sénégal',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Mercier, habitant de Cayenne, émigré de la Guadeloupe 1775",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Gilbert, esclave créole né à la Grenade vers 1769, habitant Cayenne, affranchi par son maître Lescalier (Balthazar) 1787',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Meyracq, Laurent Domenger de, bailli au bailliage royal de Louisbourg à l'île Royale, puis juge de l'amirauté à la Guadeloupe 1740/1778",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Desmahis, ancien commerçant de Saint-Domingue, allant s\'établir à l\'île de France en 1770',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Michel, Claude, soldat aux volontaires d'Afrique, mort à Saint-Louis à Gorée en Afrique le 7 septembre 1765 1765",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "military"
+    {
+        bio: 'Faveris, Jean Baptiste, originaire de l\'île de Bourbon, chirurgien-major à Gorée en 1770, rentre à l\'Île Bourbon dans les années 1780 ',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Millon, François, procureur général au Conseil supérieur de l'île Bourbon, sénéchal et juge d'amirauté à Saint-Marc à Saint-Domingue 1768/1780",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Arnaud-Etienne Périchon de Vaudeuil, né à paris en 1746, en Inde en 1770, conseiller au Conseil supérieur de Pondichéry à partir de 1775, puis à celui de l\'île Bourbon.',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Mora de La Bourdonnaye, ancien gendarme, demande un emploi dans les troupes de Cayenne ou du Sénégal 1788",
-        "from": "Guyana",
-        "to": "Senegal",
-        "tag": "military"
+    {
+        bio: 'Desgarcins, Joseph Antoine, dessinateur, passe dans l\'Inde en 1771, employé pour les fortifications de Pondichéry, puis exempt de la maréchaussée à Saint-Domingue, mort à Saint Domingue en 1782 ',
+        from: 'Caribbean',
+        to: 'India',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Morin, Jean Antoine Charles, fils de Jean-Baptiste Morin, lieutenant au régiment de la Guadeloupe, demande une place dans les bureaux de l'île de France 1771/1784",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Du Myrat de Vertpré, Charles François, major général à l\'Île de France en 1771, rang de colonel en 1771, employé en qualité de colonel à Saint Domingue et à la Martinique en 1780',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Morthot de Saint-Frémont, Jean François, ancien officier au régiment Royal-Marine, lieutenant d'infanterie, nommé aide-major au Fort-Bourbon à la Martinique, commission provisoire en 1779, lieutenant colonel en 1794, mort à Paris le 19 octobre 1794 1779/1794",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Jolibert, aumônier à Gorée à partir de c. 1771, mort à la Guadeloupe en 1778',
+        from: 'Caribbean',
+        to: 'Senegal',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Myot, Jean François, employé à la Cayenne du Port-Louis, à l'île de France 1783/1791",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Auger, Nicolas, créole du Sénégal né vers 1735, ouvrier tonnelier, engagé pour l\'île de France en 1772',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Nanteuil de Pré, Louis de, chevalier, ingénieur, capitaine d'artillerie à Saint-Domingue, puis à Cayenne 1739/1764",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "military"
+    {
+        bio: 'Arrot, d\', chevalier, puis vicomte, lieutenant grenadier à Pondichery en 1772, 1773 et 1774, expédition au Sénégal en 1778, aide-maréchal général des logis à Saint-Domingue, commandant au second à la Guadeloupe, gouverneur de Tabago dans les années 1780',
+        from: 'Caribbean',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Neyon de Soizy, Alexandre Joseph, enseigne en pied des troupes entretenues à la Louisiane, puis capitaine à la Guadeloupe 1764/1779",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Brunel, Ignace, procureur de roi en 1772 et substitut du procureur général du Conseil supérieur de l\'île de France, lieutenant de juge de la juridiction royale de l\'île de France en 1774, premier conseiller au Conseil supérieur de Pondichéry en 1776, juge de la sénéchaussée de l\'île de France',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Neyon de Villiers, Pierre Joseph, capitaine en Louisiane, colonel au régiment de la Guadeloupe, gouverneur de Marie-Galante, mort pendant la traversée de son retour en France en 1780 1764/1788",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Cambefort de La Motte-Bézat, Joseph Paul Augustin de, lieutenant commissionné de Capitaine au régiment de l\'Île de France en 1772, rang de major en 1776 , premier aide major en 1778, rang de lieutenant coloniel en 1781, puis major au régiment de la Guadeloupe en 1782, et lieutenant au régiment de la Guadeloupe en 1785et lieutenant au régiment du Cap de Saint Domingue en 1786',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Normand, écrivain des colonies à la Louisiane puis à Cayenne, commissaire des classes à Bayonne en 1779 1758/1779",
-        "from": "Louisiana",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Jouanne de Saint-Martin, négociant à la Rochelle, demande à partir à Cayenne et à Saint-Domingue en 1772',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Noyelles, Charles Joseph de, comte, capitaine au Canada, capitaine des volontaires d'Afrique, mort en 1768 à Gorée 1773/1776",
-        "from": "New France",
-        "to": "Senegal",
-        "tag": "military"
+    {
+        bio: 'Lefebvre, Jean Baptiste Nicolas Claude, sous-marchand puis procureur général au Conseil supérieur de Pondichéry à partir de c. 1772, puis procureur du Roi de la juridiction de l\'île de Bourbon à partir de 1784',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Nyon, Denis de, chevalier de Saint-Louis, gouverneur et ingénieur en chef à l'île de France 1700/1726",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Bremeuil, Pierre, sergent au bataillon de l\'Inde, embarqué à l\'île de France pour Pondichéry enn 1773',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Olivier, Jacques, exempt de maréchaussée à Saint-Domingue, puis canonnier à l'île de France 1778",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Curt, Louis de,  aide-de-camp de M. d\'Estaing et capitaine en Guadeloupe en 1773, commissaire du Roi pour la vérification et la suppression du papier monnaie aux îles de France et de Bourbon à partir de 1784, député de la Guadeloupe à l\'Assemblée constituante ',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Olivier, Joseph, chargé ci-devant du détail de l'artillerie au Canada, nommé garde-magasin principal à Port-au-Prince à Saint-Domingue 1781/1783",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Carles, Joseph André François, originaire de Castres, volontaire au régiment d\'Auvergne, sergent aux gardes françaises, chargé comme tel de la garde de Damiens, capitaine dans le régiment des recrues de Perpignan, capitaine aide-major de la légion de l\'île de France en 1770, capitaine aide-major au régiment de Pondichéry en 1773, lieutenant-colonel en 1778, maréchal de camp en 1791 ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Orte, Jean François Denis d', capitaine d'une compagnie d'ouvriers, et ingénieur en chef à l'île de Bourbon, inventeur d'un moulin à coton, demande à être employé à Saint-Domingue 1756/1787",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Desrivierre-Gers, Henri Louis Jérôme, nommé lieutenant au régiment de la Martinique en 1773, sous-lieutenance dans les volontaires d\'afrique à Gorée avec le grade de lieutenant en 1776, repasse en qualité de sous lieutenant au régiment de la Guadeloupe en 1776, nommé aide major de place à Cayenne en 1777',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Palerne, Jean de, lieutenant de chasseurs au régiment de l'île de France, capitaine au régiment de Pondichéry 1772/1791",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Desrivierre-Gers, Henri Louis Jérôme, nommé lieutenant au régiment de la Martinique en 1773, sous-lieutenance dans les volontaires d\'afrique à Gorée avec le grade de lieutenant en 1776, repasse en qualité de sous lieutenant au régiment de la Guadeloupe en 1776, nommé aide major de place à Cayenne en 1777',
+        from: 'Guyana',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Paradis, ingénieur aux îles de France et de Bourbon, ingénieur en chef à Mahé, Karikal et Pondichéry, commandant à Karikal 1740/1747",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Palerne, Jean de, entre en service en qualité de lieutenant en second au régiment de l\'île de France en 1773, fait sous aide major dans la même île en 1775, puis capitaine aussi dans la même île en 1777, arrivé en Inde vers 1782, capitaine au régiment de Pondichéry  ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Pascaud, Joseph, natif du Bas-Poitou, ci-devant négociant à Québec, demande le brevet d'interprète du Roi pour la langue anglaise, au Cap-Français à Saint-Domingue 1782",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Borel Du Bourg, Claude Isaac de, né à Grenoble nommé lieutenant en second au régiment de Bourbon en 1774, puis au régiment de Pondichéry, aide-major à Saint-Marc, à Saint-Domingue',
+        from: 'Caribbean',
+        to: 'India',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Patoulet de Mazy, Jean Baptiste, commissaire général de la Marine à Cayenne, intendant aux îles du Vent 1678/1680",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Borel Du Bourg, Claude Isaac de, né à Grenoble nommé lieutenant en second au régiment de Bourbon en 1774, puis au régiment de Pondichéry, aide-major à Saint-Marc, à Saint-Domingue',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Peire, Philippe, marchand à Québec, et son frère Pierre Peire, marchand au Cap-Français, à Saint-Domingue 1719/1721",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Le Brasseur, Joseph Alexandre, 1762 entre en service en qualité de commis au bureau des colonies, commissaire ordonnateur à Gorée à partir de 1774 et à Saint-Domingue à partir de 1779 ou  il rempli ensuite des fonction  d\'Intendant te Président des Conseils Supérieurs , devient commissaire ordonateur à l\'Île de France en 1784',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Pelevilain de La Houssaye, Jean Richard, capitaine en Louisiane et à Louisbourg 1730/1775",
-        "from": "New France",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Le Brasseur, Joseph Alexandre, 1762 entre en service en qualité de commis au bureau des colonies, commissaire ordonnateur à Gorée à partir de 1774 et à Saint-Domingue à partir de 1779 ou  il rempli ensuite des fonction  d\'Intendant te Président des Conseils Supérieurs , devient commissaire ordonateur à l\'Île de France en 1784',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Périchon, chef de la loge de Mazulipatam, et ses frères, Périchon de Sainte-Marie, employé en second au même service, Périchon de Vaudeuil, conseiller au Conseil supérieur de Pondichéry, puis à celui de l'île de France, Périchon de Beauplan, lieutenant au régiment de l'île de France 1779/1786",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Le Voyer, Louis, sous-lieutenant au régiment de Pondichéry à partir de 1776, integre le régiment de l\'île de France à partir de 1785, devient lieutenant en 1788 ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Perrault, Paul, major des milices du Canada, passé ensuite à Cayenne, Marie Josèphe de Lanouet, sa veuve, et Perrault (Paul Hyacinthe), leur fils 1761/1779",
-        "from": "New France",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Descorches de Sainte-Croix, Jacques, sous-commissaire de la Marine à Brest et à Rochefort, passe à Pondichéry en 1775, nommé ordonnateur à Chandernagor en 1777, passe à l\'Île de France en 1779',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Petit, François, adjudant au régiment de l'Île Bourbon puis capitaine de la garde nationale à Pondichéry 1761/an X",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Du Montet, Aimé Guillin, lieutenant du roi en Guadeloupe en 1775, rang de colonel en 1778, Gouverneur de Saint Vincent en 1780, Gouverneur du Sénégal en 1781',
+        from: 'Caribbean',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Philippe, Claude Guy, enseigne en Louisiane, puis lieutenant à Saint-Domingue 1766",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Barry de Richeville, conseiller au Conseil supérieur de Pondichéry à partir de c. 1776, et lieutenant, puis au Conseil supérieur de l\'île de France à partir de 1788 mort en 1792',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Pichon, Paul, fusilier au régiment de Pondichéry en 1785, mort à l'hôpital de l'île de France le 22 octobre 1791 1791",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Baudin, chargé d\'une mission à l\'île de France, débarqué à Pondichéry en 1776',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Pigeot de Louisbourg, Jean, procureur au Conseil supérieur de Port-au-Prince, procureur de la juridiction du Cap-Français à Saint-Domingue 1765/1775",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Champagne, de, chevalier, sous-lieutenant au régiment d\'Artois, demeuré à l\'île de France après le départ de ce régiment pour France, passé à Pondichéry en 1776',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Plausot, Hubert, soldat au régiment de Pondichéry, mort à l'hôpital de l'île de France le 12 avril 1788 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Clause, négociant alsacien établi à la Nouvelle-Angleterre, passé à la Martinique, puis à Gorée vers 1777',
+        from: 'Caribbean',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Poillevé, lieutenant des troupes de Louisiane et à Saint-Domingue 1765",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Lacroix de Villeneuve, Thomas, conseiller au Conseil supérieur de Pondichéry en 1777, puis nommé conseiller au Conseil supérieur de Port-au-Prince à Saint-Domingue en 1782.',
+        from: 'Caribbean',
+        to: 'India',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Ponssy, Joseph de, officier des troupes de la Compagnie des Indes, à l'île Bourbon, major général des ville et fort de Pondichéry 1697/1743",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Garnier d\'Aiglancay, Nicolas Gérard, arrive à l\'Île de France en 1779. Lieutenant d\'infanterie à l\'île de France, à Pondichéry et à Saint-Domingue ',
+        from: 'Caribbean',
+        to: 'India',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Potier de Pommeroy, René Gédéon, né au fort Frontenac au Canada le 7 septembre 1730, lieutenant des troupes du Canada, capitaine des troupes nationales de Cayenne, retiré en 1768 1730/1787",
-        "from": "New France",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Garnier d\'Aiglancay, Nicolas Gérard, arrive à l\'Île de France en 1779. Lieutenant d\'infanterie à l\'île de France, à Pondichéry et à Saint-Domingue ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Proby, Claude François de, ancien lieutenant de milices à Saint-Domingue, demande ce grade à Cayenne 1778/1779",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Chenot, François, s\'embarque pour l\'Île de France en 1780, fait caporal et s\'embarque pour l\'Inde en 1781, fait aide major à Pondichéry en 1792',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Rambaud, Benoît Thérèse, lieutenant aux volontaires étrangers de la Marine, capitaine au régiment de Pondichéry, commandant particulier au Sénégal 1764/1787",
-        "from": "India",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Le Clerc de Fresne, Camille Charles, chevalier, s\'embraque pour les Îles du Vent des Antilles en 1780,  Major Génégal de l\'Île de la Grenade , commandant en second à a St. Christophe, colonel du régiment de l\'île de Bourbon à partir de 1784,  puis gouverneur à Pondichéry, retourne en France en 1793',
+        from: 'Caribbean',
+        to: 'India',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Rambault de Barallon, Antoine Claude, capitaine des troupes du Canada, chevalier de Saint-Louis et sa veuve Marie Catherine Dusable 1762/1784",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Le Clerc de Fresne, Camille Charles, chevalier, s\'embraque pour les Îles du Vent des Antilles en 1780,  Major Génégal de l\'Île de la Grenade , commandant en second à a St. Christophe, colonel du régiment de l\'île de Bourbon à partir de 1784,  puis gouverneur à Pondichéry, retourne en France en 1793',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Rastel de Rocheblave, Pierre Louis, gouverneur de Gorée (1769-1773), lieutenant de roi à Saint-Domingue, mort en 1780 1769/1780",
-        "from": "Caribbean",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Dubreuil, Simon Etienne, passe à l\'Île de France en 1781: il y est employé au bureau des armements et ensuite à celui de magasin général. Il quitte l\'Île de France en 1782 pour aller dans l\'Inde ou il travail en qualité de secretaire de brigade. Employé au magasin de Trinquemalé, puis aux travaux des fortifications à Pondichéry avant d\'être envoyé à Mahé où il travaille comme notaire, procureur du roi et commisssaire national',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Régis, capitaine en Louisiane et à Cayenne 1734/1750",
-        "from": "Louisiana",
-        "to": "Guyana",
-        "tag": "military"
+    {
+        bio: 'Dufaure de La Curatrie, Jean Baptiste, passe à l\'Île de France en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'Île de France en 1782 pour passer en Inde en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  Pondichéry, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de Cayenne, lieutenant au régiment de Port-au-Prince à Saint-Domingue 1772/1773',
+        from: 'Caribbean',
+        to: 'India',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Ribet, Jacques Antoine, demande une place de médecin à la Martinique ou à l'île de Bourbon 1780",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Dufaure de La Curatrie, Jean Baptiste, passe à l\'Île de France en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'Île de France en 1782 pour passer en Inde en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  Pondichéry, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de Cayenne, lieutenant au régiment de Port-au-Prince à Saint-Domingue 1772/1773',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Richard, Louis, naturaliste du Roi à la Martinique et à Cayenne 1781/1792",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'Dufaure de La Curatrie, Jean Baptiste, passe à l\'Île de France en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'Île de France en 1782 pour passer en Inde en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  Pondichéry, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de Cayenne, lieutenant au régiment de Port-au-Prince à Saint-Domingue 1772/1773',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Rittier, Barthélemy, maître en chirurgie à Léogane, à Saint-Domingue, et Taillard de Pizoé (Marie-Hélène Pétronille) sa femme, veuve en premières noces de Grémauld (François Adrien) écrivain de la Marine à l'île de France 1784",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Hauguet, Thomas, employé dans les bureaux à Saint-Domingue, puis contrôleur des colonies au Sénégal. Obtient une pension en 1781',
+        from: 'Caribbean',
+        to: 'Senegal',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Romain, créole de la Guadeloupe, ayant résidé à Cayenne 1763/1777",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "other"
+    {
+        bio: 'La Carrière, sous-lieutenant à la suite de l\'artillerie des îles de France et de Bourbon puis à Pondichéry à partir de 1781 ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Rossignol de Combier, Dominique de, lieutenant au régiment de l'île de France, et Charles Joseph de Brousse, ancien capitaine aide-major au régiment d'Aunis, ayant fait la guerre à Pondichéry, avec le régiment de Lorraine, et qui demande à être employé avec son grade aux colonies 1759/1785",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Richard, Louis, naturaliste du Roi passe à Cayenne en 1781,  puis passe du temps dans les Île du vent de Antilles, voyage à la Martinique en 1788, pour conduire des études botaniques. ',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Rousseau, capitaine d'un navire de commerce parti de Saint-Domingue pour la Louisiane 1754",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "military"
+    {
+        bio: 'Verret, Joseph, habitant de la Louisiane, puis entrepreneur de moulins à sucre à Saint-Domingue, correspondance de 1781/1782',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Rustan, Pascal Fabre, ancien officier des troupes du Canada, garde-magasin à Pointe-à-Pitre à la Guadeloupe 1752/1788",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Foin, Guillaume François, soldat au régiment de Pondichéry, mort à l\'île de France en 1782 ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Sabran-Beaudinar, Pierre Bruno de, chevalier, major à la Mobile en Louisiane puis à Saint-Domingue 1735/1741",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "other"
+    {
+        bio: 'Luneau de Villeson, greffier au Sénégal, mort à la Martinique en 1782',
+        from: 'Caribbean',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Sabrevois, Charles de, capitaine au Canada, puis à l'île Bourbon 1734/1783",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Bertry, Irénée, ancien missionnaire à la Louisiane, et à Saint-Domingue avant 1783',
+        from: 'Caribbean',
+        to: 'Louisiana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Salles de Neuilly, de, ancien gendarme de la compagnie des chevau-légers de la Reine, auteur d'un ouvrage sur la Floride, Cayenne et le Sénégal 1787",
-        "from": "Guyana",
-        "to": "Senegal",
-        "tag": "other"
+    {
+        bio: 'Delosmes-Desdodins, Jean Pierre, ancien conseiller au Conseil supérieur de Pondichéry, ex-procureur général au Conseil supérieur de l\'île de France, adjoint au contrôleur de la Marine avant 1783',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Salz, Bernard, soldat au régiment de Pondichéry, mort à l'hôpital royal de l'île de France le 16 novembre 1788 1788",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Doyon, Thomas, de Québec, pauvre bourgeois mort à la Martinique en 1783',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Sanguin de Gassonville, Thomas, capitaine des troupes de la Compagnie des Indes à Bourbon, Pondichéry, Chandernagor 1738/1740",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Espinassy, Antoine Marie Joseph d\', arrive à l\'Île de France en 1783. Lieutenant en second d\'artillerie à l\'île de France en 1783, puis lieutenant en premier du régiment de corps royale d\'artillerie, employé à Saint-Domingue en 1788, commission de capitaine, devenu général en 1797 ',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'officials'
     },
-    {
-        "bio": "Sénégal, Louis, dit Lebrun, commissaire du Roi pour la Compagnie des Indes, mort à l'île de France à Port-Louis le 22 décembre 1773 1773/1782",
-        "from": "Isle Bourbon & Isle of France",
-        "to": "Senegal",
-        "tag": "officials"
+    {
+        bio: 'Beillion, François Joseph, natif de Franche-Comté, soldat du régiment de l\'île de France, à Pondichéry, déserteur procès en 1785',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Simonnet de Maisonneuve, Louis, capitaine au régiment de Pondichéry à l'île de France 1785",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Cuvilier, Jean Mathieu, natif de la province de Liège, soldat au régiment de l\'île de France, déserteur jugé à Pondichéry en 1785',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Sonnerat, sous-commissaire des colonies, employé à Pondichéry et à l'île de France, administrateur du jardin des Plantes après 1778",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Du Coudray, Jean François, natif de Rennes, soldat au régiment de l\'île de France, déserteur jugé à Pondichéry 1785',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Sornay, Pierre Basile de, major de milices à l'île de France puis ingénieur à Pondichéry 1727/an VII",
-        "from": "India",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "other"
+    {
+        bio: 'Maloeuvre, Jean, natif de Bretagne, soldat au régiment de l\'île de France, condamné comme déserteur à Pondichéry en 1785',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Testard de Montigny, Jean Baptiste Philippe, né le 15 juin 1724 à Montréal, fils de Jacques, capitaine dans les troupes du Canada, 1er avril 1753, chevalier de Saint-Louis, 4 fils : Jérémie, Jean-Baptiste, Étienne et François-Marie 1761/1788",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "military"
+    {
+        bio: 'Pichon, Paul, fusilier au régiment de Pondichéry en 1785, mort à l\'hôpital de l\'île de France le 22 octobre 1791 ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Thomas de Périndorge, Paul, conseiller-assesseur au Conseil supérieur de l'île de Bourbon, ordonnateur aux îles de Saint-Pierre et Miquelon, employé des Domaines nationaux, à Saint-Domingue 1787/an XI",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "officials"
+    {
+        bio: 'Simonnet de Maisonneuve, Louis, capitaine au régiment de Pondichéry à l\'île de France en 1785',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Tizoneaux, commis à la comptabilité de la Louisiane, puis écrivain de la Marine, à Saint-Domingue 1774/1778",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "officials"
+    {
+        bio: 'Briffaud, Louis, natif d\'Auxerre, déserteur du régiment de l\'île de Bourbon , jugé à Pondichéry en 1786',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Tourton de Clairefontaine, commis au Canada et à Saint-Domingue 1743/1765",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Ailleboust de Mantet, d\', capitaine au régiment de Pondichéry à fait un mariage à l\'Île Bourbon, demissionne en 1787',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Treyvoux, Georges, armurier au Canada et à la Martinique 1747/1792",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Dubé, Gabriel, natif du Canada, pauvre sans secours, mort à l\'hôpital de la Pointe-à-Pitre, à la Guadeloupe en 1787',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Trottier Des Ruisseaux, Joseph, seigneur, demeurant à la Chine, en l'île de Montréal, au Canada, vente à lui faite par enfant et héritier de Lemoyne Charles, écuyer, vivant seigneur de Longueuil et de Catherine Primot, de la terre, fief et seigneurie de l'île Perrot, située au haut du lac Saint-Louis, qui leur est échue par la succession de leurs père et mère, lesquels l'avaient acquise en 1684 de Perrot (François Marie) gouverneur de Montréal, mort en 1687, lequel l'avait reçue en concession de Talon Jean ci-devant intendant au Canada 1703",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Ferrand, Jean, natif de Castres, fusilier au régiment de l\'île de France, mort à Pondichéry en 1787',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Vassal, Charles Louis, avocat au Parlement, demande un emploi de judicature à Saint-Domingue, devient écrivain ordinaire des colonies, à Cayenne 1778/1785",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "officials"
+    {
+        bio: 'Garrus de La Roque, Pierre Louis, natif de Paris, commis de l\'administration de Cayenne, mort à la Martinique en 1787',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
     },
-    {
-        "bio": "Verdière, Philippe Joseph Xavier de, capitaine au régiment de Port-au-Prince à Saint-Domingue, puis à celui de l'île de France 1777/1785",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Golbéry, Sylvain François Xavier Meinrade, capitaine au corps royal du Génie, employé à Gorée et à Cayenne. Départ pour Cayenne en 1787',
+        from: 'Guyana',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Vernier, Claude Louis, natif de Romilly-sur-Seine, ancien canonnier au régiment de l'île de France, et André Benard, habitant de la Martinique 1788",
-        "from": "Caribbean",
-        "to": "Isle Bourbon & Isle of France",
-        "tag": "military"
+    {
+        bio: 'Golbéry de Tirion, de, capitaine au corps royal du Génie, employé à Gorée et à Cayenne, ingénieur au Sénégal. Départ pour Cayenne en 1787.',
+        from: 'Guyana',
+        to: 'Senegal',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Verret, Joseph, ancien habitant de la Louisiane, entrepreneur de moulins à sucre à Saint-Domingue 1781/1782",
-        "from": "Caribbean",
-        "to": "Louisiana",
-        "tag": "other"
+    {
+        bio: 'Auger, Jean Baptiste, caporal au régiment de Pondichéry, mort à l\'île de France en 1788',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Villeray, ancien officier au Canada, sous-lieutenant à Saint-Domingue 1765",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "officials"
+    {
+        bio: 'Bergeron, Antoine, natif du Limousin, sergent au régiment de Pondichéry, mort à l\'île de France en 1788',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Villotte, Pierre, navigateur de Louisbourg, établi au Cap-Français, à Saint-Domingue 1732",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Berth, Jean Baptiste, natif de Paris, soldat du régiment de Pondichéry, mort à l\'île de France en 1788',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Vincelotte de Sainte-Hélène, originaire du Canada, habitante de la Martinique 1781/1783",
-        "from": "Caribbean",
-        "to": "New France",
-        "tag": "other"
+    {
+        bio: 'Boudon, Paul, natif de Nîmes, soldat au régiment de Pondichéry, mort à l\'île de France en 1788',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'military'
     },
-    {
-        "bio": "Vlieghe, ancien capitaine de milices, armateur et négociant à Cayenne et à Saint-Domingue 1788",
-        "from": "Caribbean",
-        "to": "Guyana",
-        "tag": "military"
+    {
+        bio: 'Chrétien, Louis, natif d\'Anjou, grenadier au régiment de Pondichéry, mort à l\'île de France en 1788',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
+    },
+    {
+        bio: 'Dugas, Pierre, natif d\'Anjou, tonnelier de la Cayenne de mer, à Port-Louis, île de France, mort à l\'hôpital en 1788',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Guyana',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'other'
+    },
+    {
+        bio: 'Enserman, Jean Michel, natif d\'Alsace, soldat au régiment de Pondichéry, mort à l\'île de France en 1788',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
+    },
+    {
+        bio: 'Forget, Olivier, natif de Vannes, matelot de la Cayenne de mer à l\'île de France, mort à l\'hôpital en 1788',
+        from: 'Isle Bourbon & Isle of France',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
+    },
+    {
+        bio: 'Fournier, Claude, natif de Paris, soldat au régiment de Pondichéry, mort à l\'île de France en 1788',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
+    },
+    {
+        bio: 'Fyard de Gévigney, ancien capitaine dans le Corps de Montréal, demande une place dans la maréchaussée de Saint-Domingue. Réception de demande de position en 1788.',
+        from: 'Caribbean',
+        to: 'New France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
+    },
+    {
+        bio: 'Gonnet, Philippe, natif de Metz, soldat au régiment de Pondichéry, mort à l\'île de France en 1788.',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'military'
+    },
+    {
+        bio: 'Ménard, Jean Louis, natif d\'Avranches, soldat au régiment de Pondichéry, mort à l\'île de France en 1788',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: null,
+        tag: 'after_1763',
+        category: 'military'
+    },
+    {
+        bio: 'Plausot, Hubert, soldat au régiment de Pondichéry, mort à l\'hôpital de l\'île de France le 12 avril 1788 .',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
+    },
+    {
+        bio: 'Salz, Bernard, soldat au régiment de Pondichéry, mort à l\'hôpital royal de l\'île de France le 16 novembre 1788 ',
+        from: 'India',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
+    },
+    {
+        bio: 'Vlieghe, ancien capitaine de milices, armateur et négociant à Cayenne et à Saint-Domingue en 1788',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
+    },
+    {
+        bio: 'Blondy, ouvrier du Roi, embarqué pour Cayenne, autorisé à partir pour Saint-Domingue en 1789',
+        from: 'Caribbean',
+        to: 'Guyana',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'other'
+    },
+    {
+        bio: 'Béthisy, Louis de, ancien sergent au régiment de l\'île de France vers 1790, demande une place de commis aux écritures à Saint-Domingue 1784/1790',
+        from: 'Caribbean',
+        to: 'Isle Bourbon & Isle of France',
+        through_metropole: true,
+        tag: 'after_1763',
+        category: 'military'
     }
 ];
-
-// add connections to metropole
-const moreEdges = [];
-const seen = new Set();
-OFFICIALS_LINKS.forEach(e => {
-    if (seen.has(e.bio)) {
-        return;
-    }
-    seen.add(e.bio);
-    moreEdges.push({
-        ...e,
-        from: "France",
-        to: e.from
-    });
-});
-OFFICIALS_LINKS = OFFICIALS_LINKS.concat(moreEdges);
