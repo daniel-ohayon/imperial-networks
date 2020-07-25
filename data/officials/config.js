@@ -3,22 +3,20 @@ const OFFICIALS_CONFIG = {
     use_anmiation: false,
     use_simplified_edges: false,
     arrow_scaling_factor: 1.2,
-    edge_size: 0.8,
+    edge_size: 0.5,
     arrow_head_size: 5,
     undirected: true,
+    skip_france: true,
     use_tags: true,
+    hidden_locations: ['France', 'Madagascar'],
     tag_to_color: {
         before_1763: {
-            label: 'before 1763',
-            color: 'black'
-        },
-        before_1763_maybe: {
-            label: 'before 1763 maybe',
-            color: 'black'
+            label: 'Before 1763',
+            color: '#610b0b'
         },
         after_1763: {
-            label: 'after_1763',
-            color: '#C5C5C5'
+            label: 'After 1763',
+            color: '#d6c5c5'
         },
     },
     makeModalContent: function (node, sigmaInstance, links) {

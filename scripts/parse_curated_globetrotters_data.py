@@ -118,7 +118,7 @@ def to_edges(row, regions, keywords):
             'from': regions[i],
             'to': regions[i+1],
             'via_metropole': row.went_through_metropole,
-            'tag': row.time_period,
+            'tag': row.time_period if row.time_period != 'before_1763_maybe' else 'before_1763',
             'category': get_category(row.bio) or 'other'
         })
     return edges

@@ -1,10 +1,10 @@
 const LAWS_CONFIG = {
     links: LAWS_LINKS,
-    use_animation: false,
+    use_animation: true,
     use_simplified_edges: false,
     edge_size: 1,
     arrow_head_size: 10,
-    skip_france: true,
+    hidden_locations: ['France'],
     makeModalContent: makeModalContent
 };
 

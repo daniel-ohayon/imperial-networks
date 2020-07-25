@@ -30,7 +30,10 @@ Through a word frequency analysis, we determined groups of commonly occuring key
 
 We then programmatically screened the 19,252 biographies against these groups of keywords, and only kept the ones that contained keywords mapping to two ore more regions. For example, the sentence given above for Foucault contains keywords mapping to Louisiana, India ("Pondichery") and Isle Bourbon ("Isle of France"). Through this process, we were able to identify 335 such biographies of Marine personnel who had likely lived in multiple colonies.
 
-We then manually inspected each sentence to remove false positives such as "Bachelier, Jean Baptiste, native of Isle of France, died during the crossing to Saint-Domingue, 1766", after which we were left with [TODO] Marine employees.
+We then manually inspected each sentence to remove false positives such as "Bachelier, Jean Baptiste, native of Isle of France, died during the crossing to Saint-Domingue, 1766", after which we were left with 239 Marine employees.
+We also adjusted the biographies for factual inaccuracies based on inspection
+of the original archival records. The corresponding data was manually entered
+into `scripts/curated_globetrotters_data.xlsx`.
 
 Each of these biographies was then represented by an edge or a sequence of edges between regions on the map, matching the order of appearance of the corresponding keywords in the sentence. For example, with Foucault's description, we add two edges to the map: one going from Louisiana to India, and another one going from India to Isle Bourbon.
 
