@@ -50,11 +50,9 @@ BLOCKLIST = [
 ]
 
 
-def find_index(needle: str, haystack: str) -> int:
+def contains_keyword(haystack: str, needle: str) -> bool:
     match = re.search(fr"\b{needle}\b", haystack, re.IGNORECASE)
-    if match is None:
-        return -1
-    return match.start()
+    return match is not None
 
 
 def get_regions(sentence: str) -> Tuple[Optional[List[str]], Optional[Set[str]]]:
@@ -62,17 +60,11 @@ def get_regions(sentence: str) -> Tuple[Optional[List[str]], Optional[Set[str]]]
     matching_keywords = set()
     sentence = sentence.lower()
 
-    if "bourbonnais" in sentence:
-        # Ile Bourbon != Bourbonnais (village en France)
-        return None, None
-
     for region, keywords in REGIONS.items():
-        for kw in keywords:
-            i_start = find_index(kw, sentence)
-            if i_start > -1:
-                matching_keywords.add(kw)
-                matching_regions.append(region)
-                break
+        matches = [kw for kw in keywords if contains_keyword(sentence, kw)]
+        if len(matches) > 0:
+            matching_regions.append(region)
+            matching_keywords.update(set(matches))
 
     for _set in BLOCKLIST:
         if matching_keywords.issubset(_set):

@@ -1,7 +1,7 @@
 const OFFICIALS_LINKS = [
   {
     bio: 'Patoulet de Mazy, Jean Baptiste, secretaire de Jean Talon en Nouvelle France de 1665 à 1692, puis intendant aux îles du Vent établit en Martinique à partir de 1679',
-    annotated_bio: '<strong>Patoulet de Mazy, Jean Baptiste</strong>, secretaire de Jean Talon en <mark>Nouvelle France</mark> de 1665 à 1692, puis intendant aux <mark>îles du Vent</mark> établit en Martinique à partir de 1679',
+    annotated_bio: '<strong>Patoulet de Mazy, Jean Baptiste</strong>, secretaire de Jean Talon en <mark>Nouvelle France</mark> de 1665 à 1692, puis intendant aux <mark>îles du Vent</mark> établit en <mark>Martinique</mark> à partir de 1679',
     name: 'Patoulet de Mazy, Jean Baptiste',
     from: 'Caribbean',
     to: 'New France',
@@ -11,7 +11,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Lépinay, Jean Michel de, né vers 1665, départ pour le Canada en enseigne en 1687, promu lieutenant en 1687, puis capitaine en 1691 au Canada. Rrtour en France en 1695, pui gouverneur de la Louisiane à partir de 1716, puis de la Grenade aux Antilles en 1717. Mort en Martinique en 1721. ',
-    annotated_bio: '<strong>Lépinay, Jean Michel de</strong>, né vers 1665, départ pour le <mark>Canada</mark> en enseigne en 1687, promu lieutenant en 1687, puis capitaine en 1691 au <mark>Canada</mark>. Rrtour en France en 1695, pui gouverneur de la <mark>Louisiane</mark> à partir de 1716, puis de <mark>la Grenade</mark> aux Antilles en 1717. Mort en Martinique en 1721. ',
+    annotated_bio: '<strong>Lépinay, Jean Michel de</strong>, né vers 1665, départ pour le <mark>Canada</mark> en enseigne en 1687, promu lieutenant en 1687, puis capitaine en 1691 au <mark>Canada</mark>. Rrtour en France en 1695, pui gouverneur de la <mark>Louisiane</mark> à partir de 1716, puis de <mark>la Grenade</mark> aux Antilles en 1717. Mort en <mark>Martinique</mark> en 1721. ',
     name: 'Lépinay, Jean Michel de',
     from: 'Caribbean',
     to: 'New France',
@@ -21,7 +21,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Lépinay, Jean Michel de, né vers 1665, départ pour le Canada en enseigne en 1687, promu lieutenant en 1687, puis capitaine en 1691 au Canada. Rrtour en France en 1695, pui gouverneur de la Louisiane à partir de 1716, puis de la Grenade aux Antilles en 1717. Mort en Martinique en 1721. ',
-    annotated_bio: '<strong>Lépinay, Jean Michel de</strong>, né vers 1665, départ pour le <mark>Canada</mark> en enseigne en 1687, promu lieutenant en 1687, puis capitaine en 1691 au <mark>Canada</mark>. Rrtour en France en 1695, pui gouverneur de la <mark>Louisiane</mark> à partir de 1716, puis de <mark>la Grenade</mark> aux Antilles en 1717. Mort en Martinique en 1721. ',
+    annotated_bio: '<strong>Lépinay, Jean Michel de</strong>, né vers 1665, départ pour le <mark>Canada</mark> en enseigne en 1687, promu lieutenant en 1687, puis capitaine en 1691 au <mark>Canada</mark>. Rrtour en France en 1695, pui gouverneur de la <mark>Louisiane</mark> à partir de 1716, puis de <mark>la Grenade</mark> aux Antilles en 1717. Mort en <mark>Martinique</mark> en 1721. ',
     name: 'Lépinay, Jean Michel de',
     from: 'New France',
     to: 'Louisiana',
@@ -41,7 +41,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Forcade, Pierre de, commissaire de la Marine, travaille à la greffe et notariat de la juridiction de Saint Domingue à partir de 1713, ses intérêts à Saint-Domingue et à Cayenne 1719/1742',
-    annotated_bio: '<strong>Forcade, Pierre de</strong>, commissaire de la Marine, travaille à la greffe et notariat de la juridiction de Saint Domingue à partir de 1713, ses intérêts à <mark>Saint-Domingue</mark> et à <mark>Cayenne</mark> 1719/1742',
+    annotated_bio: '<strong>Forcade, Pierre de</strong>, commissaire de la Marine, travaille à la greffe et notariat de la juridiction de <mark>Saint Domingue</mark> à partir de 1713, ses intérêts à <mark>Saint-Domingue</mark> et à <mark>Cayenne</mark> 1719/1742',
     name: 'Forcade, Pierre de',
     from: 'Caribbean',
     to: 'Guyana',
@@ -101,7 +101,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'La Longueville, de, chevalier, lieutenant des troupes du Canada, puis capitaine des troupes de la Louisiane 1720, demande une lieutenance aux Îles du Vent des Antilles, potentiel poste pour lui en Martinique',
-    annotated_bio: '<strong>La Longueville, de,</strong> chevalier, lieutenant des troupes du <mark>Canada</mark>, puis capitaine des troupes de la <mark>Louisiane</mark> 1720, demande une lieutenance aux <mark>Îles du Vent</mark> des Antilles, potentiel poste pour lui en Martinique',
+    annotated_bio: '<strong>La Longueville, de,</strong> chevalier, lieutenant des troupes du <mark>Canada</mark>, puis capitaine des troupes de la <mark>Louisiane</mark> 1720, demande une lieutenance aux <mark>Îles du Vent</mark> des Antilles, potentiel poste pour lui en <mark>Martinique</mark>',
     name: 'La Longueville, de,',
     from: 'Caribbean',
     to: 'New France',
@@ -111,7 +111,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'La Longueville, de, chevalier, lieutenant des troupes du Canada, puis capitaine des troupes de la Louisiane 1720, demande une lieutenance aux Îles du Vent des Antilles, potentiel poste pour lui en Martinique',
-    annotated_bio: '<strong>La Longueville, de,</strong> chevalier, lieutenant des troupes du <mark>Canada</mark>, puis capitaine des troupes de la <mark>Louisiane</mark> 1720, demande une lieutenance aux <mark>Îles du Vent</mark> des Antilles, potentiel poste pour lui en Martinique',
+    annotated_bio: '<strong>La Longueville, de,</strong> chevalier, lieutenant des troupes du <mark>Canada</mark>, puis capitaine des troupes de la <mark>Louisiane</mark> 1720, demande une lieutenance aux <mark>Îles du Vent</mark> des Antilles, potentiel poste pour lui en <mark>Martinique</mark>',
     name: 'La Longueville, de,',
     from: 'New France',
     to: 'Louisiana',
@@ -121,7 +121,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Le Gardeur de Repentigny, Louis, comte, né en 1721 à Montréal, second enseigne des troupes puis lieutenant en 1751 et capitaine en 1759  en Nouvelle France, colonel des régiments de l\'Amérique en 1773 , de la Guadeloupe quatre ans plus tard puis de la Martinique, gouverneur du Sénégal à partir de 1783',
-    annotated_bio: '<strong>Le Gardeur de Repentigny, Louis</strong>, comte, né en 1721 à <mark>Montréal</mark>, second enseigne des troupes puis lieutenant en 1751 et capitaine en 1759  en Nouvelle France, colonel des régiments de l\'Amérique en 1773 , de la Guadeloupe quatre ans plus tard puis de la <mark>Martinique</mark>, gouverneur du <mark>Sénégal</mark> à partir de 1783',
+    annotated_bio: '<strong>Le Gardeur de Repentigny, Louis</strong>, comte, né en 1721 à <mark>Montréal</mark>, second enseigne des troupes puis lieutenant en 1751 et capitaine en 1759  en <mark>Nouvelle France</mark>, colonel des régiments de l\'Amérique en 1773 , de la <mark>Guadeloupe</mark> quatre ans plus tard puis de la <mark>Martinique</mark>, gouverneur du <mark>Sénégal</mark> à partir de 1783',
     name: 'Le Gardeur de Repentigny, Louis',
     from: 'Caribbean',
     to: 'New France',
@@ -131,7 +131,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Le Gardeur de Repentigny, Louis, comte, né en 1721 à Montréal, second enseigne des troupes puis lieutenant en 1751 et capitaine en 1759  en Nouvelle France, colonel des régiments de l\'Amérique en 1773 , de la Guadeloupe quatre ans plus tard puis de la Martinique, gouverneur du Sénégal à partir de 1783',
-    annotated_bio: '<strong>Le Gardeur de Repentigny, Louis</strong>, comte, né en 1721 à <mark>Montréal</mark>, second enseigne des troupes puis lieutenant en 1751 et capitaine en 1759  en Nouvelle France, colonel des régiments de l\'Amérique en 1773 , de la Guadeloupe quatre ans plus tard puis de la <mark>Martinique</mark>, gouverneur du <mark>Sénégal</mark> à partir de 1783',
+    annotated_bio: '<strong>Le Gardeur de Repentigny, Louis</strong>, comte, né en 1721 à <mark>Montréal</mark>, second enseigne des troupes puis lieutenant en 1751 et capitaine en 1759  en <mark>Nouvelle France</mark>, colonel des régiments de l\'Amérique en 1773 , de la <mark>Guadeloupe</mark> quatre ans plus tard puis de la <mark>Martinique</mark>, gouverneur du <mark>Sénégal</mark> à partir de 1783',
     name: 'Le Gardeur de Repentigny, Louis',
     from: 'New France',
     to: 'Senegal',
@@ -141,7 +141,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Sanguin de Gassonville, Thomas, né vers 1697, entre au service de la compagnie en 1723, aide major de Bourbon jusqu\'en 1725, passe à Pondichery et y travail comme aide major jusqu\'en 1726, fait capitaine en 1726 et le reste au moins jusqu\'en 1740, puis capitaine a Chandernagor en 1740',
-    annotated_bio: '<strong>Sanguin de Gassonville, Thomas</strong>, né vers 1697, entre au service de la compagnie en 1723, aide major de <mark>Bourbon</mark> jusqu\'en 1725, passe à <mark>Pondichery</mark> et y travail comme aide major jusqu\'en 1726, fait capitaine en 1726 et le reste au moins jusqu\'en 1740, puis capitaine a Chandernagor en 1740',
+    annotated_bio: '<strong>Sanguin de Gassonville, Thomas</strong>, né vers 1697, entre au service de la compagnie en 1723, aide major de <mark>Bourbon</mark> jusqu\'en 1725, passe à <mark>Pondichery</mark> et y travail comme aide major jusqu\'en 1726, fait capitaine en 1726 et le reste au moins jusqu\'en 1740, puis capitaine a <mark>Chandernagor</mark> en 1740',
     name: 'Sanguin de Gassonville, Thomas',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -201,7 +201,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Hertel de Cournoyer, Jacques Ange, né le 8 décembre 1730, à l\'île Royale, lieutenant dans les troupes détachées de la Marine, à l\'île Royale, capitaine au régiment du Cap, à Saint-Domingue, lieutenant-colonel du régiment de Port-au-Prince, dans la même colonie 1766/1792',
-    annotated_bio: '<strong>Hertel de Cournoyer, Jacques Ange</strong>, né le 8 décembre 1730, à l\'<mark>île Royale</mark>, lieutenant dans les troupes détachées de la Marine, à l\'<mark>île Royale</mark>, capitaine au régiment du Cap, à Saint-Domingue, lieutenant-colonel du régiment de <mark>Port-au-Prince</mark>, dans la même colonie 1766/1792',
+    annotated_bio: '<strong>Hertel de Cournoyer, Jacques Ange</strong>, né le 8 décembre 1730, à l\'<mark>île Royale</mark>, lieutenant dans les troupes détachées de la Marine, à l\'<mark>île Royale</mark>, capitaine au régiment du Cap, à <mark>Saint-Domingue</mark>, lieutenant-colonel du régiment de <mark>Port-au-Prince</mark>, dans la même colonie 1766/1792',
     name: 'Hertel de Cournoyer, Jacques Ange',
     from: 'Caribbean',
     to: 'New France',
@@ -261,7 +261,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Membrède, de, lieutenant à la Louisiane en 1732, puis capitaine en 1733, puis major à la Nouvelle-Orléans, à la Louisiane 1746-1747, puis lieutenant de roi à Saint-Domingue 1770, mort à Saint Domingue en 1770',
-    annotated_bio: '<strong>Membrède, de,</strong> lieutenant à la Louisiane en 1732, puis capitaine en 1733, puis major à la <mark>Nouvelle-Orléans</mark>, à la Louisiane 1746-1747, puis lieutenant de roi à <mark>Saint-Domingue</mark> 1770, mort à Saint Domingue en 1770',
+    annotated_bio: '<strong>Membrède, de,</strong> lieutenant à la <mark>Louisiane</mark> en 1732, puis capitaine en 1733, puis major à la <mark>Nouvelle-Orléans</mark>, à la <mark>Louisiane</mark> 1746-1747, puis lieutenant de roi à <mark>Saint-Domingue</mark> 1770, mort à <mark>Saint Domingue</mark> en 1770',
     name: 'Membrède, de,',
     from: 'Caribbean',
     to: 'Louisiana',
@@ -281,7 +281,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Ponssy, Joseph de, rentre au service de la compagnie des Indes avec un brevet d\'infantrie à l\'Île Bourbon en 1732, commission de capitaine en 1740, passe du temps à l\'Île de France puis à Pondichery en 1741 et 1742, major général des ville et fort de Pondichéry  en 1743, reconnu la même année major générak des troupes de l\'Île de France',
-    annotated_bio: '<strong>Ponssy, Joseph de</strong>, rentre au service de la compagnie des Indes avec un brevet d\'infantrie à l\'Île Bourbon en 1732, commission de capitaine en 1740, passe du temps à l\'<mark>Île de France</mark> puis à Pondichery en 1741 et 1742, major général des ville et fort de <mark>Pondichéry</mark>  en 1743, reconnu la même année major générak des troupes de l\'<mark>Île de France</mark>',
+    annotated_bio: '<strong>Ponssy, Joseph de</strong>, rentre au service de la compagnie des Indes avec un brevet d\'infantrie à l\'Île <mark>Bourbon</mark> en 1732, commission de capitaine en 1740, passe du temps à l\'<mark>Île de France</mark> puis à <mark>Pondichery</mark> en 1741 et 1742, major général des ville et fort de <mark>Pondichéry</mark>  en 1743, reconnu la même année major générak des troupes de l\'<mark>Île de France</mark>',
     name: 'Ponssy, Joseph de',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -291,7 +291,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Villotte, Pierre, navigateur en provenance de Louisbourg, arrive au Cap-Français, à Saint-Domingue en 1732, il y demeure habituellement',
-    annotated_bio: '<strong>Villotte, Pierre</strong>, navigateur en provenance de <mark>Louisbourg</mark>, arrive au <mark>Cap-Français</mark>, à Saint-Domingue en 1732, il y demeure habituellement',
+    annotated_bio: '<strong>Villotte, Pierre</strong>, navigateur en provenance de <mark>Louisbourg</mark>, arrive au <mark>Cap-Français</mark>, à <mark>Saint-Domingue</mark> en 1732, il y demeure habituellement',
     name: 'Villotte, Pierre',
     from: 'Caribbean',
     to: 'New France',
@@ -321,7 +321,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Noyelles, Charles Joseph de, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en Louisiane en 1739, enseigne en second au Canada en 1744, commandant du fort à Michilimackinac, puis gouverneur de Montréal en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au Canada, à Cayenne en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à Gorée ',
-    annotated_bio: '<strong>Noyelles, Charles Joseph de</strong>, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en <mark>Louisiane</mark> en 1739, enseigne en second au <mark>Canada</mark> en 1744, commandant du fort à Michilimackinac, puis gouverneur de Montréal en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au <mark>Canada</mark>, à <mark>Cayenne</mark> en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à <mark>Gorée</mark> ',
+    annotated_bio: '<strong>Noyelles, Charles Joseph de</strong>, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en <mark>Louisiane</mark> en 1739, enseigne en second au <mark>Canada</mark> en 1744, commandant du fort à Michilimackinac, puis gouverneur de <mark>Montréal</mark> en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au <mark>Canada</mark>, à <mark>Cayenne</mark> en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à <mark>Gorée</mark> ',
     name: 'Noyelles, Charles Joseph de',
     from: 'New France',
     to: 'Louisiana',
@@ -331,7 +331,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Noyelles, Charles Joseph de, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en Louisiane en 1739, enseigne en second au Canada en 1744, commandant du fort à Michilimackinac, puis gouverneur de Montréal en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au Canada, à Cayenne en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à Gorée ',
-    annotated_bio: '<strong>Noyelles, Charles Joseph de</strong>, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en <mark>Louisiane</mark> en 1739, enseigne en second au <mark>Canada</mark> en 1744, commandant du fort à Michilimackinac, puis gouverneur de Montréal en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au <mark>Canada</mark>, à <mark>Cayenne</mark> en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à <mark>Gorée</mark> ',
+    annotated_bio: '<strong>Noyelles, Charles Joseph de</strong>, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en <mark>Louisiane</mark> en 1739, enseigne en second au <mark>Canada</mark> en 1744, commandant du fort à Michilimackinac, puis gouverneur de <mark>Montréal</mark> en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au <mark>Canada</mark>, à <mark>Cayenne</mark> en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à <mark>Gorée</mark> ',
     name: 'Noyelles, Charles Joseph de',
     from: 'Louisiana',
     to: 'Guyana',
@@ -341,7 +341,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Noyelles, Charles Joseph de, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en Louisiane en 1739, enseigne en second au Canada en 1744, commandant du fort à Michilimackinac, puis gouverneur de Montréal en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au Canada, à Cayenne en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à Gorée ',
-    annotated_bio: '<strong>Noyelles, Charles Joseph de</strong>, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en <mark>Louisiane</mark> en 1739, enseigne en second au <mark>Canada</mark> en 1744, commandant du fort à Michilimackinac, puis gouverneur de Montréal en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au <mark>Canada</mark>, à <mark>Cayenne</mark> en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à <mark>Gorée</mark> ',
+    annotated_bio: '<strong>Noyelles, Charles Joseph de</strong>, comte, en service en tant que cadet en 1734. Campagne contre le Chickasaw en <mark>Louisiane</mark> en 1739, enseigne en second au <mark>Canada</mark> en 1744, commandant du fort à Michilimackinac, puis gouverneur de <mark>Montréal</mark> en 1748, Ensigne en pied en 1749, puis lieutenant en 1756, fait de muliples campagnes au <mark>Canada</mark>, à <mark>Cayenne</mark> en 1765, capitaine des volontaires d\'Afrique, mort en 1768 à <mark>Gorée</mark> ',
     name: 'Noyelles, Charles Joseph de',
     from: 'Guyana',
     to: 'Senegal',
@@ -351,7 +351,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Sabrevois de Bleury, Charles de, né en 1734 au Canada, cadet des troupes au Canada, enseigne en second à l\'Île Royale en 1750, Lieutenant en 1759, et Capitaine en 1766, puis capitaine réformé du régiment de l\'ïle Bourbon à partir de 1775',
-    annotated_bio: '<strong>Sabrevois de Bleury, Charles de</strong>, né en 1734 au <mark>Canada</mark>, cadet des troupes au <mark>Canada</mark>, enseigne en second à l\'Île Royale en 1750, Lieutenant en 1759, et Capitaine en 1766, puis capitaine réformé du régiment de l\'<mark>ïle Bourbon</mark> à partir de 1775',
+    annotated_bio: '<strong>Sabrevois de Bleury, Charles de</strong>, né en 1734 au <mark>Canada</mark>, cadet des troupes au <mark>Canada</mark>, enseigne en second à l\'<mark>Île Royale</mark> en 1750, Lieutenant en 1759, et Capitaine en 1766, puis capitaine réformé du régiment de l\'<mark>ïle <mark>Bourbon</mark></mark> à partir de 1775',
     name: 'Sabrevois de Bleury, Charles de',
     from: 'Isle Bourbon & Isle of France',
     to: 'New France',
@@ -361,7 +361,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Catalogne, Charles Gédéon de, né à Louisbourg le 14 février 1735, entré au service à Louisbourg en 1749, passe au canada en 1757, en 1764 passe à Cayenne, puis lieutenant au régiment du Port-au-Prince, capitaine aide-major aux Cayes (Saint-Domingue) ',
-    annotated_bio: '<strong>Catalogne, Charles Gédéon de</strong>, né à Louisbourg le 14 février 1735, entré au service à Louisbourg en 1749, passe au <mark>canada</mark> en 1757, en 1764 passe à <mark>Cayenne</mark>, puis lieutenant au régiment du <mark>Port-au-Prince</mark>, capitaine aide-major aux Cayes (Saint-Domingue) ',
+    annotated_bio: '<strong>Catalogne, Charles Gédéon de</strong>, né à <mark>Louisbourg</mark> le 14 février 1735, entré au service à <mark>Louisbourg</mark> en 1749, passe au <mark>canada</mark> en 1757, en 1764 passe à <mark>Cayenne</mark>, puis lieutenant au régiment du <mark>Port-au-Prince</mark>, capitaine aide-major aux Cayes (<mark>Saint-Domingue</mark>) ',
     name: 'Catalogne, Charles Gédéon de',
     from: 'Caribbean',
     to: 'New France',
@@ -371,7 +371,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Catalogne, Charles Gédéon de, né à Louisbourg le 14 février 1735, entré au service à Louisbourg en 1749, passe au canada en 1757, en 1764 passe à Cayenne, puis lieutenant au régiment du Port-au-Prince, capitaine aide-major aux Cayes (Saint-Domingue) ',
-    annotated_bio: '<strong>Catalogne, Charles Gédéon de</strong>, né à Louisbourg le 14 février 1735, entré au service à Louisbourg en 1749, passe au <mark>canada</mark> en 1757, en 1764 passe à <mark>Cayenne</mark>, puis lieutenant au régiment du <mark>Port-au-Prince</mark>, capitaine aide-major aux Cayes (Saint-Domingue) ',
+    annotated_bio: '<strong>Catalogne, Charles Gédéon de</strong>, né à <mark>Louisbourg</mark> le 14 février 1735, entré au service à <mark>Louisbourg</mark> en 1749, passe au <mark>canada</mark> en 1757, en 1764 passe à <mark>Cayenne</mark>, puis lieutenant au régiment du <mark>Port-au-Prince</mark>, capitaine aide-major aux Cayes (<mark>Saint-Domingue</mark>) ',
     name: 'Catalogne, Charles Gédéon de',
     from: 'New France',
     to: 'Guyana',
@@ -391,7 +391,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Hertel de Cournoyer, Michel, né à l\'île Royale en 1735, mort à Cayenne, en 1780, cadet à l\'île Royale, enseigne au Canada, aide-major des troupes nationales de la Guyane 1716/1782',
-    annotated_bio: '<strong>Hertel de Cournoyer, Michel</strong>, né à l\'île Royale en 1735, mort à <mark>Cayenne</mark>, en 1780, cadet à l\'île Royale, enseigne au <mark>Canada</mark>, aide-major des troupes nationales de la Guyane 1716/1782',
+    annotated_bio: '<strong>Hertel de Cournoyer, Michel</strong>, né à l\'<mark>île Royale</mark> en 1735, mort à <mark>Cayenne</mark>, en 1780, cadet à l\'<mark>île Royale</mark>, enseigne au <mark>Canada</mark>, aide-major des troupes nationales de la Guyane 1716/1782',
     name: 'Hertel de Cournoyer, Michel',
     from: 'New France',
     to: 'Guyana',
@@ -431,7 +431,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Guyon, Jean Baptiste Régis de, né en 1737 à Québec au Canada, à servit à Saint Domingue, pui en tant que capitaine d\'Infanterie à l\'île de France 1752/an VI',
-    annotated_bio: '<strong>Guyon, Jean Baptiste Régis de</strong>, né en 1737 à Québec au <mark>Canada</mark>, à servit à <mark>Saint Domingue</mark>, pui en tant que capitaine d\'Infanterie à l\'<mark>île de France</mark> 1752/an VI',
+    annotated_bio: '<strong>Guyon, Jean Baptiste Régis de</strong>, né en 1737 à <mark>Québec</mark> au <mark>Canada</mark>, à servit à <mark>Saint Domingue</mark>, pui en tant que capitaine d\'Infanterie à l\'<mark>île de France</mark> 1752/an VI',
     name: 'Guyon, Jean Baptiste Régis de',
     from: 'Caribbean',
     to: 'Isle Bourbon & Isle of France',
@@ -441,7 +441,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Guyon, Jean Baptiste Régis de, né en 1737 à Québec au Canada, à servit à Saint Domingue, pui en tant que capitaine d\'Infanterie à l\'île de France 1752/an VI',
-    annotated_bio: '<strong>Guyon, Jean Baptiste Régis de</strong>, né en 1737 à Québec au <mark>Canada</mark>, à servit à <mark>Saint Domingue</mark>, pui en tant que capitaine d\'Infanterie à l\'<mark>île de France</mark> 1752/an VI',
+    annotated_bio: '<strong>Guyon, Jean Baptiste Régis de</strong>, né en 1737 à <mark>Québec</mark> au <mark>Canada</mark>, à servit à <mark>Saint Domingue</mark>, pui en tant que capitaine d\'Infanterie à l\'<mark>île de France</mark> 1752/an VI',
     name: 'Guyon, Jean Baptiste Régis de',
     from: 'Isle Bourbon & Isle of France',
     to: 'New France',
@@ -451,7 +451,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Decous, Henry,  navigateur. Il fait des campagnes à la Martinique en 1738 et 1740 en tant que volontaire sur un navire. En 1742, Il fait une autre campagne à la Martinique en qualité de lieutenant en second sur un navire. En 1747, il fait campagne au Canada sur un bateau en qualité de capitaine en second. En 1749, il fait campagne à Saint Domingue sur un navire en qualité de second capitaine. EN 1750, il fait un voyage à la Louisiane. Il reste en Louisiane et y occuppe la position de major des milices pendant 8 ans. Il devient ensuite lieutenant de port à Saint-Pierre, à la Martinique.',
-    annotated_bio: '<strong>Decous, Henry</strong>,  navigateur. Il fait des campagnes à la Martinique en 1738 et 1740 en tant que volontaire sur un navire. En 1742, Il fait une autre campagne à la Martinique en qualité de lieutenant en second sur un navire. En 1747, il fait campagne au <mark>Canada</mark> sur un bateau en qualité de capitaine en second. En 1749, il fait campagne à <mark>Saint Domingue</mark> sur un navire en qualité de second capitaine. EN 1750, il fait un voyage à la <mark>Louisiane</mark>. Il reste en <mark>Louisiane</mark> et y occuppe la position de major des milices pendant 8 ans. Il devient ensuite lieutenant de port à Saint-Pierre, à la Martinique.',
+    annotated_bio: '<strong>Decous, Henry</strong>,  navigateur. Il fait des campagnes à la <mark>Martinique</mark> en 1738 et 1740 en tant que volontaire sur un navire. En 1742, Il fait une autre campagne à la <mark>Martinique</mark> en qualité de lieutenant en second sur un navire. En 1747, il fait campagne au <mark>Canada</mark> sur un bateau en qualité de capitaine en second. En 1749, il fait campagne à <mark>Saint Domingue</mark> sur un navire en qualité de second capitaine. EN 1750, il fait un voyage à la <mark>Louisiane</mark>. Il reste en <mark>Louisiane</mark> et y occuppe la position de major des milices pendant 8 ans. Il devient ensuite lieutenant de port à Saint-Pierre, à la <mark>Martinique</mark>.',
     name: 'Decous, Henry',
     from: 'Caribbean',
     to: 'New France',
@@ -461,7 +461,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Decous, Henry,  navigateur. Il fait des campagnes à la Martinique en 1738 et 1740 en tant que volontaire sur un navire. En 1742, Il fait une autre campagne à la Martinique en qualité de lieutenant en second sur un navire. En 1747, il fait campagne au Canada sur un bateau en qualité de capitaine en second. En 1749, il fait campagne à Saint Domingue sur un navire en qualité de second capitaine. EN 1750, il fait un voyage à la Louisiane. Il reste en Louisiane et y occuppe la position de major des milices pendant 8 ans. Il devient ensuite lieutenant de port à Saint-Pierre, à la Martinique.',
-    annotated_bio: '<strong>Decous, Henry</strong>,  navigateur. Il fait des campagnes à la Martinique en 1738 et 1740 en tant que volontaire sur un navire. En 1742, Il fait une autre campagne à la Martinique en qualité de lieutenant en second sur un navire. En 1747, il fait campagne au <mark>Canada</mark> sur un bateau en qualité de capitaine en second. En 1749, il fait campagne à <mark>Saint Domingue</mark> sur un navire en qualité de second capitaine. EN 1750, il fait un voyage à la <mark>Louisiane</mark>. Il reste en <mark>Louisiane</mark> et y occuppe la position de major des milices pendant 8 ans. Il devient ensuite lieutenant de port à Saint-Pierre, à la Martinique.',
+    annotated_bio: '<strong>Decous, Henry</strong>,  navigateur. Il fait des campagnes à la <mark>Martinique</mark> en 1738 et 1740 en tant que volontaire sur un navire. En 1742, Il fait une autre campagne à la <mark>Martinique</mark> en qualité de lieutenant en second sur un navire. En 1747, il fait campagne au <mark>Canada</mark> sur un bateau en qualité de capitaine en second. En 1749, il fait campagne à <mark>Saint Domingue</mark> sur un navire en qualité de second capitaine. EN 1750, il fait un voyage à la <mark>Louisiane</mark>. Il reste en <mark>Louisiane</mark> et y occuppe la position de major des milices pendant 8 ans. Il devient ensuite lieutenant de port à Saint-Pierre, à la <mark>Martinique</mark>.',
     name: 'Decous, Henry',
     from: 'New France',
     to: 'Louisiana',
@@ -471,7 +471,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Ailleboust de Céry, Philippe Antoine d\',  né à Quebec en 1739, entré au service vers 1748, bléssé en 1759, enseigne dans les troupes du Canada, lieutenant à Montréal, puis capitaine dans la légion de Saint-Domingue 1766',
-    annotated_bio: '<strong>Ailleboust de Céry, Philippe Antoine d\'</strong>,  né à Quebec en 1739, entré au service vers 1748, bléssé en 1759, enseigne dans les troupes du <mark>Canada</mark>, lieutenant à Montréal, puis capitaine dans la légion de <mark>Saint-Domingue</mark> 1766',
+    annotated_bio: '<strong>Ailleboust de Céry, Philippe Antoine d\'</strong>,  né à Quebec en 1739, entré au service vers 1748, bléssé en 1759, enseigne dans les troupes du <mark>Canada</mark>, lieutenant à <mark>Montréal</mark>, puis capitaine dans la légion de <mark>Saint-Domingue</mark> 1766',
     name: 'Ailleboust de Céry, Philippe Antoine d\'',
     from: 'Caribbean',
     to: 'New France',
@@ -591,7 +591,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Marchant Des Ligneris, Pierre Marie, chevalier, né au Canada, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en Louisiane en 1762, incorporé aux troupe de Cayenne en 1764, fait lieutenant en 1769, incorporé dans la légion de Saint Domingue en 1772, fait capitaine au l au régiment de Port-au-Prince en 1773',
-    annotated_bio: '<strong>Marchant Des Ligneris, Pierre Marie</strong>, chevalier, né au <mark>Canada</mark>, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en <mark>Louisiane</mark> en 1762, incorporé aux troupe de <mark>Cayenne</mark> en 1764, fait lieutenant en 1769, incorporé dans la légion de Saint Domingue en 1772, fait capitaine au l au régiment de <mark>Port-au-Prince</mark> en 1773',
+    annotated_bio: '<strong>Marchant Des Ligneris, Pierre Marie</strong>, chevalier, né au <mark>Canada</mark>, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en <mark>Louisiane</mark> en 1762, incorporé aux troupe de <mark>Cayenne</mark> en 1764, fait lieutenant en 1769, incorporé dans la légion de <mark>Saint Domingue</mark> en 1772, fait capitaine au l au régiment de <mark>Port-au-Prince</mark> en 1773',
     name: 'Marchant Des Ligneris, Pierre Marie',
     from: 'Caribbean',
     to: 'New France',
@@ -601,7 +601,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Marchant Des Ligneris, Pierre Marie, chevalier, né au Canada, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en Louisiane en 1762, incorporé aux troupe de Cayenne en 1764, fait lieutenant en 1769, incorporé dans la légion de Saint Domingue en 1772, fait capitaine au l au régiment de Port-au-Prince en 1773',
-    annotated_bio: '<strong>Marchant Des Ligneris, Pierre Marie</strong>, chevalier, né au <mark>Canada</mark>, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en <mark>Louisiane</mark> en 1762, incorporé aux troupe de <mark>Cayenne</mark> en 1764, fait lieutenant en 1769, incorporé dans la légion de Saint Domingue en 1772, fait capitaine au l au régiment de <mark>Port-au-Prince</mark> en 1773',
+    annotated_bio: '<strong>Marchant Des Ligneris, Pierre Marie</strong>, chevalier, né au <mark>Canada</mark>, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en <mark>Louisiane</mark> en 1762, incorporé aux troupe de <mark>Cayenne</mark> en 1764, fait lieutenant en 1769, incorporé dans la légion de <mark>Saint Domingue</mark> en 1772, fait capitaine au l au régiment de <mark>Port-au-Prince</mark> en 1773',
     name: 'Marchant Des Ligneris, Pierre Marie',
     from: 'New France',
     to: 'Louisiana',
@@ -611,7 +611,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Marchant Des Ligneris, Pierre Marie, chevalier, né au Canada, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en Louisiane en 1762, incorporé aux troupe de Cayenne en 1764, fait lieutenant en 1769, incorporé dans la légion de Saint Domingue en 1772, fait capitaine au l au régiment de Port-au-Prince en 1773',
-    annotated_bio: '<strong>Marchant Des Ligneris, Pierre Marie</strong>, chevalier, né au <mark>Canada</mark>, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en <mark>Louisiane</mark> en 1762, incorporé aux troupe de <mark>Cayenne</mark> en 1764, fait lieutenant en 1769, incorporé dans la légion de Saint Domingue en 1772, fait capitaine au l au régiment de <mark>Port-au-Prince</mark> en 1773',
+    annotated_bio: '<strong>Marchant Des Ligneris, Pierre Marie</strong>, chevalier, né au <mark>Canada</mark>, en 1743, entre au service en qualité de cadet en 1753, fait enseigne en <mark>Louisiane</mark> en 1762, incorporé aux troupe de <mark>Cayenne</mark> en 1764, fait lieutenant en 1769, incorporé dans la légion de <mark>Saint Domingue</mark> en 1772, fait capitaine au l au régiment de <mark>Port-au-Prince</mark> en 1773',
     name: 'Marchant Des Ligneris, Pierre Marie',
     from: 'Louisiana',
     to: 'Guyana',
@@ -631,7 +631,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Charly, de, cadet au Québec à partir de 1744, enseigne à Louisbourg à partir de 1749, puis major des troupes en 1750, brevet d\'aide-major den 1759, continue ses service jusqu\'à la prise du Canada, puis major de l\'île de Gorée',
-    annotated_bio: '<strong>Charly, de,</strong> cadet au Québec à partir de 1744, enseigne à Louisbourg à partir de 1749, puis major des troupes en 1750, brevet d\'aide-major den 1759, continue ses service jusqu\'à la prise du <mark>Canada</mark>, puis major de l\'île de <mark>Gorée</mark>',
+    annotated_bio: '<strong>Charly, de,</strong> cadet au <mark>Québec</mark> à partir de 1744, enseigne à <mark>Louisbourg</mark> à partir de 1749, puis major des troupes en 1750, brevet d\'aide-major den 1759, continue ses service jusqu\'à la prise du <mark>Canada</mark>, puis major de l\'île de <mark>Gorée</mark>',
     name: 'Charly, de,',
     from: 'New France',
     to: 'Senegal',
@@ -641,7 +641,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Dupont Du Chambon, Charles François Ferdinand, entre au service en 1744. Lieutenant des troupes détachées de la Marine au Canada et à l\'île Royale, capitaine au régiment de Foix, à Saint-Domingue 1777',
-    annotated_bio: '<strong>Dupont Du Chambon, Charles François Ferdinand</strong>, entre au service en 1744. Lieutenant des troupes détachées de la Marine au <mark>Canada</mark> et à l\'île Royale, capitaine au régiment de Foix, à <mark>Saint-Domingue</mark> 1777',
+    annotated_bio: '<strong>Dupont Du Chambon, Charles François Ferdinand</strong>, entre au service en 1744. Lieutenant des troupes détachées de la Marine au <mark>Canada</mark> et à l\'<mark>île Royale</mark>, capitaine au régiment de Foix, à <mark>Saint-Domingue</mark> 1777',
     name: 'Dupont Du Chambon, Charles François Ferdinand',
     from: 'Caribbean',
     to: 'New France',
@@ -661,7 +661,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Desvaulx, Nicolas Jacques, né à Chandernagor en 1745, passe en France, renvoyé aux indes avec commission de capitaine en 1771, capitaine commandant d\'une compagnie d\'artillerie à Pondichéry en 1777, à l\'Île de France entre 1781 à 1786, où il est capitaine d\'artillerie,   fait lieutenant colonel en 1787',
-    annotated_bio: '<strong>Desvaulx, Nicolas Jacques</strong>, né à Chandernagor en 1745, passe en France, renvoyé aux indes avec commission de capitaine en 1771, capitaine commandant d\'une compagnie d\'artillerie à <mark>Pondichéry</mark> en 1777, à l\'<mark>Île de France</mark> entre 1781 à 1786, où il est capitaine d\'artillerie,   fait lieutenant colonel en 1787',
+    annotated_bio: '<strong>Desvaulx, Nicolas Jacques</strong>, né à <mark>Chandernagor</mark> en 1745, passe en France, renvoyé aux indes avec commission de capitaine en 1771, capitaine commandant d\'une compagnie d\'artillerie à <mark>Pondichéry</mark> en 1777, à l\'<mark>Île de France</mark> entre 1781 à 1786, où il est capitaine d\'artillerie,   fait lieutenant colonel en 1787',
     name: 'Desvaulx, Nicolas Jacques',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -671,7 +671,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'La Glaine d\'Auzon, Jean René, soldat dans les troupes de l\'inde à partir de 1745,devient lieutenant à Pondichery à partir de 1761, major commandant d\'artillerie au Sénegal en 1783',
-    annotated_bio: '<strong>La Glaine d\'Auzon, Jean René</strong>, soldat dans les troupes de l\'inde à partir de 1745,devient lieutenant à <mark>Pondichery</mark> à partir de 1761, major commandant d\'artillerie au <mark>Sénegal</mark> en 1783',
+    annotated_bio: '<strong>La Glaine d\'Auzon, Jean René</strong>, soldat dans les troupes de l\'<mark>inde</mark> à partir de 1745,devient lieutenant à <mark>Pondichery</mark> à partir de 1761, major commandant d\'artillerie au <mark>Sénegal</mark> en 1783',
     name: 'La Glaine d\'Auzon, Jean René',
     from: 'India',
     to: 'Senegal',
@@ -711,7 +711,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Ailleboust de Saint-Vilmé, Jean Baptiste d\', cadet et enseigne dans les compagnie de la Marine à l\'Île Royale en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de Louisbourg en 1758, nommé à une compagnie des troupes nationales à Cayenne en 1764, authorisé à passer à Gorée en 1768,  lieutenant de roi à Saint-Louis ',
-    annotated_bio: '<strong>Ailleboust de Saint-Vilmé, Jean Baptiste d\'</strong>, cadet et enseigne dans les compagnie de la Marine à l\'<mark>Île Royale</mark> en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de Louisbourg en 1758, nommé à une compagnie des troupes nationales à <mark>Cayenne</mark> en 1764, authorisé à passer à <mark>Gorée</mark> en 1768,  lieutenant de roi à <mark>Saint-Louis</mark> ',
+    annotated_bio: '<strong>Ailleboust de Saint-Vilmé, Jean Baptiste d\'</strong>, cadet et enseigne dans les compagnie de la Marine à l\'<mark>Île Royale</mark> en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de <mark>Louisbourg</mark> en 1758, nommé à une compagnie des troupes nationales à <mark>Cayenne</mark> en 1764, authorisé à passer à <mark>Gorée</mark> en 1768,  lieutenant de roi à <mark>Saint-Louis</mark> ',
     name: 'Ailleboust de Saint-Vilmé, Jean Baptiste d\'',
     from: 'Caribbean',
     to: 'New France',
@@ -721,7 +721,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Ailleboust de Saint-Vilmé, Jean Baptiste d\', cadet et enseigne dans les compagnie de la Marine à l\'Île Royale en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de Louisbourg en 1758, nommé à une compagnie des troupes nationales à Cayenne en 1764, authorisé à passer à Gorée en 1768,  lieutenant de roi à Saint-Louis ',
-    annotated_bio: '<strong>Ailleboust de Saint-Vilmé, Jean Baptiste d\'</strong>, cadet et enseigne dans les compagnie de la Marine à l\'<mark>Île Royale</mark> en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de Louisbourg en 1758, nommé à une compagnie des troupes nationales à <mark>Cayenne</mark> en 1764, authorisé à passer à <mark>Gorée</mark> en 1768,  lieutenant de roi à <mark>Saint-Louis</mark> ',
+    annotated_bio: '<strong>Ailleboust de Saint-Vilmé, Jean Baptiste d\'</strong>, cadet et enseigne dans les compagnie de la Marine à l\'<mark>Île Royale</mark> en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de <mark>Louisbourg</mark> en 1758, nommé à une compagnie des troupes nationales à <mark>Cayenne</mark> en 1764, authorisé à passer à <mark>Gorée</mark> en 1768,  lieutenant de roi à <mark>Saint-Louis</mark> ',
     name: 'Ailleboust de Saint-Vilmé, Jean Baptiste d\'',
     from: 'New France',
     to: 'Guyana',
@@ -731,7 +731,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Ailleboust de Saint-Vilmé, Jean Baptiste d\', cadet et enseigne dans les compagnie de la Marine à l\'Île Royale en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de Louisbourg en 1758, nommé à une compagnie des troupes nationales à Cayenne en 1764, authorisé à passer à Gorée en 1768,  lieutenant de roi à Saint-Louis ',
-    annotated_bio: '<strong>Ailleboust de Saint-Vilmé, Jean Baptiste d\'</strong>, cadet et enseigne dans les compagnie de la Marine à l\'<mark>Île Royale</mark> en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de Louisbourg en 1758, nommé à une compagnie des troupes nationales à <mark>Cayenne</mark> en 1764, authorisé à passer à <mark>Gorée</mark> en 1768,  lieutenant de roi à <mark>Saint-Louis</mark> ',
+    annotated_bio: '<strong>Ailleboust de Saint-Vilmé, Jean Baptiste d\'</strong>, cadet et enseigne dans les compagnie de la Marine à l\'<mark>Île Royale</mark> en 1747 et 1749, puis Lieutenant en 1757, employé pendant le siege de <mark>Louisbourg</mark> en 1758, nommé à une compagnie des troupes nationales à <mark>Cayenne</mark> en 1764, authorisé à passer à <mark>Gorée</mark> en 1768,  lieutenant de roi à <mark>Saint-Louis</mark> ',
     name: 'Ailleboust de Saint-Vilmé, Jean Baptiste d\'',
     from: 'Guyana',
     to: 'Senegal',
@@ -741,7 +741,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Hertel de Saint-Francois, Antoine, né en Canada, entre au service cadet en 1747, fait officier à Louisbourg en 1751, nommé à une lieutenance dans la légion de l\'Île de France en 1767 et devient capitain en 1770.',
-    annotated_bio: '<strong>Hertel de Saint-Francois, Antoine</strong>, né en <mark>Canada</mark>, entre au service cadet en 1747, fait officier à Louisbourg en 1751, nommé à une lieutenance dans la légion de l\'<mark>Île de France</mark> en 1767 et devient capitain en 1770.',
+    annotated_bio: '<strong>Hertel de Saint-Francois, Antoine</strong>, né en <mark>Canada</mark>, entre au service cadet en 1747, fait officier à <mark>Louisbourg</mark> en 1751, nommé à une lieutenance dans la légion de l\'<mark>Île de France</mark> en 1767 et devient capitain en 1770.',
     name: 'Hertel de Saint-Francois, Antoine',
     from: 'Isle Bourbon & Isle of France',
     to: 'New France',
@@ -811,7 +811,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Meyracq, Laurent Domenger de, nommé bailli au bailliage royal de Louisbourg à l\'île Royale en 1750, puis nommé juge de l\'amirauté à la Guadeloupe en 1767',
-    annotated_bio: '<strong>Meyracq, Laurent Domenger de</strong>, nommé bailli au bailliage royal de Louisbourg à l\'<mark>île Royale</mark> en 1750, puis nommé juge de l\'amirauté à la <mark>Guadeloupe</mark> en 1767',
+    annotated_bio: '<strong>Meyracq, Laurent Domenger de</strong>, nommé bailli au bailliage royal de <mark>Louisbourg</mark> à l\'<mark>île Royale</mark> en 1750, puis nommé juge de l\'amirauté à la <mark>Guadeloupe</mark> en 1767',
     name: 'Meyracq, Laurent Domenger de',
     from: 'Caribbean',
     to: 'New France',
@@ -851,7 +851,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Courville, Jean Benoist de, né à Montréal le 8 décembre 1751, lieutenant au régiment de la Martinique, puis capitaine au régiment de la Guadeloupe ',
-    annotated_bio: '<strong>Courville, Jean Benoist de</strong>, né à <mark>Montréal</mark> le 8 décembre 1751, lieutenant au régiment de la <mark>Martinique</mark>, puis capitaine au régiment de la Guadeloupe ',
+    annotated_bio: '<strong>Courville, Jean Benoist de</strong>, né à <mark>Montréal</mark> le 8 décembre 1751, lieutenant au régiment de la <mark>Martinique</mark>, puis capitaine au régiment de la <mark>Guadeloupe</mark> ',
     name: 'Courville, Jean Benoist de',
     from: 'Caribbean',
     to: 'New France',
@@ -871,7 +871,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Olivier, Joseph, commis aux ecritures à Québec à partir de 1751, puischargé du détail de l\'artillerie dans la même colonie à partir de 1752, retour en France en 1760 nommé garde-magasin principal à Port-au-Prince à Saint-Domingue à partir de 1786',
-    annotated_bio: '<strong>Olivier, Joseph</strong>, commis aux ecritures à <mark>Québec</mark> à partir de 1751, puischargé du détail de l\'artillerie dans la même colonie à partir de 1752, retour en France en 1760 nommé garde-magasin principal à <mark>Port-au-Prince</mark> à Saint-Domingue à partir de 1786',
+    annotated_bio: '<strong>Olivier, Joseph</strong>, commis aux ecritures à <mark>Québec</mark> à partir de 1751, puischargé du détail de l\'artillerie dans la même colonie à partir de 1752, retour en France en 1760 nommé garde-magasin principal à <mark>Port-au-Prince</mark> à <mark>Saint-Domingue</mark> à partir de 1786',
     name: 'Olivier, Joseph',
     from: 'Caribbean',
     to: 'New France',
@@ -891,7 +891,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Billouard Dessalles de Kervaségan, René Antoine Agathe, né en 1736, campagne volontaire et enseigne au service des la compagnie dans les Indes Orientales de 1752 à 1755, puis enseigne des troupes de la Louisiane en 1760, passe à Saint Domingue en 1766, puis officier puis capitaine au régiment de la Guadeloupe à partir de 1775',
-    annotated_bio: '<strong>Billouard Dessalles de Kervaségan, René Antoine Agathe</strong>, né en 1736, campagne volontaire et enseigne au service des la compagnie dans les Indes Orientales de 1752 à 1755, puis enseigne des troupes de la <mark>Louisiane</mark> en 1760, passe à <mark>Saint Domingue</mark> en 1766, puis officier puis capitaine au régiment de la Guadeloupe à partir de 1775',
+    annotated_bio: '<strong>Billouard Dessalles de Kervaségan, René Antoine Agathe</strong>, né en 1736, campagne volontaire et enseigne au service des la compagnie dans les Indes Orientales de 1752 à 1755, puis enseigne des troupes de la <mark>Louisiane</mark> en 1760, passe à <mark>Saint Domingue</mark> en 1766, puis officier puis capitaine au régiment de la <mark>Guadeloupe</mark> à partir de 1775',
     name: 'Billouard Dessalles de Kervaségan, René Antoine Agathe',
     from: 'Caribbean',
     to: 'Louisiana',
@@ -1031,7 +1031,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Gohin, Pierre André de, chevalier de Montreuil, major général à Montréal au Canada en 1755, puis gouverneur général, par intérim de Saint-Domingue à partir de 1763',
-    annotated_bio: '<strong>Gohin, Pierre André de</strong>, chevalier de Montreuil, major général à Montréal au <mark>Canada</mark> en 1755, puis gouverneur général, par intérim de <mark>Saint-Domingue</mark> à partir de 1763',
+    annotated_bio: '<strong>Gohin, Pierre André de</strong>, chevalier de Montreuil, major général à <mark>Montréal</mark> au <mark>Canada</mark> en 1755, puis gouverneur général, par intérim de <mark>Saint-Domingue</mark> à partir de 1763',
     name: 'Gohin, Pierre André de',
     from: 'Caribbean',
     to: 'New France',
@@ -1041,7 +1041,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Lépervanche, Eustache de, commence à servir au Canada en 1755 en tant que cadet, fait enseigne des troupes du Canada en 1759,fait lieutenant dans la légion de l\'Île de France en 1766 puis lieutenant dans la même legion en 1766, passe en la même qualité au régiment de l\'Île Bourbon capitaine au régiment de Bourbon, passe capitaine au régimen de l\'Île Bourbon en 1785, obtient sa retraite en 1786.',
-    annotated_bio: '<strong>Lépervanche, Eustache de</strong>, commence à servir au <mark>Canada</mark> en 1755 en tant que cadet, fait enseigne des troupes du <mark>Canada</mark> en 1759,fait lieutenant dans la légion de l\'<mark>Île de France</mark> en 1766 puis lieutenant dans la même legion en 1766, passe en la même qualité au régiment de l\'Île Bourbon capitaine au régiment de Bourbon, passe capitaine au régimen de l\'Île Bourbon en 1785, obtient sa retraite en 1786.',
+    annotated_bio: '<strong>Lépervanche, Eustache de</strong>, commence à servir au <mark>Canada</mark> en 1755 en tant que cadet, fait enseigne des troupes du <mark>Canada</mark> en 1759,fait lieutenant dans la légion de l\'<mark>Île de France</mark> en 1766 puis lieutenant dans la même legion en 1766, passe en la même qualité au régiment de l\'Île <mark>Bourbon</mark> capitaine au régiment de <mark>Bourbon</mark>, passe capitaine au régimen de l\'Île <mark>Bourbon</mark> en 1785, obtient sa retraite en 1786.',
     name: 'Lépervanche, Eustache de',
     from: 'Isle Bourbon & Isle of France',
     to: 'New France',
@@ -1131,7 +1131,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Durseau, Jean,  habitant du Canada à partir d\'avant 1757 demande de secours et de passage à Saint-Domingue ou à la Martinique en 1763',
-    annotated_bio: '<strong>Durseau, Jean</strong>,  habitant du <mark>Canada</mark> à partir d\'avant 1757 demande de secours et de passage à <mark>Saint-Domingue</mark> ou à la Martinique en 1763',
+    annotated_bio: '<strong>Durseau, Jean</strong>,  habitant du <mark>Canada</mark> à partir d\'avant 1757 demande de secours et de passage à <mark>Saint-Domingue</mark> ou à la <mark>Martinique</mark> en 1763',
     name: 'Durseau, Jean',
     from: 'Caribbean',
     to: 'New France',
@@ -1141,7 +1141,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Godefroy de Linetot, Maurice Régis, né à Montréal, entre au service au Canada en 1757, puis capitaine aux régiments de l\'île de France, bléssé à Madagascar, mission aux Indies Orientales, 1757/1785',
-    annotated_bio: '<strong>Godefroy de Linetot, Maurice Régis</strong>, né à Montréal, entre au service au <mark>Canada</mark> en 1757, puis capitaine aux régiments de l\'<mark>île de France</mark>, bléssé à Madagascar, mission aux Indies Orientales, 1757/1785',
+    annotated_bio: '<strong>Godefroy de Linetot, Maurice Régis</strong>, né à <mark>Montréal</mark>, entre au service au <mark>Canada</mark> en 1757, puis capitaine aux régiments de l\'<mark>île de France</mark>, bléssé à Madagascar, mission aux Indies Orientales, 1757/1785',
     name: 'Godefroy de Linetot, Maurice Régis',
     from: 'Isle Bourbon & Isle of France',
     to: 'New France',
@@ -1231,7 +1231,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Gannes, Georges de, né au Canada en 1759, cadet gentilhomme, sous-lieutenant au régiment du Cap, à Saint-Domingue, puis au régiment de la Martinique 1779/1790',
-    annotated_bio: '<strong>Gannes, Georges de</strong>, né au <mark>Canada</mark> en 1759, cadet gentilhomme, sous-lieutenant au régiment du Cap, à <mark>Saint-Domingue</mark>, puis au régiment de la Martinique 1779/1790',
+    annotated_bio: '<strong>Gannes, Georges de</strong>, né au <mark>Canada</mark> en 1759, cadet gentilhomme, sous-lieutenant au régiment du Cap, à <mark>Saint-Domingue</mark>, puis au régiment de la <mark>Martinique</mark> 1779/1790',
     name: 'Gannes, Georges de',
     from: 'Caribbean',
     to: 'New France',
@@ -1241,7 +1241,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Macarty de Macteigne, de, chevalier, entre au service en 1759. Enseigne des troupes de la Louisiane à partir de 1762, passe à Saint Domingue en 1779, puis lieutenant des grenadiers volontaires au Cap-Français à Saint-Domingue. Fils du Lieutenant au roi à la Louisiane',
-    annotated_bio: '<strong>Macarty de Macteigne, de,</strong> chevalier, entre au service en 1759. Enseigne des troupes de la <mark>Louisiane</mark> à partir de 1762, passe à Saint Domingue en 1779, puis lieutenant des grenadiers volontaires au <mark>Cap-Français</mark> à Saint-Domingue. Fils du Lieutenant au roi à la <mark>Louisiane</mark>',
+    annotated_bio: '<strong>Macarty de Macteigne, de,</strong> chevalier, entre au service en 1759. Enseigne des troupes de la <mark>Louisiane</mark> à partir de 1762, passe à <mark>Saint Domingue</mark> en 1779, puis lieutenant des grenadiers volontaires au <mark>Cap-Français</mark> à <mark>Saint-Domingue</mark>. Fils du Lieutenant au roi à la <mark>Louisiane</mark>',
     name: 'Macarty de Macteigne, de,',
     from: 'Caribbean',
     to: 'Louisiana',
@@ -1261,7 +1261,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Dantier, Maximin Joseph Félix, engagé dans les troupes de la compagnie des indes en 1759, depart pour l\'Île de France en 1761, en guerre sur la côte Malabare en Inde en 1775, nommé sous lieutenant de la Milice bourgeoise de Mahé en 1778, officier en 1778, sous lieutenant au régiment de Pondichéry en 1784, puis à L\'Île de France en 1785, lieutenant en second en 1787',
-    annotated_bio: '<strong>Dantier, Maximin Joseph Félix</strong>, engagé dans les troupes de la compagnie des indes en 1759, depart pour l\'<mark>Île de France</mark> en 1761, en guerre sur la côte Malabare en Inde en 1775, nommé sous lieutenant de la Milice bourgeoise de Mahé en 1778, officier en 1778, sous lieutenant au régiment de <mark>Pondichéry</mark> en 1784, puis à L\'<mark>Île de France</mark> en 1785, lieutenant en second en 1787',
+    annotated_bio: '<strong>Dantier, Maximin Joseph Félix</strong>, engagé dans les troupes de la compagnie des <mark>inde</mark>s en 1759, depart pour l\'<mark>Île de France</mark> en 1761, en guerre sur la côte Malabare en <mark>Inde</mark> en 1775, nommé sous lieutenant de la Milice bourgeoise de Mahé en 1778, officier en 1778, sous lieutenant au régiment de <mark>Pondichéry</mark> en 1784, puis à L\'<mark>Île de France</mark> en 1785, lieutenant en second en 1787',
     name: 'Dantier, Maximin Joseph Félix',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -1271,7 +1271,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Petit, François, à l\'Île de France en 1761, incorporé au régiment de l\'Île de France en 1775,  adjudant au régiment de l\'Île Bourbon à partir de 1785, puis capitaine de la garde nationale à Pondichéry à partir de 1793',
-    annotated_bio: '<strong>Petit, François</strong>, à l\'<mark>Île de France</mark> en 1761, incorporé au régiment de l\'<mark>Île de France</mark> en 1775,  adjudant au régiment de l\'Île Bourbon à partir de 1785, puis capitaine de la garde nationale à <mark>Pondichéry</mark> à partir de 1793',
+    annotated_bio: '<strong>Petit, François</strong>, à l\'<mark>Île de France</mark> en 1761, incorporé au régiment de l\'<mark>Île de France</mark> en 1775,  adjudant au régiment de l\'Île <mark>Bourbon</mark> à partir de 1785, puis capitaine de la garde nationale à <mark>Pondichéry</mark> à partir de 1793',
     name: 'Petit, François',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -1321,7 +1321,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Lartigue, Jacques, originaire de Louisbourg à l\'île Royale, nommé pour Cayenne en 1764, puis procureur du Roi de la juridiction de Cayenne, mort à Cayenne vers 1775, son père était juge à Louisbourg',
-    annotated_bio: '<strong>Lartigue, Jacques</strong>, originaire de Louisbourg à l\'<mark>île Royale</mark>, nommé pour <mark>Cayenne</mark> en 1764, puis procureur du Roi de la juridiction de <mark>Cayenne</mark>, mort à <mark>Cayenne</mark> vers 1775, son père était juge à Louisbourg',
+    annotated_bio: '<strong>Lartigue, Jacques</strong>, originaire de <mark>Louisbourg</mark> à l\'<mark>île Royale</mark>, nommé pour <mark>Cayenne</mark> en 1764, puis procureur du Roi de la juridiction de <mark>Cayenne</mark>, mort à <mark>Cayenne</mark> vers 1775, son père était juge à <mark>Louisbourg</mark>',
     name: 'Lartigue, Jacques',
     from: 'New France',
     to: 'Guyana',
@@ -1421,7 +1421,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Barrère, Jean Baptiste, négociant au Cap-Français (Saint-Domingue), escale en martinique, guadeloupe, procédure de confiscation pour fait de commerce étranger du bateau le Bayonnais, capitaine Amiaud, par le tribunal de l\'amirauté de Cayenne en 1768',
-    annotated_bio: '<strong>Barrère, Jean Baptiste</strong>, négociant au <mark>Cap-Français</mark> (Saint-Domingue), escale en martinique, guadeloupe, procédure de confiscation pour fait de commerce étranger du bateau le Bayonnais, capitaine Amiaud, par le tribunal de l\'amirauté de <mark>Cayenne</mark> en 1768',
+    annotated_bio: '<strong>Barrère, Jean Baptiste</strong>, négociant au <mark>Cap-Français</mark> (<mark>Saint-Domingue</mark>), escale en <mark>martinique</mark>, <mark>guadeloupe</mark>, procédure de confiscation pour fait de commerce étranger du bateau le Bayonnais, capitaine Amiaud, par le tribunal de l\'amirauté de <mark>Cayenne</mark> en 1768',
     name: 'Barrère, Jean Baptiste',
     from: 'Caribbean',
     to: 'Guyana',
@@ -1471,7 +1471,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'La Barthe, Jean Baptiste, négociant et habitant de Port-au-Prince à Saint-Domingue, demande une concession à Cayenne en 1770',
-    annotated_bio: '<strong>La Barthe, Jean Baptiste</strong>, négociant et habitant de <mark>Port-au-Prince</mark> à Saint-Domingue, demande une concession à <mark>Cayenne</mark> en 1770',
+    annotated_bio: '<strong>La Barthe, Jean Baptiste</strong>, négociant et habitant de <mark>Port-au-Prince</mark> à <mark>Saint-Domingue</mark>, demande une concession à <mark>Cayenne</mark> en 1770',
     name: 'La Barthe, Jean Baptiste',
     from: 'Caribbean',
     to: 'Guyana',
@@ -1601,7 +1601,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Pascaud, Joseph, natif du Bas-Poitou, ci-devant négociant à Québec, demande le brevet d\'interprète du Roi pour la langue anglaise, au Cap-Français à Saint-Domingue en 1776, il y a passé du temps, il reçoit un commission d\'interprete pour la langue anglaise au Cap en 1777 puis une commission d\'interprete du roi au pres du gouvernemente et des tribunaux de Saint Domingue en 1779',
-    annotated_bio: '<strong>Pascaud, Joseph</strong>, natif du Bas-Poitou, ci-devant négociant à <mark>Québec</mark>, demande le brevet d\'interprète du Roi pour la langue anglaise, au <mark>Cap-Français</mark> à Saint-Domingue en 1776, il y a passé du temps, il reçoit un commission d\'interprete pour la langue anglaise au Cap en 1777 puis une commission d\'interprete du roi au pres du gouvernemente et des tribunaux de Saint Domingue en 1779',
+    annotated_bio: '<strong>Pascaud, Joseph</strong>, natif du Bas-Poitou, ci-devant négociant à <mark>Québec</mark>, demande le brevet d\'interprète du Roi pour la langue anglaise, au <mark>Cap-Français</mark> à <mark>Saint-Domingue</mark> en 1776, il y a passé du temps, il reçoit un commission d\'interprete pour la langue anglaise au Cap en 1777 puis une commission d\'interprete du roi au pres du gouvernemente et des tribunaux de <mark>Saint Domingue</mark> en 1779',
     name: 'Pascaud, Joseph',
     from: 'Caribbean',
     to: 'New France',
@@ -1661,7 +1661,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Gauvain, Jérôme, natif de la Louisiane, en service à partir de 1779. Capitaine de port aux Cayes-Saint-Louis, à Saint-Domingue, service sur vaisseaux, destinations: Saint Domingue, Guinée, Martinique.',
-    annotated_bio: '<strong>Gauvain, Jérôme</strong>, natif de la <mark>Louisiane</mark>, en service à partir de 1779. Capitaine de port aux Cayes-Saint-Louis, à <mark>Saint-Domingue</mark>, service sur vaisseaux, destinations: Saint Domingue, Guinée, Martinique.',
+    annotated_bio: '<strong>Gauvain, Jérôme</strong>, natif de la <mark>Louisiane</mark>, en service à partir de 1779. Capitaine de port aux Cayes-<mark>Saint-Louis</mark>, à <mark>Saint-Domingue</mark>, service sur vaisseaux, destinations: <mark>Saint Domingue</mark>, Guinée, <mark>Martinique</mark>.',
     name: 'Gauvain, Jérôme',
     from: 'Caribbean',
     to: 'Louisiana',
@@ -1721,7 +1721,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Rambaud, Benoît Thérèse, en Martinique de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'ïle de France sous les ordres de l\'Ingenieur en chef, 1781 débarque en Inde,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de Pondichéry en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au Sénégal à partir de 1787',
-    annotated_bio: '<strong>Rambaud, Benoît Thérèse</strong>, en <mark>Martinique</mark> de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'<mark>ïle de France</mark> sous les ordres de l\'Ingenieur en chef, 1781 débarque en Inde,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de <mark>Pondichéry</mark> en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au <mark>Sénégal</mark> à partir de 1787',
+    annotated_bio: '<strong>Rambaud, Benoît Thérèse</strong>, en <mark>Martinique</mark> de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'<mark>ïle de France</mark> sous les ordres de l\'Ingenieur en chef, 1781 débarque en <mark>Inde</mark>,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de <mark>Pondichéry</mark> en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au <mark>Sénégal</mark> à partir de 1787',
     name: 'Rambaud, Benoît Thérèse',
     from: 'Caribbean',
     to: 'India',
@@ -1731,7 +1731,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Rambaud, Benoît Thérèse, en Martinique de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'ïle de France sous les ordres de l\'Ingenieur en chef, 1781 débarque en Inde,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de Pondichéry en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au Sénégal à partir de 1787',
-    annotated_bio: '<strong>Rambaud, Benoît Thérèse</strong>, en <mark>Martinique</mark> de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'<mark>ïle de France</mark> sous les ordres de l\'Ingenieur en chef, 1781 débarque en Inde,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de <mark>Pondichéry</mark> en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au <mark>Sénégal</mark> à partir de 1787',
+    annotated_bio: '<strong>Rambaud, Benoît Thérèse</strong>, en <mark>Martinique</mark> de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'<mark>ïle de France</mark> sous les ordres de l\'Ingenieur en chef, 1781 débarque en <mark>Inde</mark>,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de <mark>Pondichéry</mark> en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au <mark>Sénégal</mark> à partir de 1787',
     name: 'Rambaud, Benoît Thérèse',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -1741,7 +1741,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Rambaud, Benoît Thérèse, en Martinique de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'ïle de France sous les ordres de l\'Ingenieur en chef, 1781 débarque en Inde,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de Pondichéry en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au Sénégal à partir de 1787',
-    annotated_bio: '<strong>Rambaud, Benoît Thérèse</strong>, en <mark>Martinique</mark> de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'<mark>ïle de France</mark> sous les ordres de l\'Ingenieur en chef, 1781 débarque en Inde,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de <mark>Pondichéry</mark> en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au <mark>Sénégal</mark> à partir de 1787',
+    annotated_bio: '<strong>Rambaud, Benoît Thérèse</strong>, en <mark>Martinique</mark> de 1764 à 1767 avec son frère, retour en France en 1770, 1780 employé à l\'<mark>ïle de France</mark> sous les ordres de l\'Ingenieur en chef, 1781 débarque en <mark>Inde</mark>,  avec les troupes travail comme officier d\'infantrie et ingénieur, capitaine au régiment de <mark>Pondichéry</mark> en 1783, officier au corps des volontaires étrangers de la Marine, commandant particulier au <mark>Sénégal</mark> à partir de 1787',
     name: 'Rambaud, Benoît Thérèse',
     from: 'Isle Bourbon & Isle of France',
     to: 'Senegal',
@@ -1801,7 +1801,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Dubois, en activité à partir e 1766. Sénéchal et lieutenant-général d\'amirauté à la Guadeloupe, administration et magistrature à Saint Domingue, il sollicite un emploi de son grade dans la Louisiane vers 1780',
-    annotated_bio: '<strong>Dubois</strong>, en activité à partir e 1766. Sénéchal et lieutenant-général d\'amirauté à la Guadeloupe, administration et magistrature à <mark>Saint Domingue</mark>, il sollicite un emploi de son grade dans la <mark>Louisiane</mark> vers 1780',
+    annotated_bio: '<strong>Dubois</strong>, en activité à partir e 1766. Sénéchal et lieutenant-général d\'amirauté à la <mark>Guadeloupe</mark>, administration et magistrature à <mark>Saint Domingue</mark>, il sollicite un emploi de son grade dans la <mark>Louisiane</mark> vers 1780',
     name: 'Dubois',
     from: 'Caribbean',
     to: 'Louisiana',
@@ -1821,7 +1821,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Manent, Jean Baptiste, service dans la legion de l\'Île de France en qualité de soldat à partir de 1766 puis lieutenant à partir de 1772, 1785 nommé capitaine commandant au régiment de l\'ïle Bourbon, puis capitaine à partir de 1785, incorporé au régiment de Pondichery en 1789 ',
-    annotated_bio: '<strong>Manent, Jean Baptiste</strong>, service dans la legion de l\'<mark>Île de France</mark> en qualité de soldat à partir de 1766 puis lieutenant à partir de 1772, 1785 nommé capitaine commandant au régiment de l\'ïle Bourbon, puis capitaine à partir de 1785, incorporé au régiment de <mark>Pondichery</mark> en 1789 ',
+    annotated_bio: '<strong>Manent, Jean Baptiste</strong>, service dans la legion de l\'<mark>Île de France</mark> en qualité de soldat à partir de 1766 puis lieutenant à partir de 1772, 1785 nommé capitaine commandant au régiment de l\'ïle <mark>Bourbon</mark>, puis capitaine à partir de 1785, incorporé au régiment de <mark>Pondichery</mark> en 1789 ',
     name: 'Manent, Jean Baptiste',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -1841,7 +1841,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Boyé, Pierre, passe à l\'Île de France en 1768 ou il est sergent, passe à l\'Île Bourbon en 1778 ou il est commis aux écritures, retrourne à l\'Île de France en 1780  pour être employé comme commis aux écritures, commission de garde d\'artillerie de l\'Equipage de l\'armée dans l\'Inde en 1781',
-    annotated_bio: '<strong>Boyé, Pierre</strong>, passe à l\'<mark>Île de France</mark> en 1768 ou il est sergent, passe à l\'Île Bourbon en 1778 ou il est commis aux écritures, retrourne à l\'<mark>Île de France</mark> en 1780  pour être employé comme commis aux écritures, commission de garde d\'artillerie de l\'Equipage de l\'armée dans l\'<mark>Inde</mark> en 1781',
+    annotated_bio: '<strong>Boyé, Pierre</strong>, passe à l\'<mark>Île de France</mark> en 1768 ou il est sergent, passe à l\'Île <mark>Bourbon</mark> en 1778 ou il est commis aux écritures, retrourne à l\'<mark>Île de France</mark> en 1780  pour être employé comme commis aux écritures, commission de garde d\'artillerie de l\'Equipage de l\'armée dans l\'<mark>Inde</mark> en 1781',
     name: 'Boyé, Pierre',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -1901,7 +1901,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Biemeré, Louis Joseph, natif de Givet, sergent dans les troupes nationales de Cayenne à partir de 1769, puis soldat au régiment de Port-au-Prince à Saint-Domingue',
-    annotated_bio: '<strong>Biemeré, Louis Joseph</strong>, natif de Givet, sergent dans les troupes nationales de <mark>Cayenne</mark> à partir de 1769, puis soldat au régiment de <mark>Port-au-Prince</mark> à Saint-Domingue',
+    annotated_bio: '<strong>Biemeré, Louis Joseph</strong>, natif de Givet, sergent dans les troupes nationales de <mark>Cayenne</mark> à partir de 1769, puis soldat au régiment de <mark>Port-au-Prince</mark> à <mark>Saint-Domingue</mark>',
     name: 'Biemeré, Louis Joseph',
     from: 'Caribbean',
     to: 'Guyana',
@@ -1911,7 +1911,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Blandin, Jean Baptiste, aide chirurgien à l\'Île de France de 1769 à 1776, puis chirurgien-major dans les Indes Orientales à partir de 1779, à Pondichery,  puis à l\'Île de Bourbon à partir de 1786',
-    annotated_bio: '<strong>Blandin, Jean Baptiste</strong>, aide chirurgien à l\'<mark>Île de France</mark> de 1769 à 1776, puis chirurgien-major dans les Indes Orientales à partir de 1779, à <mark>Pondichery</mark>,  puis à l\'Île de Bourbon à partir de 1786',
+    annotated_bio: '<strong>Blandin, Jean Baptiste</strong>, aide chirurgien à l\'<mark>Île de France</mark> de 1769 à 1776, puis chirurgien-major dans les Indes Orientales à partir de 1779, à <mark>Pondichery</mark>,  puis à l\'Île de <mark>Bourbon</mark> à partir de 1786',
     name: 'Blandin, Jean Baptiste',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -1921,7 +1921,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Collet, Jean Maurice, chirurgien à la Nouvelle-Orléans, (Louisiane) en 1769, puis à Saint-Domingue',
-    annotated_bio: '<strong>Collet, Jean Maurice</strong>, chirurgien à la <mark>Nouvelle-Orléans</mark>, (Louisiane) en 1769, puis à <mark>Saint-Domingue</mark>',
+    annotated_bio: '<strong>Collet, Jean Maurice</strong>, chirurgien à la <mark>Nouvelle-Orléans</mark>, (<mark>Louisiane</mark>) en 1769, puis à <mark>Saint-Domingue</mark>',
     name: 'Collet, Jean Maurice',
     from: 'Caribbean',
     to: 'Louisiana',
@@ -1931,7 +1931,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Estoupan de Laval, Louis François, passe à l\'Île de France en 1769. Employé de la compagnie des Indes sur cette Île jusqu\'en 1774. Entre dabs les bureaux de l\'administrtaion de Pondichéry en 1774. Passe à Mahé en 1777. Fait prisonier par les Anglais en 1778 pendant 4 ans. En 1782, il est employé dans le bureau de la comptabilité des Îles de France et de Bourbon.  Son Pere est mort Chef des Ventes de la COmpagnie des Indes. Mr David son oncle est mort Directeur de la Compagnie des Indes et Mr David son fils a été gouverneur des Îles de Bourbon et de France. Son oncle Mr Estoupan de Villeneuve était capitaine des vaisseaux des la Compagnie des Indes. Tous les trois oncles on été successivement gouverneurs du Sénégal',
-    annotated_bio: '<strong>Estoupan de Laval, Louis François</strong>, passe à l\'<mark>Île de France</mark> en 1769. Employé de la compagnie des Indes sur cette Île jusqu\'en 1774. Entre dabs les bureaux de l\'administrtaion de <mark>Pondichéry</mark> en 1774. Passe à Mahé en 1777. Fait prisonier par les Anglais en 1778 pendant 4 ans. En 1782, il est employé dans le bureau de la comptabilité des Îles de France et de Bourbon.  Son Pere est mort Chef des Ventes de la COmpagnie des Indes. Mr David son oncle est mort Directeur de la Compagnie des Indes et Mr David son fils a été gouverneur des Îles de Bourbon et de France. Son oncle Mr Estoupan de Villeneuve était capitaine des vaisseaux des la Compagnie des Indes. Tous les trois oncles on été successivement gouverneurs du <mark>Sénégal</mark>',
+    annotated_bio: '<strong>Estoupan de Laval, Louis François</strong>, passe à l\'<mark>Île de France</mark> en 1769. Employé de la compagnie des Indes sur cette Île jusqu\'en 1774. Entre dabs les bureaux de l\'administrtaion de <mark>Pondichéry</mark> en 1774. Passe à Mahé en 1777. Fait prisonier par les Anglais en 1778 pendant 4 ans. En 1782, il est employé dans le bureau de la comptabilité des Îles de France et de <mark>Bourbon</mark>.  Son Pere est mort Chef des Ventes de la COmpagnie des Indes. Mr David son oncle est mort Directeur de la Compagnie des Indes et Mr David son fils a été gouverneur des Îles de <mark>Bourbon</mark> et de France. Son oncle Mr Estoupan de Villeneuve était capitaine des vaisseaux des la Compagnie des Indes. Tous les trois oncles on été successivement gouverneurs du <mark>Sénégal</mark>',
     name: 'Estoupan de Laval, Louis François',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -1941,7 +1941,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Estoupan de Laval, Louis François, passe à l\'Île de France en 1769. Employé de la compagnie des Indes sur cette Île jusqu\'en 1774. Entre dabs les bureaux de l\'administrtaion de Pondichéry en 1774. Passe à Mahé en 1777. Fait prisonier par les Anglais en 1778 pendant 4 ans. En 1782, il est employé dans le bureau de la comptabilité des Îles de France et de Bourbon.  Son Pere est mort Chef des Ventes de la COmpagnie des Indes. Mr David son oncle est mort Directeur de la Compagnie des Indes et Mr David son fils a été gouverneur des Îles de Bourbon et de France. Son oncle Mr Estoupan de Villeneuve était capitaine des vaisseaux des la Compagnie des Indes. Tous les trois oncles on été successivement gouverneurs du Sénégal',
-    annotated_bio: '<strong>Estoupan de Laval, Louis François</strong>, passe à l\'<mark>Île de France</mark> en 1769. Employé de la compagnie des Indes sur cette Île jusqu\'en 1774. Entre dabs les bureaux de l\'administrtaion de <mark>Pondichéry</mark> en 1774. Passe à Mahé en 1777. Fait prisonier par les Anglais en 1778 pendant 4 ans. En 1782, il est employé dans le bureau de la comptabilité des Îles de France et de Bourbon.  Son Pere est mort Chef des Ventes de la COmpagnie des Indes. Mr David son oncle est mort Directeur de la Compagnie des Indes et Mr David son fils a été gouverneur des Îles de Bourbon et de France. Son oncle Mr Estoupan de Villeneuve était capitaine des vaisseaux des la Compagnie des Indes. Tous les trois oncles on été successivement gouverneurs du <mark>Sénégal</mark>',
+    annotated_bio: '<strong>Estoupan de Laval, Louis François</strong>, passe à l\'<mark>Île de France</mark> en 1769. Employé de la compagnie des Indes sur cette Île jusqu\'en 1774. Entre dabs les bureaux de l\'administrtaion de <mark>Pondichéry</mark> en 1774. Passe à Mahé en 1777. Fait prisonier par les Anglais en 1778 pendant 4 ans. En 1782, il est employé dans le bureau de la comptabilité des Îles de France et de <mark>Bourbon</mark>.  Son Pere est mort Chef des Ventes de la COmpagnie des Indes. Mr David son oncle est mort Directeur de la Compagnie des Indes et Mr David son fils a été gouverneur des Îles de <mark>Bourbon</mark> et de France. Son oncle Mr Estoupan de Villeneuve était capitaine des vaisseaux des la Compagnie des Indes. Tous les trois oncles on été successivement gouverneurs du <mark>Sénégal</mark>',
     name: 'Estoupan de Laval, Louis François',
     from: 'Isle Bourbon & Isle of France',
     to: 'Senegal',
@@ -1961,7 +1961,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Carles, Joseph André François, en 1770, capitaine aide major dans la légion de l\'ïle de France, passe dans l\'inde en tant que aide major du régiment de Pondichéry en 1773, brevet de major en 1774, brevet de colonel en 1778, repasse en France en 1779, lieutenant colonel à Pondichery en 1780, au cap de bonne esperance entre 1780 et 1783',
-    annotated_bio: '<strong>Carles, Joseph André François</strong>, en 1770, capitaine aide major dans la légion de l\'<mark>ïle de France</mark>, passe dans l\'inde en tant que aide major du régiment de <mark>Pondichéry</mark> en 1773, brevet de major en 1774, brevet de colonel en 1778, repasse en France en 1779, lieutenant colonel à Pondichery en 1780, au cap de bonne esperance entre 1780 et 1783',
+    annotated_bio: '<strong>Carles, Joseph André François</strong>, en 1770, capitaine aide major dans la légion de l\'<mark>ïle de France</mark>, passe dans l\'<mark>inde</mark> en tant que aide major du régiment de <mark>Pondichéry</mark> en 1773, brevet de major en 1774, brevet de colonel en 1778, repasse en France en 1779, lieutenant colonel à <mark>Pondichery</mark> en 1780, au cap de bonne esperance entre 1780 et 1783',
     name: 'Carles, Joseph André François',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -1991,7 +1991,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Arnaud-Etienne Périchon de Vaudeuil, né à paris en 1746, en Inde en 1770, conseiller au Conseil supérieur de Pondichéry à partir de 1775, puis à celui de l\'île Bourbon.',
-    annotated_bio: '<strong>Arnaud-Etienne Périchon de Vaudeuil</strong>, né à paris en 1746, en Inde en 1770, conseiller au Conseil supérieur de <mark>Pondichéry</mark> à partir de 1775, puis à celui de l\'île <mark>Bourbon</mark>.',
+    annotated_bio: '<strong>Arnaud-Etienne Périchon de Vaudeuil</strong>, né à paris en 1746, en <mark>Inde</mark> en 1770, conseiller au Conseil supérieur de <mark>Pondichéry</mark> à partir de 1775, puis à celui de l\'île <mark>Bourbon</mark>.',
     name: 'Arnaud-Etienne Périchon de Vaudeuil',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -2001,7 +2001,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Desgarcins, Joseph Antoine, dessinateur, passe dans l\'Inde en 1771, employé pour les fortifications de Pondichéry, puis exempt de la maréchaussée à Saint-Domingue, mort à Saint Domingue en 1782 ',
-    annotated_bio: '<strong>Desgarcins, Joseph Antoine</strong>, dessinateur, passe dans l\'Inde en 1771, employé pour les fortifications de <mark>Pondichéry</mark>, puis exempt de la maréchaussée à <mark>Saint-Domingue</mark>, mort à Saint Domingue en 1782 ',
+    annotated_bio: '<strong>Desgarcins, Joseph Antoine</strong>, dessinateur, passe dans l\'<mark>Inde</mark> en 1771, employé pour les fortifications de <mark>Pondichéry</mark>, puis exempt de la maréchaussée à <mark>Saint-Domingue</mark>, mort à <mark>Saint Domingue</mark> en 1782 ',
     name: 'Desgarcins, Joseph Antoine',
     from: 'Caribbean',
     to: 'India',
@@ -2011,7 +2011,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Du Myrat de Vertpré, Charles François, major général à l\'Île de France en 1771, rang de colonel en 1771, employé en qualité de colonel à Saint Domingue et à la Martinique en 1780',
-    annotated_bio: '<strong>Du Myrat de Vertpré, Charles François</strong>, major général à l\'<mark>Île de France</mark> en 1771, rang de colonel en 1771, employé en qualité de colonel à <mark>Saint Domingue</mark> et à la Martinique en 1780',
+    annotated_bio: '<strong>Du Myrat de Vertpré, Charles François</strong>, major général à l\'<mark>Île de France</mark> en 1771, rang de colonel en 1771, employé en qualité de colonel à <mark>Saint Domingue</mark> et à la <mark>Martinique</mark> en 1780',
     name: 'Du Myrat de Vertpré, Charles François',
     from: 'Caribbean',
     to: 'Isle Bourbon & Isle of France',
@@ -2041,7 +2041,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Arrot, d\', chevalier, puis vicomte, lieutenant grenadier à Pondichery en 1772, 1773 et 1774, expédition au Sénégal en 1778, aide-maréchal général des logis à Saint-Domingue, commandant au second à la Guadeloupe, gouverneur de Tabago dans les années 1780',
-    annotated_bio: '<strong>Arrot</strong>, d\', chevalier, puis vicomte, lieutenant grenadier à <mark>Pondichery</mark> en 1772, 1773 et 1774, expédition au <mark>Sénégal</mark> en 1778, aide-maréchal général des logis à <mark>Saint-Domingue</mark>, commandant au second à la Guadeloupe, gouverneur de Tabago dans les années 1780',
+    annotated_bio: '<strong>Arrot</strong>, d\', chevalier, puis vicomte, lieutenant grenadier à <mark>Pondichery</mark> en 1772, 1773 et 1774, expédition au <mark>Sénégal</mark> en 1778, aide-maréchal général des logis à <mark>Saint-Domingue</mark>, commandant au second à la <mark>Guadeloupe</mark>, gouverneur de Tabago dans les années 1780',
     name: 'Arrot',
     from: 'Caribbean',
     to: 'India',
@@ -2051,7 +2051,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Arrot, d\', chevalier, puis vicomte, lieutenant grenadier à Pondichery en 1772, 1773 et 1774, expédition au Sénégal en 1778, aide-maréchal général des logis à Saint-Domingue, commandant au second à la Guadeloupe, gouverneur de Tabago dans les années 1780',
-    annotated_bio: '<strong>Arrot</strong>, d\', chevalier, puis vicomte, lieutenant grenadier à <mark>Pondichery</mark> en 1772, 1773 et 1774, expédition au <mark>Sénégal</mark> en 1778, aide-maréchal général des logis à <mark>Saint-Domingue</mark>, commandant au second à la Guadeloupe, gouverneur de Tabago dans les années 1780',
+    annotated_bio: '<strong>Arrot</strong>, d\', chevalier, puis vicomte, lieutenant grenadier à <mark>Pondichery</mark> en 1772, 1773 et 1774, expédition au <mark>Sénégal</mark> en 1778, aide-maréchal général des logis à <mark>Saint-Domingue</mark>, commandant au second à la <mark>Guadeloupe</mark>, gouverneur de Tabago dans les années 1780',
     name: 'Arrot',
     from: 'India',
     to: 'Senegal',
@@ -2071,7 +2071,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Cambefort de La Motte-Bézat, Joseph Paul Augustin de, lieutenant commissionné de Capitaine au régiment de l\'Île de France en 1772, rang de major en 1776 , premier aide major en 1778, rang de lieutenant coloniel en 1781, puis major au régiment de la Guadeloupe en 1782, et lieutenant au régiment de la Guadeloupe en 1785et lieutenant au régiment du Cap de Saint Domingue en 1786',
-    annotated_bio: '<strong>Cambefort de La Motte-Bézat, Joseph Paul Augustin de</strong>, lieutenant commissionné de Capitaine au régiment de l\'<mark>Île de France</mark> en 1772, rang de major en 1776 , premier aide major en 1778, rang de lieutenant coloniel en 1781, puis major au régiment de la Guadeloupe en 1782, et lieutenant au régiment de la Guadeloupe en 1785et lieutenant au régiment du Cap de <mark>Saint Domingue</mark> en 1786',
+    annotated_bio: '<strong>Cambefort de La Motte-Bézat, Joseph Paul Augustin de</strong>, lieutenant commissionné de Capitaine au régiment de l\'<mark>Île de France</mark> en 1772, rang de major en 1776 , premier aide major en 1778, rang de lieutenant coloniel en 1781, puis major au régiment de la <mark>Guadeloupe</mark> en 1782, et lieutenant au régiment de la <mark>Guadeloupe</mark> en 1785et lieutenant au régiment du Cap de <mark>Saint Domingue</mark> en 1786',
     name: 'Cambefort de La Motte-Bézat, Joseph Paul Augustin de',
     from: 'Caribbean',
     to: 'Isle Bourbon & Isle of France',
@@ -2101,7 +2101,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Bremeuil, Pierre, sergent au bataillon de l\'Inde, embarqué à l\'île de France pour Pondichéry enn 1773',
-    annotated_bio: '<strong>Bremeuil, Pierre</strong>, sergent au bataillon de l\'Inde, embarqué à l\'<mark>île de France</mark> pour <mark>Pondichéry</mark> enn 1773',
+    annotated_bio: '<strong>Bremeuil, Pierre</strong>, sergent au bataillon de l\'<mark>Inde</mark>, embarqué à l\'<mark>île de France</mark> pour <mark>Pondichéry</mark> enn 1773',
     name: 'Bremeuil, Pierre',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -2131,7 +2131,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Desrivierre-Gers, Henri Louis Jérôme, nommé lieutenant au régiment de la Martinique en 1773, sous-lieutenance dans les volontaires d\'afrique à Gorée avec le grade de lieutenant en 1776, repasse en qualité de sous lieutenant au régiment de la Guadeloupe en 1776, nommé aide major de place à Cayenne en 1777',
-    annotated_bio: '<strong>Desrivierre-Gers, Henri Louis Jérôme</strong>, nommé lieutenant au régiment de la <mark>Martinique</mark> en 1773, sous-lieutenance dans les volontaires d\'afrique à <mark>Gorée</mark> avec le grade de lieutenant en 1776, repasse en qualité de sous lieutenant au régiment de la Guadeloupe en 1776, nommé aide major de place à <mark>Cayenne</mark> en 1777',
+    annotated_bio: '<strong>Desrivierre-Gers, Henri Louis Jérôme</strong>, nommé lieutenant au régiment de la <mark>Martinique</mark> en 1773, sous-lieutenance dans les volontaires d\'afrique à <mark>Gorée</mark> avec le grade de lieutenant en 1776, repasse en qualité de sous lieutenant au régiment de la <mark>Guadeloupe</mark> en 1776, nommé aide major de place à <mark>Cayenne</mark> en 1777',
     name: 'Desrivierre-Gers, Henri Louis Jérôme',
     from: 'Caribbean',
     to: 'Guyana',
@@ -2141,7 +2141,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Desrivierre-Gers, Henri Louis Jérôme, nommé lieutenant au régiment de la Martinique en 1773, sous-lieutenance dans les volontaires d\'afrique à Gorée avec le grade de lieutenant en 1776, repasse en qualité de sous lieutenant au régiment de la Guadeloupe en 1776, nommé aide major de place à Cayenne en 1777',
-    annotated_bio: '<strong>Desrivierre-Gers, Henri Louis Jérôme</strong>, nommé lieutenant au régiment de la <mark>Martinique</mark> en 1773, sous-lieutenance dans les volontaires d\'afrique à <mark>Gorée</mark> avec le grade de lieutenant en 1776, repasse en qualité de sous lieutenant au régiment de la Guadeloupe en 1776, nommé aide major de place à <mark>Cayenne</mark> en 1777',
+    annotated_bio: '<strong>Desrivierre-Gers, Henri Louis Jérôme</strong>, nommé lieutenant au régiment de la <mark>Martinique</mark> en 1773, sous-lieutenance dans les volontaires d\'afrique à <mark>Gorée</mark> avec le grade de lieutenant en 1776, repasse en qualité de sous lieutenant au régiment de la <mark>Guadeloupe</mark> en 1776, nommé aide major de place à <mark>Cayenne</mark> en 1777',
     name: 'Desrivierre-Gers, Henri Louis Jérôme',
     from: 'Guyana',
     to: 'Senegal',
@@ -2151,7 +2151,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Palerne, Jean de, entre en service en qualité de lieutenant en second au régiment de l\'île de France en 1773, fait sous aide major dans la même île en 1775, puis capitaine aussi dans la même île en 1777, arrivé en Inde vers 1782, capitaine au régiment de Pondichéry  ',
-    annotated_bio: '<strong>Palerne, Jean de</strong>, entre en service en qualité de lieutenant en second au régiment de l\'<mark>île de France</mark> en 1773, fait sous aide major dans la même île en 1775, puis capitaine aussi dans la même île en 1777, arrivé en Inde vers 1782, capitaine au régiment de <mark>Pondichéry</mark>  ',
+    annotated_bio: '<strong>Palerne, Jean de</strong>, entre en service en qualité de lieutenant en second au régiment de l\'<mark>île de France</mark> en 1773, fait sous aide major dans la même île en 1775, puis capitaine aussi dans la même île en 1777, arrivé en <mark>Inde</mark> vers 1782, capitaine au régiment de <mark>Pondichéry</mark>  ',
     name: 'Palerne, Jean de',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -2211,7 +2211,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Descorches de Sainte-Croix, Jacques, sous-commissaire de la Marine à Brest et à Rochefort, passe à Pondichéry en 1775, nommé ordonnateur à Chandernagor en 1777, passe à l\'Île de France en 1779',
-    annotated_bio: '<strong>Descorches de Sainte-Croix, Jacques</strong>, sous-commissaire de la Marine à Brest et à Rochefort, passe à <mark>Pondichéry</mark> en 1775, nommé ordonnateur à Chandernagor en 1777, passe à l\'<mark>Île de France</mark> en 1779',
+    annotated_bio: '<strong>Descorches de Sainte-Croix, Jacques</strong>, sous-commissaire de la Marine à Brest et à Rochefort, passe à <mark>Pondichéry</mark> en 1775, nommé ordonnateur à <mark>Chandernagor</mark> en 1777, passe à l\'<mark>Île de France</mark> en 1779',
     name: 'Descorches de Sainte-Croix, Jacques',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -2271,7 +2271,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Lacroix de Villeneuve, Thomas, conseiller au Conseil supérieur de Pondichéry en 1777, puis nommé conseiller au Conseil supérieur de Port-au-Prince à Saint-Domingue en 1782.',
-    annotated_bio: '<strong>Lacroix de Villeneuve, Thomas</strong>, conseiller au Conseil supérieur de <mark>Pondichéry</mark> en 1777, puis nommé conseiller au Conseil supérieur de <mark>Port-au-Prince</mark> à Saint-Domingue en 1782.',
+    annotated_bio: '<strong>Lacroix de Villeneuve, Thomas</strong>, conseiller au Conseil supérieur de <mark>Pondichéry</mark> en 1777, puis nommé conseiller au Conseil supérieur de <mark>Port-au-Prince</mark> à <mark>Saint-Domingue</mark> en 1782.',
     name: 'Lacroix de Villeneuve, Thomas',
     from: 'Caribbean',
     to: 'India',
@@ -2301,7 +2301,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Chenot, François, s\'embarque pour l\'Île de France en 1780, fait caporal et s\'embarque pour l\'Inde en 1781, fait aide major à Pondichéry en 1792',
-    annotated_bio: '<strong>Chenot, François</strong>, s\'embarque pour l\'<mark>Île de France</mark> en 1780, fait caporal et s\'embarque pour l\'Inde en 1781, fait aide major à <mark>Pondichéry</mark> en 1792',
+    annotated_bio: '<strong>Chenot, François</strong>, s\'embarque pour l\'<mark>Île de France</mark> en 1780, fait caporal et s\'embarque pour l\'<mark>Inde</mark> en 1781, fait aide major à <mark>Pondichéry</mark> en 1792',
     name: 'Chenot, François',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -2311,7 +2311,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Le Clerc de Fresne, Camille Charles, chevalier, s\'embraque pour les Îles du Vent des Antilles en 1780,  Major Génégal de l\'Île de la Grenade , commandant en second à a St. Christophe, colonel du régiment de l\'île de Bourbon à partir de 1784,  puis gouverneur à Pondichéry, retourne en France en 1793',
-    annotated_bio: '<strong>Le Clerc de Fresne, Camille Charles</strong>, chevalier, s\'embraque pour les Îles du Vent des Antilles en 1780,  Major Génégal de l\'Île de <mark>la Grenade</mark> , commandant en second à a St. Christophe, colonel du régiment de l\'île de <mark>Bourbon</mark> à partir de 1784,  puis gouverneur à <mark>Pondichéry</mark>, retourne en France en 1793',
+    annotated_bio: '<strong>Le Clerc de Fresne, Camille Charles</strong>, chevalier, s\'embraque pour les <mark>Îles du Vent</mark> des Antilles en 1780,  Major Génégal de l\'Île de <mark>la Grenade</mark> , commandant en second à a St. Christophe, colonel du régiment de l\'île de <mark>Bourbon</mark> à partir de 1784,  puis gouverneur à <mark>Pondichéry</mark>, retourne en France en 1793',
     name: 'Le Clerc de Fresne, Camille Charles',
     from: 'Caribbean',
     to: 'India',
@@ -2321,7 +2321,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Le Clerc de Fresne, Camille Charles, chevalier, s\'embraque pour les Îles du Vent des Antilles en 1780,  Major Génégal de l\'Île de la Grenade , commandant en second à a St. Christophe, colonel du régiment de l\'île de Bourbon à partir de 1784,  puis gouverneur à Pondichéry, retourne en France en 1793',
-    annotated_bio: '<strong>Le Clerc de Fresne, Camille Charles</strong>, chevalier, s\'embraque pour les Îles du Vent des Antilles en 1780,  Major Génégal de l\'Île de <mark>la Grenade</mark> , commandant en second à a St. Christophe, colonel du régiment de l\'île de <mark>Bourbon</mark> à partir de 1784,  puis gouverneur à <mark>Pondichéry</mark>, retourne en France en 1793',
+    annotated_bio: '<strong>Le Clerc de Fresne, Camille Charles</strong>, chevalier, s\'embraque pour les <mark>Îles du Vent</mark> des Antilles en 1780,  Major Génégal de l\'Île de <mark>la Grenade</mark> , commandant en second à a St. Christophe, colonel du régiment de l\'île de <mark>Bourbon</mark> à partir de 1784,  puis gouverneur à <mark>Pondichéry</mark>, retourne en France en 1793',
     name: 'Le Clerc de Fresne, Camille Charles',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -2331,7 +2331,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Dubreuil, Simon Etienne, passe à l\'Île de France en 1781: il y est employé au bureau des armements et ensuite à celui de magasin général. Il quitte l\'Île de France en 1782 pour aller dans l\'Inde ou il travail en qualité de secretaire de brigade. Employé au magasin de Trinquemalé, puis aux travaux des fortifications à Pondichéry avant d\'être envoyé à Mahé où il travaille comme notaire, procureur du roi et commisssaire national',
-    annotated_bio: '<strong>Dubreuil, Simon Etienne</strong>, passe à l\'<mark>Île de France</mark> en 1781: il y est employé au bureau des armements et ensuite à celui de magasin général. Il quitte l\'<mark>Île de France</mark> en 1782 pour aller dans l\'Inde ou il travail en qualité de secretaire de brigade. Employé au magasin de Trinquemalé, puis aux travaux des fortifications à <mark>Pondichéry</mark> avant d\'être envoyé à Mahé où il travaille comme notaire, procureur du roi et commisssaire national',
+    annotated_bio: '<strong>Dubreuil, Simon Etienne</strong>, passe à l\'<mark>Île de France</mark> en 1781: il y est employé au bureau des armements et ensuite à celui de magasin général. Il quitte l\'<mark>Île de France</mark> en 1782 pour aller dans l\'<mark>Inde</mark> ou il travail en qualité de secretaire de brigade. Employé au magasin de Trinquemalé, puis aux travaux des fortifications à <mark>Pondichéry</mark> avant d\'être envoyé à Mahé où il travaille comme notaire, procureur du roi et commisssaire national',
     name: 'Dubreuil, Simon Etienne',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -2341,7 +2341,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Dufaure de La Curatrie, Jean Baptiste, passe à l\'Île de France en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'Île de France en 1782 pour passer en Inde en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  Pondichéry, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de Cayenne, lieutenant au régiment de Port-au-Prince à Saint-Domingue 1772/1773',
-    annotated_bio: '<strong>Dufaure de La Curatrie, Jean Baptiste</strong>, passe à l\'<mark>Île de France</mark> en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'<mark>Île de France</mark> en 1782 pour passer en Inde en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  <mark>Pondichéry</mark>, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de <mark>Cayenne</mark>, lieutenant au régiment de <mark>Port-au-Prince</mark> à Saint-Domingue 1772/1773',
+    annotated_bio: '<strong>Dufaure de La Curatrie, Jean Baptiste</strong>, passe à l\'<mark>Île de France</mark> en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'<mark>Île de France</mark> en 1782 pour passer en <mark>Inde</mark> en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  <mark>Pondichéry</mark>, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de <mark>Cayenne</mark>, lieutenant au régiment de <mark>Port-au-Prince</mark> à <mark>Saint-Domingue</mark> 1772/1773',
     name: 'Dufaure de La Curatrie, Jean Baptiste',
     from: 'Caribbean',
     to: 'India',
@@ -2351,7 +2351,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Dufaure de La Curatrie, Jean Baptiste, passe à l\'Île de France en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'Île de France en 1782 pour passer en Inde en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  Pondichéry, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de Cayenne, lieutenant au régiment de Port-au-Prince à Saint-Domingue 1772/1773',
-    annotated_bio: '<strong>Dufaure de La Curatrie, Jean Baptiste</strong>, passe à l\'<mark>Île de France</mark> en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'<mark>Île de France</mark> en 1782 pour passer en Inde en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  <mark>Pondichéry</mark>, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de <mark>Cayenne</mark>, lieutenant au régiment de <mark>Port-au-Prince</mark> à Saint-Domingue 1772/1773',
+    annotated_bio: '<strong>Dufaure de La Curatrie, Jean Baptiste</strong>, passe à l\'<mark>Île de France</mark> en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'<mark>Île de France</mark> en 1782 pour passer en <mark>Inde</mark> en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  <mark>Pondichéry</mark>, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de <mark>Cayenne</mark>, lieutenant au régiment de <mark>Port-au-Prince</mark> à <mark>Saint-Domingue</mark> 1772/1773',
     name: 'Dufaure de La Curatrie, Jean Baptiste',
     from: 'India',
     to: 'Isle Bourbon & Isle of France',
@@ -2361,7 +2361,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Dufaure de La Curatrie, Jean Baptiste, passe à l\'Île de France en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'Île de France en 1782 pour passer en Inde en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  Pondichéry, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de Cayenne, lieutenant au régiment de Port-au-Prince à Saint-Domingue 1772/1773',
-    annotated_bio: '<strong>Dufaure de La Curatrie, Jean Baptiste</strong>, passe à l\'<mark>Île de France</mark> en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'<mark>Île de France</mark> en 1782 pour passer en Inde en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  <mark>Pondichéry</mark>, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de <mark>Cayenne</mark>, lieutenant au régiment de <mark>Port-au-Prince</mark> à Saint-Domingue 1772/1773',
+    annotated_bio: '<strong>Dufaure de La Curatrie, Jean Baptiste</strong>, passe à l\'<mark>Île de France</mark> en 1781: il y est employé au bureau des armements et ensuite à celui du magasin général. Il quitte l\'<mark>Île de France</mark> en 1782 pour passer en <mark>Inde</mark> en qualité de secretaire de Brigade. Employé à la comtabilité du génie pour les travaux à  <mark>Pondichéry</mark>, puis notaire à Mahé. sous-lieutenant dans les troupes nationales de <mark>Cayenne</mark>, lieutenant au régiment de <mark>Port-au-Prince</mark> à <mark>Saint-Domingue</mark> 1772/1773',
     name: 'Dufaure de La Curatrie, Jean Baptiste',
     from: 'Isle Bourbon & Isle of France',
     to: 'Guyana',
@@ -2591,7 +2591,7 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Golbéry de Tirion, de, capitaine au corps royal du Génie, employé à Gorée et à Cayenne, ingénieur au Sénégal. Départ pour Cayenne en 1787.',
-    annotated_bio: '<strong>Golbéry de Tirion, de,</strong> capitaine au corps royal du Génie, employé à <mark>Gorée</mark> et à <mark>Cayenne</mark>, ingénieur au Sénégal. Départ pour <mark>Cayenne</mark> en 1787.',
+    annotated_bio: '<strong>Golbéry de Tirion, de,</strong> capitaine au corps royal du Génie, employé à <mark>Gorée</mark> et à <mark>Cayenne</mark>, ingénieur au <mark>Sénégal</mark>. Départ pour <mark>Cayenne</mark> en 1787.',
     name: 'Golbéry de Tirion, de,',
     from: 'Guyana',
     to: 'Senegal',
@@ -2780,4 +2780,4 @@ const OFFICIALS_LINKS = [
     category: 'military'
   }
 ]
-  ;
+;
