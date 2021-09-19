@@ -1,13 +1,6 @@
-# To add a new cell, type '# %%'
-# To add a new markdown cell, type '# %% [markdown]'
-
-import sys
-import io
 import json
-from collections import defaultdict
 import pandas
 import numpy as np
-import subprocess
 
 from typing import List, Tuple, Optional, Dict, Set
 
@@ -110,11 +103,42 @@ def get_category(name: str) -> Optional[str]:
 # ------------------- GRAPH DATA EXPORT -----------------------------
 
 
+# Heuristic to extract the name from the bio while we don't have a
+# dedicated name colusmn
+def name_from_bio(bio: str) -> str:
+    state = "BEGIN"
+    candidate_end_idx = -1
+    for i, char in enumerate(bio):
+        if char == " ":
+            continue
+        if char == ",":
+            if state == "BEGIN":
+                state = "JUST_AFTER_FIRST_COMMA"
+                candidate_end_idx = i
+                continue
+            elif state == "EXPECTING_SECOND_COMMA":
+                # second comma: return
+                return bio[:i]
+        if state == "JUST_AFTER_FIRST_COMMA":
+            if not char.isupper():
+                # no uppercase char right after comma => end of name
+                if bio[i:].startswith("de,"):
+                    return bio[:(i+3)]
+                return bio[:candidate_end_idx]
+            else:
+                state = "EXPECTING_SECOND_COMMA"
+
+    raise Exception(f"Failed to extract name from bio: {bio}")
+
+
 def to_edges(row, regions, keywords):
     edges = []
+    name = name_from_bio(row.bio)
+
     for i in range(len(regions)-1):
         edges.append({
             'bio': row.bio,
+            'name': name,
             'from': regions[i],
             'to': regions[i+1],
             'via_metropole': row.went_through_metropole,
@@ -135,8 +159,10 @@ for _, row in df.iterrows():
 with open('globetrotters-data.json', 'w') as out1:
     json.dump(output, out1, ensure_ascii=False, allow_nan=False)
 
-# Afterwards, run:
-# cat globetrotters-data.json | json-to-js > globetrotters-data.js
+print("Successfully exported data to globetrotters-data.json")
+print("Now run: cat globetrotters-data.json | json-to-js > globetrotters-data.js")
+print("And copy-paste the data inside data/officials/links.js")
+print()
 # (not running in subprocess here because output gets truncated for some reason)
 
 # --------------------  DATA ANALYSIS -----------------------------
