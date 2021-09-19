@@ -30,7 +30,7 @@ REGIONS = {
     'Caribbean': {
         'guadeloupe', 'martinique', 'saint-domingue', 'saint domingue',
         'cap-français', 'port-au-prince', 'îles du vent',
-        'la grenade', 'saint-louis',
+        'la grenade', 'saint-louis', 'saint-vincent'
     },
     'India': {'pondichéry', 'chandernagor', 'surate', 'inde', 'pondichery'},
     'Isle Bourbon & Isle of France': {'bourbon', 'île de france', 'ïle de France', 'ïle bourbon'},

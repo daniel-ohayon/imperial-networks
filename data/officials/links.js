@@ -381,9 +381,19 @@ const OFFICIALS_LINKS = [
   },
   {
     bio: 'Du Plessis, Jean Baptiste Vigoureux, né à Chandernagor le 6 mai 1735, lieutenant-colonel d\'infanterie, commandant à Mahé, 1778, gouverneur de l\'île Saint-Vincent aux Antilles, 1780, brigadier des armées du Roi, 1784, gouverneur de l\'île de Bourbon 1771/1814',
-    annotated_bio: '<strong>Du Plessis, Jean Baptiste Vigoureux</strong>, né à <mark>Chandernagor</mark> le 6 mai 1735, lieutenant-colonel d\'infanterie, commandant à Mahé, 1778, gouverneur de l\'île Saint-Vincent aux Antilles, 1780, brigadier des armées du Roi, 1784, gouverneur de l\'île de <mark>Bourbon</mark> 1771/1814',
+    annotated_bio: '<strong>Du Plessis, Jean Baptiste Vigoureux</strong>, né à <mark>Chandernagor</mark> le 6 mai 1735, lieutenant-colonel d\'infanterie, commandant à Mahé, 1778, gouverneur de l\'île <mark>Saint-Vincent</mark> aux Antilles, 1780, brigadier des armées du Roi, 1784, gouverneur de l\'île de <mark>Bourbon</mark> 1771/1814',
     name: 'Du Plessis, Jean Baptiste Vigoureux',
     from: 'India',
+    to: 'Caribbean',
+    via_metropole: true,
+    tag: 'before_1763',
+    category: 'officials'
+  },
+  {
+    bio: 'Du Plessis, Jean Baptiste Vigoureux, né à Chandernagor le 6 mai 1735, lieutenant-colonel d\'infanterie, commandant à Mahé, 1778, gouverneur de l\'île Saint-Vincent aux Antilles, 1780, brigadier des armées du Roi, 1784, gouverneur de l\'île de Bourbon 1771/1814',
+    annotated_bio: '<strong>Du Plessis, Jean Baptiste Vigoureux</strong>, né à <mark>Chandernagor</mark> le 6 mai 1735, lieutenant-colonel d\'infanterie, commandant à Mahé, 1778, gouverneur de l\'île <mark>Saint-Vincent</mark> aux Antilles, 1780, brigadier des armées du Roi, 1784, gouverneur de l\'île de <mark>Bourbon</mark> 1771/1814',
+    name: 'Du Plessis, Jean Baptiste Vigoureux',
+    from: 'Caribbean',
     to: 'Isle Bourbon & Isle of France',
     via_metropole: true,
     tag: 'before_1763',
