@@ -24,7 +24,7 @@ const OFFICIALS_CONFIG = {
         links.filter(e => e.from == node.id || e.to == node.id)
             .sort()
             .forEach(e => {
-                output += `<li>${e.bio}</li>`;
+                output += `<li>${e.annotated_bio}</li>`;
             });
         return `<ul>${output}</ul>`;
     }

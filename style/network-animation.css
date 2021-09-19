@@ -73,6 +73,10 @@ body {
   list-style-type: none;
 }
 
+.modal-content ul li {
+  padding-bottom: 8px;
+}
+
 .close-button {
   float: right;
   width: 1.5rem;

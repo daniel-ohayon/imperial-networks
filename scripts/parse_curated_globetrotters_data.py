@@ -1,6 +1,9 @@
+# This script requires pandas and json-to-js
 import json
 import pandas
 import numpy as np
+import re
+import os
 
 from typing import List, Tuple, Optional, Dict, Set
 
@@ -47,14 +50,14 @@ BLOCKLIST = [
 ]
 
 
-def find_index(needle, haystack):
-    try:
-        return haystack.lower().index(needle.lower())
-    except ValueError:
+def find_index(needle: str, haystack: str) -> int:
+    match = re.search(fr"\b{needle}\b", haystack, re.IGNORECASE)
+    if match is None:
         return -1
+    return match.start()
 
 
-def get_regions(sentence: str) -> Tuple[Optional[List[str]], Optional[List[str]]]:
+def get_regions(sentence: str) -> Tuple[Optional[List[str]], Optional[Set[str]]]:
     matching_regions = []
     matching_keywords = set()
     sentence = sentence.lower()
@@ -76,7 +79,7 @@ def get_regions(sentence: str) -> Tuple[Optional[List[str]], Optional[List[str]]
             return None, None
 
     if len(matching_regions) > 1:
-        return matching_regions, matching_keywords
+        return matching_regions, set(matching_keywords)
     return None, None
 
 
@@ -131,13 +134,23 @@ def name_from_bio(bio: str) -> str:
     raise Exception(f"Failed to extract name from bio: {bio}")
 
 
+# Decorate the name with a <strong> tag and the keywords with a <mark> tag
+# for pretty rendering in the network modal
+def annotate_bio(bio: str, keywords: Set[str], name: str) -> str:
+    for keyword in keywords:
+        bio = re.sub(keyword, r"<mark>\g<0></mark>",
+                     bio, flags=re.IGNORECASE)
+    return re.sub(name, r"<strong>\g<0></strong>", bio)
+
+
 def to_edges(row, regions, keywords):
     edges = []
     name = name_from_bio(row.bio)
-
+    annotated_bio = annotate_bio(row.bio, keywords, name)
     for i in range(len(regions)-1):
         edges.append({
             'bio': row.bio,
+            'annotated_bio': annotated_bio,
             'name': name,
             'from': regions[i],
             'to': regions[i+1],
@@ -156,15 +169,19 @@ for _, row in df.iterrows():
     output += to_edges(row, regions, keywords)
 
 
-with open('globetrotters-data.json', 'w') as out1:
+with open('/tmp/globetrotters-data.json', 'w') as out1:
     json.dump(output, out1, ensure_ascii=False, allow_nan=False)
 
-print("Successfully exported data to globetrotters-data.json")
-print("Now run: cat globetrotters-data.json | json-to-js > globetrotters-data.js")
-print("And copy-paste the data inside data/officials/links.js")
-print()
-# (not running in subprocess here because output gets truncated for some reason)
+os.system(
+    "cat /tmp/globetrotters-data.json | json-to-js > /tmp/globetrotters-data.js")
 
+with open('/tmp/globetrotters-data.js') as temp_js_file:
+    with open('../data/officials/links.js', 'w') as out_js_file:
+        js_code = temp_js_file.read()
+        out_js_file.write(f"const OFFICIALS_LINKS = {js_code};\n")
+
+print("Results written to ../data/officials/links.js")
+print("==================================")
 # --------------------  DATA ANALYSIS -----------------------------
 
 

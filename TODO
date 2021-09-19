@@ -1,0 +1,4 @@
+* Fix node hover UX 
+* Enable closing popup by pressing ESC
+* Show trips to metropole in officials search results?
+* Page scrolling should work when cursor inside map
