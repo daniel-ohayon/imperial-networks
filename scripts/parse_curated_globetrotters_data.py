@@ -4,6 +4,7 @@ import pandas
 import numpy as np
 import re
 import os
+from dataclasses import dataclass
 
 from typing import List, Tuple, Optional, Dict, Set
 
@@ -50,28 +51,44 @@ BLOCKLIST = [
 ]
 
 
-def contains_keyword(haystack: str, needle: str) -> bool:
+def get_index(haystack: str, needle: str) -> int:
     match = re.search(fr"\b{needle}\b", haystack, re.IGNORECASE)
-    return match is not None
+    if match is None:
+        return -1
+    return match.start()
 
 
-def get_regions(sentence: str) -> Tuple[Optional[List[str]], Optional[Set[str]]]:
-    matching_regions = []
-    matching_keywords = set()
+@dataclass
+class Match:
+    keyword: str
+    region: str
+    index: int
+
+
+def get_regions(sentence: str) -> Tuple[Optional[List[str]], Optional[List[str]]]:
     sentence = sentence.lower()
+    matches: List[Match] = []
 
     for region, keywords in REGIONS.items():
-        matches = [kw for kw in keywords if contains_keyword(sentence, kw)]
-        if len(matches) > 0:
-            matching_regions.append(region)
-            matching_keywords.update(set(matches))
+        for keyword in keywords:
+            idx = get_index(sentence, keyword)
+            if idx > -1:
+                matches.append(Match(keyword, region, idx))
+
+    matches.sort(key=lambda m: m.index)
+
+    matching_regions = []
+    # return regions in order of visit
+    for match in matches:
+        if match.region not in matching_regions:
+            matching_regions.append(match.region)
 
     for _set in BLOCKLIST:
-        if matching_keywords.issubset(_set):
+        if set(matching_regions).issubset(_set):
             return None, None
 
     if len(matching_regions) > 1:
-        return matching_regions, set(matching_keywords)
+        return matching_regions, [m.keyword for m in matches]
     return None, None
 
 
