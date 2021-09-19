@@ -4,8 +4,8 @@ const OFFICIALS_CONFIG = {
     use_simplified_edges: false,
     arrow_scaling_factor: 1.2,
     edge_size: 0.5,
-    arrow_head_size: 5,
-    undirected: true,
+    arrow_head_size: 10,
+    undirected: true,  // but in single-agent view, we show arrows
     skip_france: true,
     use_tags: true,
     hidden_locations: ['France', 'Madagascar'],

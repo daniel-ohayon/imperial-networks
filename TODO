@@ -1,4 +1,12 @@
+FEATURES
 * Show trips to metropole in officials search results?
 * Page scrolling should work when cursor inside map; seems to be disabled by the sigma library
-* Rastel de Rocheblave, Pierre Louis > don't understand the order of the edges
+* Better UX for before/after 1763? eg filtering
+    * Post-63 arrows are pale especially in single-agent view
+* Add chronology to travelers map
+* Improve UI for the animation?
+
+DATA
 * Olivier Jacques: check if he actually went to India
+* Dolnet de Palmaroux: went to India?
+* La Longueville – may not have gone to Caribbean
