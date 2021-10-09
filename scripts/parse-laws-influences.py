@@ -1,5 +1,3 @@
-from openpyxl import load_workbook
-from pandas import DataFrame
 import json
 import subprocess
 

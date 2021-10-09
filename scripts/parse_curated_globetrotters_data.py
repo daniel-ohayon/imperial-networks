@@ -1,23 +1,12 @@
-# This script requires pandas and json-to-js
 import json
-import pandas
-import numpy as np
+import csv
 import re
-import os
 from dataclasses import dataclass
 
 from typing import List, Tuple, Optional, Dict, Set
 
-df = pandas.read_csv(
-    'curated_globetrotters_data.csv',
-    true_values=['Yes'],
-    false_values=['No', 'No '],
-    usecols=list(range(0, 4))
-)
-# NaN is not allowed in JSON
-df = df.replace({np.nan: None})
 
-
+########### BIOGRAPHY ANALYSIS FUNCTIONS ###################
 def flip_and_explode_dict(dic: Dict[str, Set[str]]) -> Dict[str, str]:
     out = {}
     for key, vals in dic.items():
@@ -26,18 +15,18 @@ def flip_and_explode_dict(dic: Dict[str, Set[str]]) -> Dict[str, str]:
     return out
 
 
-REGIONS = {
+REGIONS: Dict[str, Set[str]] = {
     'Caribbean': {
         'guadeloupe', 'martinique', 'saint-domingue', 'saint domingue',
         'cap-français', 'port-au-prince', 'îles du vent',
-        'la grenade', 'saint-louis', 'saint-vincent'
+        'grenada', 'saint-louis', 'saint-vincent', 'caribbean'
     },
-    'India': {'pondichéry', 'chandernagor', 'surate', 'inde', 'pondichery'},
-    'Isle Bourbon & Isle of France': {'bourbon', 'île de france', 'ïle de France', 'ïle bourbon'},
-    'New France': {'québec', 'canada', 'louisbourg', 'Montréal', 'nouvelle france', 'île royale'},
-    'Louisiana': {'louisiane', 'nouvelle-orléans'},
-    'Guyana': {'cayenne'},
-    'Senegal': {'sénégal', 'gorée', 'Sénegal'},
+    'India': {'chandannagar', 'surat', 'india', 'pondicherry'},
+    'Isle Bourbon & Isle of France': {'bourbon', 'isle of france', 'isle bourbon'},
+    'New France': {'quebec', 'québec', 'canada', 'louisbourg', 'montreal', 'new france', 'île royale'},
+    'Louisiana': {'louisiana', 'new orleans'},
+    'Guyana': {'cayenne', 'Guyana'},
+    'Senegal': {'senegal', 'gorée'},
 }
 
 REGION_TO_OCEAN = flip_and_explode_dict({
@@ -51,13 +40,6 @@ BLOCKLIST = [
 ]
 
 
-def get_index(haystack: str, needle: str) -> int:
-    match = re.search(fr"\b{needle}\b", haystack, re.IGNORECASE)
-    if match is None:
-        return -1
-    return match.start()
-
-
 @dataclass
 class Match:
     keyword: str
@@ -65,7 +47,14 @@ class Match:
     index: int
 
 
-def get_regions(sentence: str) -> Tuple[Optional[List[str]], Optional[List[str]]]:
+def get_index(haystack: str, needle: str) -> int:
+    match = re.search(fr"\b{needle}\b", haystack, re.IGNORECASE)
+    if match is None:
+        return -1
+    return match.start()
+
+
+def get_regions_from_biography(sentence: str) -> Tuple[Optional[List[str]], Optional[List[str]]]:
     sentence = sentence.lower()
     matches: List[Match] = []
 
@@ -105,46 +94,31 @@ CATEGORIES = {
 BY_PRECEDENCE = ['officials', 'military']
 
 
-def get_category(name: str) -> Optional[str]:
+def get_category_from_bio(name: str) -> Optional[str]:
     for categ in BY_PRECEDENCE:
         for kw in CATEGORIES[categ]:
             if kw in name.lower():
                 return categ
     return None
 
+
+def str_to_bool(string: str) -> bool:
+    clean_str = string.strip().lower()
+    if clean_str == "yes":
+        return True
+    if clean_str == "no":
+        return False
+    print(
+        f'[WARNING] Unrecognized boolean value: "{clean_str}" - defaulting to False')
+    return False
+
+
 # ------------------- GRAPH DATA EXPORT -----------------------------
-
-
-# Heuristic to extract the name from the bio while we don't have a
-# dedicated name colusmn
-def name_from_bio(bio: str) -> str:
-    state = "BEGIN"
-    candidate_end_idx = -1
-    for i, char in enumerate(bio):
-        if char == " ":
-            continue
-        if char == ",":
-            if state == "BEGIN":
-                state = "JUST_AFTER_FIRST_COMMA"
-                candidate_end_idx = i
-                continue
-            elif state == "EXPECTING_SECOND_COMMA":
-                # second comma: return
-                return bio[:i]
-        if state == "JUST_AFTER_FIRST_COMMA":
-            if not char.isupper():
-                # no uppercase char right after comma => end of name
-                if bio[i:].startswith("de,"):
-                    return bio[:(i+3)]
-                return bio[:candidate_end_idx]
-            else:
-                state = "EXPECTING_SECOND_COMMA"
-
-    raise Exception(f"Failed to extract name from bio: {bio}")
-
 
 # Decorate the name with a <strong> tag and the keywords with a <mark> tag
 # for pretty rendering in the network modal
+
+
 def annotate_bio(bio: str, keywords: Set[str], name: str) -> str:
     for keyword in keywords:
         bio = re.sub(keyword, r"<mark>\g<0></mark>",
@@ -154,48 +128,61 @@ def annotate_bio(bio: str, keywords: Set[str], name: str) -> str:
 
 def to_edges(row, regions, keywords):
     edges = []
-    name = name_from_bio(row.bio)
-    annotated_bio = annotate_bio(row.bio, keywords, name)
+    name = row['Name']
+    annotated_bio = annotate_bio(row['Biography'], keywords, name)
+    dep_date = int(row['Date of departure'])
     for i in range(len(regions)-1):
         edges.append({
-            'bio': row.bio,
+            'bio': row['Biography'],
             'annotated_bio': annotated_bio,
             'name': name,
             'from': regions[i],
             'to': regions[i+1],
-            'via_metropole': row.went_through_metropole,
-            'tag': row.time_period if row.time_period != 'before_1763_maybe' else 'before_1763',
-            'category': get_category(row.bio) or 'other'
+            'to_date': dep_date,
+            'tag': 'before_1763' if dep_date < 1763 else 'after_1763',
+            'via_metropole': str_to_bool(row['Time in metropolitan France']),
+            'category': get_category_from_bio(row['Biography']) or 'other'
         })
     return edges
 
-
-output = []
-for _, row in df.iterrows():
-    regions, keywords = get_regions(row.bio)
-    if regions is None:
-        continue
-    output += to_edges(row, regions, keywords)
+########################### DATA PROCESSING #######################################
 
 
-with open('/tmp/globetrotters-data.json', 'w') as out1:
-    json.dump(output, out1, ensure_ascii=False, allow_nan=False)
+# Check that all words from the regions mapping table are used
+with open('curated_globetrotters_data.csv', encoding='utf-8-sig') as input_csv:
+    raw_text = input_csv.read().lower()
+    for keywords in REGIONS.values():
+        for keyword in keywords:
+            if keyword not in raw_text:
+                print(
+                    f"[WARNING] The keyword '{keyword}' does not appear in the data")
 
-os.system(
-    "cat /tmp/globetrotters-data.json | json-to-js > /tmp/globetrotters-data.js")
 
-with open('/tmp/globetrotters-data.js') as temp_js_file:
-    with open('../data/officials/links.js', 'w') as out_js_file:
-        js_code = temp_js_file.read()
-        out_js_file.write(f"const OFFICIALS_LINKS = {js_code};\n")
+output_data = []
+with open('curated_globetrotters_data.csv', encoding='utf-8-sig') as input_csv:
+    input_data = list(csv.DictReader(input_csv))
+    for row in input_data:
+        regions, keywords = get_regions_from_biography(row['Biography'])
+        if regions is None:
+            print(f"[WARNING] Less than 2 regions found for: {row['Name']}")
+            continue
+        if int(row['Date of departure']) > 1785:
+            print(f"[WARNING] Skipping {row['Name']} who travelled after 1785")
+            continue
+        output_data += to_edges(row, regions, keywords)
+
+with open('../data/officials/links.js', 'w') as out_js_file:
+    json_str = json.dumps(output_data, indent=2, ensure_ascii=False)
+    out_js_file.write(f"const OFFICIALS_LINKS = {json_str};\n")
 
 print("Results written to ../data/officials/links.js")
 print("==================================")
+
 # --------------------  DATA ANALYSIS -----------------------------
 
 
 def both_oceans(bio: str) -> bool:
-    regions, _ = get_regions(bio)
+    regions, _ = get_regions_from_biography(bio)
     if regions is None:
         return False
     return len({REGION_TO_OCEAN[reg] for reg in regions}) == 2
@@ -207,25 +194,19 @@ def count_if(people: List[Dict], filter_func) -> str:
     return f"{n_filtered}/{n}"
 
 
-ppl = df.to_dict('records')
-
-# --------------- Data Quality check ------------------------
-for p in ppl:
-    assert get_regions(p['bio'])[
-        0] is not None, f"Cannot parse regions: {p['bio']}"
-
+print(f"Parsed {len(input_data)} biographies")
 # -----------------------------------------------------------
 
 print(
-    f"#ppl who went through France: {count_if(ppl, lambda p: p['went_through_metropole'] or False)}")
+    f"#ppl who went through France: {count_if(output_data, lambda p: p['via_metropole'])}")
 print(
-    f"#ppl who went through both oceans: {count_if(ppl, lambda p: both_oceans(p['bio']))}")
+    f"#ppl who went through both oceans: {count_if(output_data, lambda p: both_oceans(p['bio']))}")
 print(
-    f"    ... before 1763: {count_if(ppl, lambda p: both_oceans(p['bio']) and p['time_period'].startswith('before_1763'))}")
+    f"    ... before 1763: {count_if(output_data, lambda p: both_oceans(p['bio']) and p['to_date'] < 1763)}")
 
 print(
-    f"    ... after 1763: {count_if(ppl, lambda p: both_oceans(p['bio']) and p['time_period'] == 'after_1763')}")
+    f"    ... after 1763: {count_if(output_data, lambda p: both_oceans(p['bio']) and p['to_date'] >= 1763)}")
 print(
-    f"# officials: {count_if(ppl, lambda p: get_category(p['bio']) == 'officials')}")
+    f"# officials: {count_if(output_data, lambda p: get_category_from_bio(p['bio']) == 'officials')}")
 print(
-    f"# officials who went through both oceans: {count_if(ppl, lambda p: get_category(p['bio']) == 'officials' and both_oceans(p['bio']))}")
+    f"# officials who went through both oceans: {count_if(output_data, lambda p: get_category_from_bio(p['bio']) == 'officials' and both_oceans(p['bio']))}")

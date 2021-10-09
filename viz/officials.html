@@ -16,15 +16,20 @@
     <!-- network javascript -->
     <script src="../lib/autocomplete.js" charset="utf-8"></script>
     <script src="../data/places.js"></script>
+    <script src="../lib/animation.js" charset="utf-8"></script>
     <script src="../lib/network.js" charset="utf-8"></script>
     <script src="../lib/modal.js" charset="utf-8"></script>
 </head>
 
 <body>
-    <div id="title">Pan-Imperial Journeys, 1678–1799</div>
+    <div id="title">Pan-Imperial Journeys, 1598–1785</div>
+    <div class="slider-container">
+        <input type="range" min="1" max="100" value="1" class="slider" id="time-slider">
+        <button class="play-button">Start</button>
     </div>
 
     <div id="container">
+        <div id="year"></div>
         <form autocomplete="off">
             <div class="autocomplete">
                 <input id="edge-search" type="text" name="edge-name" placeholder="Search for a name, eg. David">
