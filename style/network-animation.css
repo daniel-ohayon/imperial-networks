@@ -29,6 +29,15 @@ body {
   padding: 3px;
 }
 
+#seven-years-war-label {
+  position: absolute;
+  display: inline-block;
+  font-size: 1.5em;
+  font-style: italic;
+  left: 437px;
+  top: 85px;
+}
+
 #legend {
   position: absolute;
   display: inline-block;
@@ -101,8 +110,11 @@ body {
 
 /* SLIDER */
 
-.slider-container {
-  width: 700px;
+#controls-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 900px;
   margin: auto;
   margin-top: 2px;
   margin-bottom: 5px;
@@ -111,7 +123,7 @@ body {
 .slider {
   -webkit-appearance: none;
   appearance: none;
-  width: 600px;
+  width: 500px;
   height: 15px;
   background: #e4e4e4;
   outline: none;
@@ -213,4 +225,9 @@ input[type=submit] {
     left: 100px;
     width: 1040px;
     font-size: large;
+}
+
+#dates-histogram {
+  position: absolute;
+  top: 435px;
 }

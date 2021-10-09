@@ -139,7 +139,6 @@ def to_edges(row, regions, keywords):
             'from': regions[i],
             'to': regions[i+1],
             'to_date': dep_date,
-            'tag': 'before_1763' if dep_date < 1763 else 'after_1763',
             'via_metropole': str_to_bool(row['Time in metropolitan France']),
             'category': get_category_from_bio(row['Biography']) or 'other'
         })

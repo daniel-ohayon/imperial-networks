@@ -7,6 +7,9 @@
 
     <link rel="stylesheet" href="../style/network-animation.css" />
 
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
     <!-- sigma library-->
     <script src="../lib/sigma/sigma.min.js"></script>
     <script src="../lib/sigma/sigma.canvas.edges.curvedArrowRandom.js"></script>
@@ -23,20 +26,29 @@
 
 <body>
     <div id="title">Pan-Imperial Journeys, 1598–1785</div>
-    <div class="slider-container">
-        <input type="range" min="1" max="100" value="1" class="slider" id="time-slider">
-        <button class="play-button">Start</button>
+    <div id="controls-div">
+        <div style="display: flex; align-items: center;">
+            <input type="range" min="1" max="100" value="1" class="slider" id="time-slider">
+            <button class="play-button">Start</button>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+            <input type="checkbox" id="checkbox-syw">
+            <label for="checkbox-syw" style="font-size: 1.2em; margin-left: 8px;"> Show data beyond 1763</label><br>
+        </div>
     </div>
+
 
     <div id="container">
         <div id="year"></div>
+        <div id="seven-years-war-label">Seven Years' War</div>
         <form autocomplete="off">
             <div class="autocomplete">
                 <input id="edge-search" type="text" name="edge-name" placeholder="Search for a name, eg. David">
                 <button id="clear-edge-search">Clear</button>
             </div>
         </form>
-        <div id="legend"></div>
+        <div id="dates-histogram"></div>
     </div>
 
     <div id="search-bio"></div>
@@ -52,7 +64,7 @@
     <script src="../data/officials/links.js" charset="utf-8"></script>
     <script src="../data/officials/config.js" charset="utf-8"></script>
     <script>
-        renderNetwork(OFFICIALS_CONFIG);
+        renderNetwork({ ...OFFICIALS_CONFIG, links: OFFICIALS_CONFIG.links.filter(e => e.to_date <= 1763) });
     </script>
     <!---------------------------------------->
 
