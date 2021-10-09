@@ -145,10 +145,22 @@ body {
   cursor: pointer;
 }
 
-.play-button {
-  font-size: 1.2em;
-  margin-left: 15px;
+.play-button, .goto-end-button, .goto-start-button {
+  display: inline-flex;
   cursor: pointer;
+  padding: 0;
+}
+
+.play-button {
+  margin-left: 15px;
+}
+
+.goto-start-button {
+  margin-left: 15px;
+}
+
+.goto-end-button {
+  margin-left: 5px;
 }
 
 /* Autocomplete */
