@@ -1,4 +1,4 @@
-from typing import Dict, Set, List, Tuple, Optional
+from typing import Dict, Set, List, Optional
 from dataclasses import dataclass
 import re
 import pyperclip

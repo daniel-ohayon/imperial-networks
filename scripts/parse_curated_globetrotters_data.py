@@ -40,8 +40,13 @@ class Region(Enum):
 class Occupation(Enum):
     OFFICIAL = 'Official'
     MILITARY = 'Military'
-    MISSIONARY = 'Missionary'
     OTHER = 'Other'
+
+    @staticmethod
+    def from_str(string: str) -> 'Occupation':
+        if string == 'Missionary':
+            return Occupation.OTHER
+        return Occupation(string)
 
 
 @dataclasses.dataclass
@@ -62,7 +67,7 @@ class Edge:
     to: Region
     departure_date: int
     via_metropole: bool
-    category: Occupation
+    occupation: Occupation
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -73,7 +78,7 @@ class Edge:
             'to': self.to.value,
             'to_date': self.departure_date,
             'via_metropole': self.via_metropole,
-            'category': self.category.value
+            'tag': self.occupation.value
         }
 
 ########### BIOGRAPHY ANALYSIS FUNCTIONS ###################
@@ -94,7 +99,6 @@ KEYWORDS: Set[str] = {
     'chandannagar',
     'surat',
     'pondicherry',
-    'india',
     'isle bourbon',
     'bourbon',
     'isle of france',
@@ -163,7 +167,7 @@ def process_row(row: Dict[str, str]) -> Tuple[Person, List[Edge]]:
     annotated_bio = annotate_bio(row['Biography'], name)
     dep_date = int(row['Date of departure'])
     via_metropole = str_to_bool(row['Time in metropolitan France'])
-    occupation = Occupation(row['Occupation'])
+    occupation = Occupation.from_str(row['Occupation'])
     saw_both_oceans = len({reg.ocean() for reg in regions}) > 1
 
     person = Person(regions=regions, departure_date=dep_date,
@@ -180,7 +184,7 @@ def process_row(row: Dict[str, str]) -> Tuple[Person, List[Edge]]:
             to=regions[i+1],
             departure_date=dep_date,
             via_metropole=via_metropole,
-            category=occupation,
+            occupation=occupation,
         ))
     return person, edges
 

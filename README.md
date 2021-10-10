@@ -13,14 +13,7 @@ We only show links directly between colonies, and not links with the metropole f
 We use dotted arrows to represent laws that had the same intent or similar wording, and solid arrows for laws that had the exact same text.
 
 ## OFFICIALS
-`viz/officials.html` shows travels of French officials. It is based on online archive records, extracted in `scripts/parse-officials/travel.ipynb`.
-
-For this visualization, there is no animation available because
-we do not have a travel date available for each employee.
-
-Because this visualization has many edges, there is a "simplified edges" mode where we only have one edge per pair of colonies,
-and the size of the edge is proportional to the number of officials
-who made the journey.
+`viz/officials.html` shows travels of French officials and other individuals. It is based on online archive records, extracted in `scripts/parse-officials/travel.ipynb`.
 
 The website of the French national overseas archive (http://anom.archivesnationales.culture.gouv.fr/) lists the information for over 19,000 Marine employees.
 
@@ -30,12 +23,15 @@ Through a word frequency analysis, we determined groups of commonly occuring key
 
 We then programmatically screened the 19,252 biographies against these groups of keywords, and only kept the ones that contained keywords mapping to two ore more regions. For example, the sentence given above for Foucault contains keywords mapping to Louisiana, India ("Pondichery") and Isle Bourbon ("Isle of France"). Through this process, we were able to identify 335 such biographies of Marine personnel who had likely lived in multiple colonies.
 
-We then manually inspected each sentence to remove false positives such as "Bachelier, Jean Baptiste, native of Isle of France, died during the crossing to Saint-Domingue, 1766", after which we were left with 239 Marine employees.
-We also adjusted the biographies for factual inaccuracies based on inspection
-of the original archival records. The corresponding data was manually entered
-into `scripts/curated_globetrotters_data.xlsx`.
+The raw biographies from the archives website is in `scripts/raw_anom_biographies.json`.
+
+We then manually inspected each sentence to remove false positives such as "Bachelier, Jean Baptiste, native of Isle of France, died during the crossing to Saint-Domingue, 1766".We also adjusted the biographies for factual inaccuracies based on inspection of the original archival records. 
+
+We also merged that data with a second dataset manually collected from primary and secondary sources. The merged dataset  is in `scripts/curated_globetrotters_data.csv`.
 
 Each of these biographies was then represented by an edge or a sequence of edges between regions on the map, matching the order of appearance of the corresponding keywords in the sentence. For example, with Foucault's description, we add two edges to the map: one going from Louisiana to India, and another one going from India to Isle Bourbon.
+
+The `links.js` file can be regenerated from the CVS file by running `scripts/parse_curated_globetrotters_data.py`, which also provides some summary stats.
 
 
 ## SHIPS

@@ -10,7 +10,22 @@ const OFFICIALS_CONFIG = {
     arrow_head_size: 10,
     undirected: true,  // but in single-agent view, we show arrows
     skip_france: true,
-    hidden_locations: ['France', 'Madagascar'],
+    hidden_locations: ['France'],
+    use_tags: true,
+    tag_to_color: {
+        Official: {
+            label: 'Officials',
+            color: '#009292'
+        },
+        Military: {
+            label: 'Military',
+            color: '#db6d00'
+        },
+        Other: {
+            label: 'Other',
+            color: '#490092'
+        },
+    },
     makeModalContent: function (node, sigmaInstance, links) {
         let output = '';
         links.filter(e => e.from == node.id || e.to == node.id)
