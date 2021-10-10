@@ -194,7 +194,7 @@ def process_row(row: Dict[str, str]) -> Tuple[Person, List[Edge]]:
 all_edges: List[Edge] = []
 all_people: List[Person] = []
 
-with open('curated_globetrotters_data.csv', encoding='utf-8-sig') as input_csv:
+with open('raw_data/curated_globetrotters_data.csv', encoding='utf-8-sig') as input_csv:
     input_data = list(csv.DictReader(input_csv))
     for row in input_data:
         name = row['Name']

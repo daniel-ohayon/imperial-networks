@@ -20,7 +20,7 @@ def merge_themes(theme):
     return theme
 
 
-data = load_workbook('laws-influences.xlsx').active.values
+data = load_workbook('raw_data/laws-influences.xlsx').active.values
 header = next(data)
 df = DataFrame(data, columns=header)
 df.fillna(value=MISSING_VALUE, inplace=True)

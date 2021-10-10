@@ -1,1 +1,4 @@
+.vscode/
 **/.DS_Store
+scripts/raw_data/
+**/.ipynb_checkpoints/
