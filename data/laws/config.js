@@ -2,6 +2,7 @@ const LAWS_CONFIG = {
     links: LAWS_LINKS,
     use_animation: true,
     use_simplified_edges: false,
+    default_year: 1767,
     edge_size: 1,
     arrow_head_size: 10,
     hidden_locations: ['France'],

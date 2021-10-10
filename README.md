@@ -1,5 +1,8 @@
-This is a collection of visualizations for the early modern French
-colonial empire.
+This is a collection of visualizations for the early modern French colonial empire.
+
+* [Laws](viz/laws.html)
+* [Globetrotters](viz/globetrotters.html)
+* [Ships](viz/ships.html)
 
 # Visualizations
 

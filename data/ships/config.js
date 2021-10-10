@@ -5,6 +5,8 @@ const SHIPS_CONFIG = {
     arrow_scaling_factor: 20,
     edge_size: 0.2,
     arrow_head_size: 5,
+    use_tags: true,
+    default_year: 1791,
     tag_to_color: {
         with_metropole: {
             label: 'With metropole',
