@@ -86,7 +86,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1668,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -166,7 +166,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Caribbean",
     "to_date": 1687,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -366,7 +366,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Louisiana",
     "to_date": 1719,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -386,7 +386,7 @@ const OFFICIALS_LINKS = [
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1721,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -466,7 +466,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1726,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -476,7 +476,7 @@ const OFFICIALS_LINKS = [
     "from": "Guyana",
     "to": "Caribbean",
     "to_date": 1728,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -486,7 +486,7 @@ const OFFICIALS_LINKS = [
     "from": "Louisiana",
     "to": "Guyana",
     "to_date": 1730,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -536,7 +536,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1732,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -706,7 +706,7 @@ const OFFICIALS_LINKS = [
     "from": "Louisiana",
     "to": "India",
     "to_date": 1742,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -716,7 +716,7 @@ const OFFICIALS_LINKS = [
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1742,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -756,7 +756,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Guyana",
     "to_date": 1744,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -786,7 +786,7 @@ const OFFICIALS_LINKS = [
     "from": "India",
     "to": "Senegal",
     "to_date": 1745,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -856,7 +856,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Caribbean",
     "to_date": 1747,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -866,7 +866,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Louisiana",
     "to_date": 1748,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -1036,7 +1036,7 @@ const OFFICIALS_LINKS = [
     "from": "Senegal",
     "to": "Caribbean",
     "to_date": 1753,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -1066,7 +1066,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Guyana",
     "to_date": 1755,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -1076,7 +1076,7 @@ const OFFICIALS_LINKS = [
     "from": "Guyana",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1755,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -1086,7 +1086,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1755,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -1176,7 +1176,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "New France",
     "to_date": 1756,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -1216,7 +1216,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Guyana",
     "to_date": 1757,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -1226,7 +1226,7 @@ const OFFICIALS_LINKS = [
     "from": "Guyana",
     "to": "Caribbean",
     "to_date": 1757,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -1246,7 +1246,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1757,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -1406,7 +1406,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Caribbean",
     "to_date": 1763,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -1436,7 +1436,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Guyana",
     "to_date": 1763,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -1506,7 +1506,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1764,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -1546,7 +1546,7 @@ const OFFICIALS_LINKS = [
     "from": "Senegal",
     "to": "Louisiana",
     "to_date": 1765,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -1626,7 +1626,7 @@ const OFFICIALS_LINKS = [
     "from": "Guyana",
     "to": "Caribbean",
     "to_date": 1766,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -1696,7 +1696,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Louisiana",
     "to_date": 1766,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -1706,7 +1706,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Louisiana",
     "to_date": 1766,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -1736,7 +1736,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "Guyana",
     "to_date": 1768,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -1766,7 +1766,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1769,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -1916,7 +1916,7 @@ const OFFICIALS_LINKS = [
     "from": "Senegal",
     "to": "Caribbean",
     "to_date": 1771,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -2026,7 +2026,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1774,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -2086,7 +2086,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1775,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -2126,7 +2126,7 @@ const OFFICIALS_LINKS = [
     "from": "Louisiana",
     "to": "Caribbean",
     "to_date": 1776,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -2146,7 +2146,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Caribbean",
     "to_date": 1776,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -2186,7 +2186,7 @@ const OFFICIALS_LINKS = [
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1776,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -2366,7 +2366,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1779,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -2376,7 +2376,7 @@ const OFFICIALS_LINKS = [
     "from": "India",
     "to": "Caribbean",
     "to_date": 1779,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -2416,7 +2416,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1780,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -2426,7 +2426,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1780,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -2436,7 +2436,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1781,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -2476,7 +2476,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Senegal",
     "to_date": 1781,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Official"
   },
   {
@@ -2656,7 +2656,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1785,
-    "via_metropole": false,
+    "via_metropole": null,
     "tag": "Military"
   },
   {

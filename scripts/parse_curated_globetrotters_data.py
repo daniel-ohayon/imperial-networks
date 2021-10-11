@@ -3,7 +3,7 @@ import csv
 import re
 import sys
 
-from typing import Callable, List, Dict, Set, Any, Tuple
+from typing import Callable, List, Dict, Optional, Set, Any, Tuple
 import dataclasses
 from enum import Enum
 
@@ -53,7 +53,7 @@ class Occupation(Enum):
 class Person:
     regions: List[Region]
     departure_date: int
-    via_metropole: bool
+    via_metropole: Optional[bool]
     occupation: Occupation
     saw_both_oceans: bool
 
@@ -66,7 +66,7 @@ class Edge:
     from_: Region  # 'from' is a python keyword
     to: Region
     departure_date: int
-    via_metropole: bool
+    via_metropole: Optional[bool]
     occupation: Occupation
 
     def to_dict(self) -> Dict[str, Any]:
@@ -125,15 +125,13 @@ def get_index(haystack: str, needle: str) -> int:
     return match.start()
 
 
-def str_to_bool(string: str) -> bool:
+def str_to_bool(string: str) -> Optional[bool]:
     clean_str = string.strip().lower()
     if clean_str == "yes":
         return True
     if clean_str == "no":
         return False
-    print(
-        f'[WARNING] Unrecognized boolean value: "{clean_str}" - defaulting to False')
-    return False
+    return None
 
 
 def get_regions(regions_str: str) -> List[Region]:
@@ -248,8 +246,8 @@ print("Year of first journey:", min(departure_dates))
 print("Year of last journey:", max(departure_dates))
 
 print(
-    "#ppl who travelled before 1720:",
-    count_if(all_people, lambda p: p.departure_date <= 1720)
+    "#ppl who travelled before 1710:",
+    count_if(all_people, lambda p: p.departure_date <= 1710)
 )
 print(
     "#ppl who travelled after 1763:",
@@ -303,3 +301,10 @@ print("  * continental North America (New France/Louisiana) + Mascarennes:",
               Region.NEW_FRANCE in p.regions or Region.LOUISIANA in p.regions
           ))
       )
+
+print_header("Metropole")
+print("Ppl who passed through the metropole:")
+for val in (True, False, None):
+    str_val = {True: "Yes", False: "No", None: "Unknown"}[val]
+    print(f"  * {str_val}:", count_if(all_people,
+          lambda p: p.via_metropole == val))
