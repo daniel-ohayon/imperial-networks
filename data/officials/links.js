@@ -86,7 +86,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1668,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Military"
   },
   {
@@ -166,7 +166,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Caribbean",
     "to_date": 1687,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Military"
   },
   {
@@ -250,8 +250,8 @@ const OFFICIALS_LINKS = [
     "tag": "Official"
   },
   {
-    "bio": "Jean-Baptiste Duclos was nomiated commissaire-ordonnateur of Louisiana in 1712 and left France to take up his position. He moved to  Saint-Domingue in 1717, where he became councillor at the colonial Council of Le Cap and Leogane, and was the intendant from 1729 to 1735. He died in Leogane in 1737.",
-    "annotated_bio": "Jean-Baptiste Duclos was nomiated commissaire-ordonnateur of <mark>Louisiana</mark> in 1712 and left France to take up his position. He moved to  <mark>Saint-Domingue</mark> in 1717, where he became councillor at the colonial Council of Le Cap and Leogane, and was the intendant from 1729 to 1735. He died in Leogane in 1737.",
+    "bio": "Jean-Baptiste Duclos was nominated commissaire-ordonnateur of Louisiana in 1712 and left France to take up his position. He moved to  Saint-Domingue in 1717, where he became councillor at the colonial Council of Le Cap and Leogane, and was the intendant from 1729 to 1735. He died in Leogane in 1737.",
+    "annotated_bio": "Jean-Baptiste Duclos was nominated commissaire-ordonnateur of <mark>Louisiana</mark> in 1712 and left France to take up his position. He moved to  <mark>Saint-Domingue</mark> in 1717, where he became councillor at the colonial Council of Le Cap and Leogane, and was the intendant from 1729 to 1735. He died in Leogane in 1737.",
     "name": "Jean-Baptiste Dubois Duclos",
     "from": "Louisiana",
     "to": "Caribbean",
@@ -366,7 +366,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Louisiana",
     "to_date": 1719,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Official"
   },
   {
@@ -446,7 +446,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1725,
-    "via_metropole": true,
+    "via_metropole": null,
     "tag": "Other"
   },
   {
@@ -650,6 +650,26 @@ const OFFICIALS_LINKS = [
     "tag": "Military"
   },
   {
+    "bio": "Blaise Estoupan de Saint Jean worked as a general attorney in the colonial Council of Senegal from 1740. He was a councilor in the colonial Council of Senegal from 1742, and in the colonial Council of Pondicherry around 1759–1761.  He moved to Isle of France in 1761, where he was a councilor at the colonial Council until 1767. ",
+    "annotated_bio": "<strong>Blaise Estoupan de Saint Jean</strong> worked as a general attorney in the colonial Council of <mark>Senegal</mark> from 1740. He was a councilor in the colonial Council of <mark>Senegal</mark> from 1742, and in the colonial Council of <mark>Pondicherry</mark> around 1759–1761.  He moved to <mark>Isle of France</mark> in 1761, where he was a councilor at the colonial Council until 1767. ",
+    "name": "Blaise Estoupan de Saint Jean",
+    "from": "Senegal",
+    "to": "India",
+    "to_date": 1740,
+    "via_metropole": true,
+    "tag": "Official"
+  },
+  {
+    "bio": "Blaise Estoupan de Saint Jean worked as a general attorney in the colonial Council of Senegal from 1740. He was a councilor in the colonial Council of Senegal from 1742, and in the colonial Council of Pondicherry around 1759–1761.  He moved to Isle of France in 1761, where he was a councilor at the colonial Council until 1767. ",
+    "annotated_bio": "<strong>Blaise Estoupan de Saint Jean</strong> worked as a general attorney in the colonial Council of <mark>Senegal</mark> from 1740. He was a councilor in the colonial Council of <mark>Senegal</mark> from 1742, and in the colonial Council of <mark>Pondicherry</mark> around 1759–1761.  He moved to <mark>Isle of France</mark> in 1761, where he was a councilor at the colonial Council until 1767. ",
+    "name": "Blaise Estoupan de Saint Jean",
+    "from": "India",
+    "to": "Isle Bourbon & Isle of France",
+    "to_date": 1740,
+    "via_metropole": true,
+    "tag": "Official"
+  },
+  {
     "bio": "Pierre Poivre was born in Lyon in 1719. He studied theology, botany and engineering in Paris and became a botanist. In 1741, he left France to work as a religious missionary in China and Cochinchina. While on its way back to France, in 1745, his vessel was attacked by the British who took him to Dutch Batavia. He eventually reached Pondicherry in 1746, Isle of France and France in 1758. He became a member of the Academy of Sciences in Lyon. In 1766, he was named Intendant of Isle of France and Isle Bourbon. He left Isle of France in 1772 and died in France in 1786. He wrote a travel narrative, titled Voyages d’un philosophe (1768).",
     "annotated_bio": "<strong>Pierre Poivre</strong> was born in Lyon in 1719. He studied theology, botany and engineering in Paris and became a botanist. In 1741, he left France to work as a religious missionary in China and Cochinchina. While on its way back to France, in 1745, his vessel was attacked by the British who took him to Dutch Batavia. He eventually reached <mark>Pondicherry</mark> in 1746, <mark>Isle of France</mark> and France in 1758. He became a member of the Academy of Sciences in Lyon. In 1766, he was named Intendant of <mark>Isle of France</mark> and Isle <mark>Bourbon</mark>. He left <mark>Isle of France</mark> in 1772 and died in France in 1786. He wrote a travel narrative, titled Voyages d’un philosophe (1768).",
     "name": "Pierre Poivre",
@@ -670,8 +690,8 @@ const OFFICIALS_LINKS = [
     "tag": "Military"
   },
   {
-    "bio": "René Gédéon Potier de Pommeroy was born at Fort Fontenac in Canda on September 7th 1730.  He was a cadet in the Fort Royal troop starting in 1742, then was promoted to officer in 1749, then sub-aide-major in 1750, then captain in 1754, then lieutenant in 1755, before becoming captain of the national troops in Cayenne, and he withdrew in 1768.",
-    "annotated_bio": "<strong>René Gédéon Potier de Pommeroy</strong> was born at Fort Fontenac in Canda on September 7th 1730.  He was a cadet in the Fort Royal troop starting in 1742, then was promoted to officer in 1749, then sub-aide-major in 1750, then captain in 1754, then lieutenant in 1755, before becoming captain of the national troops in <mark>Cayenne</mark>, and he withdrew in 1768.",
+    "bio": "René Gédéon Potier de Pommeroy was born at Fort Fontenac in Canada on September 7th 1730.  He was a cadet in the Fort Royal troop starting in 1742, then was promoted to officer in 1749, then sub-aide-major in 1750, then captain in 1754, then lieutenant in 1755, before becoming captain of the national troops in Cayenne, and he withdrew in 1768.",
+    "annotated_bio": "<strong>René Gédéon Potier de Pommeroy</strong> was born at Fort Fontenac in <mark>Canada</mark> on September 7th 1730.  He was a cadet in the Fort Royal troop starting in 1742, then was promoted to officer in 1749, then sub-aide-major in 1750, then captain in 1754, then lieutenant in 1755, before becoming captain of the national troops in <mark>Cayenne</mark>, and he withdrew in 1768.",
     "name": "René Gédéon Potier de Pommeroy",
     "from": "New France",
     "to": "Guyana",
@@ -700,8 +720,8 @@ const OFFICIALS_LINKS = [
     "tag": "Military"
   },
   {
-    "bio": "Denis Foucault was the chief writer of the Marine starting in 1742, then was an authorizing officer in Louisiana and Pondicherry, and then was commissioner general in charge of the function of intendant in Isle of France",
-    "annotated_bio": "<strong>Denis Foucault</strong> was the chief writer of the Marine starting in 1742, then was an authorizing officer in <mark>Louisiana</mark> and <mark>Pondicherry</mark>, and then was commissioner general in charge of the function of intendant in <mark>Isle of France</mark>",
+    "bio": "Denis Foucault was the chief book-keeper of the Marine starting in 1742, then was an authorizing officer in Louisiana and Pondicherry, and then was commissioner general in charge of the function of intendant in Isle of France",
+    "annotated_bio": "<strong>Denis Foucault</strong> was the chief book-keeper of the Marine starting in 1742, then was an authorizing officer in <mark>Louisiana</mark> and <mark>Pondicherry</mark>, and then was commissioner general in charge of the function of intendant in <mark>Isle of France</mark>",
     "name": "Denis Foucault",
     "from": "Louisiana",
     "to": "India",
@@ -710,8 +730,8 @@ const OFFICIALS_LINKS = [
     "tag": "Official"
   },
   {
-    "bio": "Denis Foucault was the chief writer of the Marine starting in 1742, then was an authorizing officer in Louisiana and Pondicherry, and then was commissioner general in charge of the function of intendant in Isle of France",
-    "annotated_bio": "<strong>Denis Foucault</strong> was the chief writer of the Marine starting in 1742, then was an authorizing officer in <mark>Louisiana</mark> and <mark>Pondicherry</mark>, and then was commissioner general in charge of the function of intendant in <mark>Isle of France</mark>",
+    "bio": "Denis Foucault was the chief book-keeper of the Marine starting in 1742, then was an authorizing officer in Louisiana and Pondicherry, and then was commissioner general in charge of the function of intendant in Isle of France",
+    "annotated_bio": "<strong>Denis Foucault</strong> was the chief book-keeper of the Marine starting in 1742, then was an authorizing officer in <mark>Louisiana</mark> and <mark>Pondicherry</mark>, and then was commissioner general in charge of the function of intendant in <mark>Isle of France</mark>",
     "name": "Denis Foucault",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -728,6 +748,16 @@ const OFFICIALS_LINKS = [
     "to_date": 1742,
     "via_metropole": true,
     "tag": "Military"
+  },
+  {
+    "bio": "Pierre de Rigaud Marquis de Vaudreuil was born in Quebec in 1698. He was the governor of Trois-Rivières from 1733 to 1743 and the governor of Louisiana from 1742 to 1753. In 1755, he became the last governor-general of New France and capitulated to the British in 1760. He was the fourth son of Philippe de Rigaud de Vaudreuil, governor of New France from 1703 to 1725. His brother Joseph Hyacinthe pursued a military career and was the governor of Saint-Domingue from 1753 to 1757. His other brother François Pierre was also granted the office of governor of Trois-Rivières. Pierre de Rigaud Marquis de Vaudreuil died in Paris in 1778.",
+    "annotated_bio": "<strong>Pierre de Rigaud Marquis de Vaudreuil</strong> was born in <mark>Quebec</mark> in 1698. He was the governor of Trois-Rivières from 1733 to 1743 and the governor of <mark>Louisiana</mark> from 1742 to 1753. In 1755, he became the last governor-general of <mark>New France</mark> and capitulated to the British in 1760. He was the fourth son of Philippe de Rigaud de Vaudreuil, governor of <mark>New France</mark> from 1703 to 1725. His brother Joseph Hyacinthe pursued a military career and was the governor of <mark>Saint-Domingue</mark> from 1753 to 1757. His other brother François Pierre was also granted the office of governor of Trois-Rivières. <strong>Pierre de Rigaud Marquis de Vaudreuil</strong> died in Paris in 1778.",
+    "name": "Pierre de Rigaud Marquis de Vaudreuil",
+    "from": "New France",
+    "to": "Louisiana",
+    "to_date": 1742,
+    "via_metropole": true,
+    "tag": "Official"
   },
   {
     "bio": "Charles François d'Espinette began his  service in 1743.  He was a major of the Isle of France legion, then of the Pondicherry regiment, with a certificate of lieutenant-colonel in 1770/1776.",
@@ -930,6 +960,26 @@ const OFFICIALS_LINKS = [
     "tag": "Military"
   },
   {
+    "bio": "Jean Daniel Dumas was sent to New France in 1750. He served in New France during the Seven Years War and was a commander in Saint-Domingue in 1765. He then moved to the Mascarennes where he was the commander from 1766 to 1768, during the transfer of the islands to royal control. ",
+    "annotated_bio": "<strong>Jean Daniel Dumas</strong> was sent to <mark>New France</mark> in 1750. He served in <mark>New France</mark> during the Seven Years War and was a commander in <mark>Saint-Domingue</mark> in 1765. He then moved to the Mascarennes where he was the commander from 1766 to 1768, during the transfer of the islands to royal control. ",
+    "name": "Jean Daniel Dumas",
+    "from": "New France",
+    "to": "Caribbean",
+    "to_date": 1750,
+    "via_metropole": true,
+    "tag": "Military"
+  },
+  {
+    "bio": "Jean Daniel Dumas was sent to New France in 1750. He served in New France during the Seven Years War and was a commander in Saint-Domingue in 1765. He then moved to the Mascarennes where he was the commander from 1766 to 1768, during the transfer of the islands to royal control. ",
+    "annotated_bio": "<strong>Jean Daniel Dumas</strong> was sent to <mark>New France</mark> in 1750. He served in <mark>New France</mark> during the Seven Years War and was a commander in <mark>Saint-Domingue</mark> in 1765. He then moved to the Mascarennes where he was the commander from 1766 to 1768, during the transfer of the islands to royal control. ",
+    "name": "Jean Daniel Dumas",
+    "from": "Caribbean",
+    "to": "Isle Bourbon & Isle of France",
+    "to_date": 1750,
+    "via_metropole": true,
+    "tag": "Military"
+  },
+  {
     "bio": "Alexandre Claude Duparquier arrived in Louisiana in 1751.  He became the general store-keeper of the king in Louisiana, then was charged with the class bureau in Saint-Domingue in 1754/1775.",
     "annotated_bio": "<strong>Alexandre Claude Duparquier</strong> arrived in <mark>Louisiana</mark> in 1751.  He became the general store-keeper of the king in <mark>Louisiana</mark>, then was charged with the class bureau in <mark>Saint-Domingue</mark> in 1754/1775.",
     "name": "Alexandre Claude Duparquier",
@@ -1036,7 +1086,7 @@ const OFFICIALS_LINKS = [
     "from": "Senegal",
     "to": "Caribbean",
     "to_date": 1753,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Other"
   },
   {
@@ -1050,8 +1100,8 @@ const OFFICIALS_LINKS = [
     "tag": "Military"
   },
   {
-    "bio": "Tizoneaux, employed by the Bureau of the Marine in Louisiana starting in 1753, was a notary in Louisiana starting in 1758, and was charged with the Louisiana store-keepers' accounts starting in 1764.  He was Louisiana accounting clerk, then was nominated as writer of the Marine, and was in Saint-Domingue starting in 1774.",
-    "annotated_bio": "<strong>Tizoneaux</strong>, employed by the Bureau of the Marine in <mark>Louisiana</mark> starting in 1753, was a notary in <mark>Louisiana</mark> starting in 1758, and was charged with the <mark>Louisiana</mark> store-keepers' accounts starting in 1764.  He was <mark>Louisiana</mark> accounting clerk, then was nominated as writer of the Marine, and was in <mark>Saint-Domingue</mark> starting in 1774.",
+    "bio": "Tizoneaux, employed by the Bureau of the Marine in Louisiana starting in 1753, was a notary in Louisiana starting in 1758, and was charged with the Louisiana store-keepers' accounts starting in 1764.  He was Louisiana accounting clerk, then was nominated as book-keeper of the Marine, and was in Saint-Domingue starting in 1774.",
+    "annotated_bio": "<strong>Tizoneaux</strong>, employed by the Bureau of the Marine in <mark>Louisiana</mark> starting in 1753, was a notary in <mark>Louisiana</mark> starting in 1758, and was charged with the <mark>Louisiana</mark> store-keepers' accounts starting in 1764.  He was <mark>Louisiana</mark> accounting clerk, then was nominated as book-keeper of the Marine, and was in <mark>Saint-Domingue</mark> starting in 1774.",
     "name": "Tizoneaux",
     "from": "Louisiana",
     "to": "Caribbean",
@@ -1066,7 +1116,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Guyana",
     "to_date": 1755,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Military"
   },
   {
@@ -1076,7 +1126,7 @@ const OFFICIALS_LINKS = [
     "from": "Guyana",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1755,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Military"
   },
   {
@@ -1086,7 +1136,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1755,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Military"
   },
   {
@@ -1140,8 +1190,8 @@ const OFFICIALS_LINKS = [
     "tag": "Official"
   },
   {
-    "bio": "Jean Antoine Charles Morin was a cadet of the Louisbourg troops starting in 1755.  He was assigned as a cadet of the national troops of French Guyana [???] in 1764, and was then sub-lieutenant of the Guadeloupe regiment.  He left in 1775 and requested a place in the Isle of France offices, where he travelled in 1784.",
-    "annotated_bio": "<strong>Jean Antoine Charles Morin</strong> was a cadet of the <mark>Louisbourg</mark> troops starting in 1755.  He was assigned as a cadet of the national troops of French <mark>Guyana</mark> [???] in 1764, and was then sub-lieutenant of the <mark>Guadeloupe</mark> regiment.  He left in 1775 and requested a place in the <mark>Isle of France</mark> offices, where he travelled in 1784.",
+    "bio": "Jean Antoine Charles Morin was a cadet of the Louisbourg troops starting in 1755.  He was assigned as a cadet of the national troops of French Guyana in 1764, and was then sub-lieutenant of the Guadeloupe regiment.  He left in 1775 and requested a place in the Isle of France offices, where he travelled in 1784.",
+    "annotated_bio": "<strong>Jean Antoine Charles Morin</strong> was a cadet of the <mark>Louisbourg</mark> troops starting in 1755.  He was assigned as a cadet of the national troops of French <mark>Guyana</mark> in 1764, and was then sub-lieutenant of the <mark>Guadeloupe</mark> regiment.  He left in 1775 and requested a place in the <mark>Isle of France</mark> offices, where he travelled in 1784.",
     "name": "Jean Antoine Charles Morin",
     "from": "New France",
     "to": "Guyana",
@@ -1150,8 +1200,8 @@ const OFFICIALS_LINKS = [
     "tag": "Military"
   },
   {
-    "bio": "Jean Antoine Charles Morin was a cadet of the Louisbourg troops starting in 1755.  He was assigned as a cadet of the national troops of French Guyana [???] in 1764, and was then sub-lieutenant of the Guadeloupe regiment.  He left in 1775 and requested a place in the Isle of France offices, where he travelled in 1784.",
-    "annotated_bio": "<strong>Jean Antoine Charles Morin</strong> was a cadet of the <mark>Louisbourg</mark> troops starting in 1755.  He was assigned as a cadet of the national troops of French <mark>Guyana</mark> [???] in 1764, and was then sub-lieutenant of the <mark>Guadeloupe</mark> regiment.  He left in 1775 and requested a place in the <mark>Isle of France</mark> offices, where he travelled in 1784.",
+    "bio": "Jean Antoine Charles Morin was a cadet of the Louisbourg troops starting in 1755.  He was assigned as a cadet of the national troops of French Guyana in 1764, and was then sub-lieutenant of the Guadeloupe regiment.  He left in 1775 and requested a place in the Isle of France offices, where he travelled in 1784.",
+    "annotated_bio": "<strong>Jean Antoine Charles Morin</strong> was a cadet of the <mark>Louisbourg</mark> troops starting in 1755.  He was assigned as a cadet of the national troops of French <mark>Guyana</mark> in 1764, and was then sub-lieutenant of the <mark>Guadeloupe</mark> regiment.  He left in 1775 and requested a place in the <mark>Isle of France</mark> offices, where he travelled in 1784.",
     "name": "Jean Antoine Charles Morin",
     "from": "Guyana",
     "to": "Caribbean",
@@ -1160,8 +1210,8 @@ const OFFICIALS_LINKS = [
     "tag": "Military"
   },
   {
-    "bio": "Jean Antoine Charles Morin was a cadet of the Louisbourg troops starting in 1755.  He was assigned as a cadet of the national troops of French Guyana [???] in 1764, and was then sub-lieutenant of the Guadeloupe regiment.  He left in 1775 and requested a place in the Isle of France offices, where he travelled in 1784.",
-    "annotated_bio": "<strong>Jean Antoine Charles Morin</strong> was a cadet of the <mark>Louisbourg</mark> troops starting in 1755.  He was assigned as a cadet of the national troops of French <mark>Guyana</mark> [???] in 1764, and was then sub-lieutenant of the <mark>Guadeloupe</mark> regiment.  He left in 1775 and requested a place in the <mark>Isle of France</mark> offices, where he travelled in 1784.",
+    "bio": "Jean Antoine Charles Morin was a cadet of the Louisbourg troops starting in 1755.  He was assigned as a cadet of the national troops of French Guyana in 1764, and was then sub-lieutenant of the Guadeloupe regiment.  He left in 1775 and requested a place in the Isle of France offices, where he travelled in 1784.",
+    "annotated_bio": "<strong>Jean Antoine Charles Morin</strong> was a cadet of the <mark>Louisbourg</mark> troops starting in 1755.  He was assigned as a cadet of the national troops of French <mark>Guyana</mark> in 1764, and was then sub-lieutenant of the <mark>Guadeloupe</mark> regiment.  He left in 1775 and requested a place in the <mark>Isle of France</mark> offices, where he travelled in 1784.",
     "name": "Jean Antoine Charles Morin",
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
@@ -1290,8 +1340,8 @@ const OFFICIALS_LINKS = [
     "tag": "Military"
   },
   {
-    "bio": "Normand was a writer of the colonies in Louisiana from 1758, then in Cayenne from 1763, and was class commissioner in Bayonne in 1779.",
-    "annotated_bio": "<strong>Normand</strong> was a writer of the colonies in <mark>Louisiana</mark> from 1758, then in <mark>Cayenne</mark> from 1763, and was class commissioner in Bayonne in 1779.",
+    "bio": "Normand was a book-keeper of the colonies in Louisiana from 1758, then in Cayenne from 1763, and was class commissioner in Bayonne in 1779.",
+    "annotated_bio": "<strong>Normand</strong> was a book-keeper of the colonies in <mark>Louisiana</mark> from 1758, then in <mark>Cayenne</mark> from 1763, and was class commissioner in Bayonne in 1779.",
     "name": "Normand",
     "from": "Louisiana",
     "to": "Guyana",
@@ -1390,8 +1440,8 @@ const OFFICIALS_LINKS = [
     "tag": "Military"
   },
   {
-    "bio": "Tourton de Clairefontaine was in the service in Canada starting in 1743, then was a clerk and staff writer in the Marine in Canada.  He then left for Saint-Domingue around 1763, where he became a shop-keeper starting in 1765.",
-    "annotated_bio": "<strong>Tourton de Clairefontaine</strong> was in the service in <mark>Canada</mark> starting in 1743, then was a clerk and staff writer in the Marine in <mark>Canada</mark>.  He then left for <mark>Saint-Domingue</mark> around 1763, where he became a shop-keeper starting in 1765.",
+    "bio": "Tourton de Clairefontaine was in the service in Canada starting in 1743, then was a clerk and staff book-keeper in the Marine in Canada.  He then left for Saint-Domingue around 1763, where he became a shop-keeper starting in 1765.",
+    "annotated_bio": "<strong>Tourton de Clairefontaine</strong> was in the service in <mark>Canada</mark> starting in 1743, then was a clerk and staff book-keeper in the Marine in <mark>Canada</mark>.  He then left for <mark>Saint-Domingue</mark> around 1763, where he became a shop-keeper starting in 1765.",
     "name": "Tourton de Clairefontaine",
     "from": "New France",
     "to": "Caribbean",
@@ -2026,7 +2076,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1774,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Official"
   },
   {
@@ -2146,7 +2196,7 @@ const OFFICIALS_LINKS = [
     "from": "New France",
     "to": "Caribbean",
     "to_date": 1776,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Official"
   },
   {
@@ -2416,7 +2466,7 @@ const OFFICIALS_LINKS = [
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
     "to_date": 1780,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Official"
   },
   {
@@ -2426,7 +2476,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1780,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Official"
   },
   {
@@ -2486,7 +2536,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1781,
-    "via_metropole": true,
+    "via_metropole": null,
     "tag": "Military"
   },
   {
@@ -2656,7 +2706,7 @@ const OFFICIALS_LINKS = [
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
     "to_date": 1785,
-    "via_metropole": null,
+    "via_metropole": true,
     "tag": "Military"
   },
   {
