@@ -61,3 +61,20 @@ start and end point that do not overlap).
 
 The data and config specific to each viz lives under `data/<vizname>`.
 There, we customize the edges (`links.js`), map styling and config (`config.js`) and modal contents (`modal-config.js`).
+
+# Sigma.js
+
+This code uses sigma.js v1 – the new release (v2) is pretty different. Check out 
+* [code examples from v1 over here](https://github.com/jacomyal/sigma.js/blob/v1/examples/basic.html)
+* [custom shapes plugin for nodes](https://github.com/jacomyal/sigma.js/tree/v1/plugins/sigma.renderers.customShapes)
+
+## Node layout
+```
+o------------> x
+|
+|
+|
+|
+v y
+```
+    

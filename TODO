@@ -1,3 +1,7 @@
+TROPES NETWORK
+* Turn troeps into rectangles with labels inside and edges stopping at the border of the rectangle
+* Move labels of authors on the left to the other side of their node so that the labels don't overlap with the edge
+
 FEATURES
 * Show trips to metropole in officials search results?
 * Page scrolling should work when cursor inside map; seems to be disabled by the sigma library
