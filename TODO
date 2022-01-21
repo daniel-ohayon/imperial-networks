@@ -1,4 +1,5 @@
 TROPES NETWORK
+* Try out https://github.com/visjs/vis-network
 * Turn troeps into rectangles with labels inside and edges stopping at the border of the rectangle
 * Move labels of authors on the left to the other side of their node so that the labels don't overlap with the edge
 
