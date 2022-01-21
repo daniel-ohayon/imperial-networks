@@ -68,13 +68,16 @@ This code uses sigma.js v1 – the new release (v2) is pretty different. Check o
 * [code examples from v1 over here](https://github.com/jacomyal/sigma.js/blob/v1/examples/basic.html)
 * [custom shapes plugin for nodes](https://github.com/jacomyal/sigma.js/tree/v1/plugins/sigma.renderers.customShapes)
 
+The docs for v1 have disappeared from Github but they are still available [on the Internet Archive](https://web.archive.org/web/20210916202145/https://github.com/jacomyal/sigma.js/wiki).
+
 ## Node layout
 ```
 o------------> x
 |
-|
-|
+|     
+|    (0,0)
+|     
 |
 v y
 ```
-    
+`(0,0)` is the middle of the canvas when `autoRescale=false`

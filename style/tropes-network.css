@@ -1,8 +1,9 @@
 #container {
     position: absolute;
-    width: 1200px;
-    height: 700px;
-    margin-left: 8%;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3000px;
     border: 1px solid gray;
 }
 
@@ -41,7 +42,7 @@
     max-height: 600px;
     width: 700px;
     overflow-y: scroll;
-    font-size: 1.2em;
+    font-size: 2em;
 }
 
 .modal-content ul {

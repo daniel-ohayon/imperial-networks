@@ -11,11 +11,14 @@
 
     <!-- sigma library-->
     <script src="../lib/sigma/sigma.min.js"></script>
+    <script src="../lib/sigma/sigma.renderers.bindEvents_forked.js"></script>
     <script src="../lib/sigma/sigma.renderers.customShapes.min.js"></script>
     <script src="../lib/sigma/sigma.plugins.filter.min.js"></script>
     <script src="../lib/sigma/sigma.layout.forceAtlas2.min.js"></script>
     <script src="../lib/sigma/sigma.canvas.labels.def.js"></script>
     <script src="../lib/sigma/sigma.canvas.hovers.def.js"></script>
+    <script src="../lib/sigma/sigma.renderers.rectangleNode.js"></script>
+    <script src="../lib/sigma/sigma.renderers.edgeToRectangleNode.js"></script>
 
     <!-- network javascript -->
     <script src="../lib/tropes-network.js" charset="utf-8"></script>
@@ -24,16 +27,14 @@
 </head>
 
 <body>
-    <div id="title">Tropes networks</div>
     <div id="container"></div>
-
+    <div id="debug">Hello</div>
     <div class="modal">
         <div class="modal-content">
             <span class="close-button">x</span>
             <div class="modal-text"></div>
         </div>
     </div>
-
     <script>
         renderTropesNetwork(TROPES);
     </script>
