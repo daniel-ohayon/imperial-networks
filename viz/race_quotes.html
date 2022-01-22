@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+
+<head>
+    <title>Race quotes</title>
+    <link rel="stylesheet" href="../style/network-animation.css" />
+
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+    <script src="../data/places.js" charset="utf-8"></script>
+    <script src="../data/race-quotes.js" charset="utf-8"></script>
+    <script src="../lib/race-quotes-plot.js" charset="utf-8"></script>
+
+    <script src="../lib/modal.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div id="title">Uses of racial lexicon (1650-1825)</div>
+    <div id="container"></div>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">x</span>
+            <div class="modal-text"></div>
+        </div>
+    </div>
+    <script>
+        renderRaceQuotesPlot(PLACES, RACE_QUOTES);
+    </script>
+</body>
+
+</html>
