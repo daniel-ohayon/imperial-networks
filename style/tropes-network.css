@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 1000px;
+    height: 2200px;
     /* height: 3000px; */
     border: 1px solid gray;
 }
@@ -43,7 +43,7 @@
     max-height: 600px;
     width: 700px;
     overflow-y: scroll;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .modal-content ul {
@@ -74,4 +74,33 @@
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.citation {
+    color: rgb(160, 160, 160);
+}
+
+.trope {
+    color: rgb(6, 0, 77);
+}
+
+.column-header-1 {
+    position: absolute;
+    top: 30px;
+    left: 80px;
+    font-size: 1.3em;
+}
+
+.column-header-2 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    font-size: 1.3em;
+}
+
+.column-header-3 {
+    position: absolute;
+    top: 30px;
+    left: 1180px;
+    font-size: 1.3em;
 }

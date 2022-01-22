@@ -3,6 +3,8 @@ This is a collection of visualizations for the early modern French colonial empi
 * [Laws](viz/laws.html)
 * [Globetrotters](viz/globetrotters.html)
 * [Ships](viz/ships.html)
+* [Tropes](viz/tropes.html)
+* [Racial discourse](vis/race_quotes.html)
 
 # Visualizations
 
