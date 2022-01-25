@@ -8,7 +8,7 @@ const OFFICIALS_CONFIG = {
     arrow_scaling_factor: 1.2,
     edge_size: 1,
     arrow_head_size: 10,
-    undirected: true,  // but in single-agent view, we show arrows
+    undirected: true, // but in single-agent view, we show arrows
     skip_france: true,
     hidden_locations: ['France'],
     use_tags: true,
@@ -26,7 +26,7 @@ const OFFICIALS_CONFIG = {
             color: '#490092'
         },
     },
-    makeModalContent: function (node, sigmaInstance, links) {
+    makeModalContent: function(node, sigmaInstance, links) {
         let output = '';
         links.filter(e => e.from == node.id || e.to == node.id)
             .sort()
