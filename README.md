@@ -1,3 +1,5 @@
+[Click here for the website](https://daniel-ohayon.github.io/imperial-networks/).
+
 This is a collection of visualizations for the early modern French colonial empire.
 
 * [Laws](viz/laws.html)
