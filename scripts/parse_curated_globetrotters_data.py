@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import csv
 import re
@@ -6,6 +8,15 @@ import sys
 from typing import Callable, List, Dict, Optional, Set, Any, Tuple
 import dataclasses
 from enum import Enum
+
+if sys.argv[1] == "--authors":
+    INPUT_FILE = 'raw_data/travel-narrative-authors-journeys.csv'
+    OUTPUT_FILE = '../data/officials/travel-narrative-authors-links.js'
+    JS_CONST_NAME = 'TRAVEL_NARRATIVE_AUTHORS_LINKS'
+else:
+    INPUT_FILE = 'raw_data/curated_globetrotters_data.csv'
+    OUTPUT_FILE = '../data/officials/links.js'
+    JS_CONST_NAME = 'OFFICIALS_LINKS'
 
 
 class Ocean(Enum):
@@ -32,8 +43,10 @@ class Region(Enum):
 
     @staticmethod
     def from_str(string: str) -> 'Region':
-        if string == 'Bourbon':
+        if string in ('Bourbon', 'Isle Bourbon'):
             return Region.BOURBON
+        if string in ('Dominica', 'Guadeloupe', "Martinique", "Saint-Domingue", "Saint-Christophe", "Saint Christopher"):
+            return Region.CARIBBEAN
         return Region(string)
 
 
@@ -43,7 +56,7 @@ class Occupation(Enum):
     OTHER = 'Other'
 
     @staticmethod
-    def from_str(string: str) -> 'Occupation':
+    def from_str(string: str) -> Occupation:
         if string == 'Missionary':
             return Occupation.OTHER
         return Occupation(string)
@@ -137,7 +150,7 @@ def str_to_bool(string: str) -> Optional[bool]:
 def get_regions(regions_str: str) -> List[Region]:
     result = []
     for reg in regions_str.split(';'):
-        result.append(Region.from_str(reg))
+        result.append(Region.from_str(reg.strip()))
     return result
 
 # ------------------- GRAPH DATA EXPORT -----------------------------
@@ -158,14 +171,15 @@ def process_row(row: Dict[str, str]) -> Tuple[Person, List[Edge]]:
     name = row['Name']
     try:
         regions = get_regions(row['Regions'])
-    except Exception:
-        print(f"Failed to parse regions string for {name}: '{row['Regions']}'")
+    except Exception as e:
+        print(
+            f"Failed to parse regions string for {name}: '{row['Regions']}' -- {str(e)}")
         sys.exit(1)
 
     annotated_bio = annotate_bio(row['Biography'], name)
     dep_date = int(row['Date of departure'])
     via_metropole = str_to_bool(row['Time in metropolitan France'])
-    occupation = Occupation.from_str(row['Occupation'])
+    occupation = Occupation.from_str(row['Occupation'].strip())
     saw_both_oceans = len({reg.ocean() for reg in regions}) > 1
 
     person = Person(regions=regions, departure_date=dep_date,
@@ -192,7 +206,7 @@ def process_row(row: Dict[str, str]) -> Tuple[Person, List[Edge]]:
 all_edges: List[Edge] = []
 all_people: List[Person] = []
 
-with open('raw_data/curated_globetrotters_data.csv', encoding='utf-8-sig') as input_csv:
+with open(INPUT_FILE, encoding='utf-8-sig') as input_csv:
     input_data = list(csv.DictReader(input_csv))
     for row in input_data:
         name = row['Name']
@@ -213,12 +227,12 @@ with open('raw_data/curated_globetrotters_data.csv', encoding='utf-8-sig') as in
         all_people.append(person)
 
 
-with open('../data/officials/links.js', 'w') as out_js_file:
+with open(OUTPUT_FILE, 'w') as out_js_file:
     json_str = json.dumps([edge.to_dict()
                           for edge in all_edges], indent=2, ensure_ascii=False)
-    out_js_file.write(f"const OFFICIALS_LINKS = {json_str};\n")
+    out_js_file.write(f"const {JS_CONST_NAME} = {json_str};\n")
 
-print("Results written to ../data/officials/links.js")
+print(f"Results written to {OUTPUT_FILE}")
 print("==================================")
 
 # --------------------  DATA ANALYSIS -----------------------------
