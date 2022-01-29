@@ -253,3 +253,15 @@ input[type=submit] {
 .citation {
     color: rgb(160, 160, 160);
 }
+
+.region {
+    font-weight: bold;
+}
+
+.keyword-bullet {
+    float: left;
+    height: 10px;
+    width: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
+}

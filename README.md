@@ -7,7 +7,7 @@ This is a collection of visualizations for the early modern French colonial empi
 * [Globetrotters V2 – including travel narrative authors](viz/globetrotters-v2.html): same as above, but including travel narrative authors (data updated Jan 2022)
 * [Ships](viz/ships.html): journeys of ships across the empire
 * [Tropes](viz/tropes.html): racial stereotypes in travel narratives and writings, and the people who used them
-* [Racial discourse](vis/race_quotes.html): uses of specific racial words across the empire
+* [Racial lexicon](viz/racial-lexicon.html): uses of specific racial words across the empire
 
 # Visualizations
 

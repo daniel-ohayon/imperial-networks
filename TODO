@@ -6,3 +6,7 @@ FEATURES
 
 CORE
 * Move away from sigma to viz.js for the older visualizations?
+
+RACIAL KEYWORDS
+* Add click interaction
+* Show all keywords for all colonies (including the 0s)
