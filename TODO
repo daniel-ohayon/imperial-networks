@@ -10,3 +10,5 @@ CORE
 RACIAL KEYWORDS
 * Add click interaction
 * Show all keywords for all colonies (including the 0s)
+    * put Blood first
+* highlight keywords in the quotes with the corresponding color

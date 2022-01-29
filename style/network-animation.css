@@ -254,6 +254,9 @@ input[type=submit] {
     color: rgb(160, 160, 160);
 }
 
+
+/* For the racial keywords map */
+
 .region {
     font-weight: bold;
 }
@@ -264,4 +267,18 @@ input[type=submit] {
     width: 10px;
     margin-right: 5px;
     margin-top: 5px;
+}
+
+.region-stats {
+    position: absolute;
+    font-family: Verdana;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.region-stats:hover {
+    background-color: lightgoldenrodyellow;
+    border: 1px solid darkgoldenrod;
+    cursor: pointer;
 }
