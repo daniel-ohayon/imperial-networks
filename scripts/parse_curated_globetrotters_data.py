@@ -9,7 +9,9 @@ from typing import Callable, List, Dict, Optional, Set, Any, Tuple
 import dataclasses
 from enum import Enum
 
-if sys.argv[1] == "--authors":
+parse_authors_data = sys.argv[1] == "--authors"
+
+if parse_authors_data:
     INPUT_FILE = 'raw_data/travel-narrative-authors-journeys.csv'
     OUTPUT_FILE = '../data/officials/travel-narrative-authors-links.js'
     JS_CONST_NAME = 'TRAVEL_NARRATIVE_AUTHORS_LINKS'

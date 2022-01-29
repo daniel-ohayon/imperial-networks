@@ -13,6 +13,10 @@ const OFFICIALS_CONFIG = {
     hidden_locations: ['France'],
     use_tags: true,
     tag_to_color: {
+        Author: {
+            label: 'Authors',
+            color: '#882255',
+        },
         Official: {
             label: 'Officials',
             color: '#009292'

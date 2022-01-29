@@ -41,6 +41,11 @@
                 <i class="material-icons">skip_next</i>
             </button>
         </div>
+
+        <div style="display: flex; align-items: center;">
+            <input type="checkbox" id="checkbox-syw">
+            <label for="checkbox-syw" style="font-size: 1.2em; margin-left: 8px;"> Show data beyond 1763</label><br>
+        </div>
     </div>
 
 
@@ -67,14 +72,26 @@
     </div>
 
     <!-- DATA SPECIFIC TO THIS VISUALIZATION-->
-    <script src="../data/officials/travel-narrative-authors-links.js" charset="utf-8"></script>
     <script src="../data/officials/links.js" charset="utf-8"></script>
+    <script src="../data/officials/travel-narrative-authors-links.js" charset="utf-8"></script>
     <script src="../data/officials/config.js" charset="utf-8"></script>
     <script>
+        const authorNames = new Set(TRAVEL_NARRATIVE_AUTHORS_LINKS.map(e => e.name));
+        let links = OFFICIALS_CONFIG.links.filter(e => e.to_date <= 1763);
+        const existingNames = new Set(links.map(l => l.name));
+        for (link of TRAVEL_NARRATIVE_AUTHORS_LINKS) {
+            if (!existingNames.has(link.name)) {
+                links.push(link);
+            }
+        }
+        links = links.map(l => ({
+            ...l,
+            tag: authorNames.has(l.name) ? 'Author' : l.tag,
+        }));
+        console.log(links.length);
+
         renderNetwork({...OFFICIALS_CONFIG,
-            links: TRAVEL_NARRATIVE_AUTHORS_LINKS,
-            use_histogram: false,
-            edge_size: 2,
+            links: links
         });
     </script>
     <!---------------------------------------->
