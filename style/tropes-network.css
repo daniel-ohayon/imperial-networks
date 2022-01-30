@@ -3,8 +3,8 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 2200px;
-    /* height: 3000px; */
+    /* Reduce if network is too low on the page */
+    height: 2000px;
     border: 1px solid gray;
 }
 
