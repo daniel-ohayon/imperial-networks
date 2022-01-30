@@ -171,7 +171,7 @@ const TROPES = [
     "Order": ""
   },
   {
-    "Trope": "Bad smell",
+    "Trope": "Blacks lack intelligence",
     "Citation": "\"ignorants\"",
     "Title": "Herbert, Relation du voyage de Perse et des Indes orientales, p. 27.",
     "Date": "1663",
@@ -180,7 +180,7 @@ const TROPES = [
     "Order": ""
   },
   {
-    "Trope": "Bad smell",
+    "Trope": "Blacks lack intelligence",
     "Citation": "\"pauvres idiots de Negres\"",
     "Title": "Flacourt, Histoire de la grande isle de Madagascar, p. 16.",
     "Date": "1661",
@@ -1108,7 +1108,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"les filles & femmes de ce païs [Madagascar] sont fort impudiques\"",
+    "Citation": "les filles & femmes de ce païs [Madagascar] sont <b>fort impudiques</b>",
     "Title": "Dubois, Les voyages faits par le sieur D.B aux isles Dauphine ou Madagascar, et Bourbon ou Mascarenne, p. 154.",
     "Date": "1674",
     "Place": "Indian Ocean",
@@ -1117,7 +1117,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"Le peu d'embarras que cause le grand nombre d'enfans, le peu de peine avec laquelle elles les mettent au monde, la chaleur de leur temperament, toutes ces choses rendent les femmes d'une complexion fort amoureuse\" \"il n’y a point d’avances qu’elles ne leur fassent pour les engager à recevoir les faveurs\"",
+    "Citation": "\"Le peu d'embarras que cause le grand nombre d'enfans, le peu de peine avec laquelle elles les mettent au monde, la chaleur de leur temperament, toutes ces choses rendent les femmes <b>d'une complexion fort amoureuse</b> \"il n’y a point d’avances qu’elles ne leur fassent pour les engager à recevoir les faveurs\"",
     "Title": "Carpeau de Saussay, Voyage de Madagascar, pp. 254-255.",
     "Date": "1722",
     "Place": "Indian Ocean",
@@ -1126,7 +1126,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"quand quelque homme qui n’a point de femme passe par un village, il en louë pour une nuit ou pour deux selon sa fantaisie\"; \"cette grande inconstance & changement des femmes, est une grande opposition aux maxims du Christianisme que nous voulions donner aux Sauvages\"",
+    "Citation": "\"quand quelque homme qui n’a point de femme passe par un village, il en louë pour une nuit ou pour deux selon sa fantaisie\"; \"cette <b>grande inconstance & changement des femmes</b>, est une grande opposition aux maxims du Christianisme que nous voulions donner aux Sauvages\"",
     "Title": "Hennepin, Description de la Louisiane, pp. 34-37.",
     "Date": "1691",
     "Place": "Atlantic",
@@ -1135,7 +1135,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"Les filles ont cette avantage, qui leur est permis de Se divertir et faire ce qui leur plaise et avec autant de garcons que bon Leur Semble Sans qu’on y trouve a redire et Sans que cela les empechent de trouver un mary Lors que la fantaisie Les prend\"\n",
+    "Citation": "\"Les filles ont cette avantage, qui leur est permis de Se divertir et <b>faire ce qui leur plaise et avec autant de garcons que bon Leur Semble</b> Sans qu’on y trouve a redire et Sans que cela les empechent de trouver un mary Lors que la fantaisie Les prend\"\n",
     "Title": "LOC, ‘Memoranda on French colonies in America, including Canada, Louisiana, and the Caribbean’, ‘Relation du Sieur de La Mothe Cadillac’, p. 412-13.",
     "Date": "1710",
     "Place": "Atlantic",
@@ -1144,7 +1144,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"ils sont fort lubriques\"",
+    "Citation": "\"ils sont <b>fort lubriques</b>\"",
     "Title": "Challe, Journal d’un voyage fait aux indes orientales, p. 191.",
     "Date": "1690",
     "Place": "Indian Ocean",
@@ -1153,7 +1153,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"Le commerce d’amour n’est point banni de leur coeur, mais il est à craindre pour leur mari qu’elles font assassiner par-dessous main, et quelquefois par leurs amants, ce qui était arrive peu de temps aussi avant notre passage\"; \"Bien que les autres maris vivent dans une grande méfiance de leur femme, les enfermant même lorsqu’ils vont quelque part, elles ne manquent guère de leur faire porter un croissant sur la tête, la chaleur du pays ne les pouvant retenir dans une passion réglée.\"",
+    "Citation": "\"Le commerce d’amour n’est point banni de leur coeur, mais il est à craindre pour leur mari qu’elles font assassiner par-dessous main, et quelquefois par leurs amants, ce qui était arrive peu de temps aussi avant notre passage\"; \"Bien que les autres maris vivent dans une grande méfiance de leur femme, les enfermant même lorsqu’ils vont quelque part, elles ne manquent guère de leur faire porter un croissant sur la tête, <b>la chaleur du pays ne les pouvant retenir dans une passion réglée</b>.\"",
     "Title": "Lougnon, Sous le signe de la tortue, p. 198.",
     "Date": "1705",
     "Place": "Indian Ocean",
@@ -1162,7 +1162,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"tendre penchant à la galanterie\"",
+    "Citation": "\"tendre <b>penchant à la galanterie</b>\"",
     "Title": "Lougnon, Sous le signe de la tortue, p. 220.",
     "Date": "1717",
     "Place": "Indian Ocean",
@@ -1171,7 +1171,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"Egallement débauchez\" \"inclination naturelle que la pluspart des femmes de l’Isle ont au mal\"",
+    "Citation": "\"Egallement <b>débauchez</b>\" \"<b>inclination</b> naturelle que la pluspart des femmes de l’Isle ont <b>au mal</b>\"",
     "Title": "Boucher, ‘Le mémoire pour servir à la connaissance particulière de chacun des habitans de l’isle Bourbon, Antoine Boucher (1679-1725)’, p. 27.",
     "Date": "1709",
     "Place": "Indian Ocean",
@@ -1180,7 +1180,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"jeunes Sauvagesses [...] portées par leur naturel à toute Sorte de dereglement\"",
+    "Citation": "\"jeunes Sauvagesses [...] portées par leur naturel <b>à toute Sorte de dereglement</b>\"",
     "Title": "ANOM C13 A2 \"Memoire Sur la Conduite des François dans la Louisiane,\" p. 390",
     "Date": "1713",
     "Place": "Atlantic",
@@ -1189,7 +1189,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"temperament chaud, leur humeur inconstante & libertine, la facilité & l’impunité qu’ils trouvent à commettre toutes sortes de crimes\"",
+    "Citation": "\"temperament chaud, leur <b>humeur inconstante & libertine</b>, la facilité & l’impunité qu’ils trouvent à commettre toutes sortes de crimes\"",
     "Title": "Labat, Nouveau voyage, II, 43.",
     "Date": "1728",
     "Place": "Atlantic",
@@ -1207,7 +1207,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"Les sauvagesses [...] n’ont nulle fierté, se laissant assez Voir\net pour peu de butin, on peut faire avec elle\nce que dans notre langue, on nomme bagatelle\nmais si vous donnez gros, vous les gardez un mois\npour Vous servir de femme et d’esclave a la fois\nC’est a dire en deux mots quelle fait la chaudierre\naussi bien que le pain, Comme une chambrierre\nnetoye la Maison, vous apporte du bois\ntravaille en tout pour Vous; et ma foy quelquefois\nelle va vous chercher; l’eau s’il est necessaire\nfait aussi votre lit, et aide a le defaire\"\n",
+    "Citation": "\"Les sauvagesses [...] n’ont <b>nulle fierté</b>, se laissant assez Voir\net pour peu de butin, on peut faire avec elle\nce que dans notre langue, on nomme bagatelle\nmais si vous donnez gros, vous les gardez un mois\npour Vous servir de femme et d’esclave a la fois\nC’est a dire en deux mots quelle fait la chaudierre\naussi bien que le pain, Comme une chambrierre\nnetoye la Maison, vous apporte du bois\ntravaille en tout pour Vous; et ma foy quelquefois\nelle va vous chercher; l’eau s’il est necessaire\nfait aussi votre lit, et aide a le defaire\"\n",
     "Title": "LOC, ‘Louisiana Miscellany 1724-1837’, Dumont De Montigny, ‘Histoire de la Louisiane’, p. 114.",
     "Date": "1736",
     "Place": "Atlantic",
