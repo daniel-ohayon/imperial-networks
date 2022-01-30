@@ -86,21 +86,21 @@
 
 .column-header-1 {
     position: absolute;
-    top: 30px;
-    left: 80px;
+    top: 70px;
+    left: 2%;
     font-size: 1.3em;
 }
 
 .column-header-2 {
     position: absolute;
     top: 30px;
-    left: 690px;
+    left: 48%;
     font-size: 1.3em;
 }
 
 .column-header-3 {
     position: absolute;
-    top: 30px;
-    left: 1180px;
+    top: 70px;
+    right: 2%;
     font-size: 1.3em;
 }
