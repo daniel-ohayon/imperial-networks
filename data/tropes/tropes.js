@@ -1126,7 +1126,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"quand quelque homme qui n’a point de femme passe par un village, il en louë pour une nuit ou pour deux selon sa fantaisie\"; \"cette <b>grande inconstance & changement des femmes</b>, est une grande opposition aux maxims du Christianisme que nous voulions donner aux Sauvages\"",
+    "Citation": "\"quand quelque homme qui n’a point de femme passe par un village, il en louë pour une nuit ou pour deux selon sa fantaisie\"; \"cette <b>grande inconstance & changement des femmes</b>, est une grande opposition aux maximes du Christianisme que nous voulons donner aux Sauvages\"",
     "Title": "Hennepin, Description de la Louisiane, pp. 34-37.",
     "Date": "1691",
     "Place": "Atlantic",
@@ -1135,7 +1135,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"Les filles ont cette avantage, qui leur est permis de Se divertir et <b>faire ce qui leur plaise et avec autant de garcons que bon Leur Semble</b> Sans qu’on y trouve a redire et Sans que cela les empechent de trouver un mary Lors que la fantaisie Les prend\"\n",
+    "Citation": "\"Les filles ont cette avantage, qui leur est permis de Se divertir et <b>faire ce qui leur plaise et avec autant de garcons que bon Leur Semble</b> Sans qu’on y trouve a redire et Sans que cela les empeche de trouver un mary Lors que la fantaisie Les prend\"\n",
     "Title": "LOC, ‘Memoranda on French colonies in America, including Canada, Louisiana, and the Caribbean’, ‘Relation du Sieur de La Mothe Cadillac’, p. 412-13.",
     "Date": "1710",
     "Place": "Atlantic",
@@ -1153,7 +1153,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"Le commerce d’amour n’est point banni de leur coeur, mais il est à craindre pour leur mari qu’elles font assassiner par-dessous main, et quelquefois par leurs amants, ce qui était arrive peu de temps aussi avant notre passage\"; \"Bien que les autres maris vivent dans une grande méfiance de leur femme, les enfermant même lorsqu’ils vont quelque part, elles ne manquent guère de leur faire porter un croissant sur la tête, <b>la chaleur du pays ne les pouvant retenir dans une passion réglée</b>.\"",
+    "Citation": "\"Le commerce d’amour n’est point banni de leur coeur, mais il est à craindre pour leur mari qu’elles font assassiner par-dessous main, et quelquefois par leurs amants, ce qui était arrivé peu de temps aussi avant notre passage\"; \"Bien que les autres maris vivent dans une grande méfiance de leur femme, les enfermant même lorsqu’ils vont quelque part, elles ne manquent guère de leur faire porter un croissant sur la tête, <b>la chaleur du pays ne les pouvant retenir dans une passion réglée</b>.\"",
     "Title": "Lougnon, Sous le signe de la tortue, p. 198.",
     "Date": "1705",
     "Place": "Indian Ocean",
@@ -1180,7 +1180,7 @@ const TROPES = [
   },
   {
     "Trope": "Sexual depravity ",
-    "Citation": "\"jeunes Sauvagesses [...] portées par leur naturel <b>à toute Sorte de dereglement</b>\"",
+    "Citation": "\"jeunes Sauvagesses [...] portées par leur naturel <b>à toutes Sortes de dereglements</b>\"",
     "Title": "ANOM C13 A2 \"Memoire Sur la Conduite des François dans la Louisiane,\" p. 390",
     "Date": "1713",
     "Place": "Atlantic",
@@ -1302,6 +1302,42 @@ const TROPES = [
     "Date": "1655",
     "Place": "Atlantic",
     "Author": "Pierre Pelleprat",
+    "Order": ""
+  },
+  {
+    "Trope": "Lack of masculinity of men of color",
+    "Citation": "\"les noirs qui viennent de Madagascar sont gros et puissants, fort au travail, et ceux des Indes beaucoup plus efféminés, lâches et sans force\"",
+    "Title": "ANOM C3 2, f. 70v, ‘Mémoire Circonstantier De L’isle de Bourbon En Général’.",
+    "Date": "1705",
+    "Place": "Indian Ocean",
+    "Author": "Sieur Jean Feuillet ",
+    "Order": ""
+  },
+  {
+    "Trope": "Lack of masculinity of men of color",
+    "Citation": "\"Mouls, Et faineans\"",
+    "Title": "ANOM F3 133, f. 139v, ‘31 Bourbon’.",
+    "Date": "1736",
+    "Place": "Indian Ocean",
+    "Author": "Anonymous",
+    "Order": ""
+  },
+  {
+    "Trope": "Lack of masculinity of men of color",
+    "Citation": "\"bazané, mal faisant, sans barbe\"",
+    "Title": "François Cauche, Relation du Voyage que François Cauche De Rouen a Fait à Madagascar, isles adjacentes & coste d’Afrique: recueilly par le Sieur Morisot (Paris, 1651), p. 45",
+    "Date": "1651",
+    "Place": "Indian Ocean",
+    "Author": "François Cauche",
+    "Order": ""
+  },
+  {
+    "Trope": "Lack of masculinity of men of color",
+    "Citation": "“[Les esclaves] sont fort lubriques. Il n’y en a aucun qui, pour une roupie, ne vende sa Soeur, sa Fille, ou sa Femme, qui de leur côté s’abandonnent volontiers aux Blancs ou Européens. [...] J’y ai été, mes yeux ont vû, mes mains ont touché: j’ai satisfait ma curiosité; & c’est tout.”",
+    "Title": "Challe, Journal d’un voyage fait aux indes orientales, p. 191.",
+    "Date": "1690",
+    "Place": "Indian Ocean",
+    "Author": "Robert Challe",
     "Order": ""
   }
 ];

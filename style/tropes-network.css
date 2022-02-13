@@ -1,11 +1,11 @@
 #container {
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
     right: 0;
     /* Reduce if network is too low on the page */
     height: 2000px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 #title {
