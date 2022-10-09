@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clusters of laws</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="../style/law-clusters.css" />
+    <script src="../data/laws/law-clusters.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="title">Clusters of French racial policies, 1603–1758</div>
+    <div id="controls-div">
+        <div style="display: flex; align-items: center;">
+            <input type="range" min="1" max="100" value="1" class="slider" id="time-slider">
+            <button class="play-button">
+        <i class="material-icons">play_arrow</i>
+      </button>
+            <button class="goto-start-button">
+        <i class="material-icons">skip_previous</i>
+      </button>
+            <button class="goto-end-button">
+        <i class="material-icons">skip_next</i>
+      </button>
+        </div>
+    </div>
+
+    <div id="year">Hello</div>
+
+    <div id="clusters">
+        <div style="display: flex; margin-bottom: 10px; font-weight: bold; font-size: 20px; padding-left: 50px;">
+            <span style="flex-basis: 75%; flex-grow: 0; flex-shrink: 0;">Cluster</span>
+            <span style="flex-basis: 12.5%; flex-grow: 0; flex-shrink: 0;">Atlantic</span>
+            <span style="flex-basis: 12.5%; flex-grow: 0; flex-shrink: 0;">Indian Ocean</span>
+        </div>
+    </div>
+
+    <script src="../lib/law-clusters.js"></script>
+</body>

@@ -2,6 +2,7 @@
 
 This is a collection of visualizations for the early modern French colonial empire.
 
+* [Law clusters](viz/law-clusters.html): clusters of related racial laws issued across the empire
 * [Laws](viz/laws.html): laws that influenced or repeated each other across the empire
 * [Globetrotters](viz/globetrotters.html): people who travelled across the empire
 * [Globetrotters V2 – including travel narrative authors](viz/globetrotters-v2.html): same as above, but including travel narrative authors (data updated Jan 2022)
@@ -14,12 +15,17 @@ This is a collection of visualizations for the early modern French colonial empi
 
 ## LAWS
 `viz/laws.html` shows influences between laws passed in the colonies.
-The data is based on Melanie's book chapter 5 (`scripts/laws-influences.xslsx`)
+The data is based on Melanie's book chapter 5 (`scripts/raw_data/laws-influences.xslsx`)
 The data is parsed and transformed to JS using `scripts/parse-laws-influences.py`.
 
 We only show links directly between colonies, and not links with the metropole for readability. We use color coding to differentiate (a) laws that went directly from one colony to another, from (b) laws that were processed through the metropole in-between (by the King or Colbert, etc).
 
 We use dotted arrows to represent laws that had the same intent or similar wording, and solid arrows for laws that had the exact same text.
+
+## LAW CLUSTERS
+This is an evolution of the laws visualization. It moves away from the idea of trying to show that "law X led to law Y", and instead highlights the existence of a global conversation around racial policymaking. This is why we look at **clusters** of similar/identical laws, and we give up on the arrows that evoked a causal link.
+
+The data is derived from the same raw data as the laws map, but annotated using a graph traversal algorithm to identify clusters. `scripts/raw_data/law_clusters_annotated.csv` is the key source spreadsheet, and it is translated to a JS file via `scripts/law_clusters_to_js.py`.
 
 ## OFFICIALS
 `viz/officials.html` shows travels of French officials and other individuals. It is based on online archive records, extracted in `scripts/parse-officials/travel.ipynb`.
@@ -53,6 +59,18 @@ For each journey, there are two sources of information: a one-line summary with 
 
 To translate these itineraries into links in our map, we use a mapping of port names to colony. We ignore ports that are not relevant to our study (eg in Brasil, Spain, China, etc).
 
+### Ships V2 Implementation
+The V2 (animated) map shows the animated journeys of individual ships in the ocean.
+I did the following:
+- find all the distinct pairs of (starting point, end point) that exist in the data
+- draw "control points" along the corresponding path in the ocean on the map (using some JS + canvas)
+- copy the points' coordinates into a file (`CONTROL_POINTS`)
+- animate the journeys as consecutive line segments between these points
+
+Each "leg" of a journey is recorded and plotted seprately. We use a stateless rendering logic: at every refresh event, we go through all the existing journeys, find the ones that are active, and call `drawShipAlongPath` for each of them – that function  takes in the set of control points and the current "% progress" where you want to draw the ship.
+
+We have a start and end date for each overall journey, but we don't have dates for the individual legs, so we extrapolate them in the python script using the relative distances between colonies (calculated by using the points I drew on the map).
+This could have been done differently by moving more of the route computations in Javascript, but it's maybe better for perf to have pre-computed the legs that way.
 
 # Implementation
 Data extraction/processing is done in Python (under `scripts`).

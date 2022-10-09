@@ -1,0 +1,116 @@
+#title {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 2.0em;
+}
+
+#clusters {
+    width: 90%;
+    margin: auto;
+}
+
+.clusterBox {
+    border: black 1px solid;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.clusterFlex {
+    display: flex;
+    padding-left: 10px;
+    font-size: 25px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cluster_name {
+    flex-basis: 72%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-left: 5px;
+}
+
+.cluster_atlanticCount {
+    color: rgb(0, 0, 156);
+    flex-basis: 8%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-right: solid black 1px;
+    border-left: solid black 1px;
+    padding-left: 2%;
+}
+
+.cluster_indianCount {
+    color: rgb(38, 121, 0);
+    flex-basis: 12.5%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-left: 3%;
+}
+
+.indianDot {
+    color: rgb(38, 121, 0);
+}
+
+.atlanticDot {
+    color: rgb(0, 0, 156);
+}
+
+table {
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+table,
+th,
+td {
+    border: black 1px solid;
+    text-align: center;
+}
+
+
+/* ================= Slider ================ */
+
+#controls-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    width: 600px;
+}
+
+.slider {
+    width: 450px;
+}
+
+.play-button,
+.goto-end-button,
+.goto-start-button {
+    display: inline-flex;
+    cursor: pointer;
+    padding: 0;
+}
+
+.play-button {
+    margin-left: 15px;
+}
+
+.goto-start-button {
+    margin-left: 15px;
+}
+
+.goto-end-button {
+    margin-left: 5px;
+}
+
+#year {
+    /* display: inline-block; */
+    font-size: 1.9em;
+    /* border: 1px solid black; */
+    background-color: white;
+    padding: 3px;
+    text-align: center;
+}
