@@ -9,7 +9,10 @@ const OFFICIALS_CONFIG = {
     edge_size: 1,
     arrow_head_size: 10,
     undirected: true, // but in single-agent view, we show arrows
-    skip_france: true,
+    // by default, there's no indication that some people went through France.
+    // when this one is `true`, we bend the edges of people going through France
+    // to indicate that they went there.
+    bend_edges_via_metropole: false,
     hidden_locations: ['France'],
     use_tags: true,
     tag_to_color: {
