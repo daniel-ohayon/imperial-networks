@@ -9,7 +9,7 @@ from typing import Callable, List, Dict, Optional, Set, Any, Tuple
 import dataclasses
 from enum import Enum
 
-parse_authors_data = sys.argv[1] == "--authors"
+parse_authors_data = len(sys.argv) > 1 and sys.argv[1] == "--authors"
 
 if parse_authors_data:
     INPUT_FILE = 'raw_data/travel-narrative-authors-journeys.csv'
@@ -324,3 +324,20 @@ for val in (True, False, None):
     str_val = {True: "Yes", False: "No", None: "Unknown"}[val]
     print(f"  * {str_val}:", count_if(all_people,
           lambda p: p.via_metropole == val))
+
+
+############## HISTOGRAMS ######################
+
+points = [e.departure_date for e in all_edges if e.departure_date < 1763]
+# points = [
+#     e.departure_date
+#     for e in all_edges
+#     if len({e.from_.ocean(), e.to.ocean()}) == 2  # went to both oceans
+#     and e.departure_date < 1763
+# ]
+
+import matplotlib.pyplot as plt
+plt.hist(points)
+plt.ylabel('Number of people departures')
+plt.xlabel('Year group')
+plt.show()

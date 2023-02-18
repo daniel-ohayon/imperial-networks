@@ -21,7 +21,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "François Cauche was born in Rouen, France in 1606. He left France in 1638, with the intention to establish a settlement on Isle of France and to travel to the Red Sea. His ship stopped in Cape-Verd, Rodrigues and Isle Bourbon before its arrival in Madagascar. Cauche explored the East Coast of Madagascar and stayed on that island until 1643, where he occupied the position of main artillery commissionner.  He travelled to the Comorro islands, Cape Guardafui, the Red Sea and back to Madagascar. He returned to France in 1644 and wrote a travel account titled Relations veritables et curieuses de l’Isle de Madagascar et du Bresil ( 1651).",
-    "annotated_bio": "<strong>François Cauche</strong> was born in Rouen, France in 1606. He left France in 1638, with the intention to establish a settlement on <mark>Isle of France</mark> and to travel to the Red Sea. His ship stopped in Cape-Verd, Rodrigues and Isle <mark>Bourbon</mark> before its arrival in Madagascar. Cauche explored the East Coast of Madagascar and stayed on that island until 1643, where he occupied the position of main artillery commissionner.  He travelled to the Comorro islands, Cape Guardafui, the Red Sea and back to Madagascar. He returned to France in 1644 and wrote a travel account titled Relations veritables et curieuses de l’Isle de Madagascar et du Bresil ( 1651).",
+    "annotated_bio": "<strong>François Cauche</strong> was born in Rouen, France in 1606. He left France in 1638, with the intention to establish a settlement on <mark>Isle of France</mark> and to travel to the Red Sea. His ship stopped in Cape-Verd, Rodrigues and <mark>Isle <mark>Bourbon</mark></mark> before its arrival in Madagascar. Cauche explored the East Coast of Madagascar and stayed on that island until 1643, where he occupied the position of main artillery commissionner.  He travelled to the Comorro islands, Cape Guardafui, the Red Sea and back to Madagascar. He returned to France in 1644 and wrote a travel account titled Relations veritables et curieuses de l’Isle de Madagascar et du Bresil ( 1651).",
     "name": "François Cauche",
     "from": "Isle Bourbon & Isle of France",
     "to": "Madagascar",
@@ -41,7 +41,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Carpeau de Saussay left France in 1663. He travelled to Cape Verde, Madagascar, Isle Bourbon and back to Madagascar. He then travelled to Saint Helena and Ascention Island before reaching France. He wrote a travel narrative titled Voyage de Madagascar (1722).",
-    "annotated_bio": "<strong>Carpeau de Saussay</strong> left France in 1663. He travelled to Cape Verde, Madagascar, Isle <mark>Bourbon</mark> and back to Madagascar. He then travelled to Saint Helena and Ascention Island before reaching France. He wrote a travel narrative titled Voyage de Madagascar (1722).",
+    "annotated_bio": "<strong>Carpeau de Saussay</strong> left France in 1663. He travelled to Cape Verde, Madagascar, <mark>Isle <mark>Bourbon</mark></mark> and back to Madagascar. He then travelled to Saint Helena and Ascention Island before reaching France. He wrote a travel narrative titled Voyage de Madagascar (1722).",
     "name": "Carpeau de Saussay",
     "from": "Madagascar",
     "to": "Isle Bourbon & Isle of France",
@@ -61,7 +61,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "François Martin was born in Paris in 1634. He was a French merchant, navigator and a commissioner of the Company of the Indies. He left France in 1665. After his stopovers in Cape Verde, Isle Bourbon and Madagascar, he travelled to India and founded Pondicherry in 1674. He  became the first governor of this latter post. He wrote an account of his travels published under the title Mémoires de François Martin, fondateur de Pondichéry (1665-1696), ed. Alfred Martineau.",
-    "annotated_bio": "<strong>François Martin</strong> was born in Paris in 1634. He was a French merchant, navigator and a commissioner of the Company of the Indies. He left France in 1665. After his stopovers in Cape Verde, Isle <mark>Bourbon</mark> and Madagascar, he travelled to India and founded <mark>Pondicherry</mark> in 1674. He  became the first governor of this latter post. He wrote an account of his travels published under the title Mémoires de <strong>François Martin</strong>, fondateur de Pondichéry (1665-1696), ed. Alfred Martineau.",
+    "annotated_bio": "<strong>François Martin</strong> was born in Paris in 1634. He was a French merchant, navigator and a commissioner of the Company of the Indies. He left France in 1665. After his stopovers in Cape Verde, <mark>Isle <mark>Bourbon</mark></mark> and Madagascar, he travelled to India and founded <mark>Pondicherry</mark> in 1674. He  became the first governor of this latter post. He wrote an account of his travels published under the title Mémoires de <strong>François Martin</strong>, fondateur de Pondichéry (1665-1696), ed. Alfred Martineau.",
     "name": "François Martin",
     "from": "Isle Bourbon & Isle of France",
     "to": "Madagascar",
@@ -71,7 +71,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "François Martin was born in Paris in 1634. He was a French merchant, navigator and a commissioner of the Company of the Indies. He left France in 1665. After his stopovers in Cape Verde, Isle Bourbon and Madagascar, he travelled to India and founded Pondicherry in 1674. He  became the first governor of this latter post. He wrote an account of his travels published under the title Mémoires de François Martin, fondateur de Pondichéry (1665-1696), ed. Alfred Martineau.",
-    "annotated_bio": "<strong>François Martin</strong> was born in Paris in 1634. He was a French merchant, navigator and a commissioner of the Company of the Indies. He left France in 1665. After his stopovers in Cape Verde, Isle <mark>Bourbon</mark> and Madagascar, he travelled to India and founded <mark>Pondicherry</mark> in 1674. He  became the first governor of this latter post. He wrote an account of his travels published under the title Mémoires de <strong>François Martin</strong>, fondateur de Pondichéry (1665-1696), ed. Alfred Martineau.",
+    "annotated_bio": "<strong>François Martin</strong> was born in Paris in 1634. He was a French merchant, navigator and a commissioner of the Company of the Indies. He left France in 1665. After his stopovers in Cape Verde, <mark>Isle <mark>Bourbon</mark></mark> and Madagascar, he travelled to India and founded <mark>Pondicherry</mark> in 1674. He  became the first governor of this latter post. He wrote an account of his travels published under the title Mémoires de <strong>François Martin</strong>, fondateur de Pondichéry (1665-1696), ed. Alfred Martineau.",
     "name": "François Martin",
     "from": "Madagascar",
     "to": "India",
@@ -91,7 +91,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Sieur Dubois left France in 1669 and his ship stopped in Cape Verde. He then travelled to Isle Bourbon and Madagascar, where he worked as the secretary and intendant to Monsieur de Champmargou, who governed Madagascar from 1660. Dubois left Madagascar in 1672. His ship stopped in Saint Helena and Ascention Island before arriving in France in 1673. He wrote a travel narrative titled Les voyages faits par le sieur D.B aux isles Dauphine ou Madagascar, et Bourbon ou Mascarenne, ès années 1669, 70, 71 et 72 (1674)",
-    "annotated_bio": "<strong>Sieur Dubois</strong> left France in 1669 and his ship stopped in Cape Verde. He then travelled to Isle <mark>Bourbon</mark> and Madagascar, where he worked as the secretary and intendant to Monsieur de Champmargou, who governed Madagascar from 1660. Dubois left Madagascar in 1672. His ship stopped in Saint Helena and Ascention Island before arriving in France in 1673. He wrote a travel narrative titled Les voyages faits par le sieur D.B aux isles Dauphine ou Madagascar, et <mark>Bourbon</mark> ou Mascarenne, ès années 1669, 70, 71 et 72 (1674)",
+    "annotated_bio": "<strong>Sieur Dubois</strong> left France in 1669 and his ship stopped in Cape Verde. He then travelled to <mark>Isle <mark>Bourbon</mark></mark> and Madagascar, where he worked as the secretary and intendant to Monsieur de Champmargou, who governed Madagascar from 1660. Dubois left Madagascar in 1672. His ship stopped in Saint Helena and Ascention Island before arriving in France in 1673. He wrote a travel narrative titled Les voyages faits par le sieur D.B aux isles Dauphine ou Madagascar, et <mark>Bourbon</mark> ou Mascarenne, ès années 1669, 70, 71 et 72 (1674)",
     "name": "Sieur Dubois",
     "from": "Isle Bourbon & Isle of France",
     "to": "Madagascar",
@@ -101,7 +101,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jacob Blanquet de La Haye was born in Mainvilliers, France in 1621. In 1671, he became commander of a squadron sent to the East Indies. He left France for India in 1671, stopping in Bahia (Brazil), Madagascar, and Isle Bourbon on the way. He arrived in Surat, India in 1672 and became Vice-Roy of the Indies. On his way back to France, his ship stopped on Isle Bourbon. De La Haye reached metropolitan France in 1675 and fought in the Franco-Dutch War (1672-1678). He died in combat in 1677.",
-    "annotated_bio": "<strong>Jacob Blanquet de La Haye</strong> was born in Mainvilliers, France in 1621. In 1671, he became commander of a squadron sent to the East Indies. He left France for India in 1671, stopping in Bahia (Brazil), Madagascar, and Isle <mark>Bourbon</mark> on the way. He arrived in <mark>Surat</mark>, India in 1672 and became Vice-Roy of the Indies. On his way back to France, his ship stopped on Isle <mark>Bourbon</mark>. De La Haye reached metropolitan France in 1675 and fought in the Franco-Dutch War (1672-1678). He died in combat in 1677.",
+    "annotated_bio": "<strong>Jacob Blanquet de La Haye</strong> was born in Mainvilliers, France in 1621. In 1671, he became commander of a squadron sent to the East Indies. He left France for India in 1671, stopping in Bahia (Brazil), Madagascar, and <mark>Isle <mark>Bourbon</mark></mark> on the way. He arrived in <mark>Surat</mark>, India in 1672 and became Vice-Roy of the Indies. On his way back to France, his ship stopped on <mark>Isle <mark>Bourbon</mark></mark>. De La Haye reached metropolitan France in 1675 and fought in the Franco-Dutch War (1672-1678). He died in combat in 1677.",
     "name": "Jacob Blanquet de La Haye",
     "from": "Madagascar",
     "to": "Isle Bourbon & Isle of France",
@@ -111,7 +111,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jacob Blanquet de La Haye was born in Mainvilliers, France in 1621. In 1671, he became commander of a squadron sent to the East Indies. He left France for India in 1671, stopping in Bahia (Brazil), Madagascar, and Isle Bourbon on the way. He arrived in Surat, India in 1672 and became Vice-Roy of the Indies. On his way back to France, his ship stopped on Isle Bourbon. De La Haye reached metropolitan France in 1675 and fought in the Franco-Dutch War (1672-1678). He died in combat in 1677.",
-    "annotated_bio": "<strong>Jacob Blanquet de La Haye</strong> was born in Mainvilliers, France in 1621. In 1671, he became commander of a squadron sent to the East Indies. He left France for India in 1671, stopping in Bahia (Brazil), Madagascar, and Isle <mark>Bourbon</mark> on the way. He arrived in <mark>Surat</mark>, India in 1672 and became Vice-Roy of the Indies. On his way back to France, his ship stopped on Isle <mark>Bourbon</mark>. De La Haye reached metropolitan France in 1675 and fought in the Franco-Dutch War (1672-1678). He died in combat in 1677.",
+    "annotated_bio": "<strong>Jacob Blanquet de La Haye</strong> was born in Mainvilliers, France in 1621. In 1671, he became commander of a squadron sent to the East Indies. He left France for India in 1671, stopping in Bahia (Brazil), Madagascar, and <mark>Isle <mark>Bourbon</mark></mark> on the way. He arrived in <mark>Surat</mark>, India in 1672 and became Vice-Roy of the Indies. On his way back to France, his ship stopped on <mark>Isle <mark>Bourbon</mark></mark>. De La Haye reached metropolitan France in 1675 and fought in the Franco-Dutch War (1672-1678). He died in combat in 1677.",
     "name": "Jacob Blanquet de La Haye",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -171,7 +171,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Henri Roulleaux Sieur de la Vente was a member of the Séminaire des Missions-Etrangères in Paris. He served on Isle Bourbon from 1698 to 1702 before being sent to Mobile, Louisiana, where he became the presiding cleric and vicar-general of the bishop of Quebec. His stay in Louisiana is best known for the controversy which opposed him to officials like Bienville and Duclos, on the question of intermarriage.",
-    "annotated_bio": "<strong>Henri Roulleaux Sieur de la Vente</strong> was a member of the Séminaire des Missions-Etrangères in Paris. He served on Isle <mark>Bourbon</mark> from 1698 to 1702 before being sent to Mobile, <mark>Louisiana</mark>, where he became the presiding cleric and vicar-general of the bishop of <mark>Quebec</mark>. His stay in <mark>Louisiana</mark> is best known for the controversy which opposed him to officials like Bienville and Duclos, on the question of intermarriage.",
+    "annotated_bio": "<strong>Henri Roulleaux Sieur de la Vente</strong> was a member of the Séminaire des Missions-Etrangères in Paris. He served on <mark>Isle <mark>Bourbon</mark></mark> from 1698 to 1702 before being sent to Mobile, <mark>Louisiana</mark>, where he became the presiding cleric and vicar-general of the bishop of <mark>Quebec</mark>. His stay in <mark>Louisiana</mark> is best known for the controversy which opposed him to officials like Bienville and Duclos, on the question of intermarriage.",
     "name": "Henri Roulleaux Sieur de la Vente",
     "from": "Isle Bourbon & Isle of France",
     "to": "Louisiana",
@@ -181,7 +181,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Charanville travelled to the French colonies in America in 1699 as a sub-brigadier for the marine guard, then arrived in Pondicherry in 1704, became major of the place and troops in 1708, then became the governor of Isle Bourbon starting in 1709. He returned to France in 1710, before being designated to serve in Cayenne in 1711. He arrived there in 1713, became captain, hen was promoted to major in 1727, then lieutenant in 1729. He died in 1730.",
-    "annotated_bio": "<strong>Charanville</strong> travelled to the French colonies in America in 1699 as a sub-brigadier for the marine guard, then arrived in <mark>Pondicherry</mark> in 1704, became major of the place and troops in 1708, then became the governor of Isle <mark>Bourbon</mark> starting in 1709. He returned to France in 1710, before being designated to serve in <mark>Cayenne</mark> in 1711. He arrived there in 1713, became captain, hen was promoted to major in 1727, then lieutenant in 1729. He died in 1730.",
+    "annotated_bio": "<strong>Charanville</strong> travelled to the French colonies in America in 1699 as a sub-brigadier for the marine guard, then arrived in <mark>Pondicherry</mark> in 1704, became major of the place and troops in 1708, then became the governor of <mark>Isle <mark>Bourbon</mark></mark> starting in 1709. He returned to France in 1710, before being designated to serve in <mark>Cayenne</mark> in 1711. He arrived there in 1713, became captain, hen was promoted to major in 1727, then lieutenant in 1729. He died in 1730.",
     "name": "Charanville",
     "from": "Louisiana",
     "to": "India",
@@ -191,7 +191,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Charanville travelled to the French colonies in America in 1699 as a sub-brigadier for the marine guard, then arrived in Pondicherry in 1704, became major of the place and troops in 1708, then became the governor of Isle Bourbon starting in 1709. He returned to France in 1710, before being designated to serve in Cayenne in 1711. He arrived there in 1713, became captain, hen was promoted to major in 1727, then lieutenant in 1729. He died in 1730.",
-    "annotated_bio": "<strong>Charanville</strong> travelled to the French colonies in America in 1699 as a sub-brigadier for the marine guard, then arrived in <mark>Pondicherry</mark> in 1704, became major of the place and troops in 1708, then became the governor of Isle <mark>Bourbon</mark> starting in 1709. He returned to France in 1710, before being designated to serve in <mark>Cayenne</mark> in 1711. He arrived there in 1713, became captain, hen was promoted to major in 1727, then lieutenant in 1729. He died in 1730.",
+    "annotated_bio": "<strong>Charanville</strong> travelled to the French colonies in America in 1699 as a sub-brigadier for the marine guard, then arrived in <mark>Pondicherry</mark> in 1704, became major of the place and troops in 1708, then became the governor of <mark>Isle <mark>Bourbon</mark></mark> starting in 1709. He returned to France in 1710, before being designated to serve in <mark>Cayenne</mark> in 1711. He arrived there in 1713, became captain, hen was promoted to major in 1727, then lieutenant in 1729. He died in 1730.",
     "name": "Charanville",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -201,7 +201,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Sieur L’Huillier left France in 1702 to take his cousin to Bengal, where she was to marry an agent of the Company of the Indies named Dulivier. After the wedding, L’Huillier travelled back to France and his ship called at Isle Bourbon in 1703.",
-    "annotated_bio": "Sieur L’Huillier left France in 1702 to take his cousin to Bengal, where she was to marry an agent of the Company of the Indies named Dulivier. After the wedding, L’Huillier travelled back to France and his ship called at Isle <mark>Bourbon</mark> in 1703.",
+    "annotated_bio": "Sieur L’Huillier left France in 1702 to take his cousin to Bengal, where she was to marry an agent of the Company of the Indies named Dulivier. After the wedding, L’Huillier travelled back to France and his ship called at <mark>Isle <mark>Bourbon</mark></mark> in 1703.",
     "name": "Sieur L'Huillier",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -221,7 +221,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Bertrand-François Mahé de la Bourdonnais was born in Saint-Malo, France in 1699. When he was 10 years old, he embarked on a first voyage to the South Sea on a merchant ship. He then travelled to the Philippines, the North Sea and the Levant and was initiated into the arts of navigation, engineering and war. In 1718, he entered the service of the Company of the East Indies as a lieutenant. In 1724, he was made a captain and took part in the capture of Mahé, India. From 1735 to 1740, he was the governor-general of Isle of France and Isle Bourbon. La Bourbonnais is considered the “founding father” of Isle of France, because he encouraged the construction of durable physical, social and economic infrastructures on the island. He then returned to India to combat the English. Accused of treason, he was sent to Martinique, taken prisoner by the English, and eventually imprisoned at the Bastille. He died shortly after his liberation in 1753.",
-    "annotated_bio": "<strong>Bertrand-François Mahé de la Bourdonnais</strong> was born in Saint-Malo, France in 1699. When he was 10 years old, he embarked on a first voyage to the South Sea on a merchant ship. He then travelled to the Philippines, the North Sea and the Levant and was initiated into the arts of navigation, engineering and war. In 1718, he entered the service of the Company of the East Indies as a lieutenant. In 1724, he was made a captain and took part in the capture of Mahé, India. From 1735 to 1740, he was the governor-general of <mark>Isle of France</mark> and Isle <mark>Bourbon</mark>. La <mark>Bourbon</mark>nais is considered the “founding father” of <mark>Isle of France</mark>, because he encouraged the construction of durable physical, social and economic infrastructures on the island. He then returned to India to combat the English. Accused of treason, he was sent to <mark>Martinique</mark>, taken prisoner by the English, and eventually imprisoned at the Bastille. He died shortly after his liberation in 1753.",
+    "annotated_bio": "<strong>Bertrand-François Mahé de la Bourdonnais</strong> was born in Saint-Malo, France in 1699. When he was 10 years old, he embarked on a first voyage to the South Sea on a merchant ship. He then travelled to the Philippines, the North Sea and the Levant and was initiated into the arts of navigation, engineering and war. In 1718, he entered the service of the Company of the East Indies as a lieutenant. In 1724, he was made a captain and took part in the capture of Mahé, India. From 1735 to 1740, he was the governor-general of <mark>Isle of France</mark> and <mark>Isle <mark>Bourbon</mark></mark>. La <mark>Bourbon</mark>nais is considered the “founding father” of <mark>Isle of France</mark>, because he encouraged the construction of durable physical, social and economic infrastructures on the island. He then returned to India to combat the English. Accused of treason, he was sent to <mark>Martinique</mark>, taken prisoner by the English, and eventually imprisoned at the Bastille. He died shortly after his liberation in 1753.",
     "name": "Bertrand-François Mahé de la Bourdonnais",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -231,7 +231,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Bertrand-François Mahé de la Bourdonnais was born in Saint-Malo, France in 1699. When he was 10 years old, he embarked on a first voyage to the South Sea on a merchant ship. He then travelled to the Philippines, the North Sea and the Levant and was initiated into the arts of navigation, engineering and war. In 1718, he entered the service of the Company of the East Indies as a lieutenant. In 1724, he was made a captain and took part in the capture of Mahé, India. From 1735 to 1740, he was the governor-general of Isle of France and Isle Bourbon. La Bourbonnais is considered the “founding father” of Isle of France, because he encouraged the construction of durable physical, social and economic infrastructures on the island. He then returned to India to combat the English. Accused of treason, he was sent to Martinique, taken prisoner by the English, and eventually imprisoned at the Bastille. He died shortly after his liberation in 1753.",
-    "annotated_bio": "<strong>Bertrand-François Mahé de la Bourdonnais</strong> was born in Saint-Malo, France in 1699. When he was 10 years old, he embarked on a first voyage to the South Sea on a merchant ship. He then travelled to the Philippines, the North Sea and the Levant and was initiated into the arts of navigation, engineering and war. In 1718, he entered the service of the Company of the East Indies as a lieutenant. In 1724, he was made a captain and took part in the capture of Mahé, India. From 1735 to 1740, he was the governor-general of <mark>Isle of France</mark> and Isle <mark>Bourbon</mark>. La <mark>Bourbon</mark>nais is considered the “founding father” of <mark>Isle of France</mark>, because he encouraged the construction of durable physical, social and economic infrastructures on the island. He then returned to India to combat the English. Accused of treason, he was sent to <mark>Martinique</mark>, taken prisoner by the English, and eventually imprisoned at the Bastille. He died shortly after his liberation in 1753.",
+    "annotated_bio": "<strong>Bertrand-François Mahé de la Bourdonnais</strong> was born in Saint-Malo, France in 1699. When he was 10 years old, he embarked on a first voyage to the South Sea on a merchant ship. He then travelled to the Philippines, the North Sea and the Levant and was initiated into the arts of navigation, engineering and war. In 1718, he entered the service of the Company of the East Indies as a lieutenant. In 1724, he was made a captain and took part in the capture of Mahé, India. From 1735 to 1740, he was the governor-general of <mark>Isle of France</mark> and <mark>Isle <mark>Bourbon</mark></mark>. La <mark>Bourbon</mark>nais is considered the “founding father” of <mark>Isle of France</mark>, because he encouraged the construction of durable physical, social and economic infrastructures on the island. He then returned to India to combat the English. Accused of treason, he was sent to <mark>Martinique</mark>, taken prisoner by the English, and eventually imprisoned at the Bastille. He died shortly after his liberation in 1753.",
     "name": "Bertrand-François Mahé de la Bourdonnais",
     "from": "Isle Bourbon & Isle of France",
     "to": "Caribbean",
@@ -241,7 +241,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Pierre-Benoît Dumas was born in Paris in 1696. In 1712, he left France to work as a secretary to his godfather Pierre Dulivier, the governor of Pondicherry. He arrived in Pondicherry in 1713 and became councillor at the colonial Council of this outpost in 1718. In 1722, he married a high-born woman from Nagapatam on the Coromandel Coast in of India, named Marie Gertrude Wanzyll. He returned to Paris and was granted the office of director-general of the Isle of France and of Bourbon from 1727. He arrived on Isle Bourbon in 1727 and governed the island until 1735. He travelled to Pondicherry to purchase slaves in the 1720s, and eventually became governor-general of the outpost in 1735.",
-    "annotated_bio": "<strong>Pierre-Benoît Dumas</strong> was born in Paris in 1696. In 1712, he left France to work as a secretary to his godfather Pierre Dulivier, the governor of <mark>Pondicherry</mark>. He arrived in <mark>Pondicherry</mark> in 1713 and became councillor at the colonial Council of this outpost in 1718. In 1722, he married a high-born woman from Nagapatam on the Coromandel Coast in of India, named Marie Gertrude Wanzyll. He returned to Paris and was granted the office of director-general of the <mark>Isle of France</mark> and of <mark>Bourbon</mark> from 1727. He arrived on Isle <mark>Bourbon</mark> in 1727 and governed the island until 1735. He travelled to <mark>Pondicherry</mark> to purchase slaves in the 1720s, and eventually became governor-general of the outpost in 1735.",
+    "annotated_bio": "<strong>Pierre-Benoît Dumas</strong> was born in Paris in 1696. In 1712, he left France to work as a secretary to his godfather Pierre Dulivier, the governor of <mark>Pondicherry</mark>. He arrived in <mark>Pondicherry</mark> in 1713 and became councillor at the colonial Council of this outpost in 1718. In 1722, he married a high-born woman from Nagapatam on the Coromandel Coast in of India, named Marie Gertrude Wanzyll. He returned to Paris and was granted the office of director-general of the <mark>Isle of France</mark> and of <mark>Bourbon</mark> from 1727. He arrived on <mark>Isle <mark>Bourbon</mark></mark> in 1727 and governed the island until 1735. He travelled to <mark>Pondicherry</mark> to purchase slaves in the 1720s, and eventually became governor-general of the outpost in 1735.",
     "name": "Pierre-Benoît Dumas",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -261,7 +261,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Guy Le Gentil de La Barbinais was born in Saint-Malo, France in 1692. He became one of the first Frenchmen to complete a round-the-world trip. He left France in 1714. After a stopover in the Canary islands, he travelled through Brazil, Chili and Perou before reaching China in 1716. He then travelled to Sumatra and Java before reaching French India and Isle Bourbon in 1717, spending five months on the island. After completing his round-the-world trip, La Barbinais moved to the French Caribbean. In 1726, he became a councillor at the colonial Council in Le Cap, Saint-Domingue and he later became Commissaire-Ordonnateur in the same city. He was also a successful planter. His son, the Marquis of Paroy, married the niece of governor of Louisiana and Canada Pierre de Rigaud, Marquis de Vaudreuil in 1749. Guy Le Gentil de la Barbinais wrote a travel narrative titled Nouveau voyage autour du monde (3 vols., 1729).",
-    "annotated_bio": "<strong>Guy Le Gentil de La Barbinais</strong> was born in Saint-Malo, France in 1692. He became one of the first Frenchmen to complete a round-the-world trip. He left France in 1714. After a stopover in the Canary islands, he travelled through Brazil, Chili and Perou before reaching China in 1716. He then travelled to Sumatra and Java before reaching French India and Isle <mark>Bourbon</mark> in 1717, spending five months on the island. After completing his round-the-world trip, La Barbinais moved to the French <mark>Caribbean</mark>. In 1726, he became a councillor at the colonial Council in Le Cap, <mark>Saint-Domingue</mark> and he later became Commissaire-Ordonnateur in the same city. He was also a successful planter. His son, the Marquis of Paroy, married the niece of governor of <mark>Louisiana</mark> and <mark>Canada</mark> Pierre de Rigaud, Marquis de Vaudreuil in 1749. Guy Le Gentil de la Barbinais wrote a travel narrative titled Nouveau voyage autour du monde (3 vols., 1729).",
+    "annotated_bio": "<strong>Guy Le Gentil de La Barbinais</strong> was born in Saint-Malo, France in 1692. He became one of the first Frenchmen to complete a round-the-world trip. He left France in 1714. After a stopover in the Canary islands, he travelled through Brazil, Chili and Perou before reaching China in 1716. He then travelled to Sumatra and Java before reaching French India and <mark>Isle <mark>Bourbon</mark></mark> in 1717, spending five months on the island. After completing his round-the-world trip, La Barbinais moved to the French <mark>Caribbean</mark>. In 1726, he became a councillor at the colonial Council in Le Cap, <mark>Saint-Domingue</mark> and he later became Commissaire-Ordonnateur in the same city. He was also a successful planter. His son, the Marquis of Paroy, married the niece of governor of <mark>Louisiana</mark> and <mark>Canada</mark> Pierre de Rigaud, Marquis de Vaudreuil in 1749. Guy Le Gentil de la Barbinais wrote a travel narrative titled Nouveau voyage autour du monde (3 vols., 1729).",
     "name": "Guy Le Gentil de La Barbinais",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -271,7 +271,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Guy Le Gentil de La Barbinais was born in Saint-Malo, France in 1692. He became one of the first Frenchmen to complete a round-the-world trip. He left France in 1714. After a stopover in the Canary islands, he travelled through Brazil, Chili and Perou before reaching China in 1716. He then travelled to Sumatra and Java before reaching French India and Isle Bourbon in 1717, spending five months on the island. After completing his round-the-world trip, La Barbinais moved to the French Caribbean. In 1726, he became a councillor at the colonial Council in Le Cap, Saint-Domingue and he later became Commissaire-Ordonnateur in the same city. He was also a successful planter. His son, the Marquis of Paroy, married the niece of governor of Louisiana and Canada Pierre de Rigaud, Marquis de Vaudreuil in 1749. Guy Le Gentil de la Barbinais wrote a travel narrative titled Nouveau voyage autour du monde (3 vols., 1729).",
-    "annotated_bio": "<strong>Guy Le Gentil de La Barbinais</strong> was born in Saint-Malo, France in 1692. He became one of the first Frenchmen to complete a round-the-world trip. He left France in 1714. After a stopover in the Canary islands, he travelled through Brazil, Chili and Perou before reaching China in 1716. He then travelled to Sumatra and Java before reaching French India and Isle <mark>Bourbon</mark> in 1717, spending five months on the island. After completing his round-the-world trip, La Barbinais moved to the French <mark>Caribbean</mark>. In 1726, he became a councillor at the colonial Council in Le Cap, <mark>Saint-Domingue</mark> and he later became Commissaire-Ordonnateur in the same city. He was also a successful planter. His son, the Marquis of Paroy, married the niece of governor of <mark>Louisiana</mark> and <mark>Canada</mark> Pierre de Rigaud, Marquis de Vaudreuil in 1749. Guy Le Gentil de la Barbinais wrote a travel narrative titled Nouveau voyage autour du monde (3 vols., 1729).",
+    "annotated_bio": "<strong>Guy Le Gentil de La Barbinais</strong> was born in Saint-Malo, France in 1692. He became one of the first Frenchmen to complete a round-the-world trip. He left France in 1714. After a stopover in the Canary islands, he travelled through Brazil, Chili and Perou before reaching China in 1716. He then travelled to Sumatra and Java before reaching French India and <mark>Isle <mark>Bourbon</mark></mark> in 1717, spending five months on the island. After completing his round-the-world trip, La Barbinais moved to the French <mark>Caribbean</mark>. In 1726, he became a councillor at the colonial Council in Le Cap, <mark>Saint-Domingue</mark> and he later became Commissaire-Ordonnateur in the same city. He was also a successful planter. His son, the Marquis of Paroy, married the niece of governor of <mark>Louisiana</mark> and <mark>Canada</mark> Pierre de Rigaud, Marquis de Vaudreuil in 1749. Guy Le Gentil de la Barbinais wrote a travel narrative titled Nouveau voyage autour du monde (3 vols., 1729).",
     "name": "Guy Le Gentil de La Barbinais",
     "from": "Isle Bourbon & Isle of France",
     "to": "Caribbean",
@@ -281,7 +281,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean-François-Benjamin Dumont de Montigny was born in Paris in 1696. He obtained a position in the French army in France, and a commission from the Ministry of the Marine. He travelled to Quebec in 1715 and then returned to France. In 1719, he sailed to Louisiana, where he occupied the positions of lieutenant and engineering officer. He spent almost eighteen years in the colony, also working as a planter. After his return to France, Dumont de Montigny travelled to Isle of France, Isle Bourbon and Pondicherry where he died in 1760.",
-    "annotated_bio": "<strong>Jean-François-Benjamin Dumont de Montigny</strong> was born in Paris in 1696. He obtained a position in the French army in France, and a commission from the Ministry of the Marine. He travelled to <mark>Quebec</mark> in 1715 and then returned to France. In 1719, he sailed to <mark>Louisiana</mark>, where he occupied the positions of lieutenant and engineering officer. He spent almost eighteen years in the colony, also working as a planter. After his return to France, Dumont de Montigny travelled to <mark>Isle of France</mark>, Isle <mark>Bourbon</mark> and <mark>Pondicherry</mark> where he died in 1760.",
+    "annotated_bio": "<strong>Jean-François-Benjamin Dumont de Montigny</strong> was born in Paris in 1696. He obtained a position in the French army in France, and a commission from the Ministry of the Marine. He travelled to <mark>Quebec</mark> in 1715 and then returned to France. In 1719, he sailed to <mark>Louisiana</mark>, where he occupied the positions of lieutenant and engineering officer. He spent almost eighteen years in the colony, also working as a planter. After his return to France, Dumont de Montigny travelled to <mark>Isle of France</mark>, <mark>Isle <mark>Bourbon</mark></mark> and <mark>Pondicherry</mark> where he died in 1760.",
     "name": "Jean-François-Benjamin Dumont de Montigny",
     "from": "New France",
     "to": "Louisiana",
@@ -291,7 +291,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean-François-Benjamin Dumont de Montigny was born in Paris in 1696. He obtained a position in the French army in France, and a commission from the Ministry of the Marine. He travelled to Quebec in 1715 and then returned to France. In 1719, he sailed to Louisiana, where he occupied the positions of lieutenant and engineering officer. He spent almost eighteen years in the colony, also working as a planter. After his return to France, Dumont de Montigny travelled to Isle of France, Isle Bourbon and Pondicherry where he died in 1760.",
-    "annotated_bio": "<strong>Jean-François-Benjamin Dumont de Montigny</strong> was born in Paris in 1696. He obtained a position in the French army in France, and a commission from the Ministry of the Marine. He travelled to <mark>Quebec</mark> in 1715 and then returned to France. In 1719, he sailed to <mark>Louisiana</mark>, where he occupied the positions of lieutenant and engineering officer. He spent almost eighteen years in the colony, also working as a planter. After his return to France, Dumont de Montigny travelled to <mark>Isle of France</mark>, Isle <mark>Bourbon</mark> and <mark>Pondicherry</mark> where he died in 1760.",
+    "annotated_bio": "<strong>Jean-François-Benjamin Dumont de Montigny</strong> was born in Paris in 1696. He obtained a position in the French army in France, and a commission from the Ministry of the Marine. He travelled to <mark>Quebec</mark> in 1715 and then returned to France. In 1719, he sailed to <mark>Louisiana</mark>, where he occupied the positions of lieutenant and engineering officer. He spent almost eighteen years in the colony, also working as a planter. After his return to France, Dumont de Montigny travelled to <mark>Isle of France</mark>, <mark>Isle <mark>Bourbon</mark></mark> and <mark>Pondicherry</mark> where he died in 1760.",
     "name": "Jean-François-Benjamin Dumont de Montigny",
     "from": "Louisiana",
     "to": "Isle Bourbon & Isle of France",
@@ -301,7 +301,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean-François-Benjamin Dumont de Montigny was born in Paris in 1696. He obtained a position in the French army in France, and a commission from the Ministry of the Marine. He travelled to Quebec in 1715 and then returned to France. In 1719, he sailed to Louisiana, where he occupied the positions of lieutenant and engineering officer. He spent almost eighteen years in the colony, also working as a planter. After his return to France, Dumont de Montigny travelled to Isle of France, Isle Bourbon and Pondicherry where he died in 1760.",
-    "annotated_bio": "<strong>Jean-François-Benjamin Dumont de Montigny</strong> was born in Paris in 1696. He obtained a position in the French army in France, and a commission from the Ministry of the Marine. He travelled to <mark>Quebec</mark> in 1715 and then returned to France. In 1719, he sailed to <mark>Louisiana</mark>, where he occupied the positions of lieutenant and engineering officer. He spent almost eighteen years in the colony, also working as a planter. After his return to France, Dumont de Montigny travelled to <mark>Isle of France</mark>, Isle <mark>Bourbon</mark> and <mark>Pondicherry</mark> where he died in 1760.",
+    "annotated_bio": "<strong>Jean-François-Benjamin Dumont de Montigny</strong> was born in Paris in 1696. He obtained a position in the French army in France, and a commission from the Ministry of the Marine. He travelled to <mark>Quebec</mark> in 1715 and then returned to France. In 1719, he sailed to <mark>Louisiana</mark>, where he occupied the positions of lieutenant and engineering officer. He spent almost eighteen years in the colony, also working as a planter. After his return to France, Dumont de Montigny travelled to <mark>Isle of France</mark>, <mark>Isle <mark>Bourbon</mark></mark> and <mark>Pondicherry</mark> where he died in 1760.",
     "name": "Jean-François-Benjamin Dumont de Montigny",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -381,7 +381,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Pierre Antoine de Parat was a lieutenant in Pondicherry. On its way back to France in 1709, his ship called at Isle Bourbon. Parat was nominated governor of the island and he occupied this position until 1715. He then left the island and subsequently returned to Pondicherry, where he became Major.",
-    "annotated_bio": "<strong>Pierre Antoine de Parat</strong> was a lieutenant in <mark>Pondicherry</mark>. On its way back to France in 1709, his ship called at Isle <mark>Bourbon</mark>. Parat was nominated governor of the island and he occupied this position until 1715. He then left the island and subsequently returned to <mark>Pondicherry</mark>, where he became Major.",
+    "annotated_bio": "<strong>Pierre Antoine de Parat</strong> was a lieutenant in <mark>Pondicherry</mark>. On its way back to France in 1709, his ship called at <mark>Isle <mark>Bourbon</mark></mark>. Parat was nominated governor of the island and he occupied this position until 1715. He then left the island and subsequently returned to <mark>Pondicherry</mark>, where he became Major.",
     "name": "Pierre Antoine de Parat",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -391,7 +391,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Beauvoillier de Courchant was the governor of Isle Bourbon starting in 1718, then of Pondicherry starting in 1723.",
-    "annotated_bio": "<strong>Beauvoillier de Courchant</strong> was the governor of Isle <mark>Bourbon</mark> starting in 1718, then of <mark>Pondicherry</mark> starting in 1723.",
+    "annotated_bio": "<strong>Beauvoillier de Courchant</strong> was the governor of <mark>Isle <mark>Bourbon</mark></mark> starting in 1718, then of <mark>Pondicherry</mark> starting in 1723.",
     "name": "Beauvoillier de Courchant",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -401,7 +401,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Thomas Sanguin de Gassonville , born in 1697, began working for the French East India Company in 1723, then worked as aide-major in Isle Bourbon until 1725. He travelled to Pondicherry and worked there as aide-major until 1726, was promoted to captain in 1726 and stayed captain until at least 1740, then became captain in Chandannagar in 1740. Hochereau de Gassonville was aide-major in Isle Bourbon and in Pondicherry in 1724.",
-    "annotated_bio": "<strong>Thomas Sanguin de Gassonville</strong> , born in 1697, began working for the French East India Company in 1723, then worked as aide-major in Isle <mark>Bourbon</mark> until 1725. He travelled to <mark>Pondicherry</mark> and worked there as aide-major until 1726, was promoted to captain in 1726 and stayed captain until at least 1740, then became captain in <mark>Chandannagar</mark> in 1740. Hochereau de Gassonville was aide-major in Isle <mark>Bourbon</mark> and in <mark>Pondicherry</mark> in 1724.",
+    "annotated_bio": "<strong>Thomas Sanguin de Gassonville</strong> , born in 1697, began working for the French East India Company in 1723, then worked as aide-major in <mark>Isle <mark>Bourbon</mark></mark> until 1725. He travelled to <mark>Pondicherry</mark> and worked there as aide-major until 1726, was promoted to captain in 1726 and stayed captain until at least 1740, then became captain in <mark>Chandannagar</mark> in 1740. Hochereau de Gassonville was aide-major in <mark>Isle <mark>Bourbon</mark></mark> and in <mark>Pondicherry</mark> in 1724.",
     "name": "Thomas Sanguin de Gassonville",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -411,7 +411,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Hochereau de Gassonville was an aide-major in Isle Bourbon and in Pondicherry in 1724.",
-    "annotated_bio": "<strong>Hochereau de Gassonville</strong> was an aide-major in Isle <mark>Bourbon</mark> and in <mark>Pondicherry</mark> in 1724.",
+    "annotated_bio": "<strong>Hochereau de Gassonville</strong> was an aide-major in <mark>Isle <mark>Bourbon</mark></mark> and in <mark>Pondicherry</mark> in 1724.",
     "name": "Hochereau de Gassonville",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -421,7 +421,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Antoine Desforges-Boucher was born in Brest, France around 1680. He worked as a cabin boy on a ship that sailed for the East Indies. Taken prisoner by Moorish pirates, he was liberared in 1695 and managed to reach Pondicherry. On its way to France, his ship called at Isle Bourbon in 1702. Boucher became the shopkeeper of the island and occupied this position until 1709. He eventually became the governor of IIsle Bourbon in 1723. He spent over eight years on the island.",
-    "annotated_bio": "<strong>Antoine Desforges-Boucher</strong> was born in Brest, France around 1680. He worked as a cabin boy on a ship that sailed for the East Indies. Taken prisoner by Moorish pirates, he was liberared in 1695 and managed to reach <mark>Pondicherry</mark>. On its way to France, his ship called at Isle <mark>Bourbon</mark> in 1702. Boucher became the shopkeeper of the island and occupied this position until 1709. He eventually became the governor of IIsle <mark>Bourbon</mark> in 1723. He spent over eight years on the island.",
+    "annotated_bio": "<strong>Antoine Desforges-Boucher</strong> was born in Brest, France around 1680. He worked as a cabin boy on a ship that sailed for the East Indies. Taken prisoner by Moorish pirates, he was liberared in 1695 and managed to reach <mark>Pondicherry</mark>. On its way to France, his ship called at <mark>Isle <mark>Bourbon</mark></mark> in 1702. Boucher became the shopkeeper of the island and occupied this position until 1709. He eventually became the governor of I<mark>Isle <mark>Bourbon</mark></mark> in 1723. He spent over eight years on the island.",
     "name": "Antoine Desforges-Boucher",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -441,7 +441,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Pitre Paul was born in Flanders, Belgium. He was brought before the colonial Council of Isle Bourbon in 1725 for polygamy. His career in ship construction took him to various part of France’s empire: he had three wives in France, Martinique and Isle Bourbon. He also travelled to Mocha, the Cape of Good Hope, China, Norway, and Guinia. He was eventually acquitted of all charges Wood, Archipelago of Justice, pp. 20–1",
-    "annotated_bio": "<strong>Pitre Paul</strong> was born in Flanders, Belgium. He was brought before the colonial Council of Isle <mark>Bourbon</mark> in 1725 for polygamy. His career in ship construction took him to various part of France’s empire: he had three wives in France, <mark>Martinique</mark> and Isle <mark>Bourbon</mark>. He also travelled to Mocha, the Cape of Good Hope, China, Norway, and Guinia. He was eventually acquitted of all charges Wood, Archipelago of Justice, pp. 20–1",
+    "annotated_bio": "<strong>Pitre Paul</strong> was born in Flanders, Belgium. He was brought before the colonial Council of <mark>Isle <mark>Bourbon</mark></mark> in 1725 for polygamy. His career in ship construction took him to various part of France’s empire: he had three wives in France, <mark>Martinique</mark> and <mark>Isle <mark>Bourbon</mark></mark>. He also travelled to Mocha, the Cape of Good Hope, China, Norway, and Guinia. He was eventually acquitted of all charges Wood, Archipelago of Justice, pp. 20–1",
     "name": "Pitre Paul",
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
@@ -451,7 +451,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Dolnet de Palmaroux was a lieutenant in Isle Bourbon in 1726, travelled back to France in 1743, returned to Isle Bourbon in 1744, then set off for India in 1757.",
-    "annotated_bio": "<strong>Dolnet de Palmaroux</strong> was a lieutenant in Isle <mark>Bourbon</mark> in 1726, travelled back to France in 1743, returned to Isle <mark>Bourbon</mark> in 1744, then set off for India in 1757.",
+    "annotated_bio": "<strong>Dolnet de Palmaroux</strong> was a lieutenant in <mark>Isle <mark>Bourbon</mark></mark> in 1726, travelled back to France in 1743, returned to <mark>Isle <mark>Bourbon</mark></mark> in 1744, then set off for India in 1757.",
     "name": "Dolnet de Palmaroux",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -461,7 +461,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Louis César Bertrand Moreau was a white creole born in Guadeloupe in 1709. He arrived on Isle Bourbon in 1726,  worked as a surgeon in Sainte-Suzanne and became a succesful coffee planter. In 1728, he married a woman of Asian descent named Marie Droman.",
-    "annotated_bio": "<strong>Louis César Bertrand Moreau</strong> was a white creole born in <mark>Guadeloupe</mark> in 1709. He arrived on Isle <mark>Bourbon</mark> in 1726,  worked as a surgeon in Sainte-Suzanne and became a succesful coffee planter. In 1728, he married a woman of Asian descent named Marie Droman.",
+    "annotated_bio": "<strong>Louis César Bertrand Moreau</strong> was a white creole born in <mark>Guadeloupe</mark> in 1709. He arrived on <mark>Isle <mark>Bourbon</mark></mark> in 1726,  worked as a surgeon in Sainte-Suzanne and became a succesful coffee planter. In 1728, he married a woman of Asian descent named Marie Droman.",
     "name": "Louis César Bertrand Moreau",
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
@@ -501,7 +501,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Pierre Félix Barthélemy David began working for the French East India Company in 1729. He was sent as sub-inspector to Senegal in 1732. He became the second inspector of the general director in 1733, travelled back to France in 1737, then was named general director of Senegal starting in 1742. In 1746, he was elected to the government of Isle Bourbon and France, and he travelled back to France in 1753.",
-    "annotated_bio": "<strong>Pierre Félix Barthélemy David</strong> began working for the French East India Company in 1729. He was sent as sub-inspector to <mark>Senegal</mark> in 1732. He became the second inspector of the general director in 1733, travelled back to France in 1737, then was named general director of <mark>Senegal</mark> starting in 1742. In 1746, he was elected to the government of Isle <mark>Bourbon</mark> and France, and he travelled back to France in 1753.",
+    "annotated_bio": "<strong>Pierre Félix Barthélemy David</strong> began working for the French East India Company in 1729. He was sent as sub-inspector to <mark>Senegal</mark> in 1732. He became the second inspector of the general director in 1733, travelled back to France in 1737, then was named general director of <mark>Senegal</mark> starting in 1742. In 1746, he was elected to the government of <mark>Isle <mark>Bourbon</mark></mark> and France, and he travelled back to France in 1753.",
     "name": "Pierre Félix Barthélemy David",
     "from": "Senegal",
     "to": "Isle Bourbon & Isle of France",
@@ -531,7 +531,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Paradis began working for the French East India Company in 1732, first as an engineer in Isle of France and Isle Bourbon, then as the chief engineer in Mahé, Karaikal, and Pondicherry. He then worked as a commander in Karaikal starting in 1744.",
-    "annotated_bio": "<strong>Paradis</strong> began working for the French East India Company in 1732, first as an engineer in <mark>Isle of France</mark> and Isle <mark>Bourbon</mark>, then as the chief engineer in Mahé, Karaikal, and <mark>Pondicherry</mark>. He then worked as a commander in Karaikal starting in 1744.",
+    "annotated_bio": "<strong>Paradis</strong> began working for the French East India Company in 1732, first as an engineer in <mark>Isle of France</mark> and <mark>Isle <mark>Bourbon</mark></mark>, then as the chief engineer in Mahé, Karaikal, and <mark>Pondicherry</mark>. He then worked as a commander in Karaikal starting in 1744.",
     "name": "Paradis",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -541,7 +541,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Joseph de Ponssy started working for the French East India Company with a certificate from the infantry in the Isle Bourbon in 1732, then with a captain's commission in 1740. He spent some time at Isle of France then in Pondicherry in 1741 and 1742, and was major general in Pondicherry and in Isle of France in 1743.",
-    "annotated_bio": "<strong>Joseph de Ponssy</strong> started working for the French East India Company with a certificate from the infantry in the Isle <mark>Bourbon</mark> in 1732, then with a captain's commission in 1740. He spent some time at <mark>Isle of France</mark> then in <mark>Pondicherry</mark> in 1741 and 1742, and was major general in <mark>Pondicherry</mark> and in <mark>Isle of France</mark> in 1743.",
+    "annotated_bio": "<strong>Joseph de Ponssy</strong> started working for the French East India Company with a certificate from the infantry in the <mark>Isle <mark>Bourbon</mark></mark> in 1732, then with a captain's commission in 1740. He spent some time at <mark>Isle of France</mark> then in <mark>Pondicherry</mark> in 1741 and 1742, and was major general in <mark>Pondicherry</mark> and in <mark>Isle of France</mark> in 1743.",
     "name": "Joseph de Ponssy",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -601,7 +601,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Armand François de Maizière de Maisoncelle was born in France’s Champagne region in 1724. He was a cadet in New France in 1738 and by 1750, he had become a lieutenant in Île Royale. In 1765, he was a captain in the Volontaires d’Afrique. In 1772, he was promoted to the position of lieutenant colonel in the Isle Bourbon regiment. By 1775 he had become the commander of a battalion on Isle of France. He died on that island in 1777. Wood, Archipelago of Justice, pp. 152–4",
-    "annotated_bio": "<strong>Armand François de Maizière de Maisoncelle</strong> was born in France’s Champagne region in 1724. He was a cadet in <mark>New France</mark> in 1738 and by 1750, he had become a lieutenant in <mark>Île Royale</mark>. In 1765, he was a captain in the Volontaires d’Afrique. In 1772, he was promoted to the position of lieutenant colonel in the Isle <mark>Bourbon</mark> regiment. By 1775 he had become the commander of a battalion on <mark>Isle of France</mark>. He died on that island in 1777. Wood, Archipelago of Justice, pp. 152–4",
+    "annotated_bio": "<strong>Armand François de Maizière de Maisoncelle</strong> was born in France’s Champagne region in 1724. He was a cadet in <mark>New France</mark> in 1738 and by 1750, he had become a lieutenant in <mark>Île Royale</mark>. In 1765, he was a captain in the Volontaires d’Afrique. In 1772, he was promoted to the position of lieutenant colonel in the <mark>Isle <mark>Bourbon</mark></mark> regiment. By 1775 he had become the commander of a battalion on <mark>Isle of France</mark>. He died on that island in 1777. Wood, Archipelago of Justice, pp. 152–4",
     "name": "Armand François de Maizière de Maisoncelle",
     "from": "New France",
     "to": "Isle Bourbon & Isle of France",
@@ -671,7 +671,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Pierre Poivre was born in Lyon in 1719. He studied theology, botany and engineering in Paris and became a botanist. In 1741, he left France to work as a religious missionary in China and Cochinchina. While on its way back to France, in 1745, his vessel was attacked by the British who took him to Dutch Batavia. He eventually reached Pondicherry in 1746, Isle of France and France in 1758. He became a member of the Academy of Sciences in Lyon. In 1766, he was named Intendant of Isle of France and Isle Bourbon. He left Isle of France in 1772 and died in France in 1786. He wrote a travel narrative, titled Voyages d’un philosophe (1768).",
-    "annotated_bio": "<strong>Pierre Poivre</strong> was born in Lyon in 1719. He studied theology, botany and engineering in Paris and became a botanist. In 1741, he left France to work as a religious missionary in China and Cochinchina. While on its way back to France, in 1745, his vessel was attacked by the British who took him to Dutch Batavia. He eventually reached <mark>Pondicherry</mark> in 1746, <mark>Isle of France</mark> and France in 1758. He became a member of the Academy of Sciences in Lyon. In 1766, he was named Intendant of <mark>Isle of France</mark> and Isle <mark>Bourbon</mark>. He left <mark>Isle of France</mark> in 1772 and died in France in 1786. He wrote a travel narrative, titled Voyages d’un philosophe (1768).",
+    "annotated_bio": "<strong>Pierre Poivre</strong> was born in Lyon in 1719. He studied theology, botany and engineering in Paris and became a botanist. In 1741, he left France to work as a religious missionary in China and Cochinchina. While on its way back to France, in 1745, his vessel was attacked by the British who took him to Dutch Batavia. He eventually reached <mark>Pondicherry</mark> in 1746, <mark>Isle of France</mark> and France in 1758. He became a member of the Academy of Sciences in Lyon. In 1766, he was named Intendant of <mark>Isle of France</mark> and <mark>Isle <mark>Bourbon</mark></mark>. He left <mark>Isle of France</mark> in 1772 and died in France in 1786. He wrote a travel narrative, titled Voyages d’un philosophe (1768).",
     "name": "Pierre Poivre",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -941,7 +941,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Charles de Sabrevois de Bleury was born in 1734 in Canada.  He was a cadet in the Canada troops, then a second ensign at Île Royale in 1750, then a lieutenant in 1759, and a captain in 1766.  He became a reformed captain of the Isle Bourbon regiment starting in 1775.",
-    "annotated_bio": "<strong>Charles de Sabrevois de Bleury</strong> was born in 1734 in <mark>Canada</mark>.  He was a cadet in the <mark>Canada</mark> troops, then a second ensign at <mark>Île Royale</mark> in 1750, then a lieutenant in 1759, and a captain in 1766.  He became a reformed captain of the Isle <mark>Bourbon</mark> regiment starting in 1775.",
+    "annotated_bio": "<strong>Charles de Sabrevois de Bleury</strong> was born in 1734 in <mark>Canada</mark>.  He was a cadet in the <mark>Canada</mark> troops, then a second ensign at <mark>Île Royale</mark> in 1750, then a lieutenant in 1759, and a captain in 1766.  He became a reformed captain of the <mark>Isle <mark>Bourbon</mark></mark> regiment starting in 1775.",
     "name": "Charles de Sabrevois de Bleury",
     "from": "New France",
     "to": "Isle Bourbon & Isle of France",
@@ -1061,7 +1061,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean François Denis d'Orte was captain of a workers' company and an engineer-in-chief in Isle Bourbon from 1752 to 1767.  He invented the coton-mill, and requested employment in Saint-Domingue in 1786.",
-    "annotated_bio": "<strong>Jean François Denis d'Orte</strong> was captain of a workers' company and an engineer-in-chief in Isle <mark>Bourbon</mark> from 1752 to 1767.  He invented the coton-mill, and requested employment in <mark>Saint-Domingue</mark> in 1786.",
+    "annotated_bio": "<strong>Jean François Denis d'Orte</strong> was captain of a workers' company and an engineer-in-chief in <mark>Isle <mark>Bourbon</mark></mark> from 1752 to 1767.  He invented the coton-mill, and requested employment in <mark>Saint-Domingue</mark> in 1786.",
     "name": "Jean François Denis d'Orte",
     "from": "Isle Bourbon & Isle of France",
     "to": "Caribbean",
@@ -1171,7 +1171,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Eustache de Lépervanche started his military service in Canada in 1755 as a cadet, then was an ensign in the Canada troops in 1759, then was a lieutenant in the Isle of France legion in 1766.  He was also a lieutenant of the Isle Bourbon regiment and then was captain of that regiment in 1785, before retiring in 1786.",
-    "annotated_bio": "<strong>Eustache de Lépervanche</strong> started his military service in <mark>Canada</mark> in 1755 as a cadet, then was an ensign in the <mark>Canada</mark> troops in 1759, then was a lieutenant in the <mark>Isle of France</mark> legion in 1766.  He was also a lieutenant of the Isle <mark>Bourbon</mark> regiment and then was captain of that regiment in 1785, before retiring in 1786.",
+    "annotated_bio": "<strong>Eustache de Lépervanche</strong> started his military service in <mark>Canada</mark> in 1755 as a cadet, then was an ensign in the <mark>Canada</mark> troops in 1759, then was a lieutenant in the <mark>Isle of France</mark> legion in 1766.  He was also a lieutenant of the <mark>Isle <mark>Bourbon</mark></mark> regiment and then was captain of that regiment in 1785, before retiring in 1786.",
     "name": "Eustache de Lépervanche",
     "from": "New France",
     "to": "Isle Bourbon & Isle of France",
@@ -1181,7 +1181,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "René Magon de La Villebague was the governor of Isle of France and Isle Bourbon from 1755 to 1759, and was the intendant of Saint-Domingue from 1763-1766.  Many members of his family made their careers in the colonies.",
-    "annotated_bio": "<strong>René Magon de La Villebague</strong> was the governor of <mark>Isle of France</mark> and Isle <mark>Bourbon</mark> from 1755 to 1759, and was the intendant of <mark>Saint-Domingue</mark> from 1763-1766.  Many members of his family made their careers in the colonies.",
+    "annotated_bio": "<strong>René Magon de La Villebague</strong> was the governor of <mark>Isle of France</mark> and <mark>Isle <mark>Bourbon</mark></mark> from 1755 to 1759, and was the intendant of <mark>Saint-Domingue</mark> from 1763-1766.  Many members of his family made their careers in the colonies.",
     "name": "René Magon de La Villebague",
     "from": "Isle Bourbon & Isle of France",
     "to": "Caribbean",
@@ -1411,7 +1411,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "François Petit was in Isle of France in 1761, and was incorporated into the Isle of France regiment in 1777.  He was an adjudant in the Isle Bourbon regiment starting in 1785, then was captain of the National Guard in Pondicherry starting in 1793.",
-    "annotated_bio": "<strong>François Petit</strong> was in <mark>Isle of France</mark> in 1761, and was incorporated into the <mark>Isle of France</mark> regiment in 1777.  He was an adjudant in the Isle <mark>Bourbon</mark> regiment starting in 1785, then was captain of the National Guard in <mark>Pondicherry</mark> starting in 1793.",
+    "annotated_bio": "<strong>François Petit</strong> was in <mark>Isle of France</mark> in 1761, and was incorporated into the <mark>Isle of France</mark> regiment in 1777.  He was an adjudant in the <mark>Isle <mark>Bourbon</mark></mark> regiment starting in 1785, then was captain of the National Guard in <mark>Pondicherry</mark> starting in 1793.",
     "name": "François Petit",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -1571,7 +1571,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Delisle, a former resident of Canada, was a counselor to the supreme counsel of Isle Bourbon, and died around 1770.",
-    "annotated_bio": "<strong>Delisle</strong>, a former resident of <mark>Canada</mark>, was a counselor to the supreme counsel of Isle <mark>Bourbon</mark>, and died around 1770.",
+    "annotated_bio": "<strong>Delisle</strong>, a former resident of <mark>Canada</mark>, was a counselor to the supreme counsel of <mark>Isle <mark>Bourbon</mark></mark>, and died around 1770.",
     "name": "Delisle",
     "from": "New France",
     "to": "Isle Bourbon & Isle of France",
@@ -1771,7 +1771,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Geoffrion de Boisy, a resident of Isle Bourbon before 1768, was employed in the Isle Bourbon offices, travelled to Pondicherry, then was in the British army in 1772.",
-    "annotated_bio": "<strong>Geoffrion de Boisy</strong>, a resident of Isle <mark>Bourbon</mark> before 1768, was employed in the Isle <mark>Bourbon</mark> offices, travelled to <mark>Pondicherry</mark>, then was in the British army in 1772.",
+    "annotated_bio": "<strong>Geoffrion de Boisy</strong>, a resident of <mark>Isle <mark>Bourbon</mark></mark> before 1768, was employed in the <mark>Isle <mark>Bourbon</mark></mark> offices, travelled to <mark>Pondicherry</mark>, then was in the British army in 1772.",
     "name": "Geoffrion de Boisy",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -1851,7 +1851,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean Baptiste Blandin, was an assistant surgeon in Isle of France from 1769 to 1776, then a major surgeon in the East Indies from 1779, in Pondicherry, then in Isle Bourbon from 1786.",
-    "annotated_bio": "<strong>Jean Baptiste Blandin</strong>, was an assistant surgeon in <mark>Isle of France</mark> from 1769 to 1776, then a major surgeon in the East Indies from 1779, in <mark>Pondicherry</mark>, then in Isle <mark>Bourbon</mark> from 1786.",
+    "annotated_bio": "<strong>Jean Baptiste Blandin</strong>, was an assistant surgeon in <mark>Isle of France</mark> from 1769 to 1776, then a major surgeon in the East Indies from 1779, in <mark>Pondicherry</mark>, then in <mark>Isle <mark>Bourbon</mark></mark> from 1786.",
     "name": "Jean Baptiste Blandin",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -1901,7 +1901,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean Baptiste Faveris, originally from Isle Bourbon, was a major surgeon at Gorée in 1770, and returned to Isle Bourbon in the 1780s.",
-    "annotated_bio": "<strong>Jean Baptiste Faveris</strong>, originally from Isle <mark>Bourbon</mark>, was a major surgeon at <mark>Gorée</mark> in 1770, and returned to Isle <mark>Bourbon</mark> in the 1780s.",
+    "annotated_bio": "<strong>Jean Baptiste Faveris</strong>, originally from <mark>Isle <mark>Bourbon</mark></mark>, was a major surgeon at <mark>Gorée</mark> in 1770, and returned to <mark>Isle <mark>Bourbon</mark></mark> in the 1780s.",
     "name": "Jean Baptiste Faveris",
     "from": "Isle Bourbon & Isle of France",
     "to": "Senegal",
@@ -1911,7 +1911,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Arnaud-Etienne Périchon de Vaudeuil was born in Paris in 1746, was in India in 1770, was an adviser to the Superior Council of Pondicherry from 1775, then to that of Isle Bourbon.",
-    "annotated_bio": "<strong>Arnaud-Etienne Périchon de Vaudeuil</strong> was born in Paris in 1746, was in India in 1770, was an adviser to the Superior Council of <mark>Pondicherry</mark> from 1775, then to that of Isle <mark>Bourbon</mark>.",
+    "annotated_bio": "<strong>Arnaud-Etienne Périchon de Vaudeuil</strong> was born in Paris in 1746, was in India in 1770, was an adviser to the Superior Council of <mark>Pondicherry</mark> from 1775, then to that of <mark>Isle <mark>Bourbon</mark></mark>.",
     "name": "Arnaud-Etienne Périchon de Vaudeuil",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -2021,7 +2021,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean Baptiste Nicolas Claude Lefebvre was a sub-merchant then attorney general at the Superior Council of Pondicherry from c. 1772, then was a King's attorney for the jurisdiction of Isle Bourbon from 1784.",
-    "annotated_bio": "<strong>Jean Baptiste Nicolas Claude Lefebvre</strong> was a sub-merchant then attorney general at the Superior Council of <mark>Pondicherry</mark> from c. 1772, then was a King's attorney for the jurisdiction of Isle <mark>Bourbon</mark> from 1784.",
+    "annotated_bio": "<strong>Jean Baptiste Nicolas Claude Lefebvre</strong> was a sub-merchant then attorney general at the Superior Council of <mark>Pondicherry</mark> from c. 1772, then was a King's attorney for the jurisdiction of <mark>Isle <mark>Bourbon</mark></mark> from 1784.",
     "name": "Jean Baptiste Nicolas Claude Lefebvre",
     "from": "India",
     "to": "Isle Bourbon & Isle of France",
@@ -2041,7 +2041,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Louis de Curt was the aide-de-camp to M. d'Estaing, and was a captain in Guadeloupe in 1773.  He was the king's commissioner for the verification and suppression of paper money in Isle of France and Isle Bourbon starting in 1784, then was the deputy of Guadeloupe in the Constituent Assembly.",
-    "annotated_bio": "<strong>Louis de Curt</strong> was the aide-de-camp to M. d'Estaing, and was a captain in <mark>Guadeloupe</mark> in 1773.  He was the king's commissioner for the verification and suppression of paper money in <mark>Isle of France</mark> and Isle <mark>Bourbon</mark> starting in 1784, then was the deputy of <mark>Guadeloupe</mark> in the Constituent Assembly.",
+    "annotated_bio": "<strong>Louis de Curt</strong> was the aide-de-camp to M. d'Estaing, and was a captain in <mark>Guadeloupe</mark> in 1773.  He was the king's commissioner for the verification and suppression of paper money in <mark>Isle of France</mark> and <mark>Isle <mark>Bourbon</mark></mark> starting in 1784, then was the deputy of <mark>Guadeloupe</mark> in the Constituent Assembly.",
     "name": "Louis de Curt",
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
@@ -2261,7 +2261,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean Harné, a native of Isle Bourbon, was a student pilot, and died in Chandannagar 1777.",
-    "annotated_bio": "<strong>Jean Harné</strong>, a native of Isle <mark>Bourbon</mark>, was a student pilot, and died in <mark>Chandannagar</mark> 1777.",
+    "annotated_bio": "<strong>Jean Harné</strong>, a native of <mark>Isle <mark>Bourbon</mark></mark>, was a student pilot, and died in <mark>Chandannagar</mark> 1777.",
     "name": "Jean Harné",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -2281,7 +2281,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Louis François Estoupan de Laval moved to Isle of France in 1769. He was an employee of the French East India Company in Isle of France island until 1774. He joined the offices of the administration of Pondicherry in 1774, and travelled to Mahé in 1777. He was taken prisoner by the English in 1778 and was imprisoned for 4 years. In 1782, he was employed in the accounting office of Isle of France and Isle Bourbon. His father died as head of sales of the French East India Company. Mr David his uncle died as director of the French East India Company, and Mr David his son was the governor of Isle of France and Isle Bourbon. His uncle Mr Estoupan de Villeneuve was captain of the vessels of the French East India Company. His three uncles were successively governors of Senegal.",
-    "annotated_bio": "<strong>Louis François Estoupan de Laval</strong> moved to <mark>Isle of France</mark> in 1769. He was an employee of the French East India Company in <mark>Isle of France</mark> island until 1774. He joined the offices of the administration of <mark>Pondicherry</mark> in 1774, and travelled to Mahé in 1777. He was taken prisoner by the English in 1778 and was imprisoned for 4 years. In 1782, he was employed in the accounting office of <mark>Isle of France</mark> and Isle <mark>Bourbon</mark>. His father died as head of sales of the French East India Company. Mr David his uncle died as director of the French East India Company, and Mr David his son was the governor of <mark>Isle of France</mark> and Isle <mark>Bourbon</mark>. His uncle Mr Estoupan de Villeneuve was captain of the vessels of the French East India Company. His three uncles were successively governors of <mark>Senegal</mark>.",
+    "annotated_bio": "<strong>Louis François Estoupan de Laval</strong> moved to <mark>Isle of France</mark> in 1769. He was an employee of the French East India Company in <mark>Isle of France</mark> island until 1774. He joined the offices of the administration of <mark>Pondicherry</mark> in 1774, and travelled to Mahé in 1777. He was taken prisoner by the English in 1778 and was imprisoned for 4 years. In 1782, he was employed in the accounting office of <mark>Isle of France</mark> and <mark>Isle <mark>Bourbon</mark></mark>. His father died as head of sales of the French East India Company. Mr David his uncle died as director of the French East India Company, and Mr David his son was the governor of <mark>Isle of France</mark> and <mark>Isle <mark>Bourbon</mark></mark>. His uncle Mr Estoupan de Villeneuve was captain of the vessels of the French East India Company. His three uncles were successively governors of <mark>Senegal</mark>.",
     "name": "Louis François Estoupan de Laval",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -2321,7 +2321,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean Baptiste Vigoureux Du Plessis, born in Chandannagar on May 6th 1735, was a lieutenant-colonel of the infantry, then commander in Mahé in 1778.  He was the governor of Saint-Vincent in the Antilles in 1780, then brigadier of the king's armies in 1784, and the governor of Isle Bourbon in 1771/1814.",
-    "annotated_bio": "<strong>Jean Baptiste Vigoureux Du Plessis</strong>, born in <mark>Chandannagar</mark> on May 6th 1735, was a lieutenant-colonel of the infantry, then commander in Mahé in 1778.  He was the governor of <mark>Saint-Vincent</mark> in the Antilles in 1780, then brigadier of the king's armies in 1784, and the governor of Isle <mark>Bourbon</mark> in 1771/1814.",
+    "annotated_bio": "<strong>Jean Baptiste Vigoureux Du Plessis</strong>, born in <mark>Chandannagar</mark> on May 6th 1735, was a lieutenant-colonel of the infantry, then commander in Mahé in 1778.  He was the governor of <mark>Saint-Vincent</mark> in the Antilles in 1780, then brigadier of the king's armies in 1784, and the governor of <mark>Isle <mark>Bourbon</mark></mark> in 1771/1814.",
     "name": "Jean Baptiste Vigoureux Du Plessis",
     "from": "India",
     "to": "Caribbean",
@@ -2331,7 +2331,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean Baptiste Vigoureux Du Plessis, born in Chandannagar on May 6th 1735, was a lieutenant-colonel of the infantry, then commander in Mahé in 1778.  He was the governor of Saint-Vincent in the Antilles in 1780, then brigadier of the king's armies in 1784, and the governor of Isle Bourbon in 1771/1814.",
-    "annotated_bio": "<strong>Jean Baptiste Vigoureux Du Plessis</strong>, born in <mark>Chandannagar</mark> on May 6th 1735, was a lieutenant-colonel of the infantry, then commander in Mahé in 1778.  He was the governor of <mark>Saint-Vincent</mark> in the Antilles in 1780, then brigadier of the king's armies in 1784, and the governor of Isle <mark>Bourbon</mark> in 1771/1814.",
+    "annotated_bio": "<strong>Jean Baptiste Vigoureux Du Plessis</strong>, born in <mark>Chandannagar</mark> on May 6th 1735, was a lieutenant-colonel of the infantry, then commander in Mahé in 1778.  He was the governor of <mark>Saint-Vincent</mark> in the Antilles in 1780, then brigadier of the king's armies in 1784, and the governor of <mark>Isle <mark>Bourbon</mark></mark> in 1771/1814.",
     "name": "Jean Baptiste Vigoureux Du Plessis",
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
@@ -2361,7 +2361,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Pierre Boyé moved to Isle of France in 1768 where he was a sergeant, then moved to Isle Bourbon in 1778 where he was a clerk, returned to Isle of France in 1780 to be employed as a clerk, and received an army crew artillery guard commission in India in 1781.",
-    "annotated_bio": "<strong>Pierre Boyé</strong> moved to <mark>Isle of France</mark> in 1768 where he was a sergeant, then moved to Isle <mark>Bourbon</mark> in 1778 where he was a clerk, returned to <mark>Isle of France</mark> in 1780 to be employed as a clerk, and received an army crew artillery guard commission in India in 1781.",
+    "annotated_bio": "<strong>Pierre Boyé</strong> moved to <mark>Isle of France</mark> in 1768 where he was a sergeant, then moved to <mark>Isle <mark>Bourbon</mark></mark> in 1778 where he was a clerk, returned to <mark>Isle of France</mark> in 1780 to be employed as a clerk, and received an army crew artillery guard commission in India in 1781.",
     "name": "Pierre Boyé",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -2371,7 +2371,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "François Millon served first as attorney general (procureur general) in the colonia Council of Isle Bourbon and later as sénéchal and judge in Saint-Marc, Saint-Domingue. Wood, Archipelago of Justice pp. 65–7",
-    "annotated_bio": "<strong>François Millon</strong> served first as attorney general (procureur general) in the colonia Council of Isle <mark>Bourbon</mark> and later as sénéchal and judge in Saint-Marc, <mark>Saint-Domingue</mark>. Wood, Archipelago of Justice pp. 65–7",
+    "annotated_bio": "<strong>François Millon</strong> served first as attorney general (procureur general) in the colonia Council of <mark>Isle <mark>Bourbon</mark></mark> and later as sénéchal and judge in Saint-Marc, <mark>Saint-Domingue</mark>. Wood, Archipelago of Justice pp. 65–7",
     "name": "François Millon",
     "from": "Isle Bourbon & Isle of France",
     "to": "Caribbean",
@@ -2461,7 +2461,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Camille Charles Le Clerc de Fresne, a knight, embarked for the Windward Islands of the Antilles in 1780, was a major general on the island of Grenada, second in command in Saint-Christophe, a colonel of the regiment of Isle Bourbon from 1784, then governor in Pondicherry, then returned to France in 1793.",
-    "annotated_bio": "<strong>Camille Charles Le Clerc de Fresne</strong>, a knight, embarked for the Windward Islands of the Antilles in 1780, was a major general on the island of <mark>Grenada</mark>, second in command in Saint-Christophe, a colonel of the regiment of Isle <mark>Bourbon</mark> from 1784, then governor in <mark>Pondicherry</mark>, then returned to France in 1793.",
+    "annotated_bio": "<strong>Camille Charles Le Clerc de Fresne</strong>, a knight, embarked for the Windward Islands of the Antilles in 1780, was a major general on the island of <mark>Grenada</mark>, second in command in Saint-Christophe, a colonel of the regiment of <mark>Isle <mark>Bourbon</mark></mark> from 1784, then governor in <mark>Pondicherry</mark>, then returned to France in 1793.",
     "name": "Camille Charles Le Clerc de Fresne",
     "from": "Caribbean",
     "to": "Isle Bourbon & Isle of France",
@@ -2471,7 +2471,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Camille Charles Le Clerc de Fresne, a knight, embarked for the Windward Islands of the Antilles in 1780, was a major general on the island of Grenada, second in command in Saint-Christophe, a colonel of the regiment of Isle Bourbon from 1784, then governor in Pondicherry, then returned to France in 1793.",
-    "annotated_bio": "<strong>Camille Charles Le Clerc de Fresne</strong>, a knight, embarked for the Windward Islands of the Antilles in 1780, was a major general on the island of <mark>Grenada</mark>, second in command in Saint-Christophe, a colonel of the regiment of Isle <mark>Bourbon</mark> from 1784, then governor in <mark>Pondicherry</mark>, then returned to France in 1793.",
+    "annotated_bio": "<strong>Camille Charles Le Clerc de Fresne</strong>, a knight, embarked for the Windward Islands of the Antilles in 1780, was a major general on the island of <mark>Grenada</mark>, second in command in Saint-Christophe, a colonel of the regiment of <mark>Isle <mark>Bourbon</mark></mark> from 1784, then governor in <mark>Pondicherry</mark>, then returned to France in 1793.",
     "name": "Camille Charles Le Clerc de Fresne",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -2531,7 +2531,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "La Carrière was a second lieutenant following the artillery of Isle of France and Isle Bourbon, then in Pondicherry starting in 1781.",
-    "annotated_bio": "<strong>La Carrière</strong> was a second lieutenant following the artillery of <mark>Isle of France</mark> and Isle <mark>Bourbon</mark>, then in <mark>Pondicherry</mark> starting in 1781.",
+    "annotated_bio": "<strong>La Carrière</strong> was a second lieutenant following the artillery of <mark>Isle of France</mark> and <mark>Isle <mark>Bourbon</mark></mark>, then in <mark>Pondicherry</mark> starting in 1781.",
     "name": "La Carrière",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",
@@ -2661,7 +2661,7 @@ const OFFICIALS_LINKS = [
   },
   {
     "bio": "Jean Baptiste Manent was in the legion of Isle of France as a soldier from 1766, then as a lieutenant from 1772. In 1785, he was appointed captain commander of the Isle Bourbon regiment, then captain in 1785, then was incorporated into the Pondicherry regiment in 1789.",
-    "annotated_bio": "<strong>Jean Baptiste Manent</strong> was in the legion of <mark>Isle of France</mark> as a soldier from 1766, then as a lieutenant from 1772. In 1785, he was appointed captain commander of the Isle <mark>Bourbon</mark> regiment, then captain in 1785, then was incorporated into the <mark>Pondicherry</mark> regiment in 1789.",
+    "annotated_bio": "<strong>Jean Baptiste Manent</strong> was in the legion of <mark>Isle of France</mark> as a soldier from 1766, then as a lieutenant from 1772. In 1785, he was appointed captain commander of the <mark>Isle <mark>Bourbon</mark></mark> regiment, then captain in 1785, then was incorporated into the <mark>Pondicherry</mark> regiment in 1789.",
     "name": "Jean Baptiste Manent",
     "from": "Isle Bourbon & Isle of France",
     "to": "India",

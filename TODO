@@ -1,3 +1,13 @@
+02/05/2023
+* The dynamic ship map is nice but we would need a static version for the printed book, and it should still capture the full voyage of each ship, which the ship maps V1 does not do. One possibility would be a static map with one "arrow path" per distinct voyage route, and make the size of the arrow proportional to the number of ships which have taken this route.
+We'd have to figure out if this works or if there are too many distinct routes.
+
+* There seems to be a bug in the V1 map when clicking on a location: 1) should be sorted chronologically, 2) seems like the filtering is incorrect (i.e. there are ships whose journey does not include Louisiana when you click on Louisiana)
+
+* It would be nice to have a way to display how the volumne of ship journeys changed over time (histogram, etc)
+
+* Bunch of stats questions on the ship journeys. Probably easiest to answer via a Python script, as they are questions about the contents of the journeys.
+
 FEATURES
 * Show trips to metropole in officials search results?
 * Page scrolling should work when cursor inside map; seems to be disabled by the sigma library
