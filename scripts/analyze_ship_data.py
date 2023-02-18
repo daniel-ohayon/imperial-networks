@@ -5,6 +5,9 @@ Shares some code with parse_ship_data_for_animation.py
 
 # TODO verify list of unique locations
 
+from contextlib import contextmanager
+import pandas
+import seaborn
 from collections import Counter
 from dataclasses import dataclass
 import itertools
@@ -103,15 +106,21 @@ for journeys_for_one_ship in raw_data.values():
         ))
 
 
-def pct(label: str, filter_fun: Callable[[Journey], bool]) -> None:
-    n = len([j for j in JOURNEYS if filter_fun(j)])
-    total = len(JOURNEYS)
+def pct(label: str, filter_fun: Callable[[Journey], bool], up_to_1763: bool = False) -> None:
+    universe = JOURNEYS if not up_to_1763 else [
+        j for j in JOURNEYS if j.end_year <= 1763]
+    n = len([j for j in universe if filter_fun(j)])
+    total = len(universe)
     pct = int(round(n/total * 100))
     print(f"{label}: {n}/{total} ({pct} %)")
 
 
-def stopped_in(journey: Journey, places: Sequence[str]) -> bool:
+def stopped_in_any(journey: Journey, places: Sequence[str]) -> bool:
     return any(stop in places for stop in journey.stops)
+
+
+def stopped_in_every(journey: Journey, places: Sequence[str]) -> bool:
+    return all(place in journey.stops for place in places)
 
 
 def went_from_to(journey: Journey, from_places: Sequence[str], to_places: Sequence[str]) -> bool:
@@ -123,6 +132,15 @@ def went_from_to(journey: Journey, from_places: Sequence[str], to_places: Sequen
             return False
     return False
 
+@contextmanager
+def only_include_journeys_between(from_year: int, to_year: int):
+    global JOURNEYS
+    _old_journeys = JOURNEYS
+    JOURNEYS = [j for j in JOURNEYS if j.start_year >= from_year and j.end_year <= to_year]
+    yield
+    JOURNEYS = _old_journeys
+
+
 
 pct("Journeys before 1720", lambda j: j.end_year < 1720)
 pct("Journeys before 1763", lambda j: j.end_year < 1763)
@@ -132,18 +150,18 @@ pct("Journeys in Atlantic", lambda j: all(
     get_ocean(p) == "ATLANTIC" for p in j.stops))
 
 pct("Journeys between NorAm and Caribbean", lambda j:
-    stopped_in(j, {"New France", "Louisiana"})
-    and stopped_in(j, "Caribbean")
+    stopped_in_any(j, {"New France", "Louisiana"})
+    and stopped_in_any(j, "Caribbean")
     )
 
 pct("Journeys between Guyana and NorAm/Caribbean", lambda j:
-    stopped_in(j, {"Guyana"})
-    and stopped_in(j, {"New France", "Caribbean", "Louisiana"})
+    stopped_in_any(j, {"Guyana"})
+    and stopped_in_any(j, {"New France", "Caribbean", "Louisiana"})
     )
 
 pct("Journeys between Noram/Caribbean and West Africa", lambda j:
-    stopped_in(j, {"New France", "Caribbean", "Louisiana"})
-    and stopped_in(j, {"Senegal"})
+    stopped_in_any(j, {"New France", "Caribbean", "Louisiana"})
+    and stopped_in_any(j, {"Senegal"})
     )
 
 pct("Journeys FROM Atlantic TO Indian Ocean", lambda j:
@@ -158,10 +176,43 @@ pct("Journeys FROM Bourbon/IdF to Atlantic", lambda j:
     went_from_to(j, {'Isle Bourbon & Isle of France'}, ATLANTIC_LOCATIONS)
     )
 
+# ==========================
+print("===========================")
+
+with only_include_journeys_between(1713, 1763):
+    n_ships = len({j.ship_name for j in JOURNEYS})
+    print(f"{len(JOURNEYS)} journeys took place between 1713-1763, conducted by {n_ships} ships")
+    pct("Journeys after 1720", lambda j: j.start_year >= 1720)
+    pct("Journeys via metropole", lambda j: stopped_in_every(j, ["France"]))
+    pct("Journeys via metropole + NorAm",
+        lambda j: stopped_in_any(j, ["France"]) and stopped_in_any(j, ["Louisiana", "New France"]))
+    pct("Journeys via metropole + Caribbean",
+        lambda j: stopped_in_every(j, ["France", "Caribbean"]))
+    pct("Journeys via metropole + Senegal",
+        lambda j: stopped_in_every(j, ["France", "Senegal"]))
+    pct("Journeys via metropole + (Madagascar or Mascarennes)",
+        lambda j: stopped_in_any(j, ["France"]) and stopped_in_any(j, ['Isle Bourbon & Isle of France', "Madagascar"]))
+    pct("Journeys via metropole + India",
+        lambda j: stopped_in_every(j, ["France", "India"]))
+    pct("Journeys via both oceans",
+        lambda j: len({get_ocean(stop) for stop in j.stops}) == 2)
+    pct("Journeys via Senegal AND (Madagascar OR Mascarennes)",
+        lambda j: stopped_in_any(j, ["Senegal"]) and stopped_in_any(
+            j, ["Madagascar", 'Isle Bourbon & Isle of France']))
+    pct("Journeys via Caribbean AND (Madagascar OR Mascarennes)",
+        lambda j: stopped_in_any(j, ["Caribbean"]) and stopped_in_any(
+            j, ["Madagascar", 'Isle Bourbon & Isle of France']))
+    pct("Journeys via NorAm AND (Madagascar OR Mascarennes)",
+        lambda j: stopped_in_any(j, ["Louisiana", "New France"]) and stopped_in_any(
+            j, ["Madagascar", 'Isle Bourbon & Isle of France']))
+    pct("Journeys within Indian Ocean only",
+        lambda j: {get_ocean(stop) for stop in j.stops} == {"INDIAN_OCEAN"})
+
+
 # Count and plot number of active ships each year
 points = [
-    j.start_year 
-    for j in JOURNEYS 
+    j.start_year
+    for j in JOURNEYS
     if j.end_year <= 1760
 ]
 # plt.hist(points)
@@ -169,10 +220,10 @@ points = [
 # plt.xlabel('Year group')
 # plt.show()
 
-import seaborn
-import pandas
 by_year = Counter(points)
 series = [(k, v) for k, v in by_year.items()]
-df = pandas.DataFrame({'Year': [tpl[0] for tpl in series], 'Number of journeys': [tpl[1] for tpl in series]})
-seaborn.lmplot(data=df, x='Year', y='Number of journeys', order=4, truncate=True)
-plt.show()
+df = pandas.DataFrame({'Year': [tpl[0] for tpl in series], 'Number of journeys': [
+                      tpl[1] for tpl in series]})
+seaborn.lmplot(data=df, x='Year', y='Number of journeys',
+               order=4, truncate=True)
+# plt.show()
