@@ -1,4 +1,6 @@
 from __future__ import annotations
+import matplotlib.pyplot as plt
+from contextlib import contextmanager
 
 import json
 import csv
@@ -205,8 +207,8 @@ def process_row(row: Dict[str, str]) -> Tuple[Person, List[Edge]]:
 ########################### DATA PROCESSING #######################################
 
 
-all_edges: List[Edge] = []
-all_people: List[Person] = []
+ALL_EDGES: List[Edge] = []
+ALL_PEOPLE: List[Person] = []
 
 with open(INPUT_FILE, encoding='utf-8-sig') as input_csv:
     input_data = list(csv.DictReader(input_csv))
@@ -225,19 +227,39 @@ with open(INPUT_FILE, encoding='utf-8-sig') as input_csv:
             continue
 
         person, edges = process_row(row)
-        all_edges += edges
-        all_people.append(person)
+        ALL_EDGES += edges
+        ALL_PEOPLE.append(person)
 
 
 with open(OUTPUT_FILE, 'w') as out_js_file:
     json_str = json.dumps([edge.to_dict()
-                          for edge in all_edges], indent=2, ensure_ascii=False)
+                          for edge in ALL_EDGES], indent=2, ensure_ascii=False)
     out_js_file.write(f"const {JS_CONST_NAME} = {json_str};\n")
 
 print(f"Results written to {OUTPUT_FILE}")
 print("==================================")
 
 # --------------------  DATA ANALYSIS -----------------------------
+
+
+@contextmanager
+def restrict_time_period(from_year: int, to_year: int):
+    global ALL_PEOPLE, ALL_EDGES
+    _all_people_old = ALL_PEOPLE
+    _all_edges_old = ALL_EDGES
+    ALL_PEOPLE = [p for p in ALL_PEOPLE if p.departure_date >=
+                  from_year and p.departure_date <= to_year]
+    ALL_EDGES = [e for e in ALL_EDGES if e.departure_date >=
+                 from_year and e.departure_date <= to_year]
+    yield
+    ALL_PEOPLE = _all_people_old
+    ALL_EDGES = _all_edges_old
+
+
+def from_to(journey: Edge, places1: List[Region], places2: List[Region]) -> bool:
+    return (journey.from_ in places1 and journey.to in places2) or (
+        journey.from_ in places2 and journey.to in places1
+    )
 
 
 def count_if(people: List[Person], filter_func: Callable[[Person], bool], show_pct: bool = True) -> str:
@@ -249,71 +271,90 @@ def count_if(people: List[Person], filter_func: Callable[[Person], bool], show_p
     return res
 
 
+def cnt_j(label: str, filter_func: Callable[[Edge], bool]):
+    n = len(ALL_EDGES)
+    n_filtered = len([e for e in ALL_EDGES if filter_func(e)])
+    pct = int(round(n_filtered / n * 100))
+    print(f"{label}: {n_filtered}/{n} ({pct} %)")
+
+
+def cnt_p(label: str, filter_func: Callable[[Person], bool], universe: Optional[List[Person]] = None):
+    universe = universe or ALL_PEOPLE
+    n = len(universe)
+    n_filtered = len([p for p in universe if filter_func(p)])
+    pct = int(round(n_filtered / n * 100))
+    print(f"{label}: {n_filtered}/{n} ({pct} %)")
+
+
+def was_in_mascarennes(p: Person) -> bool:
+    return any(reg in p.regions for reg in [Region.BOURBON, Region.MADAGASCAR])
+
+
 def print_header(title: str):
     print(f"\n{title}\n=================")
 
 
-print(f"Kept {len(all_people)}/{len(input_data)} biographies")
-print(f"(We will draw {len(all_edges)} edges)")
+print(f"Kept {len(ALL_PEOPLE)}/{len(input_data)} biographies")
+print(f"(We will draw {len(ALL_EDGES)} edges)")
 
 print_header("Dates")
-departure_dates = [p.departure_date for p in all_people]
+departure_dates = [p.departure_date for p in ALL_PEOPLE]
 print("Year of first journey:", min(departure_dates))
 print("Year of last journey:", max(departure_dates))
 
 print(
     "#ppl who travelled before 1710:",
-    count_if(all_people, lambda p: p.departure_date <= 1710)
+    count_if(ALL_PEOPLE, lambda p: p.departure_date <= 1710)
 )
 print(
     "#ppl who travelled after 1763:",
-    count_if(all_people, lambda p: p.departure_date > 1763)
+    count_if(ALL_PEOPLE, lambda p: p.departure_date > 1763)
 )
 
 print_header("Occupations")
 print("Breakdown of people by occupation:")
 for occup in Occupation:
     print(
-        f"  * {occup.value}: {count_if(all_people, lambda p: p.occupation == occup)}")
+        f"  * {occup.value}: {count_if(ALL_PEOPLE, lambda p: p.occupation == occup)}")
 
 print_header("Oceans")
 print("People who travelled within a single ocean ONLY:")
 for ocean in Ocean:
-    print(f"  * {ocean.value}: {count_if(all_people, lambda p: {reg.ocean() for reg in p.regions} == {ocean})}")
+    print(f"  * {ocean.value}: {count_if(ALL_PEOPLE, lambda p: {reg.ocean() for reg in p.regions} == {ocean})}")
 
 print(
     "#ppl who went through both oceans:",
-    count_if(all_people, lambda p: p.saw_both_oceans)
+    count_if(ALL_PEOPLE, lambda p: p.saw_both_oceans)
 )
 
 print("People who went through both oceans, by occupation:")
 for occup in Occupation:
     print(
-        f"  * {occup.value}: {count_if(all_people, lambda p: p.saw_both_oceans and p.occupation == occup)}")
+        f"  * {occup.value}: {count_if(ALL_PEOPLE, lambda p: p.saw_both_oceans and p.occupation == occup)}")
 
 print_header("Specific locations")
 print("People who went through:")
 print("  * continental North America and Caribbean:",
-      count_if(all_people, lambda p: Region.CARIBBEAN in p.regions and (
+      count_if(ALL_PEOPLE, lambda p: Region.CARIBBEAN in p.regions and (
           Region.LOUISIANA in p.regions or Region.NEW_FRANCE in p.regions
       ))
       )
 
 print(
     "  * Bourbon/Isle of France:",
-    count_if(all_people, lambda p: Region.BOURBON in p.regions)
+    count_if(ALL_PEOPLE, lambda p: Region.BOURBON in p.regions)
 )
 print("  * West Africa + Mascarennes:",
       count_if(
-          all_people, lambda p: Region.BOURBON in p.regions and Region.SENEGAL in p.regions)
+          ALL_PEOPLE, lambda p: Region.BOURBON in p.regions and Region.SENEGAL in p.regions)
       )
 print("  * Caribbean + Mascarennes:",
       count_if(
-          all_people, lambda p: Region.CARIBBEAN in p.regions and Region.BOURBON in p.regions)
+          ALL_PEOPLE, lambda p: Region.CARIBBEAN in p.regions and Region.BOURBON in p.regions)
       )
 print("  * continental North America (New France/Louisiana) + Mascarennes:",
       count_if(
-          all_people, lambda p: Region.BOURBON in p.regions and (
+          ALL_PEOPLE, lambda p: Region.BOURBON in p.regions and (
               Region.NEW_FRANCE in p.regions or Region.LOUISIANA in p.regions
           ))
       )
@@ -322,13 +363,57 @@ print_header("Metropole")
 print("Ppl who passed through the metropole:")
 for val in (True, False, None):
     str_val = {True: "Yes", False: "No", None: "Unknown"}[val]
-    print(f"  * {str_val}:", count_if(all_people,
+    print(f"  * {str_val}:", count_if(ALL_PEOPLE,
           lambda p: p.via_metropole == val))
+
+################ DATA ANALYSIS V2 (Feb 2023) ############################
+
+print_header("Data analysis Feb 2023 ; 1588-1785")
+
+with restrict_time_period(1588, 1785):
+    cnt_p("People traveling between 1588-1785: ", lambda p: True)
+    cnt_p("OFFICIALS traveling between 1588-1785: ",
+          lambda p: p.occupation == Occupation.OFFICIAL)
+    cnt_p("MILITARY ppl traveling between 1588-1785: ",
+          lambda p: p.occupation == Occupation.MILITARY)
+
+print_header("Data analysis Feb 2023 ; 1588-1763")
+with restrict_time_period(1588, 1763):
+    cnt_p("People traveling between 1588-1763: ", lambda p: True)
+    cnt_p("OFFICIALS traveling between 1588-1763: ",
+          lambda p: p.occupation == Occupation.OFFICIAL)
+    cnt_p("MILITARY ppl traveling between 1588-1763: ",
+          lambda p: p.occupation == Occupation.MILITARY)
+    cnt_j("Journeys (not people) after 1720 (but still until 1763",
+          lambda j: j.departure_date >= 1720)
+    cnt_p("People who spent time in metropole", lambda p: p.via_metropole)
+    cnt_j("Journeys within the atlantic", lambda j: {
+          j.from_.ocean(), j.to.ocean()} == {Ocean.ATLANTIC})
+    cnt_j("Journeys between NorAm and Caribbean", lambda j: from_to(
+        j, [Region.LOUISIANA, Region.NEW_FRANCE], [Region.CARIBBEAN]))
+    cnt_p("People who spent time in Atlantic + IO", lambda p: p.saw_both_oceans)
+    cnt_p("OFFICIALS who spent time in Atlantic + IO",
+          lambda p: p.saw_both_oceans and p.occupation == Occupation.OFFICIAL)
+    cnt_p("Military men who spent time in Atlantic + IO",
+          lambda p: p.saw_both_oceans and p.occupation == Occupation.MILITARY)
+    cnt_p("People who spent time in Bourbon/IdF/Madagascar",
+          was_in_mascarennes)
+    cnt_p("People who spent time in West Africa AND Bourbon/IdF/Madagascar",
+          lambda p: was_in_mascarennes(p) and Region.SENEGAL in p.regions
+          )
+    cnt_p("Among people who spent time in the Caribbean, people who also spent time in Mascarennes",
+          was_in_mascarennes,
+          universe=[p for p in ALL_PEOPLE if Region.CARIBBEAN in p.regions]
+          )
+    cnt_p("Among people who spent time in NorAm, people who also spent time in Mascarennes",
+          was_in_mascarennes,
+          universe=[p for p in ALL_PEOPLE if Region.LOUISIANA in p.regions or Region.NEW_FRANCE in p.regions])
+    cnt_j("Journeys within the Indian Ocean", lambda j: {j.from_.ocean(), j.to.ocean()} == {Ocean.INDIAN_OCEAN})
 
 
 ############## HISTOGRAMS ######################
 
-points = [e.departure_date for e in all_edges if e.departure_date < 1763]
+points = [e.departure_date for e in ALL_EDGES if e.departure_date < 1763]
 # points = [
 #     e.departure_date
 #     for e in all_edges
@@ -336,8 +421,7 @@ points = [e.departure_date for e in all_edges if e.departure_date < 1763]
 #     and e.departure_date < 1763
 # ]
 
-import matplotlib.pyplot as plt
 plt.hist(points)
 plt.ylabel('Number of people departures')
 plt.xlabel('Year group')
-plt.show()
+# plt.show()
