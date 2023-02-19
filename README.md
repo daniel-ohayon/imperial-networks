@@ -11,6 +11,13 @@ This is a collection of visualizations for the early modern French colonial empi
 * [Tropes](viz/tropes.html): racial stereotypes in travel narratives and writings, and the people who used them
 * [Racial lexicon](viz/racial-lexicon.html): uses of specific racial words across the empire
 
+# Config
+Config parameters of the maps can be overriden via the URL query parameters. Useful parameters:
+* `title`: title of the map
+* `use_animation`: whether to show the animation controls
+* `use_tags`: whether arrows should be color-coded
+* `start_year` and `end_year`: to filter the arrows based on a range of dates (when `use_animation=false`)
+
 # Visualizations
 
 ## LAWS

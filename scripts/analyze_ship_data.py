@@ -6,17 +6,19 @@ Shares some code with parse_ship_data_for_animation.py
 # TODO verify list of unique locations
 
 from contextlib import contextmanager
+import random
 import pandas
 import seaborn
 from collections import Counter
 from dataclasses import dataclass
-import itertools
 import json
 from typing import Callable, List, Sequence
-
+import sys
 import matplotlib.pyplot as plt
 
 raw_data = json.load(open('./raw_data/ship_data.json'))
+
+_DEBUG = "--debug" in sys.argv
 
 
 @dataclass
@@ -25,6 +27,7 @@ class Journey:
     end_year: int
     stops: List[str]
     ship_name: str
+    raw_stops: List[str]
 
 
 LOCATIONS = {
@@ -98,19 +101,27 @@ for journeys_for_one_ship in raw_data.values():
                 f"WARNING Skipping entry for {ship_name} because we're missing start/end date")
             continue
 
+        if _DEBUG and random.random() < 0.05:
+            print(ship_name)
+            print("stops v1: " + ', '.join(journey['stops']))
+            print("stops v2: " + ', '.join([e['location']
+                  for e in journey['ship_log']]))
+            print("Normalized stops: " + ', '.join(stops))
+            print("===========================")
+
         JOURNEYS.append(Journey(
             start_year=int(journey['start_date']),
             end_year=int(journey['end_date']),
             stops=stops,
-            ship_name=ship_name
+            ship_name=ship_name,
+            raw_stops=journey['stops']
         ))
 
 
-def pct(label: str, filter_fun: Callable[[Journey], bool], up_to_1763: bool = False) -> None:
-    universe = JOURNEYS if not up_to_1763 else [
-        j for j in JOURNEYS if j.end_year <= 1763]
-    n = len([j for j in universe if filter_fun(j)])
-    total = len(universe)
+def pct(label: str, filter_fun: Callable[[Journey], bool]) -> None:
+    matching = [j for j in JOURNEYS if filter_fun(j)]
+    n = len(matching)
+    total = len(JOURNEYS)
     pct = int(round(n/total * 100))
     print(f"{label}: {n}/{total} ({pct} %)")
 
@@ -132,14 +143,15 @@ def went_from_to(journey: Journey, from_places: Sequence[str], to_places: Sequen
             return False
     return False
 
+
 @contextmanager
 def only_include_journeys_between(from_year: int, to_year: int):
     global JOURNEYS
     _old_journeys = JOURNEYS
-    JOURNEYS = [j for j in JOURNEYS if j.start_year >= from_year and j.end_year <= to_year]
+    JOURNEYS = [j for j in JOURNEYS if j.start_year >=
+                from_year and j.end_year <= to_year]
     yield
     JOURNEYS = _old_journeys
-
 
 
 pct("Journeys before 1720", lambda j: j.end_year < 1720)
