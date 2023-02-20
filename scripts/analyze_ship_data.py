@@ -12,7 +12,7 @@ import seaborn
 from collections import Counter
 from dataclasses import dataclass
 import json
-from typing import Callable, List, Sequence
+from typing import Callable, List, Optional, Sequence
 import sys
 import matplotlib.pyplot as plt
 
@@ -97,7 +97,11 @@ for journeys_for_one_ship in raw_data.values():
         stops = stops_v1 if len(stops_v1) > len(stops_v2) else stops_v2
 
         if len(stops) == 0:
-            print(f"WARNING Skipping entry for {ship_name} because no stops")
+            if _DEBUG:
+                print(
+                    f"WARNING Skipping entry for {ship_name} because no stops")
+                print(journey['stops'])
+                print([e['location'] for e in journey['ship_log']])
             continue
 
         if journey['start_date'] is None or journey['end_date'] is None:
@@ -105,13 +109,13 @@ for journeys_for_one_ship in raw_data.values():
                 f"WARNING Skipping entry for {ship_name} because we're missing start/end date")
             continue
 
-        if _DEBUG and random.random() < 0.05:
-            print(ship_name)
-            print("stops v1: " + ', '.join(journey['stops']))
-            print("stops v2: " + ', '.join([e['location']
-                  for e in journey['ship_log']]))
-            print("Normalized stops: " + ', '.join(stops))
-            print("===========================")
+        # if _DEBUG and random.random() < 0.05:
+        #     print(ship_name)
+        #     print("stops v1: " + ', '.join(journey['stops']))
+        #     print("stops v2: " + ', '.join([e['location']
+        #           for e in journey['ship_log']]))
+        #     print("Normalized stops: " + ', '.join(stops))
+        #     print("===========================")
 
         JOURNEYS.append(Journey(
             start_year=int(journey['start_date']),
@@ -122,10 +126,11 @@ for journeys_for_one_ship in raw_data.values():
         ))
 
 
-def pct(label: str, filter_fun: Callable[[Journey], bool]) -> None:
-    matching = [j for j in JOURNEYS if filter_fun(j)]
+def pct(label: str, filter_fun: Callable[[Journey], bool], universe: Optional[List[Journey]] = None) -> None:
+    universe = universe or JOURNEYS
+    matching = [j for j in universe if filter_fun(j)]
     n = len(matching)
-    total = len(JOURNEYS)
+    total = len(universe)
     pct = int(round(n/total * 100))
     print(f"{label}: {n}/{total} ({pct} %)")
 
@@ -225,7 +230,53 @@ with only_include_journeys_between(1713, 1763):
         lambda j: {get_ocean(stop) for stop in j.stops} == {"INDIAN_OCEAN"})
     pct("Journeys within Atlantic only",
         lambda j: {get_ocean(stop) for stop in j.stops} == {"ATLANTIC"})
+    pct("Journeys linking Senegal to NorAm colonies (including Guyana)",
+        lambda j: stopped_in_any(j, ["Senegal"]) and stopped_in_any(
+            j, ["Louisiana", "New France", "Guyana"])
+        )
+    pct("Journeys that included the Caribbean",
+        lambda j: stopped_in_any(j, ["Caribbean"]))
 
+    for place in ["Louisiana", "New France", "Guyana"]:
+        pct(f"Among Caribbean journeys, those that went through {place}",
+            lambda j: stopped_in_any(j, [place]),
+            universe=[j for j in JOURNEYS if stopped_in_any(j, ["Caribbean"])]
+            )
+
+    pct("Among Caribbean journeys, those that went through the Indian Ocean",
+        lambda j: any(get_ocean(stop) == "INDIAN_OCEAN" for stop in j.stops),
+        universe=[j for j in JOURNEYS if stopped_in_any(j, ["Caribbean"])]
+        )
+
+    pct("Journeys through New France",
+        lambda j: stopped_in_any(j, ["New France"]))
+
+    pct("Journeys including Indian Ocean and Senegal", lambda j: stopped_in_any(
+        j, ["Senegal"]) and any(get_ocean(stop) == "INDIAN_OCEAN" for stop in j.stops))
+
+    pct(
+        "Journeys including Indian Ocean and Caribbean",
+        lambda j: stopped_in_any(j, ["Caribbean"]) and any(get_ocean(stop) == "INDIAN_OCEAN" for stop in j.stops))
+
+    for place in ["Senegal", "Guyana", "Louisiana", "Caribbean"]:
+        pct(
+            f"Among transoceanic journeys, those that went through {place}",
+            lambda j: stopped_in_any(j, [place]),
+            universe=[j for j in JOURNEYS if len({get_ocean(stop) for stop in j.stops}) == 2])
+
+    pct("Journeys including Mascarennes", lambda j: stopped_in_any(
+        j, ['Isle Bourbon & Isle of France', "Madagascar"]))
+
+    pct("Among IO journeys, those that included Mascarennes and India",
+        lambda j: stopped_in_any(
+            j, ['Isle Bourbon & Isle of France', "Madagascar"])
+        and stopped_in_any(j, ["India"]),
+        universe=[j for j in JOURNEYS if any(
+            get_ocean(reg) == "INDIAN_OCEAN" for reg in j.stops)]
+        )
+    # print("Average number of IO regions covered by journeys that included the IO: " +
+    #     avg([len(reg for reg in j.stops if get_ocean(reg) == "INDIAN_OCEAN")])
+    # )
 
 # Count and plot number of active ships each year
 points = [

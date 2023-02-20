@@ -409,6 +409,7 @@ with restrict_time_period(1588, 1763):
           was_in_mascarennes,
           universe=[p for p in ALL_PEOPLE if Region.LOUISIANA in p.regions or Region.NEW_FRANCE in p.regions])
     cnt_j("Journeys within the Indian Ocean", lambda j: {j.from_.ocean(), j.to.ocean()} == {Ocean.INDIAN_OCEAN})
+    cnt_j("Journeys via Caribbean", lambda j: j.from_ == Region.CARIBBEAN or j.to == Region.CARIBBEAN)
 
 
 ############## HISTOGRAMS ######################
