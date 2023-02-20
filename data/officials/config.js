@@ -1,5 +1,10 @@
 const OFFICIALS_CONFIG = {
     links: OFFICIALS_LINKS,
+    links_with_simplified_tags: OFFICIALS_LINKS.map(link => ({
+        ...link,
+        tag: link.tag == "Author" ? "Other" : link.tag
+    })),
+    use_simplified_tags: false,
     use_animation: true,
     use_simplified_edges: false,
     use_search: true,
@@ -33,7 +38,7 @@ const OFFICIALS_CONFIG = {
             color: '#490092'
         },
     },
-    makeModalContent: function(node, sigmaInstance, links) {
+    makeModalContent: function (node, sigmaInstance, links) {
         let output = '';
         links.filter(e => e.from == node.id || e.to == node.id)
             .sort()
