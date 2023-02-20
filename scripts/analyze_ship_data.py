@@ -96,6 +96,10 @@ for journeys_for_one_ship in raw_data.values():
         # use the itinerary with the most detail out of the two
         stops = stops_v1 if len(stops_v1) > len(stops_v2) else stops_v2
 
+        if len(stops) == 0:
+            print(f"WARNING Skipping entry for {ship_name} because no stops")
+            continue
+
         if journey['start_date'] is None or journey['end_date'] is None:
             print(
                 f"WARNING Skipping entry for {ship_name} because we're missing start/end date")
@@ -219,6 +223,8 @@ with only_include_journeys_between(1713, 1763):
             j, ["Madagascar", 'Isle Bourbon & Isle of France']))
     pct("Journeys within Indian Ocean only",
         lambda j: {get_ocean(stop) for stop in j.stops} == {"INDIAN_OCEAN"})
+    pct("Journeys within Atlantic only",
+        lambda j: {get_ocean(stop) for stop in j.stops} == {"ATLANTIC"})
 
 
 # Count and plot number of active ships each year
