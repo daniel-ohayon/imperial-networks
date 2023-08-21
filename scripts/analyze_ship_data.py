@@ -163,9 +163,22 @@ def only_include_journeys_between(from_year: int, to_year: int):
     JOURNEYS = _old_journeys
 
 
+print(f"Max year for journey: {max([j.end_year for j in JOURNEYS])}")
+
 pct("Journeys before 1720", lambda j: j.end_year < 1720)
 pct("Journeys before 1763", lambda j: j.end_year < 1763)
 pct("Journeys after 1763", lambda j: j.end_year >= 1763)
+
+pct("Journeys through Madagascar/Mascarennes between 1756-1791",
+    lambda j: stopped_in_any(
+        j, ["Madagascar", 'Isle Bourbon & Isle of France'])
+    and j.start_year >= 1756
+    )
+
+pct("Journeys from NorAm to Bourbon, 1756-1785",
+    lambda j: went_from_to(j, ["New France", "Louisiana"], [
+                           'Isle Bourbon & Isle of France'])
+    )
 
 pct("Journeys in Atlantic", lambda j: all(
     get_ocean(p) == "ATLANTIC" for p in j.stops))

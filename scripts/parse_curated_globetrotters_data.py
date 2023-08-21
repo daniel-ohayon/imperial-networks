@@ -261,6 +261,17 @@ def from_to(journey: Edge, places1: List[Region], places2: List[Region]) -> bool
         journey.from_ in places2 and journey.to in places1
     )
 
+def from_to_person(person: Person, places1: List[Region], places2: List[Region]) -> bool:
+    regions = person.regions
+    for from_place in places1:
+        for to_place in places2:
+            if from_place in regions and to_place in regions:
+                i1 = regions.index(from_place)
+                i2 = regions.index(to_place)
+                if i1 < i2:
+                    return True
+    return False
+
 
 def count_if(people: List[Person], filter_func: Callable[[Person], bool], show_pct: bool = True) -> str:
     n = len(people)
@@ -371,11 +382,24 @@ for val in (True, False, None):
 print_header("Data analysis Feb 2023 ; 1588-1785")
 
 with restrict_time_period(1588, 1785):
+    cnt_j("All journeys", lambda j: True)
     cnt_p("People traveling between 1588-1785: ", lambda p: True)
     cnt_p("OFFICIALS traveling between 1588-1785: ",
           lambda p: p.occupation == Occupation.OFFICIAL)
     cnt_p("MILITARY ppl traveling between 1588-1785: ",
           lambda p: p.occupation == Occupation.MILITARY)
+    cnt_j("Journeys after 1763", lambda j: j.departure_date >= 1763)
+    cnt_j("Journeys of military men, 1756-1785", lambda j:
+          j.occupation == Occupation.MILITARY and j.departure_date >= 1756
+          and j.departure_date <= 1785)
+    cnt_p("Military men who moved from New France/Louisiana/Caribbean to Mascarennes, 1756-1785",
+          lambda p: p.occupation == Occupation.MILITARY 
+          and p.departure_date >= 1756 and p.departure_date <= 1785
+          and from_to_person(p, [Region.LOUISIANA, Region.NEW_FRANCE, Region.CARIBBEAN], [Region.BOURBON])
+    )
+    cnt_j("Journeys of officials, after 1766", 
+        lambda j: j.occupation == Occupation.OFFICIAL
+        and j.departure_date >= 1766)
 
 print_header("Data analysis Feb 2023 ; 1588-1763")
 with restrict_time_period(1588, 1763):
@@ -408,8 +432,10 @@ with restrict_time_period(1588, 1763):
     cnt_p("Among people who spent time in NorAm, people who also spent time in Mascarennes",
           was_in_mascarennes,
           universe=[p for p in ALL_PEOPLE if Region.LOUISIANA in p.regions or Region.NEW_FRANCE in p.regions])
-    cnt_j("Journeys within the Indian Ocean", lambda j: {j.from_.ocean(), j.to.ocean()} == {Ocean.INDIAN_OCEAN})
-    cnt_j("Journeys via Caribbean", lambda j: j.from_ == Region.CARIBBEAN or j.to == Region.CARIBBEAN)
+    cnt_j("Journeys within the Indian Ocean", lambda j: {
+          j.from_.ocean(), j.to.ocean()} == {Ocean.INDIAN_OCEAN})
+    cnt_j("Journeys via Caribbean", lambda j: j.from_ ==
+          Region.CARIBBEAN or j.to == Region.CARIBBEAN)
 
 
 ############## HISTOGRAMS ######################
