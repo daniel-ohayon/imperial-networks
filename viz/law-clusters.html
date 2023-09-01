@@ -5,29 +5,79 @@
     <title>Clusters of laws</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="../style/law-clusters.css" />
     <script src="../data/laws/law-clusters.js" charset="utf-8"></script>
 </head>
 
 <body>
     <div id="title">Clusters of French racial policies, 1603–1758</div>
+    <div id="modal-link">Learn more about this visualization</div>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">⨉</span>
+            <div class="modal-text">
+
+                <p>This visualization shows that a coherent body of policies targeting people of non-European ancestry
+                    emerged throughout the early modern French empire, across both the Atlantic and the Indian Ocean.
+                </p>
+
+                <p>It is an interactive table showing clusters of matching policies which targeted people of
+                    non-European ancestry across different French colonies, between 1603 and 1758. The policies in the
+                    dataset deal with racial issues such as intermarriage, but also with some wider issues pertaining to
+                    people of non-European ancestry, such as their conversion to Catholicism.</p>
+
+                <p>Each row in this interactive table identifies one cluster of policies which were either identical to
+                    each other word for word or bore a strong semantic resemblance. Within each row, each policy issued
+                    for an Atlantic colony is represented with a blue dot under the heading “Atlantic,” while each law
+                    or legislative proposal issued for an Indian Ocean colony is represented with a green dot under the
+                    heading “Indian Ocean.”</p>
+
+                <h2>How to use it</h2>
+                <p>Clicking on a row reveals a sub-table enumerating the policies belonging to the corresponding cluster,
+                with a citation for each of them, as well as the name of their author and date of formulation.</p>
+                <p>Clicking on the Start button allows the user to follow the issuance of policies through time.</p>
+
+                <h2>Some numbers</h2>
+                <p>The visualization is based on a dataset of 67 policies and identifies 17 clusters of matching
+                    policies. Out of these 17 clusters, 13 contain policies formulated in identical or similar terms for
+                    the French Atlantic and the Indian Ocean. At least six different laws concerning the enslaved,
+                    manumitted slaves, and their descendants reiterate word for word a law previously issued for another
+                    colony. Moreover, at least 31 policies have the same objective as a prior policy issued for another
+                    colony, despite being phrased differently. Finally, for nine of the policies represented in this
+                    table, officials explicitly justified the issuance of the policy by referencing an earlier policy in
+                    the same cluster, which had been previously issued for a different colony.</p>
+
+                <h2>Data curation</h2>
+                <p>The dataset was curated manually, mostly from primary source material gathered in the French Overseas
+                    Archives in Aix-en-Provence, and in the Departmental Archives of Réunion Island.</p>
+
+                <h2>Authors</h2>
+                <p>The research and data collection were performed by Prof. Melanie Lamotte, and the visualization was
+                    designed and built together with Daniel Ohayon.</p>
+
+
+            </div>
+        </div>
+    </div>
+
     <div id="controls-div">
         <div style="display: flex; align-items: center;">
             <input type="range" min="1" max="100" value="1" class="slider" id="time-slider">
             <button class="play-button">
-        <i class="material-icons">play_arrow</i>
-      </button>
+                <i class="material-icons">play_arrow</i>
+            </button>
             <button class="goto-start-button">
-        <i class="material-icons">skip_previous</i>
-      </button>
+                <i class="material-icons">skip_previous</i>
+            </button>
             <button class="goto-end-button">
-        <i class="material-icons">skip_next</i>
-      </button>
+                <i class="material-icons">skip_next</i>
+            </button>
         </div>
     </div>
 
-    <div id="year">Hello</div>
+    <div id="year"></div>
 
     <div id="clusters">
         <div style="display: flex; margin-bottom: 10px; font-weight: bold; font-size: 20px; padding-left: 50px;">
