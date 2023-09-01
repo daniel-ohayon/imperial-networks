@@ -119,8 +119,11 @@ td {
 
 /* ========= MODAL ========= */
 
-#modal-link {
+#modal-div {
     text-align: center;
+}
+
+#modal-link {
     text-decoration: underline;
     cursor: pointer;
     font-size: 1.2em;
