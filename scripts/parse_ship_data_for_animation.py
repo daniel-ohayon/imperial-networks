@@ -2,7 +2,7 @@ import json
 raw_data = json.load(open('./raw_data/ship_data.json'))
 
 LOCATIONS = {
-    'Isle Bourbon & Isle of France': ['Mascareignes', 'îles de France et de Bourbon', 'île Bourbon', 'Port-Louis, île de France', 'île de France', 'Île de France'] ,
+    'Isle Bourbon & Isle of France': ['Mascareignes', 'îles de France et de Bourbon', 'île Bourbon', 'Port-Louis, île de France', 'île de France', 'Île de France'],
     'Senegal': ['Sénégal', 'Sénégal et Gorée', 'Gorée', 'Cap-Vert', 'Juda et côtes de Guinée', 'Juda'],
     'Caribbean': ['Saint-Domingue', 'Martinique', 'Antilles', 'Cap-Français', 'Saint-Louis, St-Domingue', 'Léogane', 'Port-au-Prince', 'La Grenade (île de)', 'Petit-Goâve, St-Domingue', 'Guadeloupe'],
     'Louisiana': ['Louisiane', 'Ascension', 'Nouvelle-Orléans', 'Biloxy, Louisiane'],
@@ -12,8 +12,10 @@ LOCATIONS = {
     'New France': ['Louisbourg (île Royale), Canada', 'Saint-Pierre et Miquelon', 'Terre-Neuve'],
     'Guyana': ['Guyane', 'Cayenne'],
 }
-DISTANCES = {"Caribbean:France":345,"Caribbean:Guyana":110,"Caribbean:India":866,"Caribbean:Isle Bourbon & Isle of France":668,"Caribbean:Louisiana":90,"Caribbean:Madagascar":643,"Caribbean:New France":139,"Caribbean:Senegal":249,"France:Guyana":331,"France:India":968,"France:Isle Bourbon & Isle of France":710,"France:Louisiana":349,"France:Madagascar":702,"France:New France":297,"France:Senegal":269,"Guyana:Senegal":170,"India:Isle Bourbon & Isle of France":210,"India:Louisiana":946,"India:Madagascar":182,"India:Senegal":694,"Isle Bourbon & Isle of France:Louisiana":732,"Isle Bourbon & Isle of France:Madagascar":29,"Isle Bourbon & Isle of France:New France":746,"Isle Bourbon & Isle of France:Senegal":479,"Louisiana:Madagascar":1061,"Louisiana:New France":76,"Louisiana:Senegal":297,"Madagascar:New France":702,"Madagascar:Senegal":434,"France:Caribbean":345,"Guyana:Caribbean":110,"India:Caribbean":866,"Isle Bourbon & Isle of France:Caribbean":668,"Louisiana:Caribbean":90,"Madagascar:Caribbean":643,"New France:Caribbean":139,"Senegal:Caribbean":249,"Guyana:France":331,"India:France":968,"Isle Bourbon & Isle of France:France":710,"Louisiana:France":349,"Madagascar:France":702,"New France:France":297,"Senegal:France":269,"Senegal:Guyana":170,"Isle Bourbon & Isle of France:India":210,"Louisiana:India":946,"Madagascar:India":182,"Senegal:India":694,"Louisiana:Isle Bourbon & Isle of France":732,"Madagascar:Isle Bourbon & Isle of France":29,"New France:Isle Bourbon & Isle of France":746,"Senegal:Isle Bourbon & Isle of France":479,"Madagascar:Louisiana":1061,"New France:Louisiana":76,"Senegal:Louisiana":297,"New France:Madagascar":702,"Senegal:Madagascar":434}
+DISTANCES = {"Caribbean:France": 345, "Caribbean:Guyana": 110, "Caribbean:India": 866, "Caribbean:Isle Bourbon & Isle of France": 668, "Caribbean:Louisiana": 90, "Caribbean:Madagascar": 643, "Caribbean:New France": 139, "Caribbean:Senegal": 249, "France:Guyana": 331, "France:India": 968, "France:Isle Bourbon & Isle of France": 710, "France:Louisiana": 349, "France:Madagascar": 702, "France:New France": 297, "France:Senegal": 269, "Guyana:Senegal": 170, "India:Isle Bourbon & Isle of France": 210, "India:Louisiana": 946, "India:Madagascar": 182, "India:Senegal": 694, "Isle Bourbon & Isle of France:Louisiana": 732, "Isle Bourbon & Isle of France:Madagascar": 29, "Isle Bourbon & Isle of France:New France": 746, "Isle Bourbon & Isle of France:Senegal": 479, "Louisiana:Madagascar": 1061, "Louisiana:New France": 76, "Louisiana:Senegal": 297, "Madagascar:New France": 702, "Madagascar:Senegal": 434,
+             "France:Caribbean": 345, "Guyana:Caribbean": 110, "India:Caribbean": 866, "Isle Bourbon & Isle of France:Caribbean": 668, "Louisiana:Caribbean": 90, "Madagascar:Caribbean": 643, "New France:Caribbean": 139, "Senegal:Caribbean": 249, "Guyana:France": 331, "India:France": 968, "Isle Bourbon & Isle of France:France": 710, "Louisiana:France": 349, "Madagascar:France": 702, "New France:France": 297, "Senegal:France": 269, "Senegal:Guyana": 170, "Isle Bourbon & Isle of France:India": 210, "Louisiana:India": 946, "Madagascar:India": 182, "Senegal:India": 694, "Louisiana:Isle Bourbon & Isle of France": 732, "Madagascar:Isle Bourbon & Isle of France": 29, "New France:Isle Bourbon & Isle of France": 746, "Senegal:Isle Bourbon & Isle of France": 479, "Madagascar:Louisiana": 1061, "New France:Louisiana": 76, "Senegal:Louisiana": 297, "New France:Madagascar": 702, "Senegal:Madagascar": 434}
 SHIP_JOURNEYS = []
+
 
 def normalize_location(location):
     matches = []
@@ -31,6 +33,7 @@ def normalize_location(location):
     res = [m[0] for m in sorted(matches, key=lambda m: location.index(m[1]))]
     return res
 
+
 def normalize_itinerary(itinerary):
     # normalize locations, skip unknown locations, no contiguous duplicates
     result = []
@@ -44,7 +47,8 @@ def normalize_itinerary(itinerary):
 def stops_to_legs(stops, start_year, end_year, ship_name):
     legs = []
     n_stops = len(stops)
-    total_distance = sum(DISTANCES[f"{stops[i-1]}:{stops[i]}"] for i in range(1, n_stops))
+    total_distance = sum(
+        DISTANCES[f"{stops[i-1]}:{stops[i]}"] for i in range(1, n_stops))
     progress = 0  # stays in [0,1]
     for i in range(1, n_stops):
         # In most cases we don't know the exact dates of each stop
@@ -62,21 +66,25 @@ def stops_to_legs(stops, start_year, end_year, ship_name):
     assert progress - 1 < 0.001, f"Invalid progress: {progress}"
     return legs
 
+
 for journeys_for_one_ship in raw_data.values():
     if len(journeys_for_one_ship) == 0:
         continue
     ship_name = journeys_for_one_ship[0]['ship_name']
     for journey in journeys_for_one_ship:
         stops_v1 = normalize_itinerary(journey['stops'])
-        stops_v2 = normalize_itinerary([e['location'] for e in journey['ship_log']])
+        stops_v2 = normalize_itinerary(
+            [e['location'] for e in journey['ship_log']])
 
         # use the itinerary with the most detail out of the two
         stops = stops_v1 if len(stops_v1) > len(stops_v2) else stops_v2
 
-        if journey['start_date'] is  None or journey['end_date'] is None:
-            print(f"WARNING Skipping entry for {ship_name} because we're missing start/end date")
+        if journey['start_date'] is None or journey['end_date'] is None:
+            print(
+                f"WARNING Skipping entry for {ship_name} because we're missing start/end date")
         else:
-            res = stops_to_legs(stops, float(journey['start_date']), float(journey['end_date']), ship_name)
+            res = stops_to_legs(stops, float(journey['start_date']), float(
+                journey['end_date']), ship_name)
             SHIP_JOURNEYS += res
 
 all_journeys = set()
@@ -92,6 +100,7 @@ print()
 print("Min date: ", min([j['from_date'] for j in SHIP_JOURNEYS]))
 print("Max date: ", max([j['to_date'] for j in SHIP_JOURNEYS]))
 
+############################################
 with open('../data/ships-v2.js', 'w') as out_js_file:
     json_str = json.dumps(SHIP_JOURNEYS, indent=2, ensure_ascii=False)
     out_js_file.write(f"const SHIP_JOURNEYS = {json_str};\n")
