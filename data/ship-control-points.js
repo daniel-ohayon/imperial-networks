@@ -41,7 +41,7 @@ for (key in CONTROL_POINTS) {
 CONTROL_POINTS = {...CONTROL_POINTS, ...swapped };
 
 // add cumulative progress of each segment
-// this adds an attribute `.d` to each point which is a number between 0 and 1
+// this adds an attribute `.progress` to each point which is a number between 0 and 1
 // indicating what % of the way has been covered so far (approximating each leg of the path by a straight line)
 const withProgress = {};
 let debug = {};
