@@ -41,6 +41,7 @@ class Region(Enum):
     def ocean(self) -> Ocean:
         if self.value in ('Caribbean', 'Louisiana', 'New France', 'Guyana'):
             return Ocean.ATLANTIC
+        # TODO should Senegal be moved to ATLANTIC?
         if self.value in ('India', 'Isle Bourbon & Isle of France', 'Senegal', 'Madagascar'):
             return Ocean.INDIAN_OCEAN
         raise Exception(f"Unsupported enum value: {self.value}")

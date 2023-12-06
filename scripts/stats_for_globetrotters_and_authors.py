@@ -50,6 +50,7 @@ class Region(Enum):
         if self.value in (
             "India",
             "Isle Bourbon & Isle of France",
+            # TODO should this be moved to ATLANTIC?
             "Senegal",
             "Madagascar",
         ):
