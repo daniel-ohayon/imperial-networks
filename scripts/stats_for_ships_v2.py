@@ -3,10 +3,11 @@ Some copy-paste from `parse_ship_data_for_animation.py`
 but the way we count "journeys" is different because the animation cares
 about each individual leg of a journey, but we don't here.
 """
+import csv
 from dataclasses import dataclass
 from enum import Enum
 import json
-from typing import List
+from typing import Callable, List, Optional, Tuple
 
 raw_data = json.load(open("./raw_data/ship_data.json"))
 
@@ -108,7 +109,14 @@ class Region(Enum):
     FRANCE = "France"
 
     def ocean(self) -> Ocean:
-        if self.value in ("Caribbean", "Louisiana", "New France", "Guyana", "France", "Senegal"):
+        if self.value in (
+            "Caribbean",
+            "Louisiana",
+            "New France",
+            "Guyana",
+            "France",
+            "Senegal",
+        ):
             return Ocean.ATLANTIC
         if self.value in (
             "India",
@@ -230,9 +238,9 @@ for period in PERIODS:
     )
     print(f"{period}: {n_journeys} journeys")
 
-avg_journeys_per_year = len(JOURNEYS) / (max_year - min_year)
-print(f"Avg journeys per 8 years: {avg_journeys_per_year * 8}")
-print(f"Avg journeys per 10 years: {avg_journeys_per_year * 10}")
+n_avg = len(JOURNEYS) / (max_year - min_year)
+print(f"Avg journeys per 8 years: {n_avg * 8}")
+print(f"Avg journeys per 10 years: {n_avg * 10}")
 
 for region in ALL_REGIONS:
     print(region.value)
@@ -447,3 +455,119 @@ for start_date, end_date in [(1713, 1731), (1731, 1756)]:
         print(
             f"{n} journeys went through Senegal and then {next_stop.value} (in that order) between {start_date} and {end_date}"
         )
+
+
+def avg_journeys_per_year_custom(
+    date_range: Tuple[int, int], filter_fun: Callable[[Journey], bool]
+) -> float:
+    start_date, end_date = date_range
+    n = len(
+        [
+            j
+            for j in JOURNEYS
+            if j.start_year >= start_date and j.end_year <= end_date and filter_fun(j)
+        ]
+    ) / (end_date - start_date)
+    return round(n, 2)
+
+
+def avg_journeys_per_year(
+    date_range: Tuple[int, int],
+    places: List[Region],
+) -> None:
+    start_date, end_date = date_range
+    n = len(
+        [
+            j
+            for j in JOURNEYS
+            if j.start_year >= start_date
+            and j.end_year <= end_date
+            and all(place in j.normalized_stops for place in places)
+        ]
+    ) / (end_date - start_date)
+    res = round(n, 2)
+    locations_str = " and ".join([p.value for p in places]) if places else "anywhere"
+    print(
+        f"Avg num journeys going through {locations_str} in any order ({start_date}-{end_date}): {res} journeys/year"
+    )
+
+
+print("=========== Stats Dec 2023 part 2 ==============")
+for reg in ALL_REGIONS:
+    for date_range in [(1713, 1731), (1731, 1756), (1756, 1769)]:
+        avg_journeys_per_year(date_range, [reg])
+    print()
+
+print("============ Stats Dec 2023 part 3 ===============")
+
+
+for date_range in [(1713, 1731), (1731, 1756), (1756, 1769)]:
+    avg_journeys_per_year(date_range, [])
+    avg_journeys_per_year(date_range, [Region.CARIBBEAN, Region.LOUISIANA])
+    print()
+
+for date_range in [(1713, 1769), (1756, 1763), (1763, 1773)]:
+    start_date, end_date = date_range
+    avg_journeys_per_year(date_range, [Region.BOURBON])
+
+    n = avg_journeys_per_year_custom(
+        date_range,
+        lambda j: any(p in j.normalized_stops for p in FRENCH_AMERICAS)
+        and Region.BOURBON in j.normalized_stops,
+    )
+    print(
+        f"Avg num journeys goign through French Americas and Bourbon in any order ({start_date}-{end_date}): {round(n, 2)} journeys/year"
+    )
+
+    avg_journeys_per_year(date_range, [Region.BOURBON, Region.INDIA])
+    print()
+
+print("============= Stats Dec 2023 part 4 ===============")
+avg_journeys_per_year((1713, 1769), [])
+avg_journeys_per_year((1756, 1763), [])
+# journeys = [
+#     j for j in JOURNEYS
+#     if j.start_year >= 1756
+#     and j.end_year <= 1769
+#     and Region.SENEGAL in j.normalized_stops
+# ]
+
+print("============ Stats Dec 2023 part 5 =============")
+for date_range in [(1713, 1731), (1731, 1756), (1756, 1769)]:
+    start_d, end_d = date_range
+    n = avg_journeys_per_year_custom(
+        date_range,
+        lambda j: all(p.ocean() == Ocean.ATLANTIC for p in j.normalized_stops),
+    )
+    print(
+        f"Avg travels per year in the Atlantic ({start_d}-{end_d}): {n} journeys/year"
+    )
+    n = avg_journeys_per_year_custom(
+        date_range,
+        lambda j: all(p.ocean() == Ocean.INDIAN_OCEAN for p in j.normalized_stops),
+    )
+    print(
+        f"Avg travels per year in the Indian Ocean ({start_d}-{end_d}): {n} journeys/year"
+    )
+    print()
+
+# print("============ Combinations =============")
+# with open('ship_journeys_matrix.csv', 'w') as out_file:
+#     writer = csv.writer(out_file)
+#     headers = ["_"] + ALL_REGIONS
+#     writer.writerow(headers)
+#     for reg1 in ALL_REGIONS:
+#         current_row = [reg1]
+#         for reg2 in ALL_REGIONS:
+#             if reg1 == reg2:
+#                 continue
+#             n = len(
+#                 [
+#                     j
+#                     for j in JOURNEYS
+#                     if contains_in_order(j.normalized_stops, [reg1, reg2])
+#                     and j.start_year >= start_date
+#                     and j.end_year <= end_date
+#                 ]
+#             )
+#             current_row += [n]

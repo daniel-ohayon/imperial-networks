@@ -3,31 +3,20 @@ October 2023
 Using data combined from curated_globetrotters_data.csv
 and travel-narrative-authors-journeys.csv
 See queries/combine_globetrotters_data.sql
+
+Code is forked from parse_curated_globetrotters_data.py
 """
 from __future__ import annotations
-import matplotlib.pyplot as plt
-from contextlib import contextmanager
 
-import json
 import csv
 import re
 import sys
 
-from typing import Callable, List, Dict, Optional, Set, Any, Tuple
+from typing import List, Dict, Optional, Set, Any, Tuple
 import dataclasses
 from enum import Enum
 
-parse_authors_data = len(sys.argv) > 1 and sys.argv[1] == "--authors"
-
-if parse_authors_data:
-    INPUT_FILE = "raw_data/travel-narrative-authors-journeys.csv"
-    OUTPUT_FILE = "../data/officials/travel-narrative-authors-links.js"
-    JS_CONST_NAME = "TRAVEL_NARRATIVE_AUTHORS_LINKS"
-else:
-    INPUT_FILE = "raw_data/curated_globetrotters_data.csv"
-    OUTPUT_FILE = "../data/officials/links.js"
-    JS_CONST_NAME = "OFFICIALS_LINKS"
-
+INPUT_FILE = "raw_data/globetrotters_and_travelers_oct_23.csv"
 
 class Ocean(Enum):
     ATLANTIC = "Atlantic"
@@ -45,13 +34,11 @@ class Region(Enum):
     MADAGASCAR = "Madagascar"
 
     def ocean(self) -> Ocean:
-        if self.value in ("Caribbean", "Louisiana", "New France", "Guyana"):
+        if self.value in ("Caribbean", "Louisiana", "New France", "Guyana", "Senegal"):
             return Ocean.ATLANTIC
         if self.value in (
             "India",
             "Isle Bourbon & Isle of France",
-            # TODO should this be moved to ATLANTIC?
-            "Senegal",
             "Madagascar",
         ):
             return Ocean.INDIAN_OCEAN
@@ -288,3 +275,15 @@ print_header("Data for after 1763")
 for region in [Region.CARIBBEAN, Region.BOURBON, Region.MADAGASCAR]:
     ppl = [p for p in ALL_PEOPLE if region in p.regions and p.departure_date >= 1763]
     print(f"{len(ppl)} people transited through {region.value} after 1763")
+
+print_header("December 2023 analysis")
+
+def avg_people_per_year(occupation: Occupation, date_range: Tuple[int, int], regions: List[Region]) -> None:
+    start_date, end_date = date_range
+    n = len([
+        e for e in ALL_EDGES
+        if e.departure_date >= start_date
+        and e.departure_date <= end_date
+        and e.occupation == occupation
+        and e.to in region 
+    ])
