@@ -1,3 +1,8 @@
+Dec 20 2023
+- [P0] Add more places with finer resolution to the ships v1 map
+- [P1] explore adding the 250K people with textual analysis to the globetrotters map
+- once we get the data dump from the ships, do some analysis on the owners of the ships (how many actually belonged to the Compagnie des Indes vs other stuff)
+
 02/05/2023
 * The dynamic ship map is nice but we would need a static version for the printed book, and it should still capture the full voyage of each ship, which the ship maps V1 does not do. One possibility would be a static map with one "arrow path" per distinct voyage route, and make the size of the arrow proportional to the number of ships which have taken this route.
 We'd have to figure out if this works or if there are too many distinct routes.
