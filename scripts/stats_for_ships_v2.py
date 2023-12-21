@@ -551,6 +551,91 @@ for date_range in [(1713, 1731), (1731, 1756), (1756, 1769)]:
     )
     print()
 
+print("======= Data Dec 18 2023 ===========")
+for time_period in [(1713, 1756), (1756, 1763), (1756, 1773)]:
+    avg_journeys_per_year(time_period, [])
+
+for time_period in [(1713, 1756), (1756, 1763)]:
+    n = avg_journeys_per_year_custom(
+        time_period,
+        lambda j: all(p.ocean() == Ocean.INDIAN_OCEAN for p in j.normalized_stops),
+    )
+    start, end = time_period
+    print(f"Avg num journeys per year in the Indian ocean ({start}-{end}): {n}")
+
+
+avg_journeys_per_year((1756, 1763), [Region.CARIBBEAN])
+avg_journeys_per_year((1756, 1763), [Region.LOUISIANA])
+avg_journeys_per_year((1756, 1763), [Region.CARIBBEAN, Region.LOUISIANA])
+
+for time_period in [(1713, 1731), (1731, 1756), (1756, 1763), (1763, 1773)]:
+    start, end = time_period
+    n = avg_journeys_per_year_custom(
+        time_period, lambda j: len({p.ocean() for p in j.normalized_stops}) == 2
+    )
+    print(f"Avg num journeys per year through both oceans ({start}-{end}): {n}")
+
+for time_period in [(1713, 1731), (1731, 1756), (1713, 1756), (1756, 1763)]:
+    avg_journeys_per_year(time_period, [Region.BOURBON])
+
+for time_period in [(1713, 1731), (1731, 1756), (1713, 1756), (1756, 1763)]:
+    avg_journeys_per_year(time_period, [Region.INDIA, Region.BOURBON])
+
+for time_period in [(1713, 1763), (1763, 1773)]:
+    n = avg_journeys_per_year_custom(
+        time_period,
+        lambda j: any(p.ocean() == Ocean.INDIAN_OCEAN for p in j.normalized_stops)
+        and any(
+            p
+            in [
+                Region.LOUISIANA,
+                Region.NEW_FRANCE,
+            ]
+            for p in j.normalized_stops
+        ),
+    )
+    start, end = time_period
+    print(
+        f"Avg num journeys per year going through Indian Ocean and (Louisiana or New France) ({start}-{end}): {n}"
+    )
+
+for time_period in [
+    (1713, 1756),
+    (1713, 1731),
+    (1731, 1756),
+    (1756, 1763),
+    (1763, 1773),
+]:
+    start, end = time_period
+    avg_journeys_per_year(time_period, [Region.BOURBON])
+
+n = avg_journeys_per_year_custom(
+    (1756, 1763), lambda j: all(p.ocean() == Ocean.ATLANTIC for p in j.normalized_stops)
+)
+print(f"Avg num journeys per year within the Atlantic (1756-1763): {n}")
+
+for time_period in [(1713, 1731), (1731, 1756), (1756, 1763)]:
+    n = avg_journeys_per_year_custom(
+        time_period,
+        lambda j: any(p.ocean() == Ocean.INDIAN_OCEAN for p in j.normalized_stops)
+        and any(
+            p
+            in [
+                Region.LOUISIANA,
+                Region.NEW_FRANCE,
+            ]
+            for p in j.normalized_stops
+        ),
+    )
+    start, end = time_period
+    print(
+        f"Avg num journeys per year between North America and Indian Ocean ({start}-{end}): {n}"
+    )
+
+n = len([j for j in JOURNEYS if j.start_year >= 1713 and j.end_year <= 1777])
+n2 = len({j.ship_name for j in JOURNEYS if j.start_year >= 1713 and j.end_year <= 1777})
+print(f"There are {n} journeys overall taking place between 1713-1777, for {n2} ships")
+
 # print("============ Combinations =============")
 # with open('ship_journeys_matrix.csv', 'w') as out_file:
 #     writer = csv.writer(out_file)

@@ -287,3 +287,11 @@ def avg_people_per_year(occupation: Occupation, date_range: Tuple[int, int], reg
         and e.occupation == occupation
         and e.to in region 
     ])
+
+print_header("20 Dec 2023")
+print(f"{len(ALL_PEOPLE)} people are included in the dataset")
+for occup in Occupation:
+    n_match = len([p for p in ALL_PEOPLE if p.occupation == occup])
+    print(
+        f" * {n_match} {occup.value}"
+    )
