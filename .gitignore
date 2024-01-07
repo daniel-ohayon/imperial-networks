@@ -1,5 +1,5 @@
 .vscode/
 **/.DS_Store
 scripts/raw_data/
-scripts/ships/
+scripts/ships/data_extraction
 **/.ipynb_checkpoints/

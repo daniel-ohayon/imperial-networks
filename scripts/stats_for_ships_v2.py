@@ -3,12 +3,15 @@ Some copy-paste from `parse_ship_data_for_animation.py`
 but the way we count "journeys" is different because the animation cares
 about each individual leg of a journey, but we don't here.
 """
+from collections import Counter
 import csv
 from dataclasses import dataclass
 from enum import Enum
 import json
-from typing import Callable, List, Optional, Tuple
+import random
+from typing import Callable, List, Optional, Tuple, TypeVar
 
+T = TypeVar("T")
 raw_data = json.load(open("./raw_data/ship_data.json"))
 
 
@@ -25,7 +28,6 @@ LOCATIONS = {
         "Sénégal",
         "Sénégal et Gorée",
         "Gorée",
-        "Cap-Vert",
         "Juda et côtes de Guinée",
         "Juda",
     ],
@@ -146,7 +148,7 @@ FRENCH_AMERICAS: List[Region] = [
 ]
 
 
-def contains_in_order(haystack: List[Region], needles: List[Region]) -> bool:
+def contains_in_order(haystack: List[T], needles: List[T]) -> bool:
     i = 0
     j = 0
 
@@ -457,6 +459,25 @@ for start_date, end_date in [(1713, 1731), (1731, 1756)]:
         )
 
 
+def filter_by_date(start_yr: int, end_yr: int) -> List[Journey]:
+    return [j for j in JOURNEYS if j.start_year >= start_yr and j.end_year <= end_yr]
+
+
+def filter_by_regions(
+    journeys: List[Journey], unordered_and_regions: List[Region]
+) -> List[Journey]:
+    return [
+        j
+        for j in journeys
+        if all(region in j.normalized_stops for region in unordered_and_regions)
+    ]
+
+
+def pct_str(num: int, denom: int) -> str:
+    pct = num / denom * 100
+    return f"{num}/{denom} ({pct:.1f}%)"
+
+
 def avg_journeys_per_year_custom(
     date_range: Tuple[int, int], filter_fun: Callable[[Journey], bool]
 ) -> float:
@@ -636,23 +657,172 @@ n = len([j for j in JOURNEYS if j.start_year >= 1713 and j.end_year <= 1777])
 n2 = len({j.ship_name for j in JOURNEYS if j.start_year >= 1713 and j.end_year <= 1777})
 print(f"There are {n} journeys overall taking place between 1713-1777, for {n2} ships")
 
-# print("============ Combinations =============")
-# with open('ship_journeys_matrix.csv', 'w') as out_file:
-#     writer = csv.writer(out_file)
-#     headers = ["_"] + ALL_REGIONS
-#     writer.writerow(headers)
-#     for reg1 in ALL_REGIONS:
-#         current_row = [reg1]
-#         for reg2 in ALL_REGIONS:
-#             if reg1 == reg2:
-#                 continue
-#             n = len(
-#                 [
-#                     j
-#                     for j in JOURNEYS
-#                     if contains_in_order(j.normalized_stops, [reg1, reg2])
-#                     and j.start_year >= start_date
-#                     and j.end_year <= end_date
-#                 ]
-#             )
-#             current_row += [n]
+print("\n======= Stats Jan 7 2023 ===========\n")
+
+
+# What percentages of voyages were between the metropole and its colonies,
+# and what percentage were from colony to colony for the period 1713-77
+def calc1():
+    journeys = filter_by_date(1713, 1777)
+    met_col = [
+        j
+        for j in journeys
+        if Region.FRANCE in j.normalized_stops and len(set(j.normalized_stops)) > 1
+    ]
+    col_col = [j for j in journeys if Region.FRANCE not in j.normalized_stops]
+    pct1 = len(met_col) / len(journeys) * 100
+    pct2 = len(col_col) / len(journeys) * 100
+    print(
+        f"\n[1713-1777] {pct1:.1f}% of journeys between metropole and colonies, {pct2:.1f}% amongst colonies"
+    )
+
+
+calc1()
+
+
+# Period 1713-77: % of the voyages that crossed the boundary
+# between the Atlantic and the Indian Ocean/ versus % of voyages that
+# were just within the Atlantic/versus % of voyages that were just within
+# the Indian Ocean.
+def calc2():
+    journeys = filter_by_date(1713, 1777)
+    ocean_ctr = Counter()
+    atlantic_only = [
+        j
+        for j in journeys
+        if {st.ocean() for st in j.normalized_stops} == {Ocean.ATLANTIC}
+    ]
+    ocean_ctr["Atlantic only"] = len(atlantic_only)
+    indian_only = [
+        j
+        for j in journeys
+        if {st.ocean() for st in j.normalized_stops} == {Ocean.INDIAN_OCEAN}
+    ]
+    ocean_ctr["Indian ocean only"] = len(indian_only)
+    both = [
+        j
+        for j in journeys
+        if {st.ocean() for st in j.normalized_stops}
+        == {Ocean.INDIAN_OCEAN, Ocean.ATLANTIC}
+    ]
+    ocean_ctr["Both oceans"] = len(both)
+    print("\n[1713-1777] Breakdown of voyages by ocean")
+    for key, cnt in ocean_ctr.most_common():
+        pct = cnt / ocean_ctr.total() * 100
+        print(f"  {key}: {cnt} voyages ({pct:.1f}%)")
+
+
+calc2()
+
+
+# % of voyages that were performed between 1713 and 1777, that transited through both the Mascarenes and West Africa
+def calc3():
+    total = filter_by_date(1713, 1777)
+    matched = filter_by_regions(total, [Region.BOURBON, Region.SENEGAL])
+    print(
+        f"\n[1713-1777] {pct_str(len(matched), len(total))} of all voyages went through both Mascarennes & West Africa"
+    )
+
+
+calc3()
+
+
+# Of all journeys that went through West Africa, give a breakdown by the specific location in West Africa they stopped at
+def calc4():
+    def find_senegal_keyword(stops: List[str]) -> Optional[str]:
+        for stop in j.stops:
+            for keyword in LOCATIONS["Senegal"]:
+                if keyword in stop:
+                    return keyword
+        return "Other"
+
+    journeys = filter_by_regions(JOURNEYS, [Region.SENEGAL])
+    stop_ctr = Counter()
+    for j in journeys:
+        kw = find_senegal_keyword(j.stops)
+        stop_ctr[kw] += 1
+
+    print(
+        f"\nBreakdown of stop in West Africa for the {len(journeys)} that stopped there:"
+    )
+    for name, cnt in stop_ctr.most_common():
+        pct = cnt / stop_ctr.total() * 100
+        print(f"  {name}: {cnt} ({pct:.1f}%)")
+
+
+calc4()
+
+
+# Out of the 478 journeys which took place between 1713 and 1731,
+# how many departed from, or transited through, the metropole.
+def calc5():
+    total = filter_by_date(1713, 1731)
+    matched = filter_by_regions(total, [Region.FRANCE])
+    res = pct_str(len(matched), len(total))
+    print(f"\n[1713-1731] {res} journeys included the metropole")
+
+
+calc5()
+
+
+def calc6():
+    total = filter_by_regions(filter_by_date(1713, 1731), [Region.CARIBBEAN])
+    matched = [j for j in total if "Martinique" in j.stops]
+    res = pct_str(len(matched), len(total))
+    print(f"\n[1713-1731] {res} journeys via Caribbean passed through Martinique")
+
+
+calc6()
+
+
+def calc7():
+    res = len(
+        filter_by_regions(
+            filter_by_date(1713, 1731), [Region.CARIBBEAN, Region.LOUISIANA]
+        )
+    )
+    print(f"\n[1713-1731] {res} journeys went through both Caribbean and Louisiana")
+
+
+calc7()
+
+
+# How many ship voyages stopped first in the Mascarenes, then in the Caribbean, then in France in the period 1713-31? Could you give me 3 names of ships who did this?
+def calc8():
+    base = filter_by_date(1713, 1731)
+    matched = [
+        j
+        for j in base
+        if contains_in_order(
+            j.normalized_stops, [Region.BOURBON, Region.CARIBBEAN, Region.FRANCE]
+        )
+    ]
+    examples_str = ", ".join([j.ship_name for j in matched])
+    print(
+        f"\n[1713-1731] {len(matched)} ships went through Mascarennes then Caribbean then France. They are: {examples_str}"
+    )
+
+
+calc8()
+
+
+# Of all the ships that transited through the Mascarenes between 1731-1756,
+# how much % transited through Isle de France compared to between 1713-1731? Same question for Isle Bourbon
+def calc9():
+    def find_mascarennes_kw(stops: List[str]) -> Optional[str]:
+        for stop in stops:
+            for keyword in LOCATIONS["Isle Bourbon & Isle of France"]:
+                if keyword in stop:
+                    return keyword
+        return "Other"
+
+    for start_yr, end_yr in [(1713, 1731), (1731, 1756)]:
+        journeys = filter_by_regions(filter_by_date(1713, 1731), [Region.BOURBON])
+        kw_ctr = Counter()
+        for j in journeys:
+            kw_ctr[find_mascarennes_kw(j.stops)] += 1
+        print(f"\n[{start_yr}-{end_yr}] Breakdown of journeys through Mascarennes:")
+        for name, cnt in kw_ctr.most_common():
+            print(f"  {name}: {cnt}")
+
+calc9()
