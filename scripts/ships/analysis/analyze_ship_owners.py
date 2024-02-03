@@ -73,6 +73,12 @@ JOURNEYS = cleanup_ship_journeys()
 journeys1 = [j for j in JOURNEYS if j.start_year >= 1713 and j.end_year <= 1777]
 print_breakdown("ship owners (1713-1777)", Counter([j.owner for j in journeys1]))
 
+# Could we determine what other compagnies performed the voyages between 1713 and 1777, exactly?
+print_breakdown(
+    "ship owners – other companies (1713-1777)",
+    Counter([j.owner_raw for j in journeys1 if j.owner == Owner.OTHER_COMPANY]),
+)
+
 
 # What was the % of voyages per year operated by private merchants in 1713-1767,
 # compared to 1767-77?

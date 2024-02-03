@@ -646,7 +646,7 @@ def show_job_breakdown_directed_j(
     )
 
 
-################ ADHOC DEBUGGING ################ 
+################ ADHOC DEBUGGING ################
 # Only 7% of ships went through NorAm
 # ships = process_ships_data()
 # ship_journeys: List[ShipJourney] = []
@@ -867,3 +867,6 @@ count_ppl_directed(
     MASCARENNES,
     Job.MILITARY,
 )
+
+# EOPLE MOVED FROM CARIBBEAN TO THE INDIAN OCEAN AFTER 1731-1756
+show_job_breakdown_directed_j((1731, 1756), CARIBBEAN, INDIAN_OCEAN)

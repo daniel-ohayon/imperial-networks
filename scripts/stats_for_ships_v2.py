@@ -2,7 +2,12 @@
 Some copy-paste from `parse_ship_data_for_animation.py`
 but the way we count "journeys" is different because the animation cares
 about each individual leg of a journey, but we don't here.
+
+WARNING [15 Jan 2024]: the data used by this script is not the most recent;
+(missing ships with >10 journeys, and missing info about slaves)
+Use the file repos/mdh-journeys/raw_data/all_ships_parsed_v2.json instead
 """
+
 from collections import Counter
 import csv
 from dataclasses import dataclass
@@ -825,4 +830,49 @@ def calc9():
         for name, cnt in kw_ctr.most_common():
             print(f"  {name}: {cnt}")
 
+
 calc9()
+
+
+# Could you give me examples names of SHIPS ON THEIR WAY TO the Indian Ocean THAT STOPPED AT OUIDAH in 1713-31?
+def calc10():
+    matching = [
+        j
+        for j in filter_by_date(1713, 1731)
+        if any("Juda" in st for st in j.stops)
+        and any(s.ocean() == Ocean.INDIAN_OCEAN for s in j.normalized_stops)
+    ]
+    print("SHIPS ON THEIR WAY TO the Indian Ocean THAT STOPPED AT OUIDAH in 1713-31?")
+    for match in matching:
+        print(f"{match.ship_name} ({match.start_year}-{match.start_year})")
+
+
+calc10()
+
+
+# I need a few names of ships who travelled from the Mascarenes to Madagascar before leaving for India in 1713-31.
+def calc11():
+    matching = [
+        j
+        for j in filter_by_date(1713, 1731)
+        if contains_in_order(
+            j.normalized_stops, [Region.BOURBON, Region.MADAGASCAR, Region.INDIA]
+        )
+    ]
+    print(
+        "ships who travelled from the Mascarenes to Madagascar before leaving for India in 1713-31."
+    )
+    for match in matching:
+        print(f"{match.ship_name} ({match.start_year}-{match.start_year})")
+
+
+calc11()
+
+
+# How many ship voyages were performed between 1731-56?
+def calc12():
+    n = len(filter_by_date(1731, 1756))
+    print(f"How many ship voyages were performed between 1731-56? {n}")
+
+
+calc12()
